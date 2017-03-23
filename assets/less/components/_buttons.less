@@ -1,0 +1,85 @@
+/***************************************************************************/
+/* Buttons                                                                 */
+/***************************************************************************/
+button {
+    min-height: 40px;
+    width: auto;
+    display: inline-block;
+    padding: 0 10px;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    color: @light-color;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: none;
+    border-radius: @default-border-radius;
+    border: 1px solid @border-color;
+    background: @brand-color;
+    transition: background .4s ease;
+
+    &:hover { background: lighten(@brand-color, 5%); }
+}
+
+.btn { border-radius: @default-border-radius; }
+
+.button {
+    border-radius: @default-border-radius;
+    border: 2px solid @dark-color;
+    color: @dark-color;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 40px;
+    padding: 0 16px;
+    height: 45px;
+}
+
+.btn-facebook {
+    &:hover {
+        border-color: @facebook;
+        background: @facebook;
+        color: @light-color;
+    }
+}
+
+.btn-twitter {
+    &:hover {
+        border-color: @twitter;
+        background: @twitter;
+        color: @light-color;
+    }
+}
+
+.btn-reddit {
+    &:hover {
+        border-color: @reddit;
+        background: @reddit;
+        color: @light-color;
+    }
+}
+
+.scroll-down {
+    color: darken(@light-color, 20%);
+    width: 40px;
+    height: 40px; 
+    border: 2px solid @border-color;
+    display: inline-block;
+    border-radius: 50%;
+    transition: all .4s ease;
+
+    i {
+        padding: 10px 10px;
+        color: darken(@light-color, 20%);
+        transition: color .4s ease;
+    }
+
+    &:hover { 
+        background: darken(@light-color, 20%);
+        border-color: darken(@light-color, 20%);
+
+        i { color: @dark-color; } 
+    }
+}

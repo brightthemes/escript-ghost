@@ -1,0 +1,21 @@
+//===================================
+// Links
+//===================================
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  transition: $transition-speed-base;
+
+  &:visited {
+    color: $link-color-visited;
+  }
+
+  &:hover {
+    color: $link-color-hover;
+  }
+
+  &:active {
+    color: $link-color;
+  }
+}

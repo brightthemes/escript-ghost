@@ -1,0 +1,55 @@
+//===================================
+// Colors
+//===================================
+
+// Brand color 
+$brand-color:           #16a085; // Green Sea
+
+// Background color. 
+$background-color:      #f1f1f1;
+
+// Color light. 
+$light-color:           #ffffff;
+
+// Color dark. 
+$dark-color:            #000000;
+
+// Text color
+$text-color: 			#222222;
+
+// Heading text color
+$heading-text-color: 	darken($text-color, 10%);
+
+// Global text link color. 
+$link-color:            $brand-color;
+
+// Link hover color. 
+$link-color-hover:      darken($link-color, 15%);
+
+// Link visited color. 
+$link-color-visited:    darken($link-color, 25%);
+
+// Globar border color 
+$border-color:          #cccccc;
+
+// Social Media colors 
+$behance:               #0077ff;
+$dribbble:              #ea4c89;
+$email:                 #35c7ed;
+$facebook:              #4862a3;
+$google:                #3f85f4;
+$google-plus:           #dd4b39;
+$instagram:             #3d6b92;
+$linkedin:              #0177b5;
+$pinterest:             #db242c;
+$reddit:                #ff4500;
+$rss:                   #fc8f55;
+$skype:                 #00aff0;
+$soundcloud:            #ff4e00;
+$spotify:               #84bd00;
+$stumbleupon:           #ea4b24;
+$trello:                #026aa7;
+$tumblr:                #2c4762;
+$twitter:               #55acee;
+$whatsapp:              #59ac23;
+$youtube:               #d02022;

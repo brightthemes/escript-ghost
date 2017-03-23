@@ -1,0 +1,92 @@
+/***************************************************************************/
+/* Author Box                                                              */
+/***************************************************************************/
+.author-box-section {
+    margin-bottom: 20px;
+    border-radius: @default-border-radius;
+    border: 1px solid @border-color;
+    background: @item-bg-color;
+
+    .author-title {
+        font-size: 2.8rem;
+        line-height: 1.1;
+        letter-spacing: -.015em;
+        font-weight: bold;
+        padding: 10px;
+        margin: 0;
+    } 
+}
+
+.author-box {
+    padding: 30px;
+    position: relative;
+    border-top: @border-top-style;
+    min-height: 150px;
+
+    .author-box-image {
+        box-sizing: border-box;
+        left: 50%;
+        margin: 0 auto;
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+        overflow: hidden;
+        background: @light-color;
+        z-index: 2;
+        box-shadow: fade(@light-color, 30%) 0 1px 1px 2px;
+        margin-bottom: 20px;
+        display: block;
+        background-size: cover;
+        background-position: center center;
+        border-radius: 100%;
+        transition: filter 0.4s ease;
+
+        &:hover { filter: grayscale(50%); }
+    }
+
+    .author-name {
+        margin-bottom: 15px;
+        letter-spacing: -0.0125em;
+        line-height: .9;
+        font-size: 2.5rem;
+        text-align: center;
+
+        a {
+            &:hover { color: @brand-color; }
+        }
+    }
+
+    .author-description { 
+        color: fade(@dark-color, 60%); 
+        margin-bottom: 15px;
+    }
+
+    .author-links {
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: inline;
+            float: left; 
+            margin-right: 10px;
+
+            i { padding-right: 5px; }
+            
+            a {
+                color: @dark-color;
+                font-size:  1.6rem;
+
+                &:hover { color: @brand-color; }
+            }
+        }
+    }
+
+    .author-avatar {
+        border-radius: 50%;
+        height: 85px;
+        left: 30px;
+        position: absolute;
+        top: 30px;
+        width: 85px;
+    }
+}

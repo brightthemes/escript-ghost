@@ -1,0 +1,13 @@
+//===================================
+// Blockquote
+//===================================
+
+blockquote {
+  margin: ($line-height-base / 2) 0;
+  font-size: $font-size-base * 1.25;
+  line-height: $line-height-base;
+  padding: 0 (2 * $line-height-base) 0 (2 * $line-height-base);
+  font-style: italic;
+  text-align: center;
+  background-color: darken($background-color, 5%);
+}

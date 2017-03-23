@@ -1,0 +1,201 @@
+/***************************************************************************/
+/* Author Page                                                             */
+/***************************************************************************/
+.author {
+    background: @dark-color;
+    position: relative;
+    height: 60rem;
+
+    @media @xs { height: auto; }
+
+    @media @sm { min-height: 40rem; }
+
+    @media @md { min-height: 50rem; }
+
+    @media @lg { min-height: 60rem; }
+
+    .author-cover {
+        height: 100%;
+        background-position: center center !important;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    .author-header {
+        margin: 0 auto;
+        padding: 20px;
+        position: relative;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(fade(@dark-color, 35%), fade(@dark-color, 85%));
+    }
+
+    .author-image-wrapper {
+        box-sizing: border-box;
+        display: block;
+        left: 50%;
+        margin: 20px;
+        margin-left: 0px;
+        width: 80px;
+        height: 80px;
+        margin-left: -40px;
+        padding: 0;
+        border-radius: 100%;
+        overflow: hidden;
+        z-index: 2;
+        box-shadow: fade(@light-color, 30%) 0 1px 1px 1px;
+        float: left;
+        transition: filter .4s ease;
+
+        @media @sm {
+            width: 120px;
+            height: 120px;
+            margin-left: -60px;
+        }
+
+        @media @lg {
+            width: 160px;
+            height: 160px;
+            margin-left: -80px;               
+        }
+
+        &:hover { filter: grayscale(50%); }
+
+        .author-image {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center center;
+            border-radius: 100%;
+        }
+    }
+
+    .author-title {
+        margin: 1.5rem 0rem;    
+        font-size: 4rem;
+        letter-spacing: -.0125em;
+        line-height: .9;
+        text-align: center;
+        color: @brand-color;
+
+        @media @sm { font-size: 5rem; }
+
+        @media @lg { font-size: 6rem; }
+
+        a {
+            color: @dark-color;
+
+            &:hover {
+                text-decoration: none;
+                border: none;
+            }
+        }
+    }
+
+    .author-bio {
+        max-width: 600px;
+        margin: 0 auto;
+        color: darken(@light-color, 20%);
+        font-size: 1.8rem;
+        line-height: 1.5em;
+        font-weight: 200;
+        letter-spacing: 0;
+        text-indent: 0;
+        text-align: center;
+
+        @media @xs { font-size: 1.6rem; }
+    }
+
+    .author-meta {
+        margin: 0;
+        font-size: 1.6rem;
+        padding: 10px 0px;
+        color: darken(@light-color, 20%);
+        text-align: center;
+
+        span {
+            display: inline-block;
+            margin: 1rem;
+            word-wrap: break-word;
+
+            @media @xs {         
+                display: block;
+                margin: 0.5rem 0;
+            }
+        }
+
+        a { text-decoration: none; }
+
+        .author-location, .author-stats { color: darken(@light-color, 20%); }
+    }
+
+    .author-link {
+        a { 
+            color: darken(@light-color, 20%); 
+
+            &:hover { color: @brand-color; }
+        }
+    }
+
+    .author-social {
+        margin: 1rem 0rem;
+        text-align: center;
+    }
+
+    .author-social-link {
+        border: 1px solid @border-color;
+        border-radius: @default-border-radius;
+        color: darken(@light-color, 20%);
+        font-size: 1.3rem;
+        line-height: 38px;
+        margin-right: 5px;
+        cursor: pointer;
+        display: inline-block;
+        font-weight: 700;
+        padding: 0 16px;
+        height: 40px;
+        transition: border-color .4s ease, background .4s ease;
+
+        @media @xs { margin-bottom: 5px; }
+
+        &:hover {
+            border-color: @brand-color;
+            background: @brand-color;
+            i, p { color: @light-color; }
+        }
+
+        i {
+            float: left;
+            margin-right: 0px;
+            line-height: 36px;
+            color: darken(@light-color, 20%);
+            transition: color .4s ease;
+        }
+
+        p {
+            display: inline-block;
+            margin-left: 10px;
+            margin-top: 4px;
+            font-size: 1.6rem;
+            margin-bottom: 0;
+            transition: color .4s ease;
+        }
+    }
+
+    .author-scroll-wrapper {
+        text-align: center;
+        padding: 10px 0px;
+        width: 100%;
+        left: 0;
+        position: absolute;
+        bottom: 20px;
+
+        @media @xs { position: static; }
+    }
+}

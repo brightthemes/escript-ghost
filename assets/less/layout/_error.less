@@ -1,0 +1,72 @@
+/***************************************************************************/
+/* Error                                                                   */
+/***************************************************************************/
+.error-404 {
+    padding: 50px 0px;
+    text-align: center;
+
+    @media @xs { padding: 20px 0px; }
+
+    @media @md { padding: 150px 0; }
+
+    .error-title {
+        font-size: 25rem;
+        font-weight: bold;
+        line-height: 1;
+        margin: 0;
+
+        @media @xs { font-size: 10rem; }
+    }
+
+    .error-text-big {
+        font-size: 4rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+
+        @media @xs { 
+            font-size: 2.4rem;
+            margin-bottom: 10px;
+        }
+    }
+
+    .error-text {
+        font-size: 1.8rem;
+        max-width: 300px;
+        text-align: center;
+        margin: 0 auto;
+        font-weight: bold;
+
+        @media @xs { font-size:  1.6rem; }
+    }
+
+    .error-links {
+        margin-top: 20px;
+        
+        a { padding: 0px 4px; }
+    }
+
+    .btn-404 {
+        background: transparent;
+        border: 2px solid fade(@dark-color, 80%);
+        color: fade(@dark-color, 80%);
+        font-weight: bold;
+        font-size: 1.4rem;
+        letter-spacing: 0;
+        width: 150px;
+        height: 40px;
+        vertical-align: middle;
+        padding: 2px;
+        display: inline-block;
+        margin-bottom: 10px;
+        transition: all .4s ease;
+
+        i { margin-right: 5px; }
+
+        &:hover { 
+            border-color: @brand-color;
+            background: @brand-color;
+            color: @light-color;
+        }
+    }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{!-- Document Settings --}}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {{!-- Page Meta --}}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    {{!-- Mobile Meta --}}
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {{!-- Brand icon --}}
+    <link rel="shortcut icon" href="{{asset '/favicon.ico'}}" type="image/x-icon">
+    <link rel="icon" href="{{asset '/favicon.ico'}}" type="image/x-icon">
+
+    {{!-- Styles'n'Scripts --}}
+    <link rel="stylesheet" type="text/css" href="{{asset 'css/main.min.css'}}" />
+
+    {{!-- Ghost outputs important style and meta data with this tag --}}
+    {{ghost_head}}
+</head>
+<body class="{{body_class}} nav-closed">
+
+    {{!-- The blog navigation links --}}
+    {{!-- {{> header}} --}}
+
+    {{!-- Blog search --}}
+    {{!-- {{> search}} --}}
+
+    <main class="main">
+        {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+        {{{body}}}
+    </main>
+
+    {{!-- The footer at the very bottom --}}
+    {{!-- {{> footer}} --}}
+
+    {{!-- Ghost outputs important scripts and data with this tag --}}
+    {{ghost_foot}}
+
+    {{!-- Main theme scripts --}}
+    <script type="text/javascript" async src="{{asset 'js/app.min.js'}}"></script>
+
+    {{!-- Disqus comments --}}
+    <script type="text/javascript">
+        var disqus_shortname = 'bironthemes'; // Replace 'bironthemes' with your disqus account shortname
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+
+</body>
+</html>

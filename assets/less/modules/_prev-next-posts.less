@@ -1,0 +1,92 @@
+/***************************************************************************/
+/* Previous and next story                                                 */
+/***************************************************************************/
+.read-next {
+    margin-top: 10px;
+    margin-top: 20px;
+    display: flex;
+    flex: 0 1 auto;
+    flex-flow: row wrap;
+
+    .prev .post:before { content: "Previous Story"; }
+}
+
+.read-next-story {
+    min-width: 50%;
+    text-decoration: none;
+    position: relative;
+    text-align: center;
+    color: @light-color;
+    background: fade(@dark-color, 90%) no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+    min-height: 20rem;
+
+    &:hover {
+        .post-info {
+            &:before {
+                color: fade(@dark-color, 80%);
+                background: @light-color;
+                transition: all 0.2s ease;
+            }
+        }
+
+        &:before {
+            background: fade(@dark-color, 60%);
+            transition: all 0.2s ease;
+        }
+    }
+
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: fade(@dark-color, 40%);
+        transition: all 0.5s ease;
+        z-index: 1;
+    }
+
+    h2 {
+        margin-top: 1rem;
+        color: @light-color;
+    }
+
+    .post-info {
+        padding-top: 8rem;
+        margin: 0 auto;
+        padding: 8rem 1rem;
+        z-index: 1;
+        position: relative;
+
+        &:before {
+            content: "Next Story";
+            padding: 10px 20px 10px;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: fade(@light-color, 60%);
+            border: fade(@light-color, 50%) 1px solid;
+             border-radius: @default-border-radius; 
+            transition: all 0.5s ease;
+        }
+    }
+
+    .prev-image, 
+    .next-image {
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        background: center center no-repeat fade(@dark-color, 90%);
+        background-size: cover;
+        overflow: hidden;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        position: absolute;
+    }   
+}

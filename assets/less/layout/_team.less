@@ -1,0 +1,145 @@
+/***************************************************************************/
+/* Team Page                                                               */
+/***************************************************************************/
+.team-list {
+    padding: 0;
+    padding-top: 20px;
+
+    .team-list-item {
+        padding: 5px;
+
+        @media @xs { padding: 5px 0px; }
+
+        .team-member-wrapper { 
+            border: 1px solid @border-color;
+            height: 100%;
+            background: @item-bg-color;
+        }
+    }
+
+    .team-member {
+        color: @light-color;
+        height: 15em;
+        position: relative;
+        background: @item-bg-color;
+        margin: 0;
+        padding: 0;
+
+        @media @xs { height: 10em; }
+
+        &:last-child {
+            @media @xs { height: 10em; }
+        }
+
+        .team-member-image {
+            background-size: cover;
+            background-position: center center;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+
+            &:after {
+                background-image: linear-gradient(135deg, fade(@brand-color, 20%) 0%, fade(@dark-color, 80%) 100%);
+                opacity: .4;
+                background-size: 100% 100%;
+                display: block;
+                height: 100%;
+                left: 0;
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                content: '';
+            }
+        }
+    }
+
+    .team-member-data {
+        color: fade(@dark-color, 80%);
+        height: auto;
+        position: relative;
+        background: @item-bg-color;
+        margin: 0;
+        padding: 0;
+
+        @media @xs {
+            height: auto;
+            padding-bottom: 10px;
+        }
+
+        .team-member-info {
+            padding: 16px;
+            width: 100%;
+            z-index: 2;
+
+            .team-member-name {
+                color: fade(@dark-color, 80%);
+                font-size: 2rem;
+                line-height: 1.1;
+                margin-bottom: 2px;
+
+                a { color: fade(@dark-color, 80%); }
+            }
+        }
+    }
+
+    .team-member-meta {
+        color: fade(@dark-color, 80%);
+        width: 100%;
+        padding: 0;
+        margin: 0;
+
+        li {
+            float: left;
+            white-space: nowrap;
+            margin: 0;
+            padding: 0;   
+
+            &:last-child { float: right; }
+
+            .team-member-location {
+                font-size: 1.6rem;
+                padding: 1px;
+                padding: 0;
+                margin: 0;
+            }             
+        }
+
+        &:after {
+            display: table;
+            content: "";
+            clear: both;
+        }
+    }
+
+    .team-member-social {
+        padding: 0;
+        margin: 0;
+
+        a { 
+            margin-left: 5px; 
+
+            i { 
+                color: fade(@dark-color, 80%); 
+                transition: color .3s ease;
+            }
+
+            &:hover {
+                i { color: @brand-color; }
+            }
+        }
+    }  
+
+    .team-member-bio {           
+        padding: 0 16px;
+        font-size: 1.6rem;
+        color: fade(@dark-color, 60%);
+
+        p {
+            margin: 0;
+            padding-bottom: 10px;
+        }
+    }
+}

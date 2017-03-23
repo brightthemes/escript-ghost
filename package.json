@@ -1,0 +1,36 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "Magazine and Blog Ghost Theme",
+  "author": "Biron Themes",
+  "devDependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "cssnano": "^3.10.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-postcss": "^6.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.0.1",
+    "path": "^0.12.7",
+    "pixrem": "^3.0.2",
+    "postcss": "^5.2.6",
+    "postcss-color-rgba-fallback": "^2.2.0",
+    "postcss-cssnext": "^2.9.0",
+    "postcss-discard-comments": "^2.0.4",
+    "postcss-font-magician": "^1.6.0",
+    "postcss-opacity": "^4.0.0",
+    "postcss-pseudoelements": "^3.0.0",
+    "postcss-vmin": "^2.0.0",
+    "postcss-will-change": "^1.1.0",
+    "postcss-zindex": "^2.2.0"
+  },
+  "dependencies": {
+    "animate.css": "^3.5.2",
+    "bootstrap-sass": "^3.3.7",
+    "fitvids": "^2.0.0",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.1.1",
+    "lazysizes": "^2.0.7"
+  }
+}

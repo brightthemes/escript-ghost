@@ -1,0 +1,59 @@
+/***************************************************************************/
+/* Pagination                                                              */
+/***************************************************************************/
+.pagination {
+    position: relative;
+    margin: 4rem auto;
+    font-size: 1.3rem;
+    color: fade(@dark-color, 50%);
+    text-align: center;
+    width: 100%;
+    color: fade(@dark-color, 80%);
+
+    a {
+        transition: all 0.2s ease;
+        color: fade(@dark-color, 80%);
+        margin: 0px 1px;
+
+        &:hover {
+            background: @border-color;
+            border: @border-color 1px solid;
+        }
+    }
+
+    .first-page, 
+    .last-page,
+    .previous-page, 
+    .next-page,
+    .active-page{
+        display: inline-block;
+        padding: 5px 20px;
+        border: fade(@dark-color, 75%) 1px solid;
+        border-radius: @default-border-radius;
+        text-decoration: none;
+        
+    }
+
+    .active-page {
+        background: @brand-color;
+        transition: all .4s ease;
+
+        &:hover {
+            border-color: @brand-color;
+            background: @brand-color;
+        }
+    }
+
+    .pagination-dots {
+        background: transparent;
+        border: none;
+        display: inline-block;
+        padding: 5px 20px;
+        text-decoration: none;
+
+        &:hover {
+            background: transparent;
+            border: none;
+        }
+    }
+}

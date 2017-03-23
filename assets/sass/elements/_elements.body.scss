@@ -1,0 +1,17 @@
+//===================================
+// Html and body
+//===================================
+
+html, body {
+  color: $text-color;
+  background-color: $background-color;
+  font-size: $font-size-base;
+  font-weight: $font-weight-light;
+  font-family: $font-family-base;
+  line-height: $line-height-base;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}

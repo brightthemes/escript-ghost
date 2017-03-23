@@ -1,0 +1,36 @@
+/***************************************************************************/
+/* Split                                                                   */
+/***************************************************************************/
+.split {
+    padding: 30px 10px;
+
+    @media @xs { padding: 0 0 20px 0; }
+
+    @media @md  {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .post-main-area {
+	    @media @xs { 
+	        margin: 8px;
+	        padding: 0px;
+	    }
+
+	    @media @sm { padding: 0; }
+
+	    @media @md { padding-right: 10px; }
+    }
+
+    .sidebar {
+	    padding-left: 0;
+	    padding-right: 0;
+	    margin: 0;
+
+	    @media @xs { margin: 8px; }
+
+	    @media @sm { flex: 0 0 328px; }
+
+	    @media @md { padding-left: 10px; }
+    }
+}

@@ -1,0 +1,23 @@
+//===================================
+// Headings
+//===================================
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font-family;
+  font-weight: $font-weight-semibold;
+  line-height: $heading-line-height;
+  color: $heading-text-color;
+  margin: 0 0 $heading-line-height/2;
+}
+
+h1 { font-size: ceil($font-size-base * 2.5); }
+
+h2 { font-size: ceil($font-size-base * 2); }
+
+h3 { font-size: ceil($font-size-base * 1.75); }
+
+h4 { font-size: ceil($font-size-base * 1.5); }
+
+h5 { font-size: ceil($font-size-base * 1.25); }
+
+h6 { font-size: ceil($font-size-base * 1); }

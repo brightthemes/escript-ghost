@@ -1,0 +1,118 @@
+/***************************************************************************/
+/* Contact Page                                                            */
+/***************************************************************************/
+.map {
+    width: 100%; height: 400px;
+    overflow: hidden;
+
+    .map-overlay {
+       background:transparent; 
+       position:relative; 
+       width:100%;
+       height:400px; /* your iframe height */
+       top:400px;  /* your iframe height */
+       margin-top:-400px;  /* your iframe height */
+    }
+}
+
+.contact-area {
+    background: @brand-color;
+
+    .contact-info {
+        text-align: center;
+        color: @light-color;
+        padding: 80px 45px;
+        font-size: 18px;
+        line-height: 30px;
+        float: left;
+        position: relative;
+        z-index: 9;
+        box-sizing: border-box;
+
+        h3 {
+            @media @xs { font-size: 3rem; }
+        }
+    }
+
+    .contact-form-area {
+        background: fade(@dark-color, 55%) no-repeat top left;
+        float: left;
+        position: relative;
+        padding: 0;
+
+        .contact-bg-image { 
+            background-size: cover;
+            position: absolute;
+            background:fade(@dark-color, 95%);
+            width: 100%;
+            height: 100%;
+            min-height: 100%;
+        }
+    }
+
+    .wrap-contact {
+        max-width: 880px;
+        width: 100%;
+        margin: 0 auto;  
+    }
+
+    .contact-form {
+        padding: 60px;
+
+        @media @xs { padding: 20px; }
+        
+        input, textarea {
+            display: block;
+            background: none;
+            border: 2px solid fade(@light-color, 50%);
+            color: @light-color;
+            font-size: 1.6rem;
+            line-height: 16px;
+            font-weight: 700;
+            overflow: auto;
+            overflow-x: hidden;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+
+            &:active, &:focus {
+                background: transparent;
+                border: 2px solid @light-color;
+                background: transparent;
+            }
+        }
+
+        textarea {
+            height: 120px;
+            resize: none;
+            max-width: 100%;
+        }
+
+        input {
+            height: 45px;
+            max-width: 400px;
+        }
+
+        div {
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            color: @light-color;
+            position: relative;
+        }
+    }
+
+    .submit-button input { 
+        text-transform: uppercase; 
+        color: fade(@light-color, 50%);
+        transition: all .2s ease;
+
+        &:hover { 
+            color: @light-color; 
+            background: @brand-color;
+            border-color: @brand-color;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+/***************************************************************************/
+/* Social Share                                                            */
+/***************************************************************************/
+.social-share {
+    padding: 15px;
+
+    a {
+        i { transition: all .4s ease; }
+
+        &:hover { 
+            i { transform: scale(1.2); }
+        }
+    }
+
+    .azm-comment {
+        width: auto;
+        float: right;
+
+        i:nth-child(1) { margin-left: 10px; }
+
+        i:nth-child(2) { margin-right: 10px; }
+
+        .comments {
+            color: @light-color;
+            padding: 2px;
+        }
+
+        .comment-count { padding-right: 10px; }
+    }
+}

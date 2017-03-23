@@ -1,0 +1,33 @@
+/***************************************************************************/
+/* Lists                                                                   */
+/***************************************************************************/
+ol, ul {
+    padding-left: 3rem;
+    list-style: none;
+
+    @media @xs { padding-left: 2rem; }
+}
+
+ol ol, ul ul, ul ol, ol ul {
+    margin: 0 0 0.4em 0;
+    padding-left: 2em;
+}
+
+dl dt {
+    float: left;
+    width: 180px;
+    overflow: hidden;
+    clear: left;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 700;
+    margin-bottom: 1em;
+}
+
+dl dd {
+    margin-left: 200px;
+    margin-bottom: 1em
+}
+
+li li { margin: 0; }

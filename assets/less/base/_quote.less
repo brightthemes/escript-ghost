@@ -1,0 +1,51 @@
+/***************************************************************************/
+/* Quote                                                                   */
+/***************************************************************************/
+blockquote {
+    padding: 1.25em 1.75em;
+    margin: 0px;
+    border: none;
+    margin-bottom: 1.25em;
+    font-size: 1.8rem;
+    background: fade(@dark-color, 10%);
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    p {
+	    display: inline;
+	    color: @dark-color;
+	    margin: 0.8em 0;
+	    font-style: italic;
+    }
+
+    small {
+	    display: inline-block;
+	    margin: 0.8em 0 0.8em 1.5em;
+	    font-size: 0.9em;
+	    color: darken(@dark-color, 20%);
+
+	    &:before { content: "\2014 \00A0"; }
+    }
+
+    cite {
+    	font-weight: 700;
+
+    	a { font-weight: normal; }
+    }
+
+    &:before {
+    	font-family: Fontawesome;
+    	content: "\f10d"; 
+    	float: left;
+    	margin-right: 10px;
+    	margin-top: -5px;
+    }
+
+    &:after {
+	    font-family: Fontawesome;
+	    content: "\f10e"; 
+	    position: absolute;
+	    margin-left: 10px;
+	    margin-top: -5px;
+    }
+}

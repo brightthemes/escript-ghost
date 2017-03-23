@@ -1,0 +1,41 @@
+/***************************************************************************/
+/* Placeholders/advertisement                                              */
+/***************************************************************************/
+.ad {
+    padding: 30px 10px;
+
+    @media @xs { padding: 0; }
+}
+
+.ad.bottom-0 { padding: 30px 10px 0px; }
+
+.ad-unit {
+    display: block;
+    position: relative;
+    height: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+
+}
+
+.ad-unit-h-90 { height: 90px; }
+
+.ad-unit-h-50 { height: 50px; }
+
+.ad-unit-h-250 { height: 250px; }
+
+.ad-unit-w-728 { 
+    max-width: 728px;
+    border: 1px solid @border-color;
+}
+
+.ad-unit-w-300 { max-width: 300px; }
+
+.ad-unit-w-320 {
+    max-width: 320px;
+
+    @media @xs { margin-bottom: 20px; }
+}

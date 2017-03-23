@@ -1,0 +1,212 @@
+/***************************************************************************/
+/* Sidebar                                                                 */
+/***************************************************************************/
+.sidebar-title {
+    font-size: 2.8rem;
+    line-height: 1.1;
+    letter-spacing: -.015em;
+    font-weight: bold;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.sidebar {
+    section {
+        margin-bottom: 20px;
+        font-size: 1.4rem;
+        border-radius: @default-border-radius;
+
+        @media @md { max-width: 328px; }
+
+        .sidebar-item-wrapper {
+            border-top: @border-top-style;
+        }
+
+        .sidebar-list {
+            padding-left: 0;
+            margin-bottom: 0;
+        } 
+
+        &:last-child { margin-bottom: 0; }
+    }
+
+    .sidebar-list-item {                
+        padding: 10px 0;
+        border-bottom: 1px solid fade(@dark-color, 20%);
+
+        article { padding-bottom: 0; }
+
+        .sidebar-story {
+            min-height: 80px;
+            height: 80px;
+            padding-left: 80px;
+            position: relative;
+            
+            .sidebar-story-image {
+                left: 0;
+                padding-top: 80px;
+                position: absolute;
+                top: 0;
+                width: 80px;
+                display: block;
+                overflow: hidden;
+                margin-bottom: 0px;
+                background: @dark-color;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 0;
+            }
+
+            .sidebar-story-title {
+                padding: 6px;
+                margin: 0;
+                font-size: 1.5rem;
+                font-weight: 700;
+                line-height: 18px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+                a { color: fade(@dark-color, 80%); }
+            }
+        }
+    }
+    
+    .sidebar-story-byline {
+        overflow: hidden;
+        color: fade(@dark-color, 70%);
+        font-size: 1.4rem;
+        line-height: 18px;
+        padding: 0 6px;
+
+        li {
+            display: block;
+            float: left;
+            margin-right: 6px;
+
+            i { margin-right: 4px; }
+
+            a { 
+                color: fade(@dark-color, 70%); 
+
+                i { 
+                    margin-right: 4px; 
+                    color: fade(@dark-color, 60%);
+                }
+            }
+        }
+    }
+}
+
+.sidebar-ad { 
+    .sidebar-item-wrapper { 
+        padding: 5px; 
+    }
+}
+
+.sidebar-newsletter {
+    .sidebar-item-wrapper {
+        padding: 10px;
+    }
+
+    .newsletter-header {
+        padding: 0;
+        background-position: right top;
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-bottom: 10px;
+
+        p { 
+            padding-right: 15px;
+            font-size: 1.6rem;
+            margin-bottom: 0;
+        }
+    }
+
+    form {
+        margin-bottom: 5px;
+
+        button {
+            background: @brand-color;
+            height: 40px;
+            padding: 0px 10px;
+            width: 20%;
+            max-width: 60px;
+            border: none;
+
+            i {
+                margin-top: 8px;
+                font-size: 2.2rem;
+            }
+        }
+    }
+
+    .form-group {
+        max-width: 250px;
+        float: left;
+        margin-bottom: 0;
+        width: 80%;
+
+        .subscribe-email {
+            border: 1px solid @border-color;
+            margin-bottom: 0;
+            width: 100%;
+            float: left;
+            height: 40px;
+            color: fade(@dark-color, 60%)
+        }
+    }
+}
+
+.sidebar-tag-cloud {
+    .sidebar-item-wrapper { 
+        padding: 10px; 
+    }
+}
+
+.sidebar-categories {
+    .sidebar-item-wrapper {
+        a { 
+            &:last-child { 
+                .sidebar-category-line { border: none; }
+            }
+        }
+    }
+
+    .sidebar-category-line {
+        border-bottom: 1px solid @border-color;
+        padding: 8px 10px;
+
+        &:hover {
+            .sidebar-category-number {
+                background: @brand-color;
+                border-color: @brand-color;
+                color: @light-color;
+            }
+        }
+
+        .sidebar-category-name { 
+            font-size: 1.8rem; 
+            margin: 0px;
+            display: inline-block;
+            font-weight: bold;
+            color: fade(@dark-color, 80%);
+        }
+
+        .sidebar-category-number {
+            margin: 0px;
+            display: inline-block;
+            font-weight: bold;
+            float: right;
+            border: 1px solid fade(@dark-color, 80%);
+            height: 30px;
+            width: 30px;
+            text-align: center;
+            font-size: 1.6rem;
+            line-height: 1.6;
+            transition: all .2s ease;
+            color: fade(@dark-color, 80%);
+        }
+    }
+}

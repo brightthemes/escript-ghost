@@ -1,0 +1,107 @@
+/***************************************************************************/
+/* General                                                                 */
+/***************************************************************************/
+html {
+    height: 100%;
+    max-height: 100%;
+    font-size: 62.5%;
+    -webkit-tap-highlight-color: fade(@dark-color, 0%);
+}
+
+body {
+    -ms-overflow-style: scrollbar;
+    letter-spacing: 0.01rem;
+    font-size: 1.8rem;
+    line-height: 1.75em;
+    color: fade(@dark-color, 90%);
+    -webkit-font-feature-settings: 'kern' 1;
+    -moz-font-feature-settings: 'kern' 1;
+    -o-font-feature-settings: 'kern' 1;
+    text-rendering: geometricPrecision;
+    max-height: none;
+    height: auto;
+    border-radius: @default-border-radius;
+    overflow-x: hidden;
+    background: @background-color;
+    font-family: @body-font;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, button, span, textarea, select, input, ul, ol, li { font-family: @heading-font; }
+
+.post, .page {
+    a, p { font-family: @body-font; }
+}
+
+textarea, select, input, button, div, ul, li, a, i { border-radius: @default-border-radius; }
+
+p, ul, ol, dl {
+    -webkit-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
+    -moz-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
+    -o-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
+    margin: 0 0 1.5em 0;
+    text-rendering: geometricPrecision;
+}
+
+mark { background: fade(@brand-color, 50%); }
+
+kbd {
+    display: inline-block;
+    margin-bottom: 0.4em;
+    padding: 1px 8px;
+    border: 1px solid @border-color;
+    color: fade(@dark-color, 60%);
+    text-shadow: @light-color 0 1px 0;
+    font-size: 0.9em;
+    font-weight: 700;
+    background: fade(@light-color, 90%);
+    border-radius: @default-border-radius;
+    box-shadow:
+        0 1px 0 fade(@dark-color, 20%),
+        0 1px 0 0 @light-color inset;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid @border-color;
+    margin: 2rem 0;
+    padding: 0;
+
+    @media @xs { margin: 2em 0; }
+}
+
+span { color: @brand-color; }
+
+a {
+    color: @link-color;
+    transition: color 0.3s ease;
+
+    &:hover { text-decoration: none; }
+
+    &:active, &:focus { 
+        outline: none;
+        text-decoration: none;
+    }
+}
+
+iframe { margin:0; }
+
+img, video {
+    height: auto;
+    max-width: 100%;
+}
+
+p { 
+    line-height: 1.5; 
+
+    a {
+        &:link { color: @link-color; }
+
+        &:hover { text-decoration: @link-hover-decoration; }
+
+        &:visited { color: @link-hover-color; }    
+    }
+}
+
+header { padding-top: 30px; }

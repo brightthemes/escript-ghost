@@ -1,0 +1,24 @@
+//===================================
+// Main Style
+//===================================
+
+// 1. Settings (variables)
+@import 'settings/_settings._main';
+
+// 2. Tools (global functions)
+@import 'tools/_tools._main';
+
+// 3. Generic ( Vendors )
+@import 'generic/_generic._main';
+
+// 4. Elements ( HTML elements )
+@import 'elements/_elements._main';
+
+// 5. Objects ()
+@import 'objects/_objects._main';
+
+// 6. Components
+// @import 'components/_components._main';
+
+// 7. Trumps
+@import 'trumps/_trumps._main';

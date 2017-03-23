@@ -1,0 +1,8 @@
+{{!-- Tag cloud --}}
+<div class="tag-cloud">
+    {{#get "tags" limit="all" as |tag|}}
+        {{#foreach tag}}
+            <a href="{{url}}">{{name}}</a>
+        {{/foreach}}
+    {{/get}}
+</div>

@@ -1,0 +1,37 @@
+/***************************************************************************/
+/* Table                                                                   */
+/***************************************************************************/
+table {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 1.75em 0;
+    width: 100%;
+    max-width: 100%;
+    background: transparent;
+    border: 1px solid @border-color;
+
+    th, td { 
+        padding: 8px;
+        line-height: 20px;
+        text-align: left;
+        vertical-align: top;
+    }
+
+    th { color: @dark-color; }
+
+    thead { 
+        border-bottom: 1px solid @border-color; 
+        background: fade(@dark-color, 20%);
+    }
+
+    tbody {
+        tr {
+            &:nth-child(odd) {
+                td, th { background: fade(@dark-color, 10%); }
+            }
+            &:nth-child(even) {
+                td, th { background: fade(@dark-color, 5%); }
+            }
+        }
+    }
+}

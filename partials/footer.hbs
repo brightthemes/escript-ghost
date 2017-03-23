@@ -1,0 +1,16 @@
+{{!-- Site footer --}}
+<footer class="site-footer clearfix">
+    <div class="footer-top clearfix">
+        {{!-- Social Media Links --}}
+        {{> social-media}}
+        {{!-- Site navigation --}}
+        {{navigation}}
+    </div>
+    <div class="footer-bottom clearfix">
+        <div class="copyright">
+            Copyright &copy; {{date format="YYYY"}}
+            <a href="{{@blog.url}}">{{@blog.title}}</a>.
+            All rights reserved.
+        </div>
+    </div>
+</footer>

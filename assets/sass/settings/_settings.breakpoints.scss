@@ -1,0 +1,17 @@
+//===================================
+// Breakpoints
+//===================================
+
+$screen: "only screen" !default;
+
+// Mobile phones
+$xs: "#{$screen} and (max-width: 767px)";
+
+// Tablets
+$sm: "#{$screen} and (min-width: 768px)";
+
+// Smaller laptops
+$md: "#{$screen} and (min-width: 992px)";
+
+// Larger devices 
+$lg: "#{$screen} and (min-width: 1200px)";
