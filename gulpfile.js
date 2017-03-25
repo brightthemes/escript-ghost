@@ -35,7 +35,7 @@ gulp.task('scripts', function() {
         .src([
             npm_src   + 'jquery/dist/jquery.min.js',
             npm_src   + 'fitvids/fitvids.min.js',
-            npm_src   + 'bootstrap/dist/js/bootstrap.min.js',
+            npm_src   + 'bootstrap-sass/assets/javascripts/bootstrap.min.js',
             npm_src   + 'lazysizes/lazysizes.min.js',
             asset_src + 'js/scripts/jquery.ghostHunter.js',
             asset_src + 'js/scripts/prism.js',

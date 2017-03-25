@@ -1,7 +1,70 @@
 {{!< default}}
 
 {{!-- The big featured header --}}
-
+{{#get "posts" limit="4" include="author,tags" filter="featured:true" as |featured| }}
+  <section class="featured-posts">
+    <div id="featured-posts-carousel" class="carousel slide" data-ride="carousel">
+	  <!-- Indicators -->
+	  <ol class="carousel-indicators">
+	  {{#foreach featured}}
+	    <li data-target="#featured-posts-carousel" data-slide-to="{{@index}}" class="{{#if @first}}active{{/if}}"></li>
+	  {{/foreach}}
+	  </ol>
+ 		
+ 		<div class="carousel-inner">
+ 		{{#foreach featured}}
+	    <div class="item {{#if @first}}active{{/if}}">
+	    	{{#if image}}
+	        <div class="lazyload featured-post-image" data-src="{{image}}" style="background-image: url({{image}})"></div>
+	      {{else}}
+	        <div class="lazyload featured-post-image no-image"></div>
+	      {{/if}}
+	    	<div class="carousel-caption">
+	      	<h1 class="animated fadeIn">{{title}}</h1>
+	      </div>
+	    </div>
+ 		{{/foreach}}
+	  </div>
+ 
+	  <!-- Controls -->
+	  <a class="left carousel-control" href="#featured-posts-carousel" role="button" data-slide="prev">
+	    <div class="carousel-control-prev">
+	    	<i class="fa fa-angle-left"></i>
+	    </div>
+	  </a>
+	  <a class="right carousel-control" href="#featured-posts-carousel" role="button" data-slide="next">
+	  	<div class="carousel-control-next">
+	    	<i class="fa fa-angle-right"></i>
+	    </div>
+	  </a>
+	  
+	</div><!-- Carousel -->
+{{!--         {{#foreach featured}}
+            <article class="grid-story">
+                {{#if image}}
+                    <div class="lazyload grid-image" data-src="{{image}}" style="background-image: url({{image}})"></div>
+                {{else}}
+                    <div class="lazyload grid-image no-image"></div>
+                {{/if}}
+                <a class="grid-trigger" href="{{url}}"></a>
+                <div class="grid-gradient"></div>
+                <div class="grid-logo"></div>
+                <span class="cover-date">{{date published_at format="MMMM DD, YYYY"}}</span>
+                <header class="grid-header">
+                    <div class="grid-tags">
+                        <h5 class="grid-section">
+                            {{tags limit="5" separator=""}}
+                        </h5>
+                    </div>
+                    <h2 class="grid-title"><a href="{{url}}">{{{title}}}</a></h2>
+                    <ul class="grid-byline">
+                        {{> post-info}}
+                    </ul>
+                </header>
+            </article>
+        {{/foreach}} --}}
+    </section>
+{{/get}}
 
 {{!-- The main content area on the homepage --}}
 {{#foreach posts}}

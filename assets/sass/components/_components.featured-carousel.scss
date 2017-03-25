@@ -1,0 +1,49 @@
+//===================================
+// Featured carousel
+//===================================
+
+.featured-posts {
+	
+	.featured-post-image {
+		min-height: 30em;
+		background-color: $dark-color;
+		@include background-cover;
+
+		@media #{$lg} {
+			height: 100vh;
+		}
+	}
+
+	.carousel-indicators {
+		li {
+	    width: 15px;
+	    height: 15px;
+	    margin: 0;
+	    margin-right: 5px;
+	    border: 2px solid $light-color;
+	    border-radius: 100%;
+	  }
+
+    .active {
+			background-color: $light-color;
+		}
+	}
+
+	.carousel-control-prev,
+	.carousel-control-next {
+		position: absolute;
+    color: $light-color;
+    width: 70px;
+    height: 70px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    line-height: 70px;
+    font-size: 60px;
+    cursor: pointer;
+	}
+
+	.carousel-control-prev { left: 0; }
+	.carousel-control-next { right: 0; }
+}
