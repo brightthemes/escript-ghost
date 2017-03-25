@@ -3,7 +3,7 @@
 //===================================
 
 // Brand color 
-$brand-color:           #16a085; // Green Sea
+$brand-color:           #e74c3c; // Alizarin
 
 // Background color. 
 $background-color:      #f1f1f1;
@@ -15,19 +15,19 @@ $light-color:           #ffffff;
 $dark-color:            #000000;
 
 // Text color
-$text-color: 			#222222;
+$text-color: 						#222222;
 
 // Heading text color
-$heading-text-color: 	darken($text-color, 10%);
+$heading-text-color: 		darken($text-color, 10%);
 
 // Global text link color. 
 $link-color:            $brand-color;
 
 // Link hover color. 
-$link-color-hover:      darken($link-color, 15%);
+$link-color-hover:      darken($link-color, 10%);
 
 // Link visited color. 
-$link-color-visited:    darken($link-color, 25%);
+$link-color-visited:    darken($link-color, 20%);
 
 // Globar border color 
 $border-color:          #cccccc;

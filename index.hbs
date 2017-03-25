@@ -2,6 +2,10 @@
 
 {{!-- The big featured header --}}
 
+
 {{!-- The main content area on the homepage --}}
+{{#foreach posts}}
+  <a href="{{url}}">{{title}}</a><br>
+{{/foreach}}
 
 {{!-- Email subscribe form at the main page --}}

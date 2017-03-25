@@ -3,6 +3,7 @@
 //===================================
 
 p {
-  font-size: $font-size-base;
-  margin: 0 0 $line-height-base;
+  font-size: $font-size-root;
+  line-height: $line-height-base;
+  margin: $leading 0;
 }

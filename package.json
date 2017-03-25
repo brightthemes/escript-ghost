@@ -4,6 +4,7 @@
   "description": "Magazine and Blog Ghost Theme",
   "author": "Biron Themes",
   "devDependencies": {
+    "bootstrap": "^3.3.7",
     "bootstrap-sass": "^3.3.7",
     "cssnano": "^3.10.0",
     "gulp": "^3.9.1",

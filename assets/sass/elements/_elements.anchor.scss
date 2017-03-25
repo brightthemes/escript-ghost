@@ -5,17 +5,16 @@
 a {
   color: $link-color;
   text-decoration: none;
-  transition: $transition-speed-base;
+  transition: all $transition-speed-base;
 
-  &:visited {
-    color: $link-color-visited;
-  }
+  &:visited { color: $link-color-visited; }
 
   &:hover {
     color: $link-color-hover;
+    text-decoration: none;
+    border-bottom: 1px dotted $link-color-hover;
+    transition: all $transition-speed-base;
   }
 
-  &:active {
-    color: $link-color;
-  }
+  &:active { color: $link-color; }
 }

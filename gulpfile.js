@@ -50,16 +50,16 @@ gulp.task('scripts', function() {
 // Build styles from sass
 gulp.task('sass', function () {
     var processors = [
-        removeComments,
-        cssnext({browsers:'> 1%, last 10 version, Firefox >= 20, ie >= 8', warnForDuplicates: false} ),
-        zindex,
-        willChange,
-        colorRgbaFallback,
-        opacity,
-        pseudoelements,
-        vmin,
-        pixrem,
-        cssnano
+        // removeComments,
+        // cssnext({browsers:'> 1%, last 10 version, Firefox >= 20, ie >= 8', warnForDuplicates: false}),
+        // zindex,
+        // willChange,
+        // colorRgbaFallback,
+        // opacity,
+        // pseudoelements,
+        // vmin,
+        pixrem({rootValue: '26px'})
+        // cssnano
     ];
 
   return gulp
