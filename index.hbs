@@ -3,7 +3,7 @@
 {{!-- The big featured header --}}
 {{#get "posts" limit="4" include="author,tags" filter="featured:true" as |featured| }}
   <section class="featured-posts">
-    <div id="featured-posts-carousel" class="carousel slide" data-ride="carousel">
+    <div id="featured-posts-carousel" class="carousel slide" data-ride="carousel" data-interval="8000">
 		  <!-- Indicators -->
 		  <ol class="carousel-indicators">
 		  {{#foreach featured}}

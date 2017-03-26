@@ -10,6 +10,36 @@ $(document).ready(function() {
       $('#featured-posts-carousel').carousel( $(this).data() );
   });
 
+  // Site navigation
+  $(".nav-open, .nav-close").on("click", function(e){
+      e.preventDefault();
+      
+      $(".navbar-navigation").toggleClass("open");
+      
+      $("body").toggleClass("nav-opened nav-closed");
+  });
+
+  // $('.search-open').click(function() {
+  //   $('.search').show();
+  //   $('#search-field').focus();
+  //   $('body').css('overflowY', 'hidden');
+  // });
+
+  // $('#search-field').keyup(function(e) {
+  //   if (e.keyCode === 27) {
+  //     $('.search').hide();
+  //   }
+  // });
+
+  // on scroll, let the interval function know the user has scrolled
+  $(window).scroll(function(event) {
+    if ($(document).scrollTop() > 100) {
+      $('nav').addClass('navbar-scrolled');
+    } else {
+      $('nav').removeClass('navbar-scrolled');
+    }
+  });
+
   // Advertisement div hide when ad block active
   if ($('.ad-unit').is(':hidden')) {
     $('.ad').hide();

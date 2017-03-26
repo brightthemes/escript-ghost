@@ -16,12 +16,18 @@
       <a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}"></a>
     </div>
     <div class="col-sm-4 col-xs-6 menu">
-      <button class="menu-button pull-right">
+      <button class="nav-open pull-right">
         <span class="active-page">Menu</span>
         <i class="fa fa-bars"></i>
       </button>
     </div>
   </div>
+	<div class="navbar-navigation">
+		<a href="#" class="nav-close">
+	    <span class="hidden">Close</span>
+	  </a>
+		{{navigation}}
+	</div>
 </nav>
 
 </header>

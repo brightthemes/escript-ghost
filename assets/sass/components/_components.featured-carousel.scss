@@ -28,6 +28,7 @@
     left: auto;
     margin-left: auto;
     width: auto;
+    z-index: 5;
 
     @media #{$xs} { display: none; }
 
