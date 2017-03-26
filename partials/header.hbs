@@ -1,4 +1,27 @@
 {{!-- Site header --}}
 <header>
 
+{{!-- Default navigation --}}
+<nav class="navbar navbar-default clearfix">
+  <div class="navbar-header">
+    <div class="col-sm-4 hidden-xs site-search">
+      <form action="#" method="get" class="search-form">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-search"></i></span>
+          <input type="search" class="form-control" placeholder="SEARCH">
+        </div>
+      </form>
+    </div>
+    <div class="col-sm-4 col-xs-6 site-logo text-center">
+      <a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}"></a>
+    </div>
+    <div class="col-sm-4 col-xs-6 menu">
+      <button class="menu-button pull-right">
+        <span class="active-page">Menu</span>
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
 </header>

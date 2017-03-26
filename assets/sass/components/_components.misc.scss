@@ -17,3 +17,14 @@
   transform: scale(1);
   transition: transform .6s ease, opacity 1s ease;
 }
+
+.clearfix {
+  zoom: 1;
+
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after { clear: both; }
+}

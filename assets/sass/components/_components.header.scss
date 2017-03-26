@@ -1,0 +1,73 @@
+//===================================
+// Header
+//===================================
+
+.navbar-default {
+	position: fixed;
+	font-family: $heading-font-family;
+	background-color: transparent;
+	border: none;
+	width: 100%;
+	z-index: 10;
+	height: 5em;
+
+	.navbar-header {
+		float: none;
+		margin: 0 auto;
+
+		& > div { 
+			padding: 0; 
+
+			@media #{$xs} { 
+				padding-left: 15px; 
+				padding-right: 15px;
+			}
+		}
+
+		@media #{$sm} { max-width: $max-width-sm; }
+		@media #{$md} { max-width: $max-width-md; }
+		@media #{$lg} { max-width: $max-width-lg; }
+	}
+
+	div { height: 5em; }
+
+	.site-logo {
+		@media #{$xs} {
+			text-align: left;
+		}
+
+		img {
+			max-height: 3em;
+			margin: 1em 0;
+		}
+	}
+
+	.menu-button {
+		height: 3em;
+		margin: 1em 0;
+		padding: 0 0.5em;
+	}
+
+	.site-search {
+		input {
+			height: 4em;
+			margin: 1em 0;
+			padding: 0 0.5em;
+			font-weight: $font-weight-semibold;
+			// font-size: 1.25rem;
+			box-shadow: none;
+
+			&:active, &:focus {
+				outline: none;
+				border: none;
+				box-shadow: none;
+			}
+		}
+
+		input, span { 
+			background-color: transparent;
+			border: none;
+			color: $light-color;
+		}
+	}
+}

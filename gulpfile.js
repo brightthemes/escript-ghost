@@ -75,7 +75,7 @@ gulp.task('watch', function() {
   // Watch .js files
   gulp.watch(asset_src + 'js/scripts/*.js', ['scripts']);
   // Watch .scss files
-  gulp.watch(asset_src + 'sass/*/*.sass', ['sass']);
+  gulp.watch(asset_src + 'sass/*/*.scss', ['sass']);
  });
 
 // Default Task

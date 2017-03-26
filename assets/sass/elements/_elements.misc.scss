@@ -16,3 +16,23 @@ hr {
   background-color: $border-color;
   margin: $leading 0;
 }
+
+button {
+  padding: 0.25em 0.5em;
+  margin: 0.5em 0;
+  border: 2px solid $light-color;
+  background: transparent;
+  text-transform: uppercase;
+  color: $light-color;
+  font-weight: $font-weight-semibold;
+  font-family: $heading-font-family;
+  font-size: $font-size-root;
+  transition: all $transition-speed-base;
+
+  &:hover {
+  	background: $light-color;
+  	color: $dark-color;
+  }
+
+  &:active, &:focus { outline: none; }
+}
