@@ -2,7 +2,7 @@
 // Header
 //===================================
 
-.navbar-default {
+.navbar__default {
 	position: fixed;
 	font-family: $heading-font-family;
 	background-color: transparent;
@@ -10,45 +10,29 @@
 	width: 100%;
 	z-index: 10;
 	height: 80px;
+	transition: all ($transition-speed-base);
 
 	.navbar-header {
 		float: none;
 		margin: 0 auto;
 
-		& > div { 
-			padding: 0;
-			height: 80px; 
-
-			@media #{$xs} { 
-				padding-left: 15px; 
-				padding-right: 15px;
-			}
-		}
+		& > div { padding: 0; }
 
 		@media #{$sm} { max-width: $max-width-sm; }
 		@media #{$md} { max-width: $max-width-md; }
 		@media #{$lg} { max-width: $max-width-lg; }
 	}
 
-	.site-logo {
-
-		@media #{$xs} { text-align: left; }
-
-		img {
-			max-height: 50px;
-			margin: 1em 0;
-			transition: all ($transition-speed-base * 2);
+	.navbar-search {
+		input, span { 
+			background-color: transparent;
+			border: none;
+			color: $light-color;
+			transition: all ($transition-speed-base);
 		}
-	}
 
-	.nav-open {
-		height: 50px;
-		margin: 15px 0;
-		padding: 0 10px;
-	}
+		span { padding: 0; }
 
-	.site-search {
-		.input-group { transition: all ($transition-speed-base * 2); }
 		input {
 			height: 50px;
 			margin: 15px 0;
@@ -62,29 +46,37 @@
 				box-shadow: none;
 			}
 		}
+	}
 
-		input, span { 
-			background-color: transparent;
-			border: none;
-			color: $light-color;
-			transition: all ($transition-speed-base * 2);
+	.navbar-logo {
+		@media #{$xs} { text-align: left; }
+
+		img {
+			max-height: 50px;
+			margin: 1em 0;
+			transition: all ($transition-speed-base);
 		}
 	}
-}
 
-.navbar-scrolled { 
-	background-color: rgba($dark-color, 0.75);
-	height: 50px;
-
-	.site-logo img,
-	.nav-open,
-	.site-search input {
-		height: 30px;
-		margin: 10px 0;
+	.navbar-open {
+		height: 40px;
+		margin: 20px 0;
 		padding: 0 10px;
 	}
 
-	.site-search span { transition: all ($transition-speed-base * 2); }
+	&.navbar--scrolled { 
+		background-color: rgba($dark-color, 0.85);
+		height: 50px;
+
+		.navbar-logo img,
+		.navbar-open,
+		.navbar-search input {
+			height: 30px;
+			margin: 10px 0;
+		}
+
+		.navbar-search span { transition: all ($transition-speed-base); }
+	}
 }
 
 .navbar-navigation {
@@ -125,7 +117,7 @@
     }
 	}
 
-	.nav-close {
+	.navbar-close {
     position: absolute;
 		width: 60px;
     height: 60px;

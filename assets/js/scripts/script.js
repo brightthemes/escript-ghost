@@ -7,11 +7,11 @@ $(document).ready(function() {
 
   $('.carousel-control').click(function(e){
       e.preventDefault();
-      $('#featured-posts-carousel').carousel( $(this).data() );
+      $('#featured-posts__carousel').carousel( $(this).data() );
   });
 
   // Site navigation
-  $(".nav-open, .nav-close").on("click", function(e){
+  $(".navbar-open, .navbar-close").on("click", function(e){
       e.preventDefault();
       
       $(".navbar-navigation").toggleClass("open");
@@ -34,9 +34,9 @@ $(document).ready(function() {
   // on scroll, let the interval function know the user has scrolled
   $(window).scroll(function(event) {
     if ($(document).scrollTop() > 100) {
-      $('nav').addClass('navbar-scrolled');
+      $('nav').addClass('navbar--scrolled');
     } else {
-      $('nav').removeClass('navbar-scrolled');
+      $('nav').removeClass('navbar--scrolled');
     }
   });
 

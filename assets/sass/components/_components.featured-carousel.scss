@@ -4,7 +4,7 @@
 
 .featured-posts {
 	
-	.featured-post-image {
+	.featured-post__image {
 		min-height: 30em;
 		background-color: $dark-color;
 		@include background-cover;
@@ -14,11 +14,11 @@
 		}
 	}
 
-	.featured-post-image-overlay {
+	.featured-post__image--overlay {
 		@include background-overlay;
 	}
 
-	.carousel-indicators {
+	.featured-posts__indicators {
     right: 1em;
     top: 50%;
     -webkit-transform: translateY(-50%);
@@ -48,7 +48,7 @@
 		}
 	}
 
-  .carousel-control-wrapper {
+  .featured-posts__control-wrapper {
     position: absolute; 
     left: 0; 
     right: 0; 
@@ -108,15 +108,15 @@
     cursor: pointer;
 	}
 
-	.featured-post-content {
+	.featured-post__content {
 		color: $light-color;
 		width: 100%;
     position: absolute;
     bottom: 10em;
 
-    .featured-post-tag,
-    .featured-post-title,
-    .featured-post-author {
+    .featured-post__tag,
+    .featured-post__title,
+    .featured-post__author {
     	margin: 0;
     	color: $light-color;
 
@@ -127,28 +127,28 @@
     	}
     }
 
-    .featured-post-tag a,
-    .featured-post-author a {
+    .featured-post__tag a,
+    .featured-post__author a {
     	text-transform: uppercase;
 
     	&:hover { color: $link-color-hover; }
     }
 
-    .featured-post-title {
+    .featured-post__title {
       @media #{$xs} { font-size: 2rem; }
       @media #{$sm} { font-size: 3rem; }
       @media #{$md} { font-size: 3.5rem; }
       @media #{$lg} { font-size: 4rem; }
     }
 
-    .featured-post-tag { 
+    .featured-post__tag { 
       animation-delay: 1s; 
 
       @media #{$md} { font-size: 1.1rem; }
       @media #{$lg} { font-size: 1.2rem; }
     }
 
-    .featured-post-author { 
+    .featured-post__author { 
       animation-delay: 0.5s; 
 
       @media #{$md} { font-size: 1.1rem; }
