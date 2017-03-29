@@ -1,0 +1,58 @@
+//===================================
+// Featured carousel
+//===================================
+
+.timeline {
+  padding: 3em 1em;
+  background: $light-color;
+
+}
+
+.timeline-post {
+  padding: 2em 0;
+
+  &.left {
+    padding-right: 3em;
+
+    @media #{$xs} {
+      padding: 0;
+    }
+  }
+
+  &.right {
+    padding-left: 3em;
+    padding-top: 10em;
+
+    @media #{$xs} {
+      padding: 0;
+    }
+  }
+}
+
+
+.timeline__divider {
+  position: relative;
+  padding: 3em 0;
+  
+  &:before {
+    position: absolute;
+    top: 0;
+    content: "";
+    border-left-style: solid;
+    border-left-width: 1px;
+    height: 100%;
+    border-left-color: $brand-color;
+    left: 50%;
+    margin-left: -2px;
+  }
+}
+
+.timeline__date .btn__common {
+  background: transparent;
+  padding: 1em;
+  color: $dark-color;
+}
+
+.btn__common {
+  @extend button;
+}

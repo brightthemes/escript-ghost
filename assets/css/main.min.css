@@ -906,7 +906,7 @@ samp {
   font-family: monospace, monospace;
   font-size: 1em; }
 
-button,
+button, .btn__common,
 input,
 optgroup,
 select,
@@ -915,25 +915,25 @@ textarea {
   font: inherit;
   margin: 0; }
 
-button {
+button, .btn__common {
   overflow: visible; }
 
-button,
+button, .btn__common,
 select {
   text-transform: none; }
 
-button,
+button, .btn__common,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer; }
 
-button[disabled],
+button[disabled], [disabled].btn__common,
 html input[disabled] {
   cursor: default; }
 
-button::-moz-focus-inner,
+button::-moz-focus-inner, .btn__common::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0; }
@@ -5762,6 +5762,7 @@ body {
 
 input,
 button,
+.btn__common,
 select,
 textarea {
   font-family: inherit;
@@ -7651,7 +7652,7 @@ hr {
   background-color: #cccccc;
   margin: 1em 0; }
 
-button {
+button, .btn__common {
   padding: 0.25em 0.5em;
   margin: 0.5em 0;
   border: 2px solid #ffffff;
@@ -7663,10 +7664,10 @@ button {
   font-size: 10px;
   font-size: 1rem;
   transition: all 0.4s; }
-  button:hover {
+  button:hover, .btn__common:hover {
     background: #ffffff;
     color: #000000; }
-  button:active, button:focus {
+  button:active, .btn__common:active, button:focus, .btn__common:focus {
     outline: none; }
 
 .btn {
@@ -10167,19 +10168,22 @@ a.thumbnail.active {
     border-bottom-left-radius: 4px; }
 
 a.list-group-item,
-button.list-group-item {
+button.list-group-item,
+.list-group-item.btn__common {
   color: #555; }
   a.list-group-item .list-group-item-heading,
-  button.list-group-item .list-group-item-heading {
+  button.list-group-item .list-group-item-heading, .list-group-item.btn__common .list-group-item-heading {
     color: #333; }
   a.list-group-item:hover, a.list-group-item:focus,
   button.list-group-item:hover,
-  button.list-group-item:focus {
+  .list-group-item.btn__common:hover,
+  button.list-group-item:focus,
+  .list-group-item.btn__common:focus {
     text-decoration: none;
     color: #555;
     background-color: #f5f5f5; }
 
-button.list-group-item {
+button.list-group-item, .list-group-item.btn__common {
   width: 100%;
   text-align: left; }
 
@@ -10213,20 +10217,26 @@ button.list-group-item {
   background-color: #dff0d8; }
 
 a.list-group-item-success,
-button.list-group-item-success {
+button.list-group-item-success,
+.list-group-item-success.btn__common {
   color: #3c763d; }
   a.list-group-item-success .list-group-item-heading,
-  button.list-group-item-success .list-group-item-heading {
+  button.list-group-item-success .list-group-item-heading, .list-group-item-success.btn__common .list-group-item-heading {
     color: inherit; }
   a.list-group-item-success:hover, a.list-group-item-success:focus,
   button.list-group-item-success:hover,
-  button.list-group-item-success:focus {
+  .list-group-item-success.btn__common:hover,
+  button.list-group-item-success:focus,
+  .list-group-item-success.btn__common:focus {
     color: #3c763d;
     background-color: #d0e9c6; }
   a.list-group-item-success.active, a.list-group-item-success.active:hover, a.list-group-item-success.active:focus,
   button.list-group-item-success.active,
+  .list-group-item-success.active.btn__common,
   button.list-group-item-success.active:hover,
-  button.list-group-item-success.active:focus {
+  .list-group-item-success.active.btn__common:hover,
+  button.list-group-item-success.active:focus,
+  .list-group-item-success.active.btn__common:focus {
     color: #fff;
     background-color: #3c763d;
     border-color: #3c763d; }
@@ -10236,20 +10246,26 @@ button.list-group-item-success {
   background-color: #d9edf7; }
 
 a.list-group-item-info,
-button.list-group-item-info {
+button.list-group-item-info,
+.list-group-item-info.btn__common {
   color: #31708f; }
   a.list-group-item-info .list-group-item-heading,
-  button.list-group-item-info .list-group-item-heading {
+  button.list-group-item-info .list-group-item-heading, .list-group-item-info.btn__common .list-group-item-heading {
     color: inherit; }
   a.list-group-item-info:hover, a.list-group-item-info:focus,
   button.list-group-item-info:hover,
-  button.list-group-item-info:focus {
+  .list-group-item-info.btn__common:hover,
+  button.list-group-item-info:focus,
+  .list-group-item-info.btn__common:focus {
     color: #31708f;
     background-color: #c4e3f3; }
   a.list-group-item-info.active, a.list-group-item-info.active:hover, a.list-group-item-info.active:focus,
   button.list-group-item-info.active,
+  .list-group-item-info.active.btn__common,
   button.list-group-item-info.active:hover,
-  button.list-group-item-info.active:focus {
+  .list-group-item-info.active.btn__common:hover,
+  button.list-group-item-info.active:focus,
+  .list-group-item-info.active.btn__common:focus {
     color: #fff;
     background-color: #31708f;
     border-color: #31708f; }
@@ -10259,20 +10275,26 @@ button.list-group-item-info {
   background-color: #fcf8e3; }
 
 a.list-group-item-warning,
-button.list-group-item-warning {
+button.list-group-item-warning,
+.list-group-item-warning.btn__common {
   color: #8a6d3b; }
   a.list-group-item-warning .list-group-item-heading,
-  button.list-group-item-warning .list-group-item-heading {
+  button.list-group-item-warning .list-group-item-heading, .list-group-item-warning.btn__common .list-group-item-heading {
     color: inherit; }
   a.list-group-item-warning:hover, a.list-group-item-warning:focus,
   button.list-group-item-warning:hover,
-  button.list-group-item-warning:focus {
+  .list-group-item-warning.btn__common:hover,
+  button.list-group-item-warning:focus,
+  .list-group-item-warning.btn__common:focus {
     color: #8a6d3b;
     background-color: #faf2cc; }
   a.list-group-item-warning.active, a.list-group-item-warning.active:hover, a.list-group-item-warning.active:focus,
   button.list-group-item-warning.active,
+  .list-group-item-warning.active.btn__common,
   button.list-group-item-warning.active:hover,
-  button.list-group-item-warning.active:focus {
+  .list-group-item-warning.active.btn__common:hover,
+  button.list-group-item-warning.active:focus,
+  .list-group-item-warning.active.btn__common:focus {
     color: #fff;
     background-color: #8a6d3b;
     border-color: #8a6d3b; }
@@ -10282,20 +10304,26 @@ button.list-group-item-warning {
   background-color: #f2dede; }
 
 a.list-group-item-danger,
-button.list-group-item-danger {
+button.list-group-item-danger,
+.list-group-item-danger.btn__common {
   color: #a94442; }
   a.list-group-item-danger .list-group-item-heading,
-  button.list-group-item-danger .list-group-item-heading {
+  button.list-group-item-danger .list-group-item-heading, .list-group-item-danger.btn__common .list-group-item-heading {
     color: inherit; }
   a.list-group-item-danger:hover, a.list-group-item-danger:focus,
   button.list-group-item-danger:hover,
-  button.list-group-item-danger:focus {
+  .list-group-item-danger.btn__common:hover,
+  button.list-group-item-danger:focus,
+  .list-group-item-danger.btn__common:focus {
     color: #a94442;
     background-color: #ebcccc; }
   a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus,
   button.list-group-item-danger.active,
+  .list-group-item-danger.active.btn__common,
   button.list-group-item-danger.active:hover,
-  button.list-group-item-danger.active:focus {
+  .list-group-item-danger.active.btn__common:hover,
+  button.list-group-item-danger.active:focus,
+  .list-group-item-danger.active.btn__common:focus {
     color: #fff;
     background-color: #a94442;
     border-color: #a94442; }
@@ -10672,7 +10700,7 @@ button.list-group-item-danger {
     opacity: 0.5;
     filter: alpha(opacity=50); }
 
-button.close {
+button.close, .close.btn__common {
   padding: 0;
   cursor: pointer;
   background: transparent;
@@ -11239,7 +11267,7 @@ button.close {
   left: 0;
   right: 0;
   display: block;
-  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8)); }
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, transparent 50%, rgba(0, 0, 0, 0.8) 100%); }
 
 .featured-posts .featured-posts__indicators {
   right: 1em;
@@ -11521,6 +11549,43 @@ body.nav-opened .main {
 
 body.nav-closed .main {
   transition: transform 0.4s; }
+
+.timeline {
+  padding: 3em 1em;
+  background: #ffffff; }
+
+.timeline-post {
+  padding: 2em 0; }
+  .timeline-post.left {
+    padding-right: 3em; }
+    @media only screen and (max-width: 47.938em) {
+      .timeline-post.left {
+        padding: 0; } }
+  .timeline-post.right {
+    padding-left: 3em;
+    padding-top: 10em; }
+    @media only screen and (max-width: 47.938em) {
+      .timeline-post.right {
+        padding: 0; } }
+
+.timeline__divider {
+  position: relative;
+  padding: 3em 0; }
+  .timeline__divider:before {
+    position: absolute;
+    top: 0;
+    content: "";
+    border-left-style: solid;
+    border-left-width: 1px;
+    height: 100%;
+    border-left-color: #e74c3c;
+    left: 50%;
+    margin-left: -2px; }
+
+.timeline__date .btn__common {
+  background: transparent;
+  padding: 1em;
+  color: #000000; }
 
 .clearfix:before, .clearfix:after {
   content: " ";

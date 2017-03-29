@@ -4,7 +4,7 @@
 {{#get "posts" limit="4" include="author,tags" filter="featured:true" as |featured| }}
   <section class="featured-posts">
     <div id="featured-posts__carousel" class="carousel slide" data-ride="carousel" data-interval="8000">
-		  <!-- Indicators -->
+		  {{!-- Indicators --}}
 		  <ol class="carousel-indicators featured-posts__indicators">
 		  {{#foreach featured}}
 		    <li data-target="#featured-posts__carousel" data-slide-to="{{@index}}" class="{{#if @first}}active{{/if}}"></li>
@@ -36,7 +36,7 @@
 	 		{{/foreach}}
 		  </div>
 	 
-		  <!-- Controls -->
+		  {{!-- Controls --}}
 		  <div class="featured-posts__control-wrapper clearfix">
 		  <a class="left carousel-control" href="#featured-posts__carousel" role="button" data-slide="prev">
 		    <div class="carousel-control-prev">
@@ -54,8 +54,37 @@
 {{/get}}
 
 {{!-- The main content area on the homepage --}}
-{{#foreach posts}}
+{{!-- {{#foreach posts}}
   <a href="{{url}}">{{title}}</a><br>
-{{/foreach}}
+{{/foreach}} --}}
+<section class="timeline container">
+  <div class="timeline__date text-center">
+    <span class="btn btn__common">{{date}}</span>
+  </div>
+  <div class="timeline__divider">
+  	{{#foreach posts}}
+      <div class="timeline-post col-sm-6 animated {{#if @odd}}fadeInLeft left{{else}}fadeInRight right{{/if}}">
+        <div class="timeline-post__thumb">
+          <img src="{{image}}" class="img-responsive lazyload" alt="">
+          <div class="timeline-post--overlay">
+             {{!-- <span class="uppercase"><a href="#">14 <br><small>Feb</small></a></span> --}}
+         	</div>
+        </div>
+        <div class="timeline-post__content">
+          <h2 class="timeline-post__title"><a href="{{url}}">{{title}}</a></h2>
+          <h3 class="timeline-post__author"><a href="#">{{author}}</a></h3>
+          <p>{{excerpt words="20"}}&hellip;</p>
+          <a href="#" class="read-more">Read More</a>
+          <div class="timeline-post__info">
+		    		<time datetime="{{date format="YYYY-MM-DD"}}">{{date published_at}}</time> |
+						<i class="fa fa-comments-o"></i>
+						<a href="{{url absolute='true'}}#disqus_thread" class="comments comment-count">0</a>
+          </div>
+        </div>
+      </div>
+    {{/foreach}}
+    <div class="clearfix"></div>
+  </div>
+</section>
 
 {{!-- Email subscribe form at the main page --}}
