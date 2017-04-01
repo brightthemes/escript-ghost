@@ -1,0 +1,46 @@
+//===================================
+// Subscribe
+//===================================
+
+.subscribe {
+  background: $brand-color; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top left, #fc00ff , #00dbde); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top left, #fc00ff , #00dbde); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 5em 0;
+  color: $light-color;
+
+  h3 {
+    color: $light-color;
+  }
+  .subscribe-form {
+  .subscribe-form__input {
+    background-color: transparent;
+    padding: 4px 10px;
+    border: 2px solid $light-color;
+    border-right: 0;
+    width: 100%;
+    max-width: 250px;
+    color: $light-color;
+    font-weight: bold;
+
+    &:focus {
+      outline: none;
+    }
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: rgba($light-color, 0.6);
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+      color: rgba($light-color, 0.6);
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+      color: rgba($light-color, 0.6);
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+      color: rgba($light-color, 0.6);
+    }
+  }
+  .subscribe-form__button {
+    margin-left: -5px;
+  }
+}
+}
