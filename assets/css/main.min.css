@@ -11562,8 +11562,8 @@ body.nav-closed .main {
     bottom: 0;
     position: absolute;
     content: " ";
-    width: 3px;
-    background-color: #eeeeee;
+    width: 2px;
+    background-color: rgba(0, 0, 0, 0.2);
     left: 50%;
     margin-left: -1.5px; }
   .timeline-list .timeline-post--inverted {
@@ -11571,6 +11571,8 @@ body.nav-closed .main {
     clear: left;
     margin-top: 30px;
     margin-bottom: 30px; }
+    .timeline-list .timeline-post--inverted:first-of-type {
+      margin-top: 5em; }
   .timeline-list .timeline-post {
     margin-bottom: 20px;
     position: relative;
@@ -11578,7 +11580,10 @@ body.nav-closed .main {
     float: left;
     clear: left; }
     .timeline-list .timeline-post.timeline-post--inverted {
-      float: right; }
+      float: right;
+      clear: right; }
+      .timeline-list .timeline-post.timeline-post--inverted:first-of-type {
+        margin-top: 5em; }
     .timeline-list .timeline-post:before, .timeline-list .timeline-post:after {
       content: " ";
       display: table; }
@@ -11589,26 +11594,20 @@ body.nav-closed .main {
   width: 95%;
   float: left;
   position: relative; }
-  .timeline-card:before {
-    position: absolute;
-    top: 26px;
-    right: -15px;
-    display: inline-block;
-    border-top: 15px solid transparent;
-    border-left: 15px solid #ccc;
-    border-right: 0 solid #ccc;
-    border-bottom: 15px solid transparent;
-    content: " "; }
   .timeline-card:after {
     position: absolute;
-    top: 27px;
-    right: -14px;
+    top: 5em;
+    right: -1em;
     display: inline-block;
-    border-top: 14px solid transparent;
-    border-left: 14px solid #fff;
-    border-right: 0 solid #fff;
-    border-bottom: 14px solid transparent;
+    border-top: 1em solid transparent;
+    border-left: 1em solid #cccccc;
+    border-right: 0 solid #cccccc;
+    border-bottom: 1em solid transparent;
     content: " "; }
+  .timeline-card .timeline-card__content {
+    padding: 1em;
+    background: #ffffff;
+    border: 1px solid #cccccc; }
 
 .timeline-post--inverted {
   float: right; }

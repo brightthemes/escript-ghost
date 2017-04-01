@@ -16,7 +16,7 @@
 		    <div class="featured-post item {{#if @first}}active{{/if}}">
 		      <div class="lazyload featured-post__image" 
 		      		 data-src="{{#if image}}{{image}}{{/if}}" 
-		      		 style="{{#if image}}background-image: url({{image}}){{else}}backgroun-color: #000;{{/if}}">
+		      		 style="{{#if image}}background-image: url({{image}}){{else}}background-color: #000;{{/if}}">
 		      </div>
 		      <div class="featured-post__image--overlay"></div>
 		    	<div class="featured-post__content">
@@ -60,7 +60,7 @@
 <section class="timeline container">
   <ul class="timeline-list">
   	{{#foreach posts}}
-    <li class="timeline-post {{#if @odd}}fadeInLeft left{{else}}timeline-post--inverted fadeInRight right{{/if}}">
+    <li class="timeline-post animated {{#if @odd}}fadeInLeft left{{else}}timeline-post--inverted fadeInRight right{{/if}}">
     	<div class="timeline-card">
 	      <div class="timeline-card__thumb">
 	        <img src="{{image}}" class="img-responsive lazyload" alt="">
