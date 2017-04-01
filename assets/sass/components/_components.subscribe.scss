@@ -12,35 +12,36 @@
   h3 {
     color: $light-color;
   }
-  .subscribe-form {
-  .subscribe-form__input {
-    background-color: transparent;
-    padding: 4px 10px;
-    border: 2px solid $light-color;
-    border-right: 0;
-    width: 100%;
-    max-width: 250px;
-    color: $light-color;
-    font-weight: bold;
 
-    &:focus {
-      outline: none;
+  .subscribe-form {
+    .subscribe-form__input {
+      background-color: transparent;
+      padding: 4px 10px;
+      border: 2px solid $light-color;
+      border-right: 0;
+      width: 100%;
+      max-width: 250px;
+      color: $light-color;
+      font-weight: $font-weight-bold;
+
+      &:focus {
+        outline: none;
+      }
+      &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: rgba($light-color, 0.6);
+      }
+      &::-moz-placeholder { /* Firefox 19+ */
+        color: rgba($light-color, 0.6);
+      }
+      &:-ms-input-placeholder { /* IE 10+ */
+        color: rgba($light-color, 0.6);
+      }
+      &:-moz-placeholder { /* Firefox 18- */
+        color: rgba($light-color, 0.6);
+      }
     }
-    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-      color: rgba($light-color, 0.6);
-    }
-    &::-moz-placeholder { /* Firefox 19+ */
-      color: rgba($light-color, 0.6);
-    }
-    &:-ms-input-placeholder { /* IE 10+ */
-      color: rgba($light-color, 0.6);
-    }
-    &:-moz-placeholder { /* Firefox 18- */
-      color: rgba($light-color, 0.6);
+    .subscribe-form__button {
+      margin-left: -5px;
     }
   }
-  .subscribe-form__button {
-    margin-left: -5px;
-  }
-}
 }
