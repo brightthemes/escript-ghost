@@ -10,7 +10,7 @@
 		    <li data-target="#featured-posts__carousel" data-slide-to="{{@index}}" class="{{#if @first}}active{{/if}}"></li>
 		  {{/foreach}}
 		  </ol>
-	 		
+
 	 		<div class="carousel-inner featured-posts__inner">
 	 		{{#foreach featured}}
 		    <div class="featured-post item {{#if @first}}active{{/if}}">
@@ -35,7 +35,7 @@
 		    </div>
 	 		{{/foreach}}
 		  </div>
-	 
+
 		  {{!-- Controls --}}
 		  <div class="featured-posts__control-wrapper clearfix">
 		  <a class="left carousel-control" href="#featured-posts__carousel" role="button" data-slide="prev">
@@ -80,10 +80,11 @@
 	        </div>
 	      </div>
 	    </div>
-    </li>    
+    </li>
     {{/foreach}}
     <li class="clearfix"></li>
   </ul>
 </section>
 
 {{!-- Email subscribe form at the main page --}}
+{{> subscribe}}

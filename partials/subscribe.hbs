@@ -1,4 +1,13 @@
 {{!-- Subscribe component (Ghost) --}}
-<div class="subscribe">
-
-</div>
+{{#if @labs.subscribers}}
+  <section class="subscribe">
+    <div class="container text-center">
+      <div class="gh-subscribe">
+        <h3 class="gh-subscribe-title">Subscribe to {{@blog.title}}</h3>
+        <p>Get the latest posts delivered right to your inbox.</p>
+        {{> subscribe-form input_class="subscribe-form__input" button_class="subscribe-form__button" placeholder="Your email"}}
+        <span class="gh-subscribe-rss">or subscribe <a href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/">via RSS</a> with Feedly!</span>
+      </div>
+    </div>
+  </section>
+{{/if}}
