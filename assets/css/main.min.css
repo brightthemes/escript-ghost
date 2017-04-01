@@ -11551,22 +11551,79 @@ body.nav-closed .main {
   transition: transform 0.4s; }
 
 .timeline {
-  padding: 3em 1em;
-  background: #ffffff; }
+  padding: 3em 1em; }
 
-.timeline-post {
-  padding: 2em 0; }
-  .timeline-post.left {
-    padding-right: 3em; }
-    @media only screen and (max-width: 47.938em) {
-      .timeline-post.left {
-        padding: 0; } }
-  .timeline-post.right {
-    padding-left: 3em;
-    padding-top: 10em; }
-    @media only screen and (max-width: 47.938em) {
-      .timeline-post.right {
-        padding: 0; } }
+.timeline-list {
+  list-style: none;
+  padding: 20px 0 20px;
+  position: relative; }
+  .timeline-list:before {
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 3px;
+    background-color: #eeeeee;
+    left: 50%;
+    margin-left: -1.5px; }
+  .timeline-list .timeline-post--inverted {
+    float: left;
+    clear: left;
+    margin-top: 30px;
+    margin-bottom: 30px; }
+  .timeline-list .timeline-post {
+    margin-bottom: 20px;
+    position: relative;
+    width: 50%;
+    float: left;
+    clear: left; }
+    .timeline-list .timeline-post.timeline-post--inverted {
+      float: right; }
+    .timeline-list .timeline-post:before, .timeline-list .timeline-post:after {
+      content: " ";
+      display: table; }
+    .timeline-list .timeline-post:after {
+      clear: both; }
+
+.timeline-card {
+  width: 95%;
+  float: left;
+  position: relative; }
+  .timeline-card:before {
+    position: absolute;
+    top: 26px;
+    right: -15px;
+    display: inline-block;
+    border-top: 15px solid transparent;
+    border-left: 15px solid #ccc;
+    border-right: 0 solid #ccc;
+    border-bottom: 15px solid transparent;
+    content: " "; }
+  .timeline-card:after {
+    position: absolute;
+    top: 27px;
+    right: -14px;
+    display: inline-block;
+    border-top: 14px solid transparent;
+    border-left: 14px solid #fff;
+    border-right: 0 solid #fff;
+    border-bottom: 14px solid transparent;
+    content: " "; }
+
+.timeline-post--inverted {
+  float: right; }
+  .timeline-post--inverted .timeline-card {
+    float: right; }
+    .timeline-post--inverted .timeline-card:before {
+      border-left-width: 0;
+      border-right-width: 15px;
+      left: -15px;
+      right: auto; }
+    .timeline-post--inverted .timeline-card:after {
+      border-left-width: 0;
+      border-right-width: 14px;
+      left: -14px;
+      right: auto; }
 
 .timeline__divider {
   position: relative;

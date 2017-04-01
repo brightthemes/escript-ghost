@@ -58,33 +58,32 @@
   <a href="{{url}}">{{title}}</a><br>
 {{/foreach}} --}}
 <section class="timeline container">
-  <div class="timeline__date text-center">
-    <span class="btn btn__common">{{date}}</span>
-  </div>
-  <div class="timeline__divider">
+  <ul class="timeline-list">
   	{{#foreach posts}}
-      <div class="timeline-post col-sm-6 animated {{#if @odd}}fadeInLeft left{{else}}fadeInRight right{{/if}}">
-        <div class="timeline-post__thumb">
-          <img src="{{image}}" class="img-responsive lazyload" alt="">
-          <div class="timeline-post--overlay">
-             {{!-- <span class="uppercase"><a href="#">14 <br><small>Feb</small></a></span> --}}
-         	</div>
-        </div>
-        <div class="timeline-post__content">
-          <h2 class="timeline-post__title"><a href="{{url}}">{{title}}</a></h2>
-          <h3 class="timeline-post__author"><a href="#">{{author}}</a></h3>
-          <p>{{excerpt words="20"}}&hellip;</p>
-          <a href="#" class="read-more">Read More</a>
-          <div class="timeline-post__info">
+    <li class="timeline-post {{#if @odd}}fadeInLeft left{{else}}timeline-post--inverted fadeInRight right{{/if}}">
+    	<div class="timeline-card">
+	      <div class="timeline-card__thumb">
+	        <img src="{{image}}" class="img-responsive lazyload" alt="">
+	        <div class="timeline-card--overlay">
+	           {{!-- <span class="uppercase"><a href="#">14 <br><small>Feb</small></a></span> --}}
+	       	</div>
+	      </div>
+	      <div class="timeline-card__content">
+					<h2 class="timeline-card__title"><a href="{{url}}">{{title}}</a></h2>
+	        <h3 class="timeline-card__author"><a href="#">{{author}}</a></h3>
+	        <p>{{excerpt words="20"}}&hellip;</p>
+	        <a href="#" class="read-more">Read More</a>
+	        <div class="timeline-card__info">
 		    		<time datetime="{{date format="YYYY-MM-DD"}}">{{date published_at}}</time> |
 						<i class="fa fa-comments-o"></i>
 						<a href="{{url absolute='true'}}#disqus_thread" class="comments comment-count">0</a>
-          </div>
-        </div>
-      </div>
+	        </div>
+	      </div>
+	    </div>
+    </li>    
     {{/foreach}}
-    <div class="clearfix"></div>
-  </div>
+    <li class="clearfix"></li>
+  </ul>
 </section>
 
 {{!-- Email subscribe form at the main page --}}
