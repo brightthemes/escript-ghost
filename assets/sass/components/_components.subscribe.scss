@@ -3,14 +3,13 @@
 //===================================
 
 .subscribe {
-  background: $brand-color; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top left, #fc00ff , #00dbde); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top left, #fc00ff , #00dbde); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: rgba($brand-color, 0.8); 
   padding: 5em 0;
   color: $light-color;
 
   h3 {
     color: $light-color;
+    margin-top: 0;
   }
 
   .subscribe-form {
@@ -42,6 +41,10 @@
     }
     .subscribe-form__button {
       margin-left: -5px;
+
+      &:hover { 
+        i { color: rgba($brand-color, 0.6); }
+      }
     }
   }
 }

@@ -3,7 +3,7 @@
 //===================================
 
 a {
-  color: $link-color;
+  color: $dark-color;
   text-decoration: none;
   transition: all $transition-speed-base;
 
@@ -12,8 +12,23 @@ a {
   &:hover {
     color: $link-color-hover;
     text-decoration: none;
-    transition: all $transition-speed-base;
   }
+}
 
-  &:active { color: $link-color; }
+p {
+  a {
+    color: $link-color;
+    text-decoration: none;
+    transition: all $transition-speed-base;
+
+    &:visited { color: $link-color-visited; }
+
+    &:hover {
+      color: $link-color-hover;
+      text-decoration: none;
+      transition: all $transition-speed-base;
+    }
+
+    &:active { color: $link-color; }
+  }
 }

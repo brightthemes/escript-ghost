@@ -116,9 +116,10 @@
 
     .featured-post__tag,
     .featured-post__title,
-    .featured-post__author {
+    .featured-post__info {
     	margin: 0;
     	color: $light-color;
+      font-family: $heading-font-family;
 
     	a { 
     		color: $light-color; 
@@ -127,8 +128,24 @@
     	}
     }
 
+    .featured-post__author, 
+    .featured-post__date {
+      float: left;
+      display: inline-block;
+
+      &:after { 
+        content: "|";
+        margin: 0 0.4em;
+        font-weight: $font-weight-regular;
+      }
+    }
+
+    .featured-post__date {
+      &:after { margin: 0 0.4em 0 0.2em; }
+    }
+
     .featured-post__tag a,
-    .featured-post__author a {
+    .featured-post__info a {
     	text-transform: uppercase;
 
     	&:hover { color: $link-color-hover; }
@@ -148,7 +165,7 @@
       @media #{$lg} { font-size: 1.2rem; }
     }
 
-    .featured-post__author { 
+    .featured-post__info { 
       animation-delay: 0.5s; 
 
       @media #{$md} { font-size: 1.1rem; }
