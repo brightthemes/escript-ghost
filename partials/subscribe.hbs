@@ -1,6 +1,7 @@
 {{!-- Subscribe component (Ghost) --}}
 {{#if @labs.subscribers}}
-  <section class="subscribe">
+  <section class="subscribe" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
+    <div class="subscribe-overlay"></div>
     <div class="container text-center">
       <div class="gh-subscribe">
         <h3 class="gh-subscribe-title">Subscribe to {{@blog.title}}</h3>

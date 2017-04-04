@@ -3,13 +3,30 @@
 //===================================
 
 .subscribe {
-  background: rgba($brand-color, 0.8); 
+  @include background-cover;
+  position: relative;
   padding: 5em 0;
   color: $light-color;
+
+  .subscribe-overlay {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    background-color: rgba($brand-color, 0.8);
+  }
 
   h3 {
     color: $light-color;
     margin-top: 0;
+  }
+
+  .gh-subscribe {
+    position: relative;
+    z-index: 2;
   }
 
   .subscribe-form {

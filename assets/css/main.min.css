@@ -11783,12 +11783,27 @@ body.nav-closed .main {
     clear: left; } }
 
 .subscribe {
-  background: rgba(231, 76, 60, 0.8);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
   padding: 5em 0;
   color: #ffffff; }
+  .subscribe .subscribe-overlay {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    background-color: rgba(231, 76, 60, 0.8); }
   .subscribe h3 {
     color: #ffffff;
     margin-top: 0; }
+  .subscribe .gh-subscribe {
+    position: relative;
+    z-index: 2; }
   .subscribe .subscribe-form .subscribe-form__input {
     background-color: transparent;
     padding: 4px 10px;
