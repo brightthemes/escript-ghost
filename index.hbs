@@ -14,8 +14,8 @@
 	 		<div class="carousel-inner featured-posts__inner">
 	 		{{#foreach featured}}
 		    <div class="featured-post item {{#if @first}}active{{/if}}">
-		      <div class="lazyload featured-post__image" 
-		      		 data-src="{{#if image}}{{image}}{{/if}}" 
+		      <div class="lazyload featured-post__image"
+		      		 data-src="{{#if image}}{{image}}{{/if}}"
 		      		 style="{{#if image}}background-image: url({{image}}){{else}}background-color: #000;{{/if}}">
 		      </div>
 		      <div class="featured-post__image--overlay"></div>
@@ -86,10 +86,10 @@
 	    </div>
     </li>
     {{/foreach}}
-    <li class="clearfix"></li>
   </ul>
+  <div class="clearfix"></div>
   <div class="timeline-foot text-center">
-  	<a href="#" id="load-posts" class="btn btn-common uppercase">Load More</a>
+  	<button id="load-posts" class="btn btn-common uppercase">Load More</button>
   </div>
 </section>
 

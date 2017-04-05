@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
-var uglify = require('gulp-uglify');  
+var uglify = require('gulp-uglify');
 var postcss = require('gulp-postcss');
 var cssnext = require('postcss-cssnext');
 var colorRgbaFallback = require('postcss-color-rgba-fallback');
@@ -36,6 +36,7 @@ gulp.task('scripts', function() {
             npm_src   + 'jquery/dist/jquery.min.js',
             npm_src   + 'fitvids/fitvids.min.js',
             npm_src   + 'bootstrap-sass/assets/javascripts/bootstrap.min.js',
+            npm_src   + 'moment/min/moment.min.js',
             npm_src   + 'lazysizes/lazysizes.min.js',
             asset_src + 'js/scripts/jquery.ghostHunter.js',
             asset_src + 'js/scripts/prism.js',

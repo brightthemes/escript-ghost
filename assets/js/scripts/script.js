@@ -2,7 +2,6 @@
 /* Script                                                                  */
 /***************************************************************************/
 $(document).ready(function() {
-
   'use strict';
 
   $('.carousel-control').click(function(e){
@@ -13,9 +12,9 @@ $(document).ready(function() {
   // Site navigation
   $(".navbar-open, .navbar-close").on("click", function(e){
       e.preventDefault();
-      
+
       $(".navbar-navigation").toggleClass("open");
-      
+
       $("body").toggleClass("nav-opened nav-closed");
   });
 
@@ -155,7 +154,7 @@ $(document).ready(function() {
   //This is set to 2 since the posts already loaded should be page 1
     var nextPage = 2;
     //Set this to match the pagination used in your blog
-    var pagination = 1;
+    var pagination = 10;
 
     //on button click
     $('#load-posts').click(function() {
@@ -164,8 +163,12 @@ $(document).ready(function() {
             url: ghost.url.api("posts") + '&include=tags&limit=' + pagination + '&page=' + nextPage,
             type: 'get'
         }).done(function(data) {
+          var postCount = $('.timeline-list .timeline-post').length;
             //for each post returned
             $.each(data.posts, function(i, post) {
+              var selector =  (postCount % 2 === 0) ? 'fadeInLeft left' : 'timeline-post--inverted fadeInRight right';
+              postCount++;
+
                 //Take the author of the post, and now go get that data to fill in
                 $.ajax({
                     url: ghost.url.api("users") + '&filter=id:' + post.author,
@@ -173,41 +176,48 @@ $(document).ready(function() {
                 }).done(function(data) {
                     $.each(data.users, function(i, users) {
                         //Now that we have the author and post data, send that to the insertPost function
-                        insertPost(post, users);
+                        insertPost(post, users, selector);
                     });
                 });
             });
         }).done(function(data) {
             //If you are on the last post, hide the load more button
-            if (nextPage == data.meta.pagination.total) {
-                $('#load-posts').hide();
+            if (nextPage == data.meta.pagination.pages) {
+              $('#load-posts').hide();
+            } else {
+              nextPage++;
             }
+            $.getScript("http://bironthemes.disqus.com/count.js");
         }).fail(function(err) {
             console.log(err);
         });
     })
 
-    function insertPost(postData, authorData) {
-        //start the inserting of the html
-        console.log(postData, authorData);
-      var postInfo = 
-        '<li class="timeline-post animated {{#if @odd}}fadeInLeft left{{else}}timeline-post--inverted fadeInRight right{{/if}}">\
+    function insertPost(postData, authorData, selector) {
+      // remove new lines
+      var excerpt = postData.html.replace(/<\/?[^>]+(>|$)/g, "").replace(/\n/g, " ")
+        // get first 20 words
+        .split(/\s+/).slice(0, 20).join(" ");
+
+      var postInfo =
+        '<li class="timeline-post animated ' + selector + '">\
           <div class="timeline-badge primary">\
             <a><i class="fa fa-dot-circle-o" rel="tooltip" title="{{date published_at timeago="true"}}" id=""></i></a>\
           </div>\
           <div class="timeline-card">\
             <div class="timeline-card__thumb">\
-              <img src="{{image}}" class="img-responsive lazyload" alt="">\
+              <img src="' + postData.image + '" class="img-responsive lazyload" alt="">\
               <div class="timeline-card--overlay"></div>\
             </div>\
             <div class="timeline-card__content">\
-              <h2 class="timeline-card__title"><a href="{{url}}">{{title}}</a></h2>\
-              <div class="timeline-card__author">by <a href="#">{{author}}</a></div>\
-              <div class="timeline-card__excerpt">{{excerpt words="20"}}&hellip;</div>\
+              <h2 class="timeline-card__title"><a href="' + postData.url + '">' + postData.title + '</a></h2>\
+              <div class="timeline-card__author">by <a href="#">' + authorData.name + '</a></div>\
+              <div class="timeline-card__excerpt">' + excerpt + '&hellip;</div>\
               <div class="timeline-card__info">\
-                <time datetime="{{date format="YYYY-MM-DD"}}">{{date published_at}}</time>\
+                <time datetime="' + moment(postData.published_at).format('YYYY-MM-DD') + '" class="timeago">' +
+                  moment(postData.published_at).fromNow() + '</time>\
                 <i class="fa fa-comments-o"></i>\
-                <a href="{{url}}#disqus_thread" class="comments comment-count">0</a>\
+                <a href="' + window.location.href.slice(0, -1) + postData.url + '#disqus_thread" class="comments comment-count">0</a>\
               </div>\
             </div>\
           </div>\
@@ -245,8 +255,6 @@ $(document).ready(function() {
 
         //Append the html to the content of the blog
         $('.timeline-list').append(postInfo);
-        //incriment next page so it will get the next page of posts if hit again.
-        nextPage += 1;
     }
 });
 
@@ -315,8 +323,8 @@ function loadComments(url, id) {
 //     $('.related-list').append($(
 //       '<li class="col-xs-12 col-sm-6 col-md-12 col-lg-6 related-list-item">' +
 //         '<div class="related-card">' +
-//           '<a class="lazyload ' + imageClass + ' related-image" href="' + posts[i].url + 
-//             '" data-src="' + posts[i].image + '" ' + 'style="background-image:url(' + 
+//           '<a class="lazyload ' + imageClass + ' related-image" href="' + posts[i].url +
+//             '" data-src="' + posts[i].image + '" ' + 'style="background-image:url(' +
 //              posts[i].image + ')">' +
 //           '</a>' +
 //           '<div class="related-card-content">'+
@@ -325,7 +333,7 @@ function loadComments(url, id) {
 //             '</h4>' +
 //             '<ul class="related-byline">' +
 //               '<li>' + posts[i].author.name + '</li>' +
-//               '<li>' + 
+//               '<li>' +
 //                 '<i class="fa fa-calendar-o"></i>' +
 //                 '<time datetime="' + moment(posts[i].published_at).format('YYYY-MM-DD') + '" class="timeago">' +
 //                   moment(posts[i].published_at).fromNow() +
