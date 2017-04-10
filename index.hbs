@@ -14,8 +14,8 @@
 	 		<div class="carousel-inner featured-posts__inner">
 	 		{{#foreach featured}}
 		    <div class="featured-post item {{#if @first}}active{{/if}}">
-		      <div class="lazyload featured-post__image"
-		      		 data-src="{{#if image}}{{image}}{{/if}}"
+		      <div class="lazyload featured-post__image" 
+		      		 data-src="{{#if image}}{{image}}{{/if}}" 
 		      		 style="{{#if image}}background-image: url({{image}}){{else}}background-color: #000;{{/if}}">
 		      </div>
 		      <div class="featured-post__image--overlay"></div>
@@ -58,11 +58,11 @@
 {{/get}}
 
 {{!-- The main content area on the homepage --}}
-<section class="timeline container">
+{{!-- <section class="timeline container">
 	<div class="timeline-head text-center">Latest Posts</div>
   <ul class="timeline-list">
   	{{#foreach posts}}
-    <li class="timeline-post animated {{#if @odd}}fadeInLeft left{{else}}timeline-post--inverted fadeInRight right{{/if}}">
+    <li class="timeline-post animated {{#if}}fadeInLeft left{{else}}timeline-post--inverted fadeInRight right{{/if}}">
     	<div class="timeline-badge primary">
     		<a><i class="fa fa-dot-circle-o" rel="tooltip" title="{{date published_at timeago="true"}}" id=""></i></a>
     	</div>
@@ -70,7 +70,6 @@
 	      <div class="timeline-card__thumb">
 	        <img src="{{image}}" class="img-responsive lazyload" alt="">
 	        <div class="timeline-card--overlay">
-	           {{!-- <span class="uppercase"><a href="#">14 <br><small>Feb</small></a></span> --}}
 	       	</div>
 	      </div>
 	      <div class="timeline-card__content">
@@ -86,12 +85,64 @@
 	    </div>
     </li>
     {{/foreach}}
+    <li class="clearfix"></li>
   </ul>
-  <div class="clearfix"></div>
   <div class="timeline-foot text-center">
   	<button id="load-posts" class="btn btn-common uppercase">Load More</button>
   </div>
+</section> --}}
+
+{{!-- <section id="timeline">
+	<h1>A Flexbox Timeline</h1>
+	<p class="leader">All cards must be the same height and width for space calculations on large screens.</p>
+	<div class="demo-card-wrapper">
+	    {{#foreach posts}}
+    <div class="demo-card">
+      <div class="head">
+        {{#if image}}<img class="img-responsive" src="{{image}}" alt="Graphic">{{/if}} 
+
+        <h2>{{title}}</h2> 
+      </div>
+      <div class="body">      
+        <p>{{excerpt words="20"}}&hellip;</p>
+      </div>
+    </div>
+    {{/foreach}}
+	</div>
+</section> --}}
+
+
+{{#get "posts" include="author,tags" filter="featured:false" as |latest| }}
+<section class="latest-posts container">
+	<div class="masonry masonry-columns-3">
+	{{#foreach latest}}
+		<div class="masonry-item">
+			{{#if image}}
+				<a class="masonry-post__image" href="{{url}}">
+					<img src="{{image}}" class="lazyload img-responsive" alt="{{title}}">
+				</a>
+			{{/if}}
+			<div class="masonry-post__content">
+				<h2 class="post-title"><a href="{{url}}">{{title}}</a></h2>
+				<p class="post-info">{{date}} - by {{author}}</p>
+				<p>{{excerpt words="20"}}&hellip;</p>
+				{{!-- <a href="{{url}}" class="read-more">Read More</a> --}}
+				<hr>
+				<div class="tag-comment clearfix">
+					{{#if tags}}<span class="pull-left"><i class="fa fa-tags"></i>{{tags limit=1}}</span>{{/if}}
+					<span class="pull-right">
+						<i class="fa fa-comments"></i>
+						<a href="{{url absolute='true'}}#disqus_thread" class="comments comment-count">0</a>
+					</span>
+				</div>
+			</div>
+		</div>
+	{{/foreach}}
+	</div>
+	{{pagination}}
 </section>
+{{/get}}
+
 
 {{!-- Email subscribe form at the main page --}}
 {{> subscribe}}

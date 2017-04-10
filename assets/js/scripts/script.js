@@ -18,18 +18,6 @@ $(document).ready(function() {
       $("body").toggleClass("nav-opened nav-closed");
   });
 
-  // $('.search-open').click(function() {
-  //   $('.search').show();
-  //   $('#search-field').focus();
-  //   $('body').css('overflowY', 'hidden');
-  // });
-
-  // $('#search-field').keyup(function(e) {
-  //   if (e.keyCode === 27) {
-  //     $('.search').hide();
-  //   }
-  // });
-
   // on scroll, let the interval function know the user has scrolled
   $(window).scroll(function(event) {
     if ($(document).scrollTop() > 100) {
@@ -49,107 +37,40 @@ $(document).ready(function() {
     $(el).attr('data-src', el.src).addClass('lazyload');
   });
 
-  // // Site search
-  // $('.search-close').click(function() {
-  //   $('.search').hide();
-  //   $('body').css('overflowY', 'auto');
-  // });
+  var ordering = 1;
 
-  // $('.search-open').click(function() {
-  //   $('.search').show();
-  //   $('#search-field').focus();
-  //   $('body').css('overflowY', 'hidden');
-  // });
-
-  // $('#search-field').keyup(function(e) {
-  //   if (e.keyCode === 27) {
-  //     $('.search').hide();
-  //   }
-  // });
-
-  // var didScroll;
-  // // on scroll, let the interval function know the user has scrolled
-  // $(window).scroll(function(event) {
-  //   if ($('.navbar-collapse').hasClass('in')) {
-  //     $('.navbar-collapse').removeClass('in').addClass('collapse');
-  //     $('.navbar-toggle').addClass('collapsed');
-  //   }
-  // });
-
-  // $('#search-field').ghostHunter({
-  //   results         : '#results',
-  //   includepages    : true,
-  //   onPageLoad      : true,
-  //   info_template   : '<p>{{amount}} results found</p>',
-  //   result_template : '<div class="col-sm-6 col-xs-12 animated fadeInUp result-item">' +
-  //                       '<a href="{{link}}" class="result-link">' +
-  //                         '<div class="lazyload no-image result-item-image" style="background-image: url({{image}})"></div>' +
-  //                         '<div class="result-item-content">' +
-  //                         '<h4>{{title}}</h4>' +
-  //                         '<p href="{{authorLink}}">{{authorName}}</p>' +
-  //                         '<p><i class="fa fa-calendar-o"></i>{{pubDate}}</p>' +
-  //                         '</div>' +
-  //                       '</a>' +
-  //                     '</div>',
-  //   before          : function() {
-  //                       $('.slider-after').animate({
-  //                         width: '100%'
-  //                       }, 800);
-  //                     },
-  //   onComplete      : function() {
-  //                       $('.slider-after').animate({
-  //                         width: '0%'
-  //                       }, 0);
-  //                     }
-  // });
-
-  // // Previous & next post responsivness
-  // var $prevStory = $('.read-next-story.prev');
-  // var $nextStory = $('.read-next-story.next');
-
-  // if ($prevStory.length > 0 && $nextStory.length === 0) {
-  //   $prevStory.css('width', '100%');
+  // // Timeline adjustment
+  // var timelineItemsOdd = $('.demo-card-wrapper .demo-card:odd');
+  // for (var i = 0; i <= timelineItemsOdd.length - 1; i++) {
+  //   $(timelineItemsOdd[i]).css('order', ordering);
+  //   ordering++;
   // }
 
-  // if ($prevStory.length === 0 && $nextStory.length > 0) {
-  //   $nextStory.css('width', '100%');
+  //   // var ordering = 1;
+
+  // // Timeline adjustment
+  // var timelineItemsEven = $('.demo-card-wrapper .demo-card:even');
+  // for (var i = 0; i <= timelineItemsEven.length - 1; i++) {
+  //   $(timelineItemsEven[i]).css('order', ordering);
+  //   ordering++;
   // }
 
-  // // Navbar scroll
-  // $(window).scroll(function() {
-  //   var $navbar = $('.navbar-default');
-  //   var scrolledClass = 'navbar-default-scrolled';
+  var timelineItemsHeight = $('.demo-card-wrapper .demo-card').height();
+  var timelineItemsLength = $('.demo-card-wrapper .demo-card').length;
+  var totalHeight = 0;
 
-  //   if ($(this).scrollTop() > 30) {
-  //     $navbar.addClass(scrolledClass);
-  //   } else {
-  //     $navbar.removeClass(scrolledClass);
-  //   };
-  // });
+  setTimeout( function(){ 
+    $(".demo-card-wrapper .demo-card").each(function(){
+      totalHeight = totalHeight + $(this).height();
+    });
 
-  // // Site scroll takes into account the fixed header
-  // function scroll_if_anchor(href) {
-  //   href = typeof(href) === 'string' ? href : $(this).attr('href');
-  //   var fromTop = 50;
+    var avarageTimelineItemHeight = totalHeight/timelineItemsLength;
 
-  //   if (href.indexOf('#') === 0) {
-  //     var $target = $(href);
+    console.log(timelineItemsLength, totalHeight, avarageTimelineItemHeight);
 
-  //     if ($target.length) {
-  //       $('html, body').animate({ scrollTop: $target.offset().top - fromTop });
-
-  //       if (history && 'pushState' in history) {
-  //         history.pushState({}, document.title, window.location.pathname + href);
-  //         return false;
-  //       }
-  //     }
-  //   }
-  // }
-
-  // scroll_if_anchor(window.location.hash);
-
-  // // Intercept all anchor clicks
-  // $('body').on('click', 'a', scroll_if_anchor);
+    var newHeight = timelineItemsLength/2 * ( avarageTimelineItemHeight + 90) + 180;
+    $('.demo-card-wrapper').css('height', newHeight);
+  }, 200 );
 
   //This is set to 2 since the posts already loaded should be page 1
     var nextPage = 2;
@@ -173,11 +94,14 @@ $(document).ready(function() {
                 $.ajax({
                     url: ghost.url.api("users") + '&filter=id:' + post.author,
                     type: 'get'
-                }).done(function(data) {
-                    $.each(data.users, function(i, users) {
-                        //Now that we have the author and post data, send that to the insertPost function
-                        insertPost(post, users, selector);
-                    });
+                }).done(function(response) {
+                  if (i == data.posts.length - 1) {
+                    $('.timeline-list .clearfix').remove();
+                  }
+                  insertPost(post, response.users[0], selector);
+                  if (i == data.posts.length - 1) {
+                    $('.timeline-list').append('<li class="clearfix"></li>');
+                  }
                 });
             });
         }).done(function(data) {
@@ -222,36 +146,6 @@ $(document).ready(function() {
             </div>\
           </div>\
         </li>'
-
-        // var postInfo = '<article class="post">\
-        //         <header class="post-header">\
-        //             <h2 class="post-title"><a href="' + postData.url + '">' + postData.title + '</a></h2>\
-        //         </header>\
-        //         <section class="post-excerpt">\
-        //             <p>' + postData.html + '<a class="read-more" href="' + postData.url + '">& raquo; < /a></p > \
-        //     < /section>\ < footer class = "post-meta" > '
-
-        // //if no author image, dont include it
-        // if (authorData.Image != null) {
-        //     postInfo += '<img class="author-thumb" src="' + authorData.image + '" alt="' + authorData.name + '" nopin="nopin" />'
-        // }
-
-        // //if there are tags, add each of them to the post
-        // if (postData.tags.length > 0) {
-        //     for (var i = 0; i < postData.tags.length; i++) {
-        //         console.log(postData.tags[i]);
-        //         postInfo += authorData.name + ' on ' + '<a href="/tag/' + postData.tags[i].slug + '">' + postData.tags[i].name + "</a> ";
-        //     }
-        // } else {
-        //     //if no tags, just add the author name
-        //     postInfo += authorData.name;
-        // }
-
-        // //Finish off the html with the time
-        // //The format for the time will be different, you will have to figure this out
-        // postInfo += '<time class="post-date" datetime="' + postData.published_at + '">' + postData.published_at + '</time>\
-        //         </footer>\
-        //     </article>'
 
         //Append the html to the content of the blog
         $('.timeline-list').append(postInfo);
