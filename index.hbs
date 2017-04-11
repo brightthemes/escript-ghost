@@ -124,14 +124,17 @@
 			{{/if}}
 			<div class="masonry-post__content">
 				<h2 class="post-title"><a href="{{url}}">{{title}}</a></h2>
-				<p class="post-info">{{date}} - by {{author}}</p>
+				<p class="post-info">by {{author}} {{#if tags}}in {{tags limit=1}}{{/if}}</p>
 				<p>{{excerpt words="20"}}&hellip;</p>
-				{{!-- <a href="{{url}}" class="read-more">Read More</a> --}}
-				<hr>
 				<div class="tag-comment clearfix">
-					{{#if tags}}<span class="pull-left"><i class="fa fa-tags"></i>{{tags limit=1}}</span>{{/if}}
+					<div class="text-center">
+						<a href="{{url}}" class="read-more">Read More</a>
+				  </div>
+					<hr>
+					{{#if tags}}<span class="pull-left">{{date}}</span>{{/if}}
 					<span class="pull-right">
-						<i class="fa fa-comments"></i>
+						<i class="fa fa-share-alt"></i>
+						<i class="fa fa-comments-o"></i>
 						<a href="{{url absolute='true'}}#disqus_thread" class="comments comment-count">0</a>
 					</span>
 				</div>

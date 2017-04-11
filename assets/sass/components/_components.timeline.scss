@@ -89,61 +89,69 @@ column-count: 1;
 }
 }
 
-.masonry .masonry-item{
-}
-
 .masonry .masonry-item {
   background-color: $light-color;
   margin-bottom: 1em;
-    display: inline-block;
-    width: 100%;
+  display: inline-block;
+  width: 100%;
+  transition: all 0.4s ease-in-out; 
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+
+  &:hover {
     transition: all 0.4s ease-in-out; 
-    -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
-
-    .masonry-post__image {
-      display: block;
-    }
-
-    hr { background-color: #ededed; }
-
-    .masonry-post__content {
-      padding: 0.75em;
-      padding-top: 0;
-
-      .post-title {
-        font-size: 1.6rem;
-      }
-
-      .post-info, .post-info a {
-        color: lighten($dark-color, 40%);
-      }
-
-      .tag-comment {
-        color: lighten($dark-color, 60%); 
-
-        a { color: lighten($dark-color, 40%); }
-
-        .pull-left i {
-          margin-right: 0.25em;
-        }
-      }
-    }
-
-    .read-more { 
-      border: 1px solid #ccc;
-      padding: 0.25em 0.5em;
-    }
-
-
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
   }
-    .masonry .masonry-item:hover {
-      transition: all 0.4s ease-in-out; 
-      -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-    }
-    .masonry .masonry-item p {
-      color: lighten($dark-color, 40%); 
+
+  .masonry-post__image {
+    display: block;
+  }
+
+  p { color: lighten($dark-color, 40%); }
+
+  hr { background-color: #ededed; }
+
+  .masonry-post__content {
+    padding: 0.75em;
+    padding-top: 0;
+
+    .post-title {
+      font-size: 1.6rem;
     }
 
-/*=====  End of masonry Page  ======*/
+    .post-info a {
+      color: lighten($dark-color, 40%);
+      font-weight: $font-weight-bold;
+
+      &:hover {
+        color: $link-color-hover;
+      }
+    }
+
+    .tag-comment {
+      color: lighten($dark-color, 60%);
+
+      .pull-left i {
+        margin-right: 0.25em;
+      }
+    }
+  }
+
+  .read-more { 
+    border: 1px solid $border-color;
+    padding: 0.4em 0.8em;
+    transition: all $transition-speed-base;
+    display: inline-block;
+    color: lighten($dark-color, 40%);
+
+    &:hover {
+      background-color: $dark-color;
+      border-color: $dark-color;
+      color: $light-color;
+    }
+  }
+
+  hr { margin: 0.75em 0; }
+
+}
