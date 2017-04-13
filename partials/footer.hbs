@@ -21,20 +21,22 @@
       </div>
       <div class="col-md-4 clearfix">
         <div class="footer-section"><p class="footer-section-title">Latest News</p></div>
-        {{#foreach posts to=2}}
-          <div class="footer-post clearfix">
-            <a href="{{url}}">
-              <div class="footer-post__image" style="{{#if image}} background-image: url({{image}}) {{/if}}"></div>
-            </a>
-            <div class="footer-post__info">
-              <a href="{{url}}"><p class="footer-post__title">{{title}}</p></a>
-              <p class="footer-post__author">by {{author}} {{date published_at timeago="true"}}</p>
+        {{#get "posts" include="author, tags" limit=2 }}
+          {{#foreach posts}}
+            <div class="footer-post clearfix">
+              <a href="{{url}}">
+                <div class="footer-post__image" style="{{#if image}} background-image: url({{image}}) {{/if}}"></div>
+              </a>
+              <div class="footer-post__info">
+                <a href="{{url}}"><p class="footer-post__title">{{title}}</p></a>
+                <p class="footer-post__author">by {{author}} {{date published_at timeago="true"}}</p>
+              </div>
             </div>
-          </div>
-          {{^if @last}}
-            <hr class="footer-divider">
-          {{/if}}
-        {{/foreach}}
+            {{^if @last}}
+              <hr class="footer-divider">
+            {{/if}}
+          {{/foreach}}
+        {{/get}}
       </div>
     </div>
   </div>

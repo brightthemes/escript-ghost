@@ -7,8 +7,6 @@ a {
   text-decoration: none;
   transition: all $transition-speed-base;
 
-  &:visited { color: $link-color-visited; }
-
   &:hover {
     color: $link-color-hover;
     text-decoration: none;

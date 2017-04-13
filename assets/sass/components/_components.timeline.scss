@@ -14,80 +14,100 @@
 // column-gap: 12.25rem;
 }
 
-/* 5 columns */
-.masonry.masonry-columns-5{
--webkit-column-count: 5;
--moz-column-count: 5;
-column-count: 5;
-}
-@media(max-width: 1170px){
-  .masonry.masonry-columns-5{
--webkit-column-count: 4;
--moz-column-count: 4;
-column-count: 4;
-}
-}
-
-
-/*-4 columns------*/
-.masonry.masonry-columns-4{
--webkit-column-count: 4;
--moz-column-count: 4;
-column-count: 4;
-}
-
 /*-3 columns------*/
 .masonry.masonry-columns-3{
--webkit-column-count: 3;
--moz-column-count: 3;
-column-count: 3;
+  -webkit-column-count: 1;
+  -moz-column-count: 1;
+  column-count: 1;
+
+  @media #{$sm} {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+
+  @media #{$lg} {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+  }
 }
 
-/*-2 columns------*/
-.masonry.masonry-columns-2{
--webkit-column-count: 2;
--moz-column-count: 2;
-column-count: 2;
-}
+// /* 5 columns */
+// .masonry.masonry-columns-5{
+// -webkit-column-count: 5;
+// -moz-column-count: 5;
+// column-count: 5;
+// }
 
-/*-1 columns------*/
-.masonry.masonry-columns-1{
--webkit-column-count: 1;
--moz-column-count: 1;
-column-count: 1;
-}
+// @media(max-width: 1170px){
+//   .masonry.masonry-columns-5{
+//   -webkit-column-count: 4;
+//   -moz-column-count: 4;
+//   column-count: 4;
+//   }
+// }
 
 
-/*--------Responsive---------*/
-@media(max-width: 991px){
-  .masonry.masonry-columns-4, 
-  .masonry.masonry-columns-5{
--webkit-column-count: 3;
--moz-column-count: 3;
-column-count: 3;
-}
-}
+// /*-4 columns------*/
+// .masonry.masonry-columns-4{
+// -webkit-column-count: 4;
+// -moz-column-count: 4;
+// column-count: 4;
+// }
 
-@media(max-width: 767px){
-  .masonry.masonry-columns-4, 
-  .masonry.masonry-columns-5,
-  .masonry.masonry-columns-3{
--webkit-column-count: 2;
--moz-column-count: 2;
-column-count: 2;
-}
-}
+// /*-3 columns------*/
+// .masonry.masonry-columns-3{
+// -webkit-column-count: 3;
+// -moz-column-count: 3;
+// column-count: 3;
+// }
 
-@media(max-width: 540px){
-  .masonry.masonry-columns-4, 
-  .masonry.masonry-columns-5,
-  .masonry.masonry-columns-3,
-  .masonry.masonry-columns-2{
--webkit-column-count: 1;
--moz-column-count: 1;
-column-count: 1;
-}
-}
+// /*-2 columns------*/
+// .masonry.masonry-columns-2{
+// -webkit-column-count: 2;
+// -moz-column-count: 2;
+// column-count: 2;
+// }
+
+// /*-1 columns------*/
+// .masonry.masonry-columns-1{
+// -webkit-column-count: 1;
+// -moz-column-count: 1;
+// column-count: 1;
+// }
+
+
+// /*--------Responsive---------*/
+// @media(max-width: 991px){
+//   .masonry.masonry-columns-4, 
+//   .masonry.masonry-columns-5{
+// -webkit-column-count: 3;
+// -moz-column-count: 3;
+// column-count: 3;
+// }
+// }
+
+// @media(max-width: 767px){
+//   .masonry.masonry-columns-4, 
+//   .masonry.masonry-columns-5,
+//   .masonry.masonry-columns-3{
+// -webkit-column-count: 2;
+// -moz-column-count: 2;
+// column-count: 2;
+// }
+// }
+
+// @media(max-width: 540px){
+//   .masonry.masonry-columns-4, 
+//   .masonry.masonry-columns-5,
+//   .masonry.masonry-columns-3,
+//   .masonry.masonry-columns-2{
+// -webkit-column-count: 1;
+// -moz-column-count: 1;
+// column-count: 1;
+// }
+// }
 
 .masonry .masonry-item {
   background-color: $light-color;
@@ -106,9 +126,11 @@ column-count: 1;
 
   .masonry-post__image {
     display: block;
+
+    // &:hover 
   }
 
-  p { color: lighten($dark-color, 40%); }
+  p, h6 { color: lighten($dark-color, 40%); }
 
   hr { background-color: #ededed; }
 
@@ -122,7 +144,7 @@ column-count: 1;
 
     .post-info a {
       color: lighten($dark-color, 40%);
-      font-weight: $font-weight-bold;
+      text-transform: uppercase;
 
       &:hover {
         color: $link-color-hover;
@@ -132,8 +154,40 @@ column-count: 1;
     .tag-comment {
       color: lighten($dark-color, 60%);
 
+      .comment-count {
+        color: lighten($dark-color, 60%);
+      }
+
       .pull-left i {
         margin-right: 0.25em;
+      }
+
+      .masonry-post-share {
+        cursor: pointer;
+        color: lighten($dark-color, 60%);
+        margin-right: 0.25em;
+
+        &:hover + .masonry-post-share__social {
+          display: inline;
+        }
+      }
+    }
+
+    .masonry-post-share__social { 
+      display: none;
+
+      a {
+        padding: 0 0.2em;
+        display: inline-block;
+        text-align: center;
+
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+
+      &:hover {
+        display: inline;
       }
     }
   }
