@@ -11576,6 +11576,8 @@ body.nav-closed .main {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1); }
   .masonry .masonry-item .masonry-post__image {
     display: block; }
+    .masonry .masonry-item .masonry-post__image img {
+      width: 100%; }
   .masonry .masonry-item p, .masonry .masonry-item h6 {
     color: #666666; }
   .masonry .masonry-item hr {
@@ -11593,10 +11595,10 @@ body.nav-closed .main {
         color: #d62c1a; }
     .masonry .masonry-item .masonry-post__content .tag-comment {
       color: #999999; }
-      .masonry .masonry-item .masonry-post__content .tag-comment .comment-count {
+      .masonry .masonry-item .masonry-post__content .tag-comment .masonry-post-comment-count, .masonry .masonry-item .masonry-post__content .tag-comment .masonry-post-share {
+        display: inline-block; }
+      .masonry .masonry-item .masonry-post__content .tag-comment .disqus-comment-count {
         color: #999999; }
-      .masonry .masonry-item .masonry-post__content .tag-comment .pull-left i {
-        margin-right: 0.25em; }
       .masonry .masonry-item .masonry-post__content .tag-comment .masonry-post-share {
         cursor: pointer;
         color: #999999;
@@ -11604,7 +11606,8 @@ body.nav-closed .main {
         .masonry .masonry-item .masonry-post__content .tag-comment .masonry-post-share:hover + .masonry-post-share__social {
           display: inline; }
     .masonry .masonry-item .masonry-post__content .masonry-post-share__social {
-      display: none; }
+      display: none;
+      padding-right: 0.25em; }
       .masonry .masonry-item .masonry-post__content .masonry-post-share__social a {
         padding: 0 0.2em;
         display: inline-block;

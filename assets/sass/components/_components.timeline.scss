@@ -127,6 +127,7 @@
   .masonry-post__image {
     display: block;
 
+    img { width: 100%; }
     // &:hover 
   }
 
@@ -154,12 +155,12 @@
     .tag-comment {
       color: lighten($dark-color, 60%);
 
-      .comment-count {
-        color: lighten($dark-color, 60%);
+      .masonry-post-comment-count, .masonry-post-share {
+        display: inline-block;
       }
 
-      .pull-left i {
-        margin-right: 0.25em;
+      .disqus-comment-count {
+        color: lighten($dark-color, 60%);
       }
 
       .masonry-post-share {
@@ -175,6 +176,7 @@
 
     .masonry-post-share__social { 
       display: none;
+      padding-right: 0.25em;
 
       a {
         padding: 0 0.2em;
