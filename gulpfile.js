@@ -38,6 +38,8 @@ gulp.task('scripts', function() {
             npm_src   + 'bootstrap-sass/assets/javascripts/bootstrap.min.js',
             npm_src   + 'moment/min/moment.min.js',
             npm_src   + 'lazysizes/lazysizes.min.js',
+            npm_src   + 'jquery-viewport-checker/dist/jquery.viewportchecker.min.js',
+            npm_src   + 'salvattore/dist/salvattore.min.js',
             asset_src + 'js/scripts/jquery.ghostHunter.js',
             asset_src + 'js/scripts/prism.js',
             asset_src + 'js/scripts/script.js'

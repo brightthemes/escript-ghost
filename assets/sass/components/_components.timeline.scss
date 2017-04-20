@@ -1,6 +1,9 @@
 //===================================
 // Featured carousel
 //===================================
+.invisible {
+  opacity:0;
+}
 
 .latest-posts {
   margin-top: 2em;
@@ -12,6 +15,51 @@
 // -webkit-column-gap: 2.25rem;
 // -moz-column-gap: 2.25rem;
 // column-gap: 12.25rem;
+
+  $class-slug: masonry-item;
+  $animation-delay: 0.1s;
+
+  & > div {
+    @for $i from 1 through 10 {
+      .masonry-item:nth-child(#{$i}) {
+        animation-delay: 0.2s * $i;
+      }
+    }
+  }
+
+  & > div { 
+    padding-left: 0;
+    padding-right: 0; 
+  }
+
+  @media #{$sm} {
+    & > div:nth-child(1) {
+      padding-left: 0;
+      padding-right: 0.5em;
+    }
+
+    & > div:nth-child(2) {
+      padding-left: 0.5em;
+      padding-right: 0;
+    }
+  }
+  
+  @media #{$md} {
+    & > div:nth-child(1) {
+      padding-left: 0;
+      padding-right: 0.5em;
+    }
+
+    & > div:nth-child(2) {
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+    }
+
+    & > div:nth-child(3) {
+      padding-left: 0.5em;
+      padding-right: 0;
+    }
+  }
 }
 
 /*-3 columns------*/
@@ -108,6 +156,28 @@
 // column-count: 1;
 // }
 // }
+
+@media screen and (min-width: 1px) and (max-width: 767px){
+    #grid[data-columns]::before {
+        content: '1 .col-xs-12';
+    }
+}
+@media screen and (min-width:768px) and (max-width: 991px){
+    #grid[data-columns]::before {
+        content: '2 .col-sm-6';
+    }
+}
+@media screen and (min-width:992px) and (max-width: 9999px){
+    #grid[data-columns]::before {
+        content: '3 .col-md-4';
+    }
+}
+
+/* Again, you’re free to use and define the classes: */
+.column { float: left; }
+.size-1of1 { width: 100%; }
+.size-1of2 { width: 50%; }
+.size-1of3 { width: 33.333%; }
 
 .masonry .masonry-item {
   background-color: $light-color;
@@ -211,3 +281,21 @@
   hr { margin: 0.75em 0; }
 
 }
+
+
+
+  .masonry-foot { 
+    .load-more-posts { 
+      // background-color: $light-color;
+      border-color: $brand-color;
+      // border: none;
+      color: $brand-color;
+      transition: all $transition-speed-base;
+      padding: 0.75em 1.5em;
+
+      &:hover {
+        background-color: $brand-color;
+        color: $light-color;
+      }
+    }
+  }

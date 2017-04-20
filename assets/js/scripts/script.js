@@ -37,16 +37,21 @@ $(document).ready(function() {
     $(el).attr('data-src', el.src).addClass('lazyload');
   });
 
-//This is set to 2 since the posts already loaded should be page 1
+  var postsPerPage = $('.masonry-item').length;
+  //This is set to 2 since the posts already loaded should be page 1
   var nextPage = 2;
   //Set this to match the pagination used in your blog
-  var pagination = 1;
+  var pagination = postsPerPage;
+
+  var grid = document.querySelector('#grid');
+  var item = document.createElement('div');
 
   //on button click
   $('#load-posts').click(function() {
+    var animateDelay = 0.1;
       $.ajax({
           //go grab the pagination number of posts on the next page and include the tags
-          url: ghost.url.api("posts") + '&include=tags&limit=' + pagination + '&page=' + nextPage,
+          url: ghost.url.api("posts") + '&filter=featured:false&include=tags&limit=' + pagination + '&page=' + nextPage,
           type: 'get'
       }).done(function(data) {
           //for each post returned
@@ -57,29 +62,29 @@ $(document).ready(function() {
                   type: 'get'
               }).done(function(data) {
                   $.each(data.users, function(i, users) {
-                      //Now that we have the author and post data, send that to the insertPost function
-                      console.log(users);
-                      insertPost(post, users);
+                    //Now that we have the author and post data, send that to the insertPost function
+                    insertPost(post, users, animateDelay);
+                    animateDelay += 0.1;
                   });
               });
           });
       }).done(function(data) {
           //If you are on the last post, hide the load more button
-          if (nextPage == data.meta.pagination.total) {
-              $('#load-posts').hide();
+          if (nextPage == data.meta.pagination.pages) {
+            $('#load-posts').hide();
+          } else {
+            nextPage++;
           }
       }).fail(function(err) {
           console.log(err);
       });
-  })
+  });
 
-  function insertPost(postData, authorData) {
-
-      console.log(postData);
+  function insertPost(postData, authorData, animate) {
       //start the inserting of the html
       var excerpt = postData.html.replace(/<\/?[^>]+(>|$)/g, "").replace(/\n/g, " ").split(/\s+/).slice(0, 20).join(" ");
 
-      var postInfo = '<div class="masonry-item animated fadeIn">';
+      var postInfo = '<div class="masonry-item animated fadeInUp" style="animation-delay:' + animate + 's">';
 
       if (postData.image !== null) {
         postInfo += '<a class="masonry-post__image" href="' + postData.url + '">\
@@ -113,12 +118,18 @@ $(document).ready(function() {
                   '</div>'
 
       //Append the html to the content of the blog
-      $('.masonry').append(postInfo);
+      // $('.masonry').append(postInfo);
+      salvattore.appendElements(grid, [item]);
+      item.outerHTML = postInfo;
 
       DISQUSWIDGETS.getCount({reset: true});
-      //incriment next page so it will get the next page of posts if hit again.
-      nextPage += 1;
   }
+
+  jQuery('.masonry-item').addClass("invisible").viewportChecker({
+    classToAdd: 'visible animated fadeInUp',
+    classToRemove: 'invisible',
+    offset: 100
+  });
 
 });
 
@@ -141,7 +152,7 @@ function loadComments(url, id) {
   (function() {  // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');
     s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
+    s.setAttribute('data-timestamp', + new Date());
     (d.head || d.body).appendChild(s);
   })();
 }

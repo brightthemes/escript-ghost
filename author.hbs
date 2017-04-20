@@ -2,7 +2,47 @@
 
 {{!-- Everything inside the #author tags pulls data from the author --}}
 {{#author}}
-
+	{{author.name}}
 {{/author}}
 
 {{!-- The main content/post by the author --}}
+<section class="latest-posts container">
+	<div class="masonry clearfix" id="grid" data-columns>
+	{{#foreach posts}}
+		<div class="masonry-item">
+			{{#if image}}
+				<a class="masonry-post__image" href="{{url}}">
+					<img src="{{image}}" class="lazyload img-responsive" alt="{{title}}">
+				</a>
+			{{/if}}
+			<div class="masonry-post__content">
+				<h2 class="post-title"><a href="{{url}}">{{title}}</a></h2>
+				<h6 class="post-info">by {{author}} {{#if tags}}in {{tags limit=1}}{{/if}}</h6>
+				<p>{{excerpt words="20"}}&hellip;</p>
+				<div class="tag-comment clearfix">
+					<div class="text-center">
+						<a href="{{url}}" class="read-more">Read More</a>
+				  </div>
+					<hr>
+					<span class="pull-left">{{date}}</span>
+					<span class="pull-right">
+						<div class="masonry-post-share"><i class="fa fa-share-alt"></i></div>					
+						<div class="masonry-post-share__social pull-left animated fadeIn">
+							<a class="facebook" href=""><i class="fa fa-facebook-official"></i></a>
+							<a class="twitter" href=""><i class="fa fa-twitter"></i></a>
+							<a class="reddit" href=""><i class="fa fa-reddit"></i></a>
+						</div>
+						<div class="masonry-post-comment-count">
+							<i class="fa fa-comments-o"></i>
+							<span class="disqus-comment-count" data-disqus-url="{{url absolute='true'}}">0</span>
+						</div>
+					</span>
+				</div>
+			</div>
+		</div>
+	{{/foreach}}
+	</div>
+	<div class="masonry-foot text-center">
+  	<button id="load-posts" class="uppercase load-more-posts">Load More</button>
+  </div>
+</section>

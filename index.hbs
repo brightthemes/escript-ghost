@@ -57,9 +57,9 @@
   </section>
 {{/get}}
 
-{{#get "posts" include="author,tags" limit="5" filter="featured:false" as |latest| }}
+{{#get "posts" include="author,tags" limit=@blog.posts_per_page filter="featured:false" as |latest| }}
 <section class="latest-posts container">
-	<div class="masonry masonry-columns-3">
+	<div class="masonry clearfix" id="grid" data-columns>
 	{{#foreach latest}}
 		<div class="masonry-item">
 			{{#if image}}
@@ -95,7 +95,7 @@
 	{{/foreach}}
 	</div>
 	<div class="masonry-foot text-center">
-  	<button id="load-posts" class="btn btn-common uppercase">Load More</button>
+  	<button id="load-posts" class="uppercase load-more-posts">Load More</button>
   </div>
 </section>
 {{/get}}
