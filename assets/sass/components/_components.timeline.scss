@@ -213,12 +213,22 @@
       font-size: 1.6rem;
     }
 
-    .post-info a {
+    .post-author a {
       color: lighten($dark-color, 40%);
       text-transform: uppercase;
 
       &:hover {
         color: $link-color-hover;
+      }
+    }
+
+    .post-tags {
+      font-style: italic;
+
+      a { 
+        color: lighten($dark-color, 40%); 
+
+        &:hover { color: $link-color-hover; }
       }
     }
 

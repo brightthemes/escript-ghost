@@ -4,49 +4,51 @@
 {{#author}}
   <section class="author">
     {{#if cover}}
-      <div class="author__cover lazyload " data-src="{{cover}}" style="background: url({{cover}})"></div>
+      <div class="author__cover lazyload " data-src="{{cover}}" style="background-image: url({{cover}})"></div>
     {{/if}}
-    <div class="container author__profile">
-      {{#if image}}
-        <div class="lazyload author__image" data-src="{{image}}" style="background-image: url({{image}})">
-          <span class="hidden">{{name}}'s Picture</span>
-        </div>
-      {{/if}}
-
-      <h2 class="author__title">{{name}}</h2>
-      {{#if bio}}
-        <p class="author__bio">{{bio}}</p>
-      {{/if}}
-
-      <div class="author-meta">
-        {{#if location}}
-          <span class="author-meta__location"><i class="fa fa-globe" aria-hidden="true"></i> {{location}}</span>
+    <div class="container">
+      <div class="author__profile">
+        {{#if image}}
+          <div class="lazyload author__image" data-src="{{image}}" style="background-image: url({{image}})">
+            <span class="hidden">{{name}}'s Picture</span>
+          </div>
         {{/if}}
-        {{#if website}}
-          <span class="author-meta__link">
-            <a href="{{website}}"><i class="fa fa-link" aria-hidden="true"></i> {{website}}</a>
+        
+        <h2 class="author__title">{{name}}</h2>
+        {{#if bio}}
+          <p class="author__bio">{{bio}}</p>
+        {{/if}}
+
+        <div class="author-meta">
+          {{#if location}}
+            <span class="author-meta__location"><i class="fa fa-globe" aria-hidden="true"></i> {{location}}</span>
+          {{/if}}
+          {{#if website}}
+            <span class="author-meta__link">
+              <a href="{{website}}"><i class="fa fa-link" aria-hidden="true"></i> {{website}}</a>
+            </span>
+          {{/if}}
+          <span class="author-meta__stats">
+            <i class="fa fa-signal" aria-hidden="true"></i>
+            {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
           </span>
-        {{/if}}
-        <span class="author-meta__stats">
-          <i class="fa fa-signal" aria-hidden="true"></i>
-          {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
-        </span>
-      </div>
+        </div>
 
-      <div class="author-social">
-        {{#if twitter}}
-        <a class="author-social__link" href="{{twitter_url}}" target="_blank">
-          <i class="fa fa-lg fa-twitter" aria-hidden="true"></i>
-          <p>Twitter</p>
-        </a>
-        {{/if}}
+        <div class="author-social">
+          {{#if twitter}}
+          <a class="author-social__link" href="{{twitter_url}}" target="_blank">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <p>Twitter</p>
+          </a>
+          {{/if}}
 
-        {{#if facebook}}
-        <a class="author-social__link" href="{{facebook_url}}" target="_blank">
-          <i class="fa fa-lg fa-facebook" aria-hidden="true"></i>
-          <p>Facebook</p>
-        </a>
-        {{/if}}
+          {{#if facebook}}
+          <a class="author-social__link" href="{{facebook_url}}" target="_blank">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <p>Facebook</p>
+          </a>
+          {{/if}}
+        </div>
       </div>
 
       <div class="scroll-wrapper">

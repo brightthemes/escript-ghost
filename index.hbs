@@ -69,7 +69,8 @@
 			{{/if}}
 			<div class="masonry-post__content">
 				<h2 class="post-title"><a href="{{url}}">{{title}}</a></h2>
-				<h6 class="post-info">by {{author}} {{#if tags}}in {{tags limit=1}}{{/if}}</h6>
+				<h6 class="post-author">by {{author}}</h6>
+				<p class="post-tags">{{#if tags}}#{{tags limit=5 separator=" #"}}{{/if}}</p>
 				<p>{{excerpt words="20"}}&hellip;</p>
 				<div class="tag-comment clearfix">
 					<div class="text-center">
