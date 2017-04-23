@@ -11920,6 +11920,121 @@ body.nav-closed .main {
 .youtube, .youtube:hover {
   color: #d02022; }
 
+.author {
+  height: 100vh; }
+  .author .author__cover {
+    height: 100%;
+    background-position: center center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    position: absolute;
+    top: 0;
+    width: 100%; }
+  .author .author__profile {
+    margin: 0 auto;
+    padding: 2em;
+    padding-top: 4em;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.85)); }
+  .author .author__image {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 100%; }
+  .author .author__title {
+    margin: 15px 0px;
+    margin: 1.5rem 0rem;
+    font-size: 40px;
+    font-size: 4rem;
+    letter-spacing: -.0125em;
+    line-height: .9;
+    text-align: center;
+    color: #e74c3c; }
+    .author .author__title a {
+      color: #000000; }
+      .author .author__title a:hover {
+        text-decoration: none;
+        border: none; }
+  .author .author__bio {
+    max-width: 600px;
+    margin: 0 auto;
+    color: #cccccc;
+    font-size: 18px;
+    font-size: 1.8rem;
+    line-height: 1.5em;
+    font-weight: 200;
+    letter-spacing: 0;
+    text-indent: 0;
+    text-align: center; }
+  .author .author-meta {
+    margin: 0;
+    font-size: 16px;
+    font-size: 1.6rem;
+    padding: 10px 0px;
+    color: #cccccc;
+    text-align: center; }
+    .author .author-meta span {
+      display: inline-block;
+      margin: 10px;
+      margin: 1rem;
+      word-wrap: break-word; }
+    .author .author-meta a {
+      text-decoration: none; }
+    .author .author-meta .author-meta__location, .author .author-meta .author-meta__stats {
+      color: #cccccc; }
+  .author .author__link a {
+    color: #cccccc; }
+    .author .author__link a:hover {
+      color: #e74c3c; }
+  .author .author-social {
+    margin: 10px 0px;
+    margin: 1rem 0rem;
+    text-align: center; }
+  .author .author-social__link {
+    border: 1px solid #cccccc;
+    color: #cccccc;
+    font-size: 13px;
+    font-size: 1.3rem;
+    line-height: 38px;
+    margin-right: 5px;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 700;
+    padding: 0 16px;
+    height: 40px;
+    transition: border-color .4s ease, background .4s ease; }
+    .author .author-social__link:hover {
+      border-color: #e74c3c;
+      background: #e74c3c; }
+      .author .author-social__link:hover i, .author .author-social__link:hover p {
+        color: #ffffff; }
+    .author .author-social__link i {
+      float: left;
+      margin-right: 0px;
+      line-height: 36px;
+      color: #cccccc;
+      transition: color .4s ease; }
+    .author .author-social__link p {
+      display: inline-block;
+      margin-left: 10px;
+      margin-top: 4px;
+      font-size: 16px;
+      font-size: 1.6rem;
+      margin-bottom: 0;
+      transition: color .4s ease; }
+  .author .scroll-wrapper {
+    text-align: center;
+    padding: 10px 0px;
+    width: 100%;
+    left: 0;
+    position: absolute;
+    bottom: 20px; }
+
 .clearfix:before, .clearfix:after {
   content: " ";
   display: table; }
