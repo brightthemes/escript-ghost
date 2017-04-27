@@ -7528,7 +7528,8 @@ html, body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Francois One", Tahoma, Arial, sans-serif;
-  color: #090909; }
+  color: #090909;
+  word-break: break-word; }
   h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     color: #090909; }
 
@@ -11692,6 +11693,8 @@ body.nav-closed .main {
         margin-right: 0.25em; }
         .masonry .masonry-item .masonry-post__content .tag-comment .masonry-post-share:hover + .masonry-post-share__social {
           display: inline; }
+      .masonry .masonry-item .masonry-post__content .tag-comment .masonry-post-share__social a i {
+        font-size: 1.2em; }
     .masonry .masonry-item .masonry-post__content .masonry-post-share__social {
       display: none;
       padding-right: 0.25em; }

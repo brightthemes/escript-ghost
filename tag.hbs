@@ -1,5 +1,134 @@
 {{!< default}}
 
-{{!-- The first three articles form the header part --}}
+{{!-- Tag header --}}
+{{#tag}}
+  <section class="author">
+    {{#if image}}
+      <div class="author__cover lazyload " data-src="{{image}}" style="background-image: url({{image}})"></div>
+    {{/if}}
+    <div class="container">
+      <div class="author__profile">        
+        <h2 class="author__title">{{name}}</h2>
+        {{#if description}}
+          <p class="author__bio">{{description}}</p>
+        {{/if}}
 
-{{!-- The main content area on the homepage --}}
+        <div class="author-meta">
+          <span class="author-meta__stats">
+            <i class="fa fa-signal" aria-hidden="true"></i>
+            {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
+          </span>
+        </div>
+      </div>
+
+      <div class="scroll-wrapper">
+        <a class="scroll-down animated bounce" href="#content">
+          <i class="fa fa-angle-double-down fa-lg" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+{{/tag}}
+
+{{!-- Everything inside the #author tags pulls data from the author --}}
+{{#author}}
+  <section class="author">
+    {{#if cover}}
+      <div class="author__cover lazyload " data-src="{{cover}}" style="background-image: url({{cover}})"></div>
+    {{/if}}
+    <div class="container">
+      <div class="author__profile">
+        {{#if image}}
+          <div class="lazyload author__image" data-src="{{image}}" style="background-image: url({{image}})">
+            <span class="hidden">{{name}}'s Picture</span>
+          </div>
+        {{/if}}
+        
+        <h2 class="author__title">{{name}}</h2>
+        {{#if bio}}
+          <p class="author__bio">{{bio}}</p>
+        {{/if}}
+
+        <div class="author-meta">
+          {{#if location}}
+            <span class="author-meta__location"><i class="fa fa-globe" aria-hidden="true"></i> {{location}}</span>
+          {{/if}}
+          {{#if website}}
+            <span class="author-meta__link">
+              <a href="{{website}}"><i class="fa fa-link" aria-hidden="true"></i> {{website}}</a>
+            </span>
+          {{/if}}
+          <span class="author-meta__stats">
+            <i class="fa fa-signal" aria-hidden="true"></i>
+            {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
+          </span>
+        </div>
+
+        <div class="author-social">
+          {{#if twitter}}
+          <a class="author-social__link" href="{{twitter_url}}" target="_blank">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <p>Twitter</p>
+          </a>
+          {{/if}}
+
+          {{#if facebook}}
+          <a class="author-social__link" href="{{facebook_url}}" target="_blank">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <p>Facebook</p>
+          </a>
+          {{/if}}
+        </div>
+      </div>
+
+      <div class="scroll-wrapper">
+        <a class="scroll-down animated bounce" href="#content">
+          <i class="fa fa-angle-double-down fa-lg" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+{{/author}}
+
+{{!-- The main content/post by the author --}}
+<section class="latest-posts container">
+	<div class="masonry clearfix" id="grid" data-columns>
+	{{#foreach posts}}
+		<div class="masonry-item">
+			{{#if image}}
+				<a class="masonry-post__image" href="{{url}}">
+					<img src="{{image}}" class="lazyload img-responsive" alt="{{title}}">
+				</a>
+			{{/if}}
+			<div class="masonry-post__content">
+				<h2 class="post-title"><a href="{{url}}">{{title}}</a></h2>
+				<h6 class="post-author">by {{author}}</h6>
+				<p class="post-tags">{{#if tags}}#{{tags limit=5 separator=" #"}}{{/if}}</p>
+				<p>{{excerpt words="20"}}&hellip;</p>
+				<div class="tag-comment clearfix">
+					<div class="text-center">
+						<a href="{{url}}" class="read-more">Read More</a>
+				  </div>
+					<hr>
+					<span class="pull-left">{{date}}</span>
+					<span class="pull-right">
+						<div class="masonry-post-share"><i class="fa fa-share-alt"></i></div>					
+						<div class="masonry-post-share__social pull-left animated fadeIn">
+							<a class="facebook" href=""><i class="fa fa-facebook-official"></i></a>
+							<a class="twitter" href=""><i class="fa fa-twitter"></i></a>
+							<a class="reddit" href=""><i class="fa fa-reddit"></i></a>
+						</div>
+						<div class="masonry-post-comment-count">
+							<i class="fa fa-comments-o"></i>
+							<span class="disqus-comment-count" data-disqus-url="{{url absolute='true'}}">0</span>
+						</div>
+					</span>
+				</div>
+			</div>
+		</div>
+	{{/foreach}}
+	</div>
+	<div class="masonry-foot text-center">
+  	<button id="load-posts" onclick="loadTagPosts('{{tag.slug}}');" class="uppercase load-more-posts">Load More</button>
+  </div>
+</section>
