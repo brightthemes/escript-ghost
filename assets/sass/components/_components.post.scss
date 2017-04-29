@@ -17,11 +17,51 @@
 
     .post-header__tag, 
     .post-header__title,
-    .post-header__author {
+    .post-header__detail {
       color: $light-color;
-      margin: 0;
+      margin: 0.3em 0;
 
       a { color: $light-color; }
+    }
+
+    .post-header__tag {
+      a { 
+        border: 1px solid $light-color;
+        padding: 0.25em 0.5em;
+        text-transform: uppercase;
+        margin-right: 0.25em;
+        transition: all $transition-speed-base;
+
+        @media #{$sm} {
+          font-size: 1.2rem;
+        }
+
+        &:hover {
+          background-color: $light-color;
+          color: $dark-color;
+        }
+      }
+    }
+
+    .post-header__detail {
+      display: inline-block;
+      text-transform: uppercase;
+      border-top: 1px solid $light-color;
+      border-bottom: 1px solid $light-color;
+      padding: 0.5em;
+
+      a {
+        border-right: 1px solid $light-color;
+        padding-right: 0.5em;
+
+        &:hover { color: $link-color-hover; }
+      }
+
+      time { padding-left: 0.3em; }
+
+      @media #{$sm} {
+        font-size: 1.2rem;
+      }
     }
   }
 

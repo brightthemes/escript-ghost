@@ -9,8 +9,12 @@
             
             <div class="container">
                 <div class="post-header__info">    
-                    <h6 class="post-header__tag animated fadeInDown">{{tags limit="5" separator=""}}</h6>
+                    <h6 class="post-header__tag animated fadeInDown">{{tags limit="5" separator=" "}}</h6>
 		      		<h2 class="post-header__title animated fadeInRight"><a href="{{url}}">{{title}}</a></h2>
+                    <h6 class="post-header__detail animated fadeInUp">
+                        {{#author}}<a href="{{url}}">{{name}}</a>{{/author}}
+                        <time datetime="{{date format="YYYY-MM-DD"}}">{{date published_at}}</time>
+                    </h6>
                 </div>
 
                 <div class="scroll-wrapper hidden-xs">
@@ -26,12 +30,12 @@
     </div>
 </div>
 
-{{!-- Include Disqus Comments --}}
-{{> comments}}
-
 {{!-- Links to Previous/Next posts --}}
 
 {{/post}}
+
+{{!-- Include Disqus Comments --}}
+{{> comments}}
 
 {{!-- Email subscribe form at the main page --}}
 {{> subscribe}}
