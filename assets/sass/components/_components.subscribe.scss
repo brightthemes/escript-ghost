@@ -27,6 +27,13 @@
   .gh-subscribe {
     position: relative;
     z-index: 2;
+
+    .gh-subscribe-rss a {
+      color: $light-color;
+      font-weight: $font-weight-bold;
+
+      &:hover { color: $dark-color; }
+    }
   }
 
   .subscribe-form {

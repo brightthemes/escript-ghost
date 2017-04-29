@@ -3,12 +3,15 @@
 //===================================
 
 .author {
-  height: 100vh;
-  min-height: 100%;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   padding-top: 6em;
   background-color: $dark-color;
+
+	@media #{$xs} {
+		padding-top: 8em;
+	}
 
   .author__cover {
 	  @include background-cover;
@@ -17,14 +20,13 @@
 		top: 0;
 		width: 100%;
 
-	&:after {
-		content: "";
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		background: linear-gradient(rgba($dark-color, 0.35), rgba($dark-color, 0.85));
-
-	}
+		&:after {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(rgba($dark-color, 0.35), rgba($dark-color, 0.85));
+		}
   }
 
 	.author__profile {
@@ -34,7 +36,6 @@
 		position: relative;
 		height: 100%;
 		width: 100%;
-		border: 2px solid $border-color;
 		background-color: rgba($dark-color, 0.6);
 	}
 
@@ -47,7 +48,6 @@
 		right: 0;
 		margin-left: auto;
 		margin-right: auto;
-		border: 2px solid $border-color;
 		top: -3em;
 		margin: 0 auto;
 		background-size: cover;
@@ -62,7 +62,8 @@
 	}
 
 	.author__title {
-		margin-top: 2em; 
+		padding-top: 2em; 
+		margin-top: 0;
 		font-size: 2rem;
 		text-align: center;
 		color: $brand-color;
@@ -86,7 +87,7 @@
 	}
 
 	.author__bio {
-		max-width: 600px;
+		max-width: 30em;
 		margin: 0 auto;
 		color: darken($light-color, 20%);
 		font-size: 1rem;
@@ -101,7 +102,7 @@
 
 	.author-meta {
 		margin: 0;
-		padding: 10px 0px;
+		padding: 0.5em 0;
 		color: darken($light-color, 20%);
 		text-align: center;
 
@@ -137,13 +138,17 @@
 	.author-social__link {
 		border: 1px solid $border-color;
 		color: darken($light-color, 20%);
-		margin-right: 5px;
+		margin-right: 0.25em;
 		cursor: pointer;
 		display: inline-block;
 		font-weight: 700;
-		padding: 0 16px;
-		height: 40px;
+		padding: 0 1em;
+		height: 2.6em;
 		transition: border-color .4s ease, background .4s ease;
+
+		@media #{$xs} {
+			margin-bottom: 0.5em;
+		}
 
 		&:hover {
 			border-color: $brand-color;
@@ -153,28 +158,18 @@
 
 		i {
 			float: left;
-			margin-right: 0px;
-			margin-top: 0.5em;
+			margin-right: 0;
+			margin-top: 0.6em;
 			color: darken($light-color, 20%);
 			transition: color .4s ease;
 		}
 
 		p {
 			display: inline-block;
-			margin-left: 10px;
-			margin-top: 4px;
+			margin-left: 0.5em;
+    	margin-top: 0.35em;
 			margin-bottom: 0;
 			transition: color .4s ease;
 		}
-	}
-
-	.scroll-wrapper {
-		text-align: center;
-		padding: 10px 0px;
-		width: 100%;
-		left: 0;
-		position: absolute;
-		bottom: 20px;
-
 	}
 }

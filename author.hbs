@@ -4,7 +4,7 @@
 {{#author}}
   <section class="author">
     {{#if cover}}
-      <div class="author__cover lazyload " data-src="{{cover}}" style="background-image: url({{cover}})"></div>
+      <div class="full-page-cover lazyload " data-src="{{cover}}" style="background-image: url({{cover}})"></div>
     {{/if}}
     <div class="container">
       <div class="author__profile">
@@ -51,9 +51,9 @@
         </div>
       </div>
 
-      <div class="scroll-wrapper">
+      <div class="scroll-wrapper hidden-xs">
         <a class="scroll-down animated bounce" href="#content">
-          <i class="fa fa-angle-double-down fa-lg" aria-hidden="true"></i>
+          <i class="fa fa-angle-double-down" aria-hidden="true"></i>
         </a>
       </div>
     </div>
@@ -61,7 +61,7 @@
 {{/author}}
 
 {{!-- The main content/post by the author --}}
-<section class="latest-posts container">
+<section class="latest-posts container" id="content">
 	<div class="masonry clearfix" id="grid" data-columns>
 	{{#foreach posts}}
 		<div class="masonry-item">

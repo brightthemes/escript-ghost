@@ -22,7 +22,7 @@
 		    	<div class="featured-post__content">
 		    		<div class="container">
 		    		  <h6 class="featured-post__tag animated fadeInDown">in {{tags limit="1" separator=""}}</h6>
-		      		<h2 class="featured-post__title animated fadeInRight"><a href="{{url}}">{{title}}</a></h6>
+		      		<h2 class="featured-post__title animated fadeInRight"><a href="{{url}}">{{title}}</a></h2>
 							<div class="featured-post__info animated fadeInRight">
 								<div class="featured-post__author">by {{author}}</div>
 						    <div class="featured-post__date">
@@ -33,7 +33,7 @@
 									<span class="disqus-comment-count" data-disqus-url="{{url absolute='true'}}">0</span>
 								</div>
 							</div>
-							<button class="read-more animated fadeInUp">Read More</button>
+							<button class="read-more animated fadeInUp" href={{url}}>Read More</button>
 		      	</div>
 		      </div>
 		    </div>
@@ -100,7 +100,6 @@
   </div>
 </section>
 {{/get}}
-
 
 {{!-- Email subscribe form at the main page --}}
 {{> subscribe}}

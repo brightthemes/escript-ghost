@@ -2,6 +2,8 @@
   background-color: rgba($dark-color, 0.8);
   color: rgba($light-color, 0.8);
 
+  a { color: rgba($light-color, 0.8); }
+
   .footer-title {
     color: $brand-color;
     line-height: 1;
@@ -45,17 +47,16 @@
     margin-bottom: 1em;
 
     .footer-post__image {
-      width: 80px;
-      height: 80px;
+      width: 5em;
+      height: 5em;
       float: left;
       background-color: $brand-color;
       @include background-cover;
     }
 
     .footer-post__info {
-      height: 80px;
-      margin-left: 1em;
-      display: inline-block;
+      height: 5em;
+      margin-left: 5.5em;
 
       .footer-post__title, .footer-post__author {
         margin-top: 0;
@@ -72,24 +73,6 @@
     }
   }
 
-  .tag-cloud a {
-    padding: 0.3em 0.6em;
-    border: 1px solid rgba($light-color, 0.8);
-    margin-bottom: 0.5em;
-    margin-right: 0.5em;
-    float: left;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    color: rgba($light-color, 0.8);
-    font-weight: $font-weight-bold;
-    line-height: 1.4;
-
-    &:hover {
-      color: rgba($dark-color, 0.8);
-      background-color: rgba($light-color, 0.8);
-    }
-  }
-
   .footer-divider {
     background-color: rgba($light-color, 0.4);
   }
@@ -101,7 +84,6 @@
   .social-media-list {
     margin: 0;
     padding: 0;
-    list-style: none;
 
     .social-media-list__item {
       float: left;
@@ -110,19 +92,35 @@
       height: 2em;
       text-align: center;
       margin-right: 0.5em;
+      transition: all $transition-speed-base;
 
-      a i {
-        margin-top: 0.4em;
+      i {
+        vertical-align: middle;
         color: rgba($light-color, 0.8);
       }
 
       &:hover {
         background-color: rgba($light-color, 0.8);
+        transition: all $transition-speed-base;
 
-        a i {
+        i {
           color: rgba($dark-color, 0.8);
+          transition: all $transition-speed-base;
         }
       }
     }
+  }
+
+  .container .row > div:not(:first-child) {
+    margin-top: 1em;
+  }
+
+  @media #{$md} { 
+    .container .row > div:not(:first-child) {
+      margin-top: 0em;
+    }
+  }
+
+  .footer__bottom {
   }
 }
