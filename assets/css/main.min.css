@@ -7585,9 +7585,10 @@ a {
   color: #000000;
   text-decoration: none;
   transition: all 0.4s; }
-  a:hover {
-    color: #d62c1a;
+  a:active, a:focus, a:hover {
     text-decoration: none; }
+  a:hover {
+    color: #d62c1a; }
 
 p a {
   color: #e74c3c;
@@ -7660,7 +7661,7 @@ hr {
   background-color: #cccccc;
   margin: 1em 0; }
 
-button {
+button, .button {
   padding: 0.25em 0.5em;
   margin: 0.5em 0;
   border: 2px solid #ffffff;
@@ -7672,10 +7673,10 @@ button {
   font-size: 10px;
   font-size: 1rem;
   transition: all 0.4s; }
-  button:hover {
+  button:hover, .button:hover {
     background: #ffffff;
     color: #000000; }
-  button:active, button:focus {
+  button:active, button:focus, .button:active, .button:focus {
     outline: none; }
 
 .btn {
@@ -11353,6 +11354,8 @@ button.close {
       font-weight: 400; }
   .featured-posts .featured-post__content .featured-post__date:after {
     margin: 0 0.4em 0 0.2em; }
+  .featured-posts .featured-post__content .featured-post__comments {
+    display: inline-block; }
   .featured-posts .featured-post__content .featured-post__tag a,
   .featured-posts .featured-post__content .featured-post__info a {
     text-transform: uppercase; }
@@ -11380,7 +11383,8 @@ button.close {
       .featured-posts .featured-post__content .featured-post__tag {
         font-size: 1.2rem; } }
   .featured-posts .featured-post__content .featured-post__info {
-    animation-delay: 0.5s; }
+    animation-delay: 0.5s;
+    margin-bottom: 0.5em; }
     @media only screen and (min-width: 62em) {
       .featured-posts .featured-post__content .featured-post__info {
         font-size: 1.1rem; } }
@@ -12195,6 +12199,7 @@ body.nav-closed .main {
       padding: 0.25em 0.5em;
       text-transform: uppercase;
       margin-right: 0.25em;
+      line-height: 2;
       transition: all 0.4s; }
       @media only screen and (min-width: 48em) {
         .post-header .post-header__info .post-header__tag a {
@@ -12202,22 +12207,31 @@ body.nav-closed .main {
       .post-header .post-header__info .post-header__tag a:hover {
         background-color: #ffffff;
         color: #000000; }
-    .post-header .post-header__info .post-header__detail {
+    .post-header .post-header__info .post-header__details {
       display: inline-block;
       text-transform: uppercase;
       border-top: 1px solid #ffffff;
       border-bottom: 1px solid #ffffff;
-      padding: 0.5em; }
-      .post-header .post-header__info .post-header__detail a {
-        border-right: 1px solid #ffffff;
-        padding-right: 0.5em; }
-        .post-header .post-header__info .post-header__detail a:hover {
+      padding: 0.5em 0; }
+      .post-header .post-header__info .post-header__details h6 {
+        margin: 0;
+        padding: 0 0.5em;
+        border-right: 1px solid #ffffff; }
+        .post-header .post-header__info .post-header__details h6 a, .post-header .post-header__info .post-header__details h6 time, .post-header .post-header__info .post-header__details h6 span {
+          color: #ffffff; }
+        .post-header .post-header__info .post-header__details h6 a:hover {
           color: #d62c1a; }
-      .post-header .post-header__info .post-header__detail time {
-        padding-left: 0.3em; }
-      @media only screen and (min-width: 48em) {
-        .post-header .post-header__info .post-header__detail {
-          font-size: 1.2rem; } }
+        @media only screen and (min-width: 48em) {
+          .post-header .post-header__info .post-header__details h6 {
+            font-size: 1.2rem; } }
+      .post-header .post-header__info .post-header__details .post-header__author,
+      .post-header .post-header__info .post-header__details .post-header__date,
+      .post-header .post-header__info .post-header__details .post-header__comments {
+        display: inline-block; }
+      .post-header .post-header__info .post-header__details .post-header__comments {
+        border-right: none; }
+        .post-header .post-header__info .post-header__details .post-header__comments a:hover {
+          color: #ffffff; }
   @media only screen and (max-width: 47.938em) {
     .post-header .post-header__title {
       font-size: 2rem; } }

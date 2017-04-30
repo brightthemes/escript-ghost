@@ -143,6 +143,8 @@
       &:after { margin: 0 0.4em 0 0.2em; }
     }
 
+    .featured-post__comments { display: inline-block; }
+
     .featured-post__tag a,
     .featured-post__info a {
     	text-transform: uppercase;
@@ -166,6 +168,7 @@
 
     .featured-post__info { 
       animation-delay: 0.5s; 
+      margin-bottom: 0.5em;
 
       @media #{$md} { font-size: 1.1rem; }
       @media #{$lg} { font-size: 1.2rem; }

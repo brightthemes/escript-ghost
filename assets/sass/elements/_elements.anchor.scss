@@ -7,10 +7,9 @@ a {
   text-decoration: none;
   transition: all $transition-speed-base;
 
-  &:hover {
-    color: $link-color-hover;
-    text-decoration: none;
-  }
+  &:active, &:focus, &:hover { text-decoration: none; }
+
+  &:hover { color: $link-color-hover; }
 }
 
 p {
