@@ -4,7 +4,11 @@
 
 .comments {
   .comments__panel {
-    max-width: 54em;
-    padding: 2em 0;
+    max-width: 52em;
+    padding: 1em;
+
+    @media #{$sm} {
+      padding: 2em 0;
+    }
   }
 }
