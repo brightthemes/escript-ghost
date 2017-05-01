@@ -4,6 +4,29 @@
 $(document).ready(function () {
   'use strict';
 
+  if ( $('.social-share').length ) {
+    var top = $('.social-share').offset().top -50;
+    var commentTop = $('.author-box').offset().top;
+    var socialHeight = $('.social-share').height();
+    var socialTop = $('.social-share').offset().top;
+
+    $(window).scroll(function (event) {
+      var social = $(this).scrollTop();
+      // var comments = document.getElementById('comments');
+
+      if (social >= top) {
+        $('.social-share').addClass('sticky');
+      }
+      else {
+        $('.social-share').removeClass('sticky');
+      }
+
+      if (($('.social-share').offset().top - ( commentTop - socialHeight - 50)) >= 0) {
+        $('.social-share').removeClass('sticky');
+      }
+    });
+  }
+
   $('.carousel-control').click(function (e) {
     e.preventDefault();
     $('#featured-posts__carousel').carousel($(this).data());
@@ -27,7 +50,7 @@ $(document).ready(function () {
     }
   });
 
-  if ( $('.post').length ) {
+  if ( $('.post-without-image').length ) {
     $('.navbar__default').css('backgroundColor', 'rgba(0,0,0,0.85)');
   }
 
@@ -117,7 +140,6 @@ $(document).ready(function () {
         filter: filter
       })
     ).done(function (data) {
-      // console.log(data);
       //for each post returned
       $.each(data.posts, function (i, post) {
         //Now that we have the author and post data, send that to the insertPost function
@@ -185,7 +207,6 @@ $(document).ready(function () {
 
   function listTags(tags) {
     var tagList = '';
-    console.log(tags);
     for(i=0; i<tags.length; i++) {
       if (i < 5) {
        tagList += '#<a href="/tag' + tags[i].slug + '/">' + tags[i].name + '</a> ';
@@ -195,7 +216,6 @@ $(document).ready(function () {
     return tagList;
   }
 
-// $.getScript("http://bironthemes.disqus.com/count.js");
 // Make videos responsive
 fitvids();
 
@@ -217,4 +237,24 @@ function loadComments(url, id) {
     s.setAttribute('data-timestamp', + new Date());
     (d.head || d.body).appendChild(s);
   })();
+}
+
+function isInViewport(el) {
+  var top = el.offsetTop;
+  var left = el.offsetLeft;
+  var width = el.offsetWidth;
+  var height = el.offsetHeight;
+
+  while(el.offsetParent) {
+    el = el.offsetParent;
+    top += el.offsetTop;
+    left += el.offsetLeft;
+  }
+
+  return (
+    top < (window.pageYOffset + window.innerHeight) &&
+    left < (window.pageXOffset + window.innerWidth) &&
+    (top + height) > window.pageYOffset &&
+    (left + width) > window.pageXOffset
+  );
 }

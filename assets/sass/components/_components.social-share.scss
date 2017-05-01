@@ -1,0 +1,39 @@
+//===================================
+// Social share
+//===================================
+
+.social-share {
+
+  @media #{$sm} {
+    &.sticky {
+      position: fixed;
+      z-index: 9999;
+      top: 3em;
+    }
+  }
+
+  @media #{$sm} {
+    position: absolute;
+    margin-left: -1.2em;
+    padding-top: 1.5em;
+  }
+
+  a {
+    width: 2.8em;
+    height: 2.8em;
+    border: 1px solid $dark-color;
+    background-color: $light-color;
+    border-radius: 0;
+    transition: all $transition-speed-base;
+
+    @media #{$sm} {
+      display: block;
+      margin-bottom: 0.5em;
+    }
+
+    &:hover {
+      background-color: $dark-color;
+      color: $light-color;
+    }
+  }
+}

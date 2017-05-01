@@ -23,8 +23,14 @@
 // Social Media
 @import 'components/_components.social-media';
 
+// Social share
+@import 'components/_components.social-share';
+
 // Author
 @import 'components/_components.author';
+
+// Author Box
+@import 'components/_components.author-box';
 
 // Tag Cloud
 @import 'components/_components.tag-cloud';
@@ -37,3 +43,6 @@
 
 // Comments
 @import 'components/_components.comments'; 
+
+// Prev/Next posts
+@import 'components/_components.read-next';
