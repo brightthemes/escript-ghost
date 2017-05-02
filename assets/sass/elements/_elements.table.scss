@@ -7,8 +7,20 @@ table {
   border-spacing: 0px;
   border-collapse: collapse;
 
+  thead {
+    background-color: darken($light-color, 20%);
+  }
+
+  tbody {
+    background-color: darken($light-color, 5%);
+
+    tr:nth-child(even) {
+      background-color: darken($light-color, 10%);
+    }
+  }
+
   th, td { 
-    padding: 0;
+    padding: 1em;
     line-height: $line-height-base;
   }
 }

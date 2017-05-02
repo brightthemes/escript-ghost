@@ -7637,8 +7637,14 @@ table {
   margin: 1em 0;
   border-spacing: 0px;
   border-collapse: collapse; }
+  table thead {
+    background-color: #cccccc; }
+  table tbody {
+    background-color: #f2f2f2; }
+    table tbody tr:nth-child(even) {
+      background-color: #e6e6e6; }
   table th, table td {
-    padding: 0;
+    padding: 1em;
     line-height: 1.6; }
 
 ul, ol {
@@ -11967,32 +11973,32 @@ body.nav-closed .main {
 .youtube, .youtube:hover {
   color: #d02022; }
 
-@media only screen and (min-width: 48em) {
-  .social-share.sticky {
-    position: fixed;
-    z-index: 9999;
-    top: 3em; } }
-
-@media only screen and (min-width: 48em) {
-  .social-share {
-    position: absolute;
-    margin-left: -1.2em;
-    padding-top: 1.5em; } }
-
-.social-share a {
-  width: 2.8em;
-  height: 2.8em;
-  border: 1px solid #000000;
-  background-color: #ffffff;
-  border-radius: 0;
-  transition: all 0.4s; }
+.social-share {
+  display: none; }
   @media only screen and (min-width: 48em) {
-    .social-share a {
-      display: block;
-      margin-bottom: 0.5em; } }
-  .social-share a:hover {
-    background-color: #000000;
-    color: #ffffff; }
+    .social-share.sticky {
+      position: fixed;
+      z-index: 9999;
+      top: 3em; } }
+  @media only screen and (min-width: 48em) {
+    .social-share {
+      position: absolute;
+      margin-left: -1.2em;
+      padding-top: 1.5em; } }
+  .social-share a {
+    width: 2.8em;
+    height: 2.8em;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    border-radius: 0;
+    transition: all 0.4s;
+    margin-bottom: 0.5em; }
+    @media only screen and (min-width: 48em) {
+      .social-share a {
+        display: block; } }
+    .social-share a:hover {
+      background-color: #000000;
+      color: #ffffff; }
 
 .author {
   min-height: 100vh;
@@ -12376,12 +12382,16 @@ body.nav-closed .main {
     margin: 0 auto;
     text-align: center;
     flex-grow: 1;
-    min-width: 48%;
+    min-width: 49%;
     position: relative; }
-    .read-next .read-next__story.prev {
-      margin-right: 0.5em; }
+    .read-next .read-next__story:hover .read-next__image:after {
+      opacity: 0.9;
+      transition: all 0.4s; }
+    .read-next .read-next__story:hover .read-next__info .read-next__icon {
+      background-color: #ffffff;
+      color: #000000; }
     .read-next .read-next__story.next {
-      margin-left: 0.5em; }
+      margin-left: 1em; }
     .read-next .read-next__story.no-image .read-next__info .read-next__icon {
       border: 2px solid #000000;
       color: #000000; }
@@ -12398,13 +12408,16 @@ body.nav-closed .main {
       background-repeat: no-repeat; }
       .read-next .read-next__story .read-next__image:after {
         content: "";
+        transition: all 0.4s;
         position: absolute;
         top: 0;
         bottom: 0;
         left: 0;
         right: 0;
         display: block;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, transparent 50%, rgba(0, 0, 0, 0.8) 100%); }
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, transparent 50%, rgba(0, 0, 0, 0.8) 100%);
+        opacity: 0.6;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.8) 100%); }
     .read-next .read-next__story .read-next__info {
       position: relative; }
       .read-next .read-next__story .read-next__info .read-next__icon {
@@ -12414,7 +12427,8 @@ body.nav-closed .main {
         width: 3em;
         height: 3em;
         border-radius: 50%;
-        margin-top: 1em; }
+        margin-top: 1em;
+        transition: all 0.4s; }
         .read-next .read-next__story .read-next__info .read-next__icon i {
           padding: 0.15em; }
       .read-next .read-next__story .read-next__info .read-next__title {

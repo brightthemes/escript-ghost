@@ -12,15 +12,23 @@
     margin: 0 auto;
     text-align: center;
     flex-grow: 1;
-    min-width: 48%;
+    min-width: 49%;
     position: relative;
 
-    &.prev {
-      margin-right: 0.5em;
+    &:hover {
+      .read-next__image:after {
+        opacity: 0.9;
+        transition: all $transition-speed-base;
+      }
+
+      .read-next__info .read-next__icon {
+        background-color: $light-color;
+        color: $dark-color;
+      }
     }
 
     &.next {
-      margin-left: 0.5em;
+      margin-left: 1em;
     }
 
     &.no-image {
@@ -45,7 +53,10 @@
 
       &:after {
         content: "";
+        transition: all $transition-speed-base;
         @include background-overlay;
+        opacity: 0.6;
+        background: linear-gradient(to bottom, rgba($dark-color, 0.6) 0%, rgba($dark-color, 0.8) 100%);
       }
     }
 
@@ -60,6 +71,7 @@
         height: 3em;
         border-radius: 50%;
         margin-top: 1em;
+        transition: all $transition-speed-base;
 
         i { padding: 0.15em; }
       }

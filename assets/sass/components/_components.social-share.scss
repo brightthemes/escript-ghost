@@ -3,6 +3,7 @@
 //===================================
 
 .social-share {
+  display: none;
 
   @media #{$sm} {
     &.sticky {
@@ -25,10 +26,10 @@
     background-color: $light-color;
     border-radius: 0;
     transition: all $transition-speed-base;
+    margin-bottom: 0.5em;
 
     @media #{$sm} {
       display: block;
-      margin-bottom: 0.5em;
     }
 
     &:hover {
