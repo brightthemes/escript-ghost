@@ -160,6 +160,7 @@ $(document).ready(function () {
       });
     }).done(function (data) {
       //If you are on the last post, hide the load more button
+
       if (nextPage == data.meta.pagination.pages || data.posts.length == 0) {
         $('#load-posts').hide();
       } else {

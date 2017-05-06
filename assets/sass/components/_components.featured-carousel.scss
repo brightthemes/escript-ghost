@@ -120,6 +120,7 @@
     	margin: 0;
     	color: $light-color;
       font-family: $heading-font-family;
+      display: table;
 
     	a { 
     		color: $light-color; 
@@ -176,9 +177,21 @@
     
     .read-more { 
       animation-delay: 1.5s; 
+      padding: 0.5em 0;
+      display: table;
 
       @media #{$md} { font-size: 1.1rem; }
       @media #{$lg} { font-size: 1.2rem; }
+
+      a {
+        @media #{$sm} {
+          padding: 0.35em 0.7em;
+        }
+
+        @media #{$lg} {
+          padding: 0.5em 1em;
+        }
+      }
     }
 	}
 }

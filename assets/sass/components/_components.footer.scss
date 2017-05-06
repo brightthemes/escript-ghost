@@ -24,18 +24,16 @@
     position: relative;
     display: inline-block;
 
-    &:after {
-      content: "";
-      position: absolute;
-      left: 0;
-      background-color: $brand-color;
-      height: 1px;
-      width: 100%;
-      margin-top: 1.55em;
-      transition: all $transition-speed-base;
-    }
-
-    // &:hover:after { width: 200%; }
+    // &:after {
+    //   content: "";
+    //   position: absolute;
+    //   left: 0;
+    //   background-color: $brand-color;
+    //   height: 1px;
+    //   width: 100%;
+    //   margin-top: 1.6em;
+    //   transition: all $transition-speed-base;
+    // }
   }
 
   .footer-bottom {

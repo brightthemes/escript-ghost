@@ -28,22 +28,26 @@
     position: relative;
     z-index: 2;
 
-    .gh-subscribe-rss a {
-      color: $light-color;
-      font-weight: $font-weight-bold;
+    .gh-subscribe-rss {
+      margin: 1em 0;
+    
+      a {
+        color: $light-color;
+        font-weight: $font-weight-bold;
 
-      &:hover { color: $dark-color; }
+        &:hover { color: $dark-color; }
+      }
     }
   }
 
   .subscribe-form {
     .subscribe-form__input {
       background-color: transparent;
-      padding: 4px 10px;
+      padding: 0.5em;
       border: 2px solid $light-color;
       border-right: 0;
       width: 100%;
-      max-width: 250px;
+      max-width: 15em;
       color: $light-color;
       font-weight: $font-weight-bold;
 
@@ -64,7 +68,7 @@
       }
     }
     .subscribe-form__button {
-      margin-left: -5px;
+      margin-left: -0.25em;
 
       &:hover { 
         i { color: rgba($brand-color, 0.6); }

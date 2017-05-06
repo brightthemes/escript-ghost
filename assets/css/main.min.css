@@ -7668,8 +7668,7 @@ hr {
   margin: 1em 0; }
 
 button, .button {
-  padding: 0.25em 0.5em;
-  margin: 0.5em 0;
+  padding: 0.5em 1em;
   border: 2px solid #ffffff;
   background: transparent;
   text-transform: uppercase;
@@ -11341,7 +11340,8 @@ button.close {
   .featured-posts .featured-post__content .featured-post__info {
     margin: 0;
     color: #ffffff;
-    font-family: "Francois One", Tahoma, Arial, sans-serif; }
+    font-family: "Francois One", Tahoma, Arial, sans-serif;
+    display: table; }
     .featured-posts .featured-post__content .featured-post__tag a,
     .featured-posts .featured-post__content .featured-post__title a,
     .featured-posts .featured-post__content .featured-post__info a {
@@ -11398,13 +11398,21 @@ button.close {
       .featured-posts .featured-post__content .featured-post__info {
         font-size: 1.2rem; } }
   .featured-posts .featured-post__content .read-more {
-    animation-delay: 1.5s; }
+    animation-delay: 1.5s;
+    padding: 0.5em 0;
+    display: table; }
     @media only screen and (min-width: 62em) {
       .featured-posts .featured-post__content .read-more {
         font-size: 1.1rem; } }
     @media only screen and (min-width: 75em) {
       .featured-posts .featured-post__content .read-more {
         font-size: 1.2rem; } }
+    @media only screen and (min-width: 48em) {
+      .featured-posts .featured-post__content .read-more a {
+        padding: 0.35em 0.7em; } }
+    @media only screen and (min-width: 75em) {
+      .featured-posts .featured-post__content .read-more a {
+        padding: 0.5em 1em; } }
 
 .lazyload, .lazyloading {
   opacity: 0;
@@ -11796,18 +11804,20 @@ body.nav-closed .main {
   .subscribe .gh-subscribe {
     position: relative;
     z-index: 2; }
-    .subscribe .gh-subscribe .gh-subscribe-rss a {
-      color: #ffffff;
-      font-weight: 700; }
-      .subscribe .gh-subscribe .gh-subscribe-rss a:hover {
-        color: #000000; }
+    .subscribe .gh-subscribe .gh-subscribe-rss {
+      margin: 1em 0; }
+      .subscribe .gh-subscribe .gh-subscribe-rss a {
+        color: #ffffff;
+        font-weight: 700; }
+        .subscribe .gh-subscribe .gh-subscribe-rss a:hover {
+          color: #000000; }
   .subscribe .subscribe-form .subscribe-form__input {
     background-color: transparent;
-    padding: 4px 10px;
+    padding: 0.5em;
     border: 2px solid #ffffff;
     border-right: 0;
     width: 100%;
-    max-width: 250px;
+    max-width: 15em;
     color: #ffffff;
     font-weight: 700; }
     .subscribe .subscribe-form .subscribe-form__input:focus {
@@ -11825,7 +11835,7 @@ body.nav-closed .main {
       /* Firefox 18- */
       color: rgba(255, 255, 255, 0.6); }
   .subscribe .subscribe-form .subscribe-form__button {
-    margin-left: -5px; }
+    margin-left: -0.25em; }
     .subscribe .subscribe-form .subscribe-form__button:hover i {
       color: rgba(231, 76, 60, 0.6); }
 
@@ -11850,15 +11860,6 @@ body.nav-closed .main {
     color: rgba(255, 255, 255, 0.8);
     position: relative;
     display: inline-block; }
-    .footer .footer-section-title:after {
-      content: "";
-      position: absolute;
-      left: 0;
-      background-color: #e74c3c;
-      height: 1px;
-      width: 100%;
-      margin-top: 1.55em;
-      transition: all 0.4s; }
   .footer .footer-bottom {
     background-color: #000000;
     padding: 1em 0; }
