@@ -10,14 +10,15 @@
 		    <li data-target="#featured-posts__carousel" data-slide-to="{{@index}}" class="{{#if @first}}active{{/if}}"></li>
 		  {{/foreach}}
 		  </ol>
-
+			
+			{{!-- Featured post content --}}
 	 		<div class="carousel-inner featured-posts__inner">
 	 		{{#foreach featured}}
 		    <div class="featured-post item {{#if @first}}active{{/if}}">
 		      <div class="lazyload featured-post__image" 
 		      		 data-src="{{#if image}}{{image}}{{/if}}" 
 		      		 style="{{#if image}}background-image: url({{image}}){{else}}background-color: #000;{{/if}}">
-		      </div>
+		      </div> 
 		      <div class="featured-post__image--overlay"></div>
 		    	<div class="featured-post__content">
 		    		<div class="container">
@@ -30,7 +31,7 @@
 						    </div>
 						    <div class="featured-post__comments">
 									<i class="fa fa-comments-o"></i>
-									<span class="disqus-comment-count" data-disqus-url="{{url absolute='true'}}"></span>
+									<span class="disqus-comment-count" data-disqus-url="{{url absolute='true'}}">0</span>
 								</div>
 							</div>
 							<div class="read-more animated fadeInUp">
@@ -59,6 +60,7 @@
   </section>
 {{/get}}
 
+{{!-- Masonry posts --}}
 {{#get "posts" include="author,tags" limit=@blog.posts_per_page filter="featured:false" as |latest| }}
 <section class="latest-posts container">
 	<div class="masonry clearfix" id="grid" data-columns>

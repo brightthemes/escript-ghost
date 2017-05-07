@@ -52,10 +52,15 @@
 	.navbar-logo {
 		@media #{$xs} { text-align: left; }
 
-		img {
-			max-height: 50px;
+		a img {
+			height: 50px;
 			margin: 1em 0;
-			transition: all ($transition-speed-base);
+			transition: height ($transition-speed-base);
+
+			@media #{$xs} {
+				max-height: 40px;
+				margin: 1.5em 0;
+			}
 		}
 	}
 
@@ -68,6 +73,10 @@
 	&.navbar--scrolled { 
 		background-color: rgba($dark-color, 0.85);
 		height: 50px;
+
+		.navbar-logo a img { 
+			transition: height ($transition-speed-base);
+		}
 
 		.navbar-logo img,
 		.navbar-open,

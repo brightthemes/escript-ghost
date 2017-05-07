@@ -11,6 +11,7 @@
   display: flex;
   align-items: center;
   background-color: $dark-color;
+  position: relative;
 
   &.post-without-image { 
     display: block; 

@@ -1,7 +1,36 @@
 {{!< default}}
 
-{{!-- Everything inside the #post tags pulls data from the page --}}
+{{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
+<div class="{{post_class}}">
+  <div class="post-header {{#if image}}post-hero{{else}}post-without-image{{/if}}">
+    {{#if image}}
+      <div class="full-page-cover lazyload" data-src="{{image}}" style="background-image: url({{image}})"></div>
+    {{/if}}
+    <div class="container">
+      <div class="post-header__info">    
+        <h6 class="post-header__tag animated fadeInDown">{{tags limit="5" separator=" "}}</h6>
+        <h2 class="post-header__title animated fadeInRight">{{title}}</h2>
+      </div>
+
+      {{#if image}}
+        <div class="scroll-wrapper hidden-xs">
+          <a class="scroll-down animated bounce" href="#content">
+            <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+          </a>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+  <div class="post-content container" id="content">
+    {{> social-share}}
+    <article>
+      {{content}}
+    </article>
+  </div>
+</div>
 
 {{/post}}
 
+{{!-- Email subscribe form at the main page --}}
+{{> subscribe}}

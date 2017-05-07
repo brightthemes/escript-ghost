@@ -46,10 +46,13 @@
       padding: 0.5em;
       border: 2px solid $light-color;
       border-right: 0;
-      width: 100%;
       max-width: 15em;
       color: $light-color;
       font-weight: $font-weight-bold;
+
+      @media #{$sm} {
+        width: 100%;
+      }
 
       &:focus {
         outline: none;

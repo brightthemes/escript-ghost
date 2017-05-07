@@ -9,7 +9,7 @@
 		background-color: $dark-color;
 		@include background-cover;
 
-		@media #{$lg} {
+		@media #{$md} {
 			height: 100vh;
 		}
 	}

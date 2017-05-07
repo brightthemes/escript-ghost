@@ -2,11 +2,12 @@
 // Author page style
 //===================================
 
-.tag {
+.tag-header {
   min-height: 100vh;
   display: flex;
   align-items: center;
   background-color: $dark-color;
+	position: relative;
 
 	.tag__info {
 		margin: 0 auto;

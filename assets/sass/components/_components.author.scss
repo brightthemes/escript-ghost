@@ -8,6 +8,7 @@
   align-items: center;
   padding-top: 6em;
   background-color: $dark-color;
+	position: relative;
 
 	@media #{$xs} {
 		padding-top: 8em;

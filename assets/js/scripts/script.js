@@ -6,8 +6,13 @@ $(document).ready(function () {
 
   if ( $('.social-share').length ) {
     $('.social-share').show();
+
+    var commentTop = $('.subscribe').offset().top;
+
+    if ( $('.author-box').length ) {
+      commentTop = $('.author-box').offset().top;
+    }
     var top = $('.social-share').offset().top -50;
-    var commentTop = $('.author-box').offset().top;
     var socialHeight = $('.social-share').height();
     var socialTop = $('.social-share').offset().top;
 
