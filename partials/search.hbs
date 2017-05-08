@@ -1,4 +1,12 @@
 {{!-- Blog search --}}
 <div class="search">
-
+  <form action="/" method="get" class="search-form">
+      <input type="text" id="search-field" class="search-input" placeholder="Search" autocomplete="off" required>
+      <button class="search-icon" type="submit" value="search">
+          <i class="fa fa-search fa-lg fa-rotate-90"></i>
+      </button>
+      <div class="slider"></div>
+      <div class="slider-after"></div>
+  </form>
+  <div class="search-results" id="results"></div>
 </div>

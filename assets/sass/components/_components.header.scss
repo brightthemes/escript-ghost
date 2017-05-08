@@ -10,7 +10,7 @@
 	border: none;
 	width: 100%;
 	z-index: 10;
-	height: 80px;
+	height: 5em;
 	transition: all ($transition-speed-base);
 
 	.navbar-header {
@@ -25,26 +25,19 @@
 	}
 
 	.navbar-search {
-		input, span { 
-			background-color: transparent;
-			border: none;
+
+		.navbar-search.search--open {
+			display: inline-block;
+			height: 3em;
+			margin: 1em 0;
+			cursor: pointer;
 			color: $light-color;
-			transition: all ($transition-speed-base);
-		}
 
-		span { padding: 0; }
-
-		input {
-			height: 50px;
-			margin: 15px 0;
-			padding: 0 10px;
-			font-weight: $font-weight-semibold;
-			box-shadow: none;
-
-			&:active, &:focus {
-				outline: none;
-				border: none;
-				box-shadow: none;
+			p {
+				display: inline-block;
+				padding: 0.7em 0.5em;
+				transition: all ($transition-speed-base);
+				margin: 0;
 			}
 		}
 	}
@@ -78,9 +71,14 @@
 			transition: height ($transition-speed-base);
 		}
 
+		.navbar-search.search--open p {
+			padding: 0.2em 0.5em;
+			transition: all ($transition-speed-base);
+		}
+
 		.navbar-logo img,
 		.navbar-open,
-		.navbar-search input {
+		.navbar-search.search--open {
 			height: 30px;
 			margin: 10px 0;
 		}

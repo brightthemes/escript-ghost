@@ -11560,7 +11560,7 @@ button.close {
   border: none;
   width: 100%;
   z-index: 10;
-  height: 80px;
+  height: 5em;
   transition: all 0.4s; }
   .navbar__default .navbar-header {
     float: none;
@@ -11576,23 +11576,17 @@ button.close {
     @media only screen and (min-width: 75em) {
       .navbar__default .navbar-header {
         max-width: 73.125em; } }
-  .navbar__default .navbar-search input, .navbar__default .navbar-search span {
-    background-color: transparent;
-    border: none;
-    color: #ffffff;
-    transition: all 0.4s; }
-  .navbar__default .navbar-search span {
-    padding: 0; }
-  .navbar__default .navbar-search input {
-    height: 50px;
-    margin: 15px 0;
-    padding: 0 10px;
-    font-weight: 500;
-    box-shadow: none; }
-    .navbar__default .navbar-search input:active, .navbar__default .navbar-search input:focus {
-      outline: none;
-      border: none;
-      box-shadow: none; }
+  .navbar__default .navbar-search .navbar-search.search--open {
+    display: inline-block;
+    height: 3em;
+    margin: 1em 0;
+    cursor: pointer;
+    color: #ffffff; }
+    .navbar__default .navbar-search .navbar-search.search--open p {
+      display: inline-block;
+      padding: 0.7em 0.5em;
+      transition: all 0.4s;
+      margin: 0; }
   @media only screen and (max-width: 47.938em) {
     .navbar__default .navbar-logo {
       text-align: left; } }
@@ -11613,9 +11607,12 @@ button.close {
     height: 50px; }
     .navbar__default.navbar--scrolled .navbar-logo a img {
       transition: height 0.4s; }
+    .navbar__default.navbar--scrolled .navbar-search.search--open p {
+      padding: 0.2em 0.5em;
+      transition: all 0.4s; }
     .navbar__default.navbar--scrolled .navbar-logo img,
     .navbar__default.navbar--scrolled .navbar-open,
-    .navbar__default.navbar--scrolled .navbar-search input {
+    .navbar__default.navbar--scrolled .navbar-search.search--open {
       height: 30px;
       margin: 10px 0; }
     .navbar__default.navbar--scrolled .navbar-search span {
@@ -12536,6 +12533,139 @@ body.nav-closed .main {
           padding: 0.15em; }
       .read-next .read-next__story .read-next__info .read-next__title {
         color: #ffffff; }
+
+/***************************************************************************/
+/* Search                                                                  */
+/***************************************************************************/
+.search {
+  background: #f1f1f1;
+  height: 100%;
+  padding: 80px 20px 0;
+  position: fixed;
+  z-index: 999;
+  display: none;
+  left: 0;
+  width: 100%;
+  top: 0; }
+  .search .search-form {
+    margin: 0 auto 20px;
+    max-width: 640px;
+    position: relative;
+    width: 100%; }
+    .search .search-form input {
+      color: #e74c3c;
+      font-weight: 700;
+      border: none;
+      display: inline;
+      font-size: 40px;
+      font-size: 4rem;
+      line-height: 46px;
+      padding-bottom: 8px;
+      background: #f1f1f1; }
+      .search .search-form input::-ms-clear {
+        display: none; }
+      .search .search-form input:active, .search .search-form input:focus {
+        border: none;
+        background: #f1f1f1; }
+    .search .search-form .search-icon {
+      float: right;
+      background: transparent;
+      color: fade(#000000, 25%);
+      border: none;
+      padding: 17px 0px 17px 0px;
+      font-size: 26px;
+      font-size: 2.6rem; }
+      .search .search-form .search-icon i {
+        transition: color .4s ease; }
+      .search .search-form .search-icon:hover i {
+        color: #e74c3c; }
+    .search .search-form .slider {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      background: fade(#000000, 20%);
+      width: 100%; }
+    .search .search-form .slider-after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      width: 100%;
+      width: 0%;
+      background: #e74c3c; }
+  .search .search-results {
+    margin: 0 auto;
+    height: 80%;
+    max-width: 1192px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch; }
+    .search .search-results p {
+      text-align: center;
+      font-size: 30px;
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 10px; }
+
+.result-item {
+  padding: 10px; }
+  @media only screen and (max-width: 47.938em) {
+    .result-item {
+      padding: 5px; } }
+  .result-item .result-link {
+    display: inline-block;
+    width: 100%;
+    border: 1px solid fade(#000000, 20%);
+    background: fade(#000000, 5%);
+    color: fade(#000000, 60%);
+    transition: background .4s ease, box-shadow .4s ease; }
+    .result-item .result-link h4 {
+      font-size: 20px;
+      font-size: 2rem; }
+      @media only screen and (max-width: 47.938em) {
+        .result-item .result-link h4 {
+          font-size: 1.6rem; } }
+      @media only screen and (min-width: 48em) {
+        .result-item .result-link h4 {
+          font-size: 1.8rem; } }
+    .result-item .result-link p {
+      margin: 0px;
+      margin-right: 10px;
+      font-size: 16px;
+      font-size: 1.6rem;
+      float: left;
+      color: fade(#000000, 60%); }
+      .result-item .result-link p i {
+        padding-right: 5px; }
+      @media only screen and (max-width: 47.938em) {
+        .result-item .result-link p {
+          font-size: 1.4rem; } }
+      @media only screen and (min-width: 48em) {
+        .result-item .result-link p {
+          font-size: 1.5rem; } }
+    .result-item .result-link:hover {
+      box-shadow: 0 2px 5px fade(#000000, 30%);
+      background: fade(#ffffff, 75%); }
+    .result-item .result-link .result-item-image {
+      height: 100px;
+      width: 100px;
+      background-position: 50%;
+      background-size: cover;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      display: inline-block;
+      overflow: hidden; }
+      @media only screen and (max-width: 47.938em) {
+        .result-item .result-link .result-item-image {
+          height: 80px;
+          width: 80px; } }
+    .result-item .result-link .result-item-content {
+      padding: 10px;
+      padding-left: 110px; }
+      @media only screen and (max-width: 47.938em) {
+        .result-item .result-link .result-item-content {
+          padding: 5px;
+          padding-left: 85px; } }
 
 .clearfix:before, .clearfix:after {
   content: " ";
