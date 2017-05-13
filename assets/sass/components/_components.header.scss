@@ -26,7 +26,7 @@
 
 	.navbar-search {
 
-		.navbar-search.search--open {
+		.navbar-search.btn-search--open {
 			display: inline-block;
 			height: 3em;
 			margin: 1em 0;
@@ -57,7 +57,7 @@
 		}
 	}
 
-	.navbar-open {
+	.btn-navbar--open {
 		height: 40px;
 		margin: 20px 0;
 		padding: 0 10px;
@@ -71,14 +71,14 @@
 			transition: height ($transition-speed-base);
 		}
 
-		.navbar-search.search--open p {
+		.navbar-search.btn-search--open p {
 			padding: 0.2em 0.5em;
 			transition: all ($transition-speed-base);
 		}
 
 		.navbar-logo img,
-		.navbar-open,
-		.navbar-search.search--open {
+		.btn-navbar--open,
+		.navbar-search.btn-search--open {
 			height: 30px;
 			margin: 10px 0;
 		}
@@ -89,6 +89,7 @@
 
 .navbar-navigation {
 	@include absolute-full-width;
+	display: table;
 	font-family: $font-family-base;
 	width: 100%;
 	height: 100vh;
@@ -100,7 +101,6 @@
   transition: transform 0.5s, visibility 0s 0.5s;
 
   &.open {
-	  display: table;
 	  visibility: visible;
 	  transform: translateX(0%);
 	  transition: transform 0.5s; 
@@ -119,51 +119,21 @@
 
     	a { 
     		color: $light-color;
+				background-color: transparent;
+				display: inline-block;
 
     		&:hover { color: $link-color; }
     	}
     }
 	}
-
-	.navbar-close {
-    position: absolute;
-		width: 60px;
-    height: 60px;
-    top: 20px;
-    right: 20px;
-    padding: 0;
-
-    &:before, &:after {
-	    width: 60px;
-	    background: $light-color;
-	    top: 30px;
-	    content: '';
-	    position: absolute;
-	    height: 2px;
-	    transition: background 0.15s ease;
-		}
-
-		&:before {
-		  transform: rotate(45deg);
-		}
-
-		&:after {
-		  transform: rotate(-45deg);
-		}
-
-		&:hover:before,
-		&:hover:after {
-			background: $link-color;
-		}
-	}
 }
 
-body.nav-opened .main {
+body.nav--opened .main {
   overflow-x: hidden;
   transition: transform ($transition-speed-base);
   transform: translateX(-50%); 
 }
 
-body.nav-closed .main {
+body.nav--closed .main {
   transition: transform ($transition-speed-base);
 }

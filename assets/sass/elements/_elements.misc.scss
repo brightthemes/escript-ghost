@@ -35,3 +35,35 @@ button, .button {
 
   &:active, &:focus { outline: none; }
 }
+
+.btn--close {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 20px;
+  right: 20px;
+  padding: 0;
+
+  &:before, &:after {
+    width: 60px;
+    background: $light-color;
+    top: 30px;
+    content: '';
+    position: absolute;
+    height: 2px;
+    transition: background 0.15s ease;
+  }
+
+  &:before {
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    transform: rotate(-45deg);
+  }
+
+  &:hover:before,
+  &:hover:after {
+    background: $link-color;
+  }
+}

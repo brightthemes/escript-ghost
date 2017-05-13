@@ -7765,6 +7765,28 @@ button, .button {
   button:active, button:focus, .button:active, .button:focus {
     outline: none; }
 
+.btn--close {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 20px;
+  right: 20px;
+  padding: 0; }
+  .btn--close:before, .btn--close:after {
+    width: 60px;
+    background: #ffffff;
+    top: 30px;
+    content: '';
+    position: absolute;
+    height: 2px;
+    transition: background 0.15s ease; }
+  .btn--close:before {
+    transform: rotate(45deg); }
+  .btn--close:after {
+    transform: rotate(-45deg); }
+  .btn--close:hover:before, .btn--close:hover:after {
+    background: #e74c3c; }
+
 .btn {
   display: inline-block;
   margin-bottom: 0;
@@ -11576,13 +11598,13 @@ button.close {
     @media only screen and (min-width: 75em) {
       .navbar__default .navbar-header {
         max-width: 73.125em; } }
-  .navbar__default .navbar-search .navbar-search.search--open {
+  .navbar__default .navbar-search .navbar-search.btn-search--open {
     display: inline-block;
     height: 3em;
     margin: 1em 0;
     cursor: pointer;
     color: #ffffff; }
-    .navbar__default .navbar-search .navbar-search.search--open p {
+    .navbar__default .navbar-search .navbar-search.btn-search--open p {
       display: inline-block;
       padding: 0.7em 0.5em;
       transition: all 0.4s;
@@ -11598,7 +11620,7 @@ button.close {
       .navbar__default .navbar-logo a img {
         max-height: 40px;
         margin: 1.5em 0; } }
-  .navbar__default .navbar-open {
+  .navbar__default .btn-navbar--open {
     height: 40px;
     margin: 20px 0;
     padding: 0 10px; }
@@ -11607,12 +11629,12 @@ button.close {
     height: 50px; }
     .navbar__default.navbar--scrolled .navbar-logo a img {
       transition: height 0.4s; }
-    .navbar__default.navbar--scrolled .navbar-search.search--open p {
+    .navbar__default.navbar--scrolled .navbar-search.btn-search--open p {
       padding: 0.2em 0.5em;
       transition: all 0.4s; }
     .navbar__default.navbar--scrolled .navbar-logo img,
-    .navbar__default.navbar--scrolled .navbar-open,
-    .navbar__default.navbar--scrolled .navbar-search.search--open {
+    .navbar__default.navbar--scrolled .btn-navbar--open,
+    .navbar__default.navbar--scrolled .navbar-search.btn-search--open {
       height: 30px;
       margin: 10px 0; }
     .navbar__default.navbar--scrolled .navbar-search span {
@@ -11624,6 +11646,7 @@ button.close {
   bottom: 0;
   left: 0;
   right: 0;
+  display: table;
   font-family: "Raleway", Tahoma, Arial, sans-serif;
   width: 100%;
   height: 100vh;
@@ -11634,7 +11657,6 @@ button.close {
   transform: translateX(100%);
   transition: transform 0.5s, visibility 0s 0.5s; }
   .navbar-navigation.open {
-    display: table;
     visibility: visible;
     transform: translateX(0%);
     transition: transform 0.5s; }
@@ -11648,37 +11670,18 @@ button.close {
     .navbar-navigation .navbar-nav li {
       float: none; }
       .navbar-navigation .navbar-nav li a {
-        color: #ffffff; }
+        color: #ffffff;
+        background-color: transparent;
+        display: inline-block; }
         .navbar-navigation .navbar-nav li a:hover {
           color: #e74c3c; }
-  .navbar-navigation .navbar-close {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    top: 20px;
-    right: 20px;
-    padding: 0; }
-    .navbar-navigation .navbar-close:before, .navbar-navigation .navbar-close:after {
-      width: 60px;
-      background: #ffffff;
-      top: 30px;
-      content: '';
-      position: absolute;
-      height: 2px;
-      transition: background 0.15s ease; }
-    .navbar-navigation .navbar-close:before {
-      transform: rotate(45deg); }
-    .navbar-navigation .navbar-close:after {
-      transform: rotate(-45deg); }
-    .navbar-navigation .navbar-close:hover:before, .navbar-navigation .navbar-close:hover:after {
-      background: #e74c3c; }
 
-body.nav-opened .main {
+body.nav--opened .main {
   overflow-x: hidden;
   transition: transform 0.4s;
   transform: translateX(-50%); }
 
-body.nav-closed .main {
+body.nav--closed .main {
   transition: transform 0.4s; }
 
 .invisible {
@@ -11938,7 +11941,8 @@ body.nav-closed .main {
     padding: 2em 0; }
   .footer .footer-section {
     border-bottom: 1px solid #888;
-    margin-bottom: 1em; }
+    margin-bottom: 1em;
+    padding-bottom: 0.5em; }
   .footer .footer-section-title {
     margin: 0;
     font-size: 14px;
@@ -12543,36 +12547,49 @@ body.nav-closed .main {
   padding: 80px 20px 0;
   position: fixed;
   z-index: 999;
-  display: none;
   left: 0;
   width: 100%;
-  top: 0; }
+  top: 0;
+  visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.5s, visibility 0s 0.5s; }
+  .search .btn-search--close:before, .search .btn-search--close:after {
+    background-color: #000000; }
+  .search .btn-search--close:hover:before, .search .btn-search--close:hover:after {
+    background-color: #e74c3c; }
+  .search.open {
+    display: block;
+    visibility: visible;
+    transform: translateX(0%);
+    transition: transform 0.5s; }
   .search .search-form {
     margin: 0 auto 20px;
     max-width: 640px;
     position: relative;
     width: 100%; }
     .search .search-form input {
+      font-family: "Francois One", Tahoma, Arial, sans-serif;
       color: #e74c3c;
       font-weight: 700;
       border: none;
-      display: inline;
+      display: inline-block;
       font-size: 40px;
       font-size: 4rem;
-      line-height: 46px;
-      padding-bottom: 8px;
+      width: 80%;
       background: #f1f1f1; }
       .search .search-form input::-ms-clear {
         display: none; }
       .search .search-form input:active, .search .search-form input:focus {
         border: none;
+        outline: none;
         background: #f1f1f1; }
     .search .search-form .search-icon {
       float: right;
       background: transparent;
-      color: fade(#000000, 25%);
+      color: #000000;
       border: none;
-      padding: 17px 0px 17px 0px;
+      padding: 0.2em 0;
       font-size: 26px;
       font-size: 2.6rem; }
       .search .search-form .search-icon i {

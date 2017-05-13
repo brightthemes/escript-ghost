@@ -5,20 +5,20 @@
   <nav class="navbar navbar__default">
     <div class="navbar-header container">
       <div class="col-sm-4 hidden-xs navbar-search">
-        <span class="navbar-search search--open"><i class="fa fa-search"></i><p>SEARCH</p></span>
+        <span class="navbar-search btn-search--open"><i class="fa fa-search"></i><p>SEARCH</p></span>
       </div>
       <div class="col-sm-4 col-xs-6 navbar-logo text-center">
         <a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}"></a>
       </div>
       <div class="col-sm-4 col-xs-6 navbar-menu">
-        <button class="navbar-open pull-right">
+        <button class="btn-navbar--open pull-right">
           <span class="active-page">Menu</span>
           <i class="fa fa-bars"></i>
         </button>
       </div>
     </div>
     <div class="navbar-navigation">
-      <a href="#" class="navbar-close">
+      <a href="#" class="btn--close btn-navbar--close">
         <span class="hidden">Close</span>
       </a>
       {{navigation}}

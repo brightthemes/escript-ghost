@@ -41,20 +41,21 @@ $(document).ready(function () {
   }
 
     // Site search
-  $('.search--close').click(function() {
-    $('.search').hide();
+  $('.btn-search--close').click(function() {
+    $('.search').removeClass('open');
     $('body').css('overflowY', 'auto');
   });
 
-  $('.search--open').click(function() {
-    $('.search').show();
+  $('.btn-search--open').click(function() {
+    $('.search').addClass('open');
     $('#search-field').focus();
     $('body').css('overflowY', 'hidden');
   });
 
   $('#search-field').keyup(function(e) {
     if (e.keyCode === 27) {
-      $('.search').hide();
+      $('.search').removeClass('open');
+      $('body').css('overflowY', 'auto');
     }
   });
 
@@ -69,12 +70,13 @@ $(document).ready(function () {
   });
 
   // Site navigation
-  $(".navbar-open, .navbar-close").on("click", function (e) {
+  $(".btn-navbar--open, .btn-navbar--close").on("click", function (e) {
+    console.log(e);
     e.preventDefault();
 
     $(".navbar-navigation").toggleClass("open");
 
-    $("body").toggleClass("nav-opened nav-closed");
+    $("body").toggleClass("nav--opened nav--closed");
   });
 
   // on scroll, let the interval function know the user has scrolled
