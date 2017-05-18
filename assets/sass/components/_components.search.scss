@@ -4,7 +4,7 @@
 .search {
     background: $background-color;
     height: 100%;
-    padding: 80px 20px 0;
+    padding: 6em 1.5em 0;
     position: fixed;
     z-index: 999;
     left: 0;
@@ -34,17 +34,18 @@
     }
 
     .search-form {     
-        margin: 0 auto 20px;
-        max-width: 640px;
+        margin: 0 auto 1.5em;
+        max-width: 40em;
         position: relative;
-        width: 100%;
+        border-bottom: 2px solid $border-color;
 
         input { 
             font-family: $heading-font-family;
             color: $brand-color; 
-            font-weight: 700;
+            font-weight: $font-weight-bold;
             border: none;
             display: inline-block;
+            line-height: 1.2;
             font-size: 4rem;
             width: 80%;
             background: $background-color;
@@ -63,7 +64,7 @@
             background: transparent;
             color: $dark-color;
             border: none;
-            padding: 0.2em 0;
+            padding: 0.15em 0;
             font-size: 2.6rem;
 
             i { transition: color .4s ease; }
@@ -80,16 +81,6 @@
             height: 3px;
             background: fade($dark-color, 20%);
             width: 100%;
-        }
-
-        .slider-after {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: 3px;
-            width: 100%;
-            width: 0%;
-            background: $brand-color;
         }
     }
 

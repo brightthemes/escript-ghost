@@ -43,20 +43,50 @@ $(document).ready(function () {
     // Site search
   $('.btn-search--close').click(function() {
     $('.search').removeClass('open');
-    $('body').css('overflowY', 'auto');
   });
 
   $('.btn-search--open').click(function() {
     $('.search').addClass('open');
     $('#search-field').focus();
-    $('body').css('overflowY', 'hidden');
   });
 
   $('#search-field').keyup(function(e) {
     if (e.keyCode === 27) {
       $('.search').removeClass('open');
-      $('body').css('overflowY', 'auto');
+      $("body").toggleClass("search--opened search--closed");
     }
+  });
+
+  $(".btn-search--open, .btn-search--close").on("click", function (e) {
+    e.preventDefault();
+    $("body").toggleClass("search--opened search--closed");
+  });
+
+  $('#search-field').ghostHunter({
+    results         : '#results',
+    onKeyUp         : true,
+    includepages    : true,
+    onPageLoad      : true,
+    info_template   : '<p>{{amount}} results found</p>',
+    result_template : '<div class="animated fadeIn result-item">' +
+                        '<a href="{{link}}" class="result-link">' +
+                          '<div class="result-item-content">' +
+                          '<h4>{{title}}</h4>' +
+                          '<p href="{{authorLink}}">{{authorName}}</p>' +
+                          '<p><i class="fa fa-calendar-o"></i>{{pubDate}}</p>' +
+                          '</div>' +
+                        '</a>' +
+                      '</div>',
+    before          : function() {
+                        $('.slider-after').animate({
+                          width: '100%'
+                        }, 800);
+                      },
+    onComplete      : function() {
+                        $('.slider-after').animate({
+                          width: '0%'
+                        }, 0);
+                      }
   });
 
   // Read more section styling
@@ -71,7 +101,6 @@ $(document).ready(function () {
 
   // Site navigation
   $(".btn-navbar--open, .btn-navbar--close").on("click", function (e) {
-    console.log(e);
     e.preventDefault();
 
     $(".navbar-navigation").toggleClass("open");
@@ -111,13 +140,13 @@ $(document).ready(function () {
   // Site scroll takes into account the fixed header
   function scroll_if_anchor(href) {
     href = typeof(href) === 'string' ? href : $(this).attr('href');
-    var fromTop = 70;
+    var fromTop = 50;
 
     if (href.indexOf('#') === 0) {
       var $target = $(href);
 
       if ($target.length) {
-        $('html, body').animate({ scrollTop: $target.offset().top - fromTop });
+        $('html, body').animate({ scrollTop: $target.offset().top - fromTop }, 500);
 
         if (history && 'pushState' in history) {
           history.pushState({}, document.title, window.location.pathname + href);

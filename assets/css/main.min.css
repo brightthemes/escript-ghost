@@ -7607,6 +7607,9 @@ html, body {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%; }
 
+body {
+  overflow-x: hidden; }
+
 h1, h2, h3, h4, h5, h6 {
   font-family: "Francois One", Tahoma, Arial, sans-serif;
   color: #090909;
@@ -11676,13 +11679,23 @@ button.close {
         .navbar-navigation .navbar-nav li a:hover {
           color: #e74c3c; }
 
+body.nav--opened,
+body.search--opened {
+  overflow-y: hidden; }
+
+body.nav--opened .main,
+body.search--opened .main {
+  transition: transform 0.4s; }
+
+body.nav--closed .main,
+body.search--closed .main {
+  transition: transform 0.4s; }
+
 body.nav--opened .main {
-  overflow-x: hidden;
-  transition: transform 0.4s;
   transform: translateX(-50%); }
 
-body.nav--closed .main {
-  transition: transform 0.4s; }
+body.search--opened .main {
+  transform: translateX(50%); }
 
 .invisible {
   opacity: 0; }
@@ -12544,7 +12557,7 @@ body.nav--closed .main {
 .search {
   background: #f1f1f1;
   height: 100%;
-  padding: 80px 20px 0;
+  padding: 6em 1.5em 0;
   position: fixed;
   z-index: 999;
   left: 0;
@@ -12564,16 +12577,17 @@ body.nav--closed .main {
     transform: translateX(0%);
     transition: transform 0.5s; }
   .search .search-form {
-    margin: 0 auto 20px;
-    max-width: 640px;
+    margin: 0 auto 1.5em;
+    max-width: 40em;
     position: relative;
-    width: 100%; }
+    border-bottom: 2px solid #cccccc; }
     .search .search-form input {
       font-family: "Francois One", Tahoma, Arial, sans-serif;
       color: #e74c3c;
       font-weight: 700;
       border: none;
       display: inline-block;
+      line-height: 1.2;
       font-size: 40px;
       font-size: 4rem;
       width: 80%;
@@ -12589,7 +12603,7 @@ body.nav--closed .main {
       background: transparent;
       color: #000000;
       border: none;
-      padding: 0.2em 0;
+      padding: 0.15em 0;
       font-size: 26px;
       font-size: 2.6rem; }
       .search .search-form .search-icon i {
@@ -12603,14 +12617,6 @@ body.nav--closed .main {
       height: 3px;
       background: fade(#000000, 20%);
       width: 100%; }
-    .search .search-form .slider-after {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 3px;
-      width: 100%;
-      width: 0%;
-      background: #e74c3c; }
   .search .search-results {
     margin: 0 auto;
     height: 80%;

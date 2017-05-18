@@ -128,12 +128,26 @@
 	}
 }
 
-body.nav--opened .main {
-  overflow-x: hidden;
-  transition: transform ($transition-speed-base);
-  transform: translateX(-50%); 
+body.nav--opened,
+body.search--opened {
+  // overflow-x: visible;
+	overflow-y: hidden;
 }
 
-body.nav--closed .main {
+body.nav--opened .main,
+body.search--opened .main {
   transition: transform ($transition-speed-base);
+}
+
+body.nav--closed .main,
+body.search--closed .main {
+  transition: transform ($transition-speed-base);
+}
+
+body.nav--opened .main {
+	transform: translateX(-50%); 
+}
+
+body.search--opened .main {
+  transform: translateX(50%); 
 }
