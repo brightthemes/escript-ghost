@@ -1,3 +1,24 @@
 {{!< default}}
 
 {{!-- Page 404 --}}
+<div class="page-header {{#if @blog.cover}}post-hero{{else}}post-without-image{{/if}}">
+    {{#if @blog.cover}}
+      <div class="full-page-cover lazyload" data-src="{{@blog.cover}}" style="background-image: url({{@blog.cover}})"></div>
+    {{/if}}
+    <div class="container">
+      <div class="error-404">
+        <h2 class="error-404__title">404</h2> 
+        <p class="error-404__text">Page Not Found</p>
+        <p class="error-404__description">Something went wrong!</p>
+        <p class="error-404__description">We can't seem to find the page you are looking for.</p>
+        <div class="error-404__links"> 
+            <a class="button" href="{{@blog.url}}">
+              <i class="fa fa-share fa-flip-horizontal"></i> HOME
+            </a>  
+            <a class="button" href="{{@blog.url}}/contact">
+              <i class="fa fa-paper-plane"></i> CONTACT
+            </a>
+        </div>
+      </div>
+    </div>
+</div>

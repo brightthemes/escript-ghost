@@ -17,16 +17,31 @@ hr {
   margin: $leading 0;
 }
 
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: darken($light-color, 30%);
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: darken($light-color, 30%);
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: darken($light-color, 30%);
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: darken($light-color, 30%);
+}
+
 button, .button {
-  padding: 0.5em 1em;
-  border: 2px solid $light-color;
-  background: transparent;
-  text-transform: uppercase;
   color: $light-color;
   font-weight: $font-weight-semibold;
   font-family: $heading-font-family;
   font-size: $font-size-root;
   transition: all $transition-speed-base;
+  background: transparent;
+  text-transform: uppercase;
+  display: inline-block;
+  border: 2px solid $light-color;
+  padding: 0.5em 1em;
+  margin: 0.25em;
 
   &:hover {
   	background: $light-color;
@@ -38,16 +53,16 @@ button, .button {
 
 .btn--close {
   position: absolute;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   top: 20px;
   right: 20px;
   padding: 0;
 
   &:before, &:after {
-    width: 60px;
+    width: 40px;
     background: $light-color;
-    top: 30px;
+    top: 20px;
     content: '';
     position: absolute;
     height: 2px;

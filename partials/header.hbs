@@ -4,15 +4,20 @@
   {{!-- Default navigation --}}
   <nav class="navbar navbar__default">
     <div class="navbar-header container">
-      <div class="col-sm-4 hidden-xs navbar-search">
-        <span class="navbar-search btn-search--open"><i class="fa fa-search"></i><p>SEARCH</p></span>
+      <div class="col-xs-3 col-sm-4 navbar-search">
+        <div class="navbar-search btn-search--open">
+          <div class="navbar-search__group">
+            <i class="fa fa-search"></i>
+            <p class="hidden-xs">SEARCH</p>
+          </div>
+        </div>
       </div>
-      <div class="col-sm-4 col-xs-6 navbar-logo text-center">
+      <div class="col-xs-6 col-sm-4 navbar-logo">
         <a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}"></a>
       </div>
-      <div class="col-sm-4 col-xs-6 navbar-menu">
+      <div class="col-xs-3 col-sm-4 navbar-menu">
         <button class="btn-navbar--open pull-right">
-          <span class="active-page">Menu</span>
+          <span class="active-page hidden-xs">Menu</span>
           <i class="fa fa-bars"></i>
         </button>
       </div>

@@ -15,6 +15,10 @@
     transform: translateX(-100%);
     transition: transform 0.5s, visibility 0s 0.5s;
 
+    @media #{$xs} {
+        padding: 6em 1em;
+    }
+
     .btn-search--close {
         &:before, &:after {
             background-color: $dark-color;
@@ -29,6 +33,7 @@
     &.open {
         display: block;
         visibility: visible;
+        position: absolute;
         transform: translateX(0%);
         transition: transform 0.5s;
     }
@@ -43,6 +48,7 @@
             font-family: $heading-font-family;
             color: $brand-color; 
             font-weight: $font-weight-bold;
+            padding: 0;
             border: none;
             display: inline-block;
             line-height: 1.2;
@@ -62,8 +68,9 @@
         .search-icon {      
             float: right;
             background: transparent;
-            color: $dark-color;
+            color: darken($light-color, 60%);
             border: none;
+            margin: 0;
             padding: 0.15em 0;
             font-size: 2.6rem;
 
@@ -87,83 +94,58 @@
     .search-results {
         margin: 0 auto;
         height: 80%;
-        max-width: 1192px;
-        overflow: auto;
+        overflow-y: scroll;
+        overflow-x: hidden;
         -webkit-overflow-scrolling: touch;
+        max-width: 50em;
+        padding-left: 30px;
+
+        @media #{$xs} {
+            padding-left: 0;
+            margin-right: -15px;
+        }
 
         p {
             text-align: center;
-            font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 10px;  
+            font-size: 2rem;
+            margin: 0.5em 0;  
         }
     }
 }
 
 .result-item {
-    padding: 10px;
+    max-width: 40em;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    background-color: $light-color;
+    box-shadow: 0 2px 5px darken($light-color, 20%);
+    transition: box-shadow $transition-speed-base;
 
-    @media #{$xs} { padding: 5px; }
+    &:hover {
+        box-shadow: 0 3px 8px darken($light-color, 30%);
+    }
 
     .result-link {
         display: inline-block;
         width: 100%;
-        border: 1px solid fade($dark-color, 20%);
-        background: fade($dark-color, 5%);
-        color: fade($dark-color, 60%);
-        transition: background .4s ease, box-shadow .4s ease;
+        padding: 1em;
 
         h4 { 
-            font-size: 2rem; 
+            font-size: 1.6rem; 
+            margin-top: 0;
+            margin-bottom: 0.25em;
 
-            @media #{$xs} { font-size: 1.6rem; }
-
-            @media #{$sm} { font-size: 1.8rem; }
+            @media #{$lg} { font-size: 1.8rem; }
         }
 
         p {
-            margin: 0px;
-            margin-right: 10px;
-            font-size: 1.6rem;
+            color: $dark-color;
+            margin: 0;
+            font-size: 1.2rem;
             float: left;
-            color: fade($dark-color, 60%);
+            text-align: left;
 
-            i { padding-right: 5px; }
-
-            @media #{$xs} { font-size: 1.4rem; }
-
-            @media #{$sm} { font-size: 1.5rem; }
-        }
-
-        &:hover {
-            box-shadow: 0 2px 5px fade($dark-color, 30%);
-            background: fade($light-color, 75%);
-        }
-
-        .result-item-image {
-            height: 100px;
-            width: 100px;
-            background-position: 50%;
-            background-size: cover;
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-            display: inline-block;
-            overflow: hidden;
-
-            @media #{$xs} {
-                height: 80px;
-                width: 80px;
-            }
-        }
-
-        .result-item-content {
-            padding: 10px;
-            padding-left: 110px;
-
-            @media #{$xs} { 
-                padding: 5px;
-                padding-left: 85px;
-            }
+            @media #{$lg} { font-size: 1.4rem; }
         }
     }
 }

@@ -10,12 +10,7 @@
   margin-bottom: 2em;
 }
 
-.masonry{
-//   display: block;
-// -webkit-column-gap: 2.25rem;
-// -moz-column-gap: 2.25rem;
-// column-gap: 12.25rem;
-
+.masonry {
   $class-slug: masonry-item;
   $animation-delay: 0.1s;
 
@@ -81,82 +76,6 @@
   }
 }
 
-// /* 5 columns */
-// .masonry.masonry-columns-5{
-// -webkit-column-count: 5;
-// -moz-column-count: 5;
-// column-count: 5;
-// }
-
-// @media(max-width: 1170px){
-//   .masonry.masonry-columns-5{
-//   -webkit-column-count: 4;
-//   -moz-column-count: 4;
-//   column-count: 4;
-//   }
-// }
-
-
-// /*-4 columns------*/
-// .masonry.masonry-columns-4{
-// -webkit-column-count: 4;
-// -moz-column-count: 4;
-// column-count: 4;
-// }
-
-// /*-3 columns------*/
-// .masonry.masonry-columns-3{
-// -webkit-column-count: 3;
-// -moz-column-count: 3;
-// column-count: 3;
-// }
-
-// /*-2 columns------*/
-// .masonry.masonry-columns-2{
-// -webkit-column-count: 2;
-// -moz-column-count: 2;
-// column-count: 2;
-// }
-
-// /*-1 columns------*/
-// .masonry.masonry-columns-1{
-// -webkit-column-count: 1;
-// -moz-column-count: 1;
-// column-count: 1;
-// }
-
-
-// /*--------Responsive---------*/
-// @media(max-width: 991px){
-//   .masonry.masonry-columns-4, 
-//   .masonry.masonry-columns-5{
-// -webkit-column-count: 3;
-// -moz-column-count: 3;
-// column-count: 3;
-// }
-// }
-
-// @media(max-width: 767px){
-//   .masonry.masonry-columns-4, 
-//   .masonry.masonry-columns-5,
-//   .masonry.masonry-columns-3{
-// -webkit-column-count: 2;
-// -moz-column-count: 2;
-// column-count: 2;
-// }
-// }
-
-// @media(max-width: 540px){
-//   .masonry.masonry-columns-4, 
-//   .masonry.masonry-columns-5,
-//   .masonry.masonry-columns-3,
-//   .masonry.masonry-columns-2{
-// -webkit-column-count: 1;
-// -moz-column-count: 1;
-// column-count: 1;
-// }
-// }
-
 @media screen and (min-width: 1px) and (max-width: 767px){
     #grid[data-columns]::before {
         content: '1 .col-xs-12';
@@ -190,15 +109,14 @@
 
   &:hover {
     transition: all 0.4s ease-in-out; 
-    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1);
   }
 
   .masonry-post__image {
     display: block;
 
     img { width: 100%; }
-    // &:hover 
   }
 
   p, h6 { color: lighten($dark-color, 40%); }
@@ -207,10 +125,10 @@
 
   .masonry-post__content {
     padding: 0.75em;
-    padding-top: 0;
 
     .post-title {
       font-size: 1.6rem;
+      margin-top:0;
     }
 
     .post-author a {

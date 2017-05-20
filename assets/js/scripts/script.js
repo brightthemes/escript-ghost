@@ -40,55 +40,6 @@ $(document).ready(function () {
     });
   }
 
-    // Site search
-  $('.btn-search--close').click(function() {
-    $('.search').removeClass('open');
-  });
-
-  $('.btn-search--open').click(function() {
-    $('.search').addClass('open');
-    $('#search-field').focus();
-  });
-
-  $('#search-field').keyup(function(e) {
-    if (e.keyCode === 27) {
-      $('.search').removeClass('open');
-      $("body").toggleClass("search--opened search--closed");
-    }
-  });
-
-  $(".btn-search--open, .btn-search--close").on("click", function (e) {
-    e.preventDefault();
-    $("body").toggleClass("search--opened search--closed");
-  });
-
-  $('#search-field').ghostHunter({
-    results         : '#results',
-    onKeyUp         : true,
-    includepages    : true,
-    onPageLoad      : true,
-    info_template   : '<p>{{amount}} results found</p>',
-    result_template : '<div class="animated fadeIn result-item">' +
-                        '<a href="{{link}}" class="result-link">' +
-                          '<div class="result-item-content">' +
-                          '<h4>{{title}}</h4>' +
-                          '<p href="{{authorLink}}">{{authorName}}</p>' +
-                          '<p><i class="fa fa-calendar-o"></i>{{pubDate}}</p>' +
-                          '</div>' +
-                        '</a>' +
-                      '</div>',
-    before          : function() {
-                        $('.slider-after').animate({
-                          width: '100%'
-                        }, 800);
-                      },
-    onComplete      : function() {
-                        $('.slider-after').animate({
-                          width: '0%'
-                        }, 0);
-                      }
-  });
-
   // Read more section styling
   if ( !$('.read-next__story.prev').length ) {
     $('.read-next__story.next').css('margin-left', '0');
@@ -161,6 +112,57 @@ $(document).ready(function () {
   // Intercept all anchor clicks
   $('body').on('click', 'a', scroll_if_anchor);
 
+  // Site search
+  $('.btn-search--close').click(function() {
+    $('.search').removeClass('open');
+  });
+
+  $('.btn-search--open').click(function() {
+    $('.search').addClass('open');
+    $('#search-field').focus();
+  });
+
+  $('#search-field').keyup(function(e) {
+    if (e.keyCode === 27) {
+      $('.search').removeClass('open');
+      $("body").toggleClass("search--opened search--closed");
+    }
+  });
+
+  $(".btn-search--open, .btn-search--close").on("click", function (e) {
+    e.preventDefault();
+    $("body").toggleClass("search--opened search--closed");
+  });
+
+  // Text area modification
+  $('#message').on('keydown', function(e){
+    var that = $(this);
+    if (that.scrollTop()) {
+      var areaHeight = $(this).height();
+      if (areaHeight < 200) {
+        $(this).height(function(i,h){
+          areaHeight = areaHeight + 20;
+          return h + 20;
+        });
+      }
+    }
+  });
+
+  $('#search-field').ghostHunter({
+    results         : '#results',
+    onKeyUp         : true,
+    includepages    : true,
+    onPageLoad      : true,
+    info_template   : '<p>{{amount}} results found</p>',
+    result_template : '<div class="animated fadeIn result-item">' +
+                        '<a href="{{link}}" class="result-link">' +
+                          '<div class="result-item-content">' +
+                          '<h4>{{title}}</h4>' +
+                          '<p>{{authorName}}, {{pubDate}}</p>' +
+                          '</div>' +
+                        '</a>' +
+                      '</div>'
+  });
 });
 
   var postsPerPage = $('.masonry-item').length;
@@ -249,8 +251,8 @@ $(document).ready(function () {
       '<a href="' + postData.url + '" class="read-more">Read More</a>' +
       '</div>' +
       '<hr>' +
-      '<span class="pull-left">' + moment(postData.published_at).format('MMM DD, YYYY') + '</span>' +
-      '<span class="pull-right">' +
+      '<div class="pull-left">' + moment(postData.published_at).format('MMM DD, YYYY') + '</div>' +
+      '<div class="pull-right">' +
       '<div class="masonry-post-share"><i class="fa fa-share-alt"></i></div> ' +
       '<div class="masonry-post-share__social pull-left animated fadeIn">' +
       '<a class="facebook" href=""><i class="fa fa-facebook-official"></i></a>' +
@@ -261,7 +263,7 @@ $(document).ready(function () {
       '<i class="fa fa-comments-o"></i> ' +
       '<span class="disqus-comment-count" data-disqus-url="' + window.location.href.slice(0, -1) + postData.url + '">0</span>' +
       '</div>' +
-      '</span' +
+      '</div' +
       '</div>' +
       '</div>'
 

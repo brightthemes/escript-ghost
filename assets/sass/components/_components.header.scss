@@ -33,9 +33,13 @@
 			cursor: pointer;
 			color: $light-color;
 
+			.navbar-search__group {
+				padding: 0.7em 0;
+			}
+
 			p {
 				display: inline-block;
-				padding: 0.7em 0.5em;
+				padding-left: 0.5em;
 				transition: all ($transition-speed-base);
 				margin: 0;
 			}
@@ -43,7 +47,7 @@
 	}
 
 	.navbar-logo {
-		@media #{$xs} { text-align: left; }
+		text-align: center;
 
 		a img {
 			height: 50px;
@@ -71,8 +75,8 @@
 			transition: height ($transition-speed-base);
 		}
 
-		.navbar-search.btn-search--open p {
-			padding: 0.2em 0.5em;
+		.navbar-search.btn-search--open .navbar-search__group {
+			padding: 0.2em 0;
 			transition: all ($transition-speed-base);
 		}
 

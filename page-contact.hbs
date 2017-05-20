@@ -1,0 +1,48 @@
+{{!< default}}
+
+{{!-- Everything inside the #post tags pulls data from the post --}}
+{{#post}}
+<div class="{{post_class}}">
+  <div class="post-header {{#if image}}post-hero{{else}}post-without-image{{/if}}">
+    {{#if image}}
+      <div class="full-page-cover lazyload" data-src="{{image}}" style="background-image: url({{image}})"></div>
+    {{/if}}
+    <div class="container">
+      <div class="post-header__info">    
+        <h2 class="post-header__title animated fadeInDown">{{title}}</h2>
+      </div>
+
+      <div class="contact">
+        <div class="row">
+          <div class="col-sm-6 col-xs-12 contact-address animated fadeInLeft">
+              <h3 class="contact-address__title">Info</h3>
+              <p> 601 E 54th St<br>
+                  New York City<br>
+                  New York<br>
+                  10000<br>
+              </p>
+              <p><strong>Tel: </strong>1 234 567 890></p>
+              <p><strong>Email: </strong>bironthemes@gmail.com</p>
+              {{>social-media}}
+          </div>
+          <div class="col-sm-6 col-xs-12 contact__form-wrapper animated fadeInRight">
+              {{!--<div class="wrap-contact">--}}
+                  <form action="//formspree.io/youremail@domain.com" id="contact-form" class="contact-form clearfix" method="post">
+                      <h3 class="contact-form__title">Contact us</h3>
+                      <input type="text" name="username" id="username" class="contact-form__name" title="Name" placeholder="Name" required>
+                      <input type="text" name="email" id="email" title="Email" class="contact-form__email" placeholder="Email" required>
+                      <textarea rows="3" name="message" id="message" title="Message" placeholder="Message" required></textarea>
+                      <input type="text" name="_gotcha" style="display:none">
+                      <input class="button" type="submit" name="submit" id="submit" value="Submit">
+                  </form>
+              {{!--</div>--}}
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+{{/post}}
+
+{{!-- Email subscribe form at the main page --}}
+{{> subscribe}}
