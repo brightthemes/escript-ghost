@@ -64,38 +64,7 @@
 <section class="latest-posts container" id="content">
 	<div class="masonry clearfix" id="grid" data-columns>
 	{{#foreach posts}}
-		<div class="masonry-item">
-			{{#if image}}
-				<a class="masonry-post__image" href="{{url}}">
-					<img src="{{image}}" class="lazyload img-responsive" alt="{{title}}">
-				</a>
-			{{/if}}
-			<div class="masonry-post__content">
-				<h2 class="post-title"><a href="{{url}}">{{title}}</a></h2>
-				<h6 class="post-author">by {{author}}</h6>
-				<p class="post-tags">{{#if tags}}#{{tags limit=5 separator=" #"}}{{/if}}</p>
-				<p>{{excerpt words="20"}}&hellip;</p>
-				<div class="tag-comment clearfix">
-					<div class="text-center">
-						<a href="{{url}}" class="read-more">Read More</a>
-				  </div>
-					<hr>
-					<div class="pull-left">{{date}}</div>
-					<div class="pull-right">
-						<div class="masonry-post-share"><i class="fa fa-share-alt"></i></div>					
-						<div class="masonry-post-share__social pull-left animated fadeIn">
-							<a class="facebook" href=""><i class="fa fa-facebook-official"></i></a>
-							<a class="twitter" href=""><i class="fa fa-twitter"></i></a>
-							<a class="reddit" href=""><i class="fa fa-reddit"></i></a>
-						</div>
-						<div class="masonry-post-comment-count">
-							<i class="fa fa-comments-o"></i>
-							<span class="disqus-comment-count" data-disqus-url="{{url absolute='true'}}">0</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+    {{> masonry}}
 	{{/foreach}}
 	</div>
 	<div class="masonry-foot text-center">

@@ -32,6 +32,7 @@
 			margin: 1em 0;
 			cursor: pointer;
 			color: $light-color;
+			transition: all ($transition-speed-base);
 
 			.navbar-search__group {
 				padding: 0.7em 0;
@@ -134,24 +135,22 @@
 
 body.nav--opened,
 body.search--opened {
-  // overflow-x: visible;
 	overflow-y: hidden;
 }
 
-body.nav--opened .main,
-body.search--opened .main {
-  transition: transform ($transition-speed-base);
-}
+@media #{$sm} {
+	body.nav--opened .main,
+	body.search--opened .main,
+	body.nav--closed .main,
+	body.search--closed .main {
+		transition: transform ($transition-speed-base);
+	}
 
-body.nav--closed .main,
-body.search--closed .main {
-  transition: transform ($transition-speed-base);
-}
+	body.nav--opened .main {
+		transform: translateX(-50%); 
+	}
 
-body.nav--opened .main {
-	transform: translateX(-50%); 
-}
-
-body.search--opened .main {
-  transform: translateX(50%); 
+	body.search--opened .main {
+		transform: translateX(50%); 
+	}
 }

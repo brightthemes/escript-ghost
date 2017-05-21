@@ -24,17 +24,6 @@
     color: rgba($light-color, 0.8);
     position: relative;
     display: inline-block;
-
-    // &:after {
-    //   content: "";
-    //   position: absolute;
-    //   left: 0;
-    //   background-color: $brand-color;
-    //   height: 1px;
-    //   width: 100%;
-    //   margin-top: 1.6em;
-    //   transition: all $transition-speed-base;
-    // }
   }
 
   .footer-bottom {

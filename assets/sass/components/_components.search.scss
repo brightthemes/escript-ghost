@@ -2,150 +2,171 @@
 /* Search                                                                  */
 /***************************************************************************/
 .search {
-    background: $background-color;
-    height: 100%;
-    padding: 6em 1.5em 0;
-    position: fixed;
-    z-index: 999;
-    left: 0;
-    width: 100%;
-    top: 0;
-    visibility: hidden;
-    backface-visibility: hidden;
-    transform: translateX(-100%);
-    transition: transform 0.5s, visibility 0s 0.5s;
+  background: $background-color;
+  padding: 6em 1.5em 0;
+  position: fixed;
+  z-index: 999;
+  height: 100vh;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.5s, visibility 0s 0.5s;
+
+  .btn-search--close {
+    &:before, &:after {
+      background-color: $dark-color;
+    }
+        
+    &:hover:before,
+    &:hover:after {
+      background-color: $link-color;
+    }
+  }
+
+  &.open {
+    display: block;
+    visibility: visible;
+    transform: translateX(0%);
+    transition: transform 0.5s;
+  }
+
+  .search-form {     
+    margin: 0 auto 1.5em;
+    max-width: 40em;
+    position: relative;
+    border-bottom: 2px solid $border-color;
+
+    input { 
+      font-family: $heading-font-family;
+      color: $brand-color; 
+      font-weight: $font-weight-bold;
+      padding: 0;
+      border: none;
+      display: inline-block;
+      line-height: 1.2;
+      font-size: 2rem;
+      width: 80%;
+      background: $background-color;
+
+      @media #{$sm} { font-size: 3rem; }
+      @media #{$md} { font-size: 4rem; }
+
+      &::-ms-clear { display: none; }
+
+      &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: rgba($dark-color, 0.5);
+      }
+      &::-moz-placeholder { /* Firefox 19+ */
+        color: rgba($dark-color, 0.5);
+      }
+      &:-ms-input-placeholder { /* IE 10+ */
+        color: rgba($dark-color, 0.5);
+      }
+      &:-moz-placeholder { /* Firefox 18- */
+        color: rgba($dark-color, 0.5);
+      }
+
+      &:active, &:focus {
+        border: none;
+        outline: none;
+        background: $background-color;
+      }
+    }
+
+    .search-icon {      
+      float: right;
+      background: transparent;
+      color: darken($light-color, 60%);
+      border: none;
+      margin: 0;
+      padding: 0;
+      font-size: 1.4rem;
+
+      @media #{$sm} { font-size: 2rem; }
+      @media #{$md} { 
+        font-size: 2.6rem;
+        padding: 0.15em 0; 
+      }
+
+      i { transition: color .4s ease; }
+
+      &:hover { 
+        i { color: $brand-color; }
+      }
+    }
+
+    .slider { 
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      background: fade($dark-color, 20%);
+      width: 100%;
+    }
+  }
+
+  .search-results {
+    margin: 0 auto;
+    height: 80%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    max-width: 50em;
+    padding-left: 30px;
 
     @media #{$xs} {
-        padding: 6em 1em;
+      padding-left: 0;
+      margin-right: -15px;
     }
 
-    .btn-search--close {
-        &:before, &:after {
-            background-color: $dark-color;
-        }
-            
-        &:hover:before,
-        &:hover:after {
-            background-color: $link-color;
-        }
+    p {
+      text-align: center;
+      font-size: 1.2rem;
+      margin: 0.5em 0;  
+
+      @media #{$lg} { font-size: 1.4rem; }
     }
-
-    &.open {
-        display: block;
-        visibility: visible;
-        position: absolute;
-        transform: translateX(0%);
-        transition: transform 0.5s;
-    }
-
-    .search-form {     
-        margin: 0 auto 1.5em;
-        max-width: 40em;
-        position: relative;
-        border-bottom: 2px solid $border-color;
-
-        input { 
-            font-family: $heading-font-family;
-            color: $brand-color; 
-            font-weight: $font-weight-bold;
-            padding: 0;
-            border: none;
-            display: inline-block;
-            line-height: 1.2;
-            font-size: 4rem;
-            width: 80%;
-            background: $background-color;
-
-            &::-ms-clear { display: none; }
-
-            &:active, &:focus {
-                border: none;
-                outline: none;
-                background: $background-color;
-            }
-        }
-
-        .search-icon {      
-            float: right;
-            background: transparent;
-            color: darken($light-color, 60%);
-            border: none;
-            margin: 0;
-            padding: 0.15em 0;
-            font-size: 2.6rem;
-
-            i { transition: color .4s ease; }
-
-            &:hover { 
-                i { color: $brand-color; }
-            }
-        }
-
-        .slider { 
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: 3px;
-            background: fade($dark-color, 20%);
-            width: 100%;
-        }
-    }
-
-    .search-results {
-        margin: 0 auto;
-        height: 80%;
-        overflow-y: scroll;
-        overflow-x: hidden;
-        -webkit-overflow-scrolling: touch;
-        max-width: 50em;
-        padding-left: 30px;
-
-        @media #{$xs} {
-            padding-left: 0;
-            margin-right: -15px;
-        }
-
-        p {
-            text-align: center;
-            font-size: 2rem;
-            margin: 0.5em 0;  
-        }
-    }
+  }
 }
 
 .result-item {
-    max-width: 40em;
-    margin: 0 auto;
-    margin-bottom: 1em;
-    background-color: $light-color;
-    box-shadow: 0 2px 5px darken($light-color, 20%);
-    transition: box-shadow $transition-speed-base;
+  max-width: 40em;
+  margin: 0 auto;
+  margin-bottom: 1em;
+  background-color: $light-color;
+  box-shadow: 0 2px 5px darken($light-color, 20%);
+  transition: box-shadow $transition-speed-base;
 
-    &:hover {
-        box-shadow: 0 3px 8px darken($light-color, 30%);
+  &:hover {
+    box-shadow: 0 3px 8px darken($light-color, 30%);
+  }
+
+  .result-link {
+    display: inline-block;
+    width: 100%;
+    padding: 1em;
+
+    h4 { 
+      font-size: 1.2rem; 
+      margin-top: 0;
+      margin-bottom: 0.25em;
+
+      @media #{$lg} { font-size: 1.4rem; }
     }
 
-    .result-link {
-        display: inline-block;
-        width: 100%;
-        padding: 1em;
+    p {
+      color: $dark-color;
+      margin: 0;
+      font-size: 1rem;
+      float: left;
+      text-align: left;
 
-        h4 { 
-            font-size: 1.6rem; 
-            margin-top: 0;
-            margin-bottom: 0.25em;
-
-            @media #{$lg} { font-size: 1.8rem; }
-        }
-
-        p {
-            color: $dark-color;
-            margin: 0;
-            font-size: 1.2rem;
-            float: left;
-            text-align: left;
-
-            @media #{$lg} { font-size: 1.4rem; }
-        }
+      @media #{$lg} { font-size: 1.2rem; }
     }
+  }
 }

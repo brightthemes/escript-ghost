@@ -3,76 +3,55 @@
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
 <div class="{{post_class}}">
-    <div class="post-header {{#if image}}post-hero{{else}}post-without-image{{/if}}">
-        {{#if image}}
-            <div class="full-page-cover lazyload" data-src="{{image}}" style="background-image: url({{image}})"></div>
-        {{/if}}
-            <div class="container">
-                <div class="post-header__info">    
-                    <h6 class="post-header__tag animated fadeInDown">{{tags limit="5" separator=" "}}</h6>
-		      		<h2 class="post-header__title animated fadeInRight">{{title}}</h2>
-                    <div class="post-header__details animated fadeInUp">
-                        <h6 class="post-header__author">
-                            {{#author}}<a href="{{url}}">{{name}}</a>{{/author}}
-                        </h6>
-                        <h6 class="post-header__date">
-                            <time datetime="{{date format="YYYY-MM-DD"}}">{{date published_at}}</time>
-                        </h6>
-                        <h6 class="post-header__comments">
-                            <a href="#comments">
-                                <i class="fa fa-comments-o"></i>
-                                <span class="disqus-comment-count" data-disqus-url="{{url absolute='true'}}">0</span>
-                            </a>
-                        </h6>
-                    </div>
-                </div>
+  <div class="post-header {{#if image}}post-hero{{else}}post-without-image{{/if}}">
+    {{#if image}}
+      <div class="full-page-cover lazyload" data-src="{{image}}" style="background-image: url({{image}})"></div>
+    {{/if}}
+    <div class="container">
+      <div class="post-header__info">    
+          <h6 class="post-header__tag animated fadeInDown">{{tags limit="5" separator=" "}}</h6>
+          <h2 class="post-header__title animated fadeInRight">{{title}}</h2>
+          <div class="post-header__details animated fadeInUp">
+            <h6 class="post-header__author">
+              {{#author}}<a href="{{url}}">{{name}}</a>{{/author}}
+            </h6>
+            <h6 class="post-header__date">
+              <time datetime="{{date format="YYYY-MM-DD"}}">{{date published_at}}</time>
+            </h6>
+            <h6 class="post-header__comments">
+              <a href="#comments">
+                <i class="fa fa-comments-o"></i>
+                <span class="disqus-comment-count" data-disqus-url="{{url absolute='true'}}">0</span>
+              </a>
+            </h6>
+          </div>
+      </div>
 
-        {{#if image}}
-                <div class="scroll-wrapper hidden-xs">
-                    <a class="scroll-down animated bounce" href="#content">
-                    <i class="fa fa-angle-double-down" aria-hidden="true"></i>
-                    </a>
-                </div>
-        {{/if}}
-            </div>
-    </div>
-    <div class="post-content container" id="content">
-        {{> social-share}}
-        <article>
-            {{content}}
-        </article>
-        {{> author-box}}
-        
-        {{!-- Links to Previous/Next posts --}}
-        <div class="read-next animated fadeIn clearfix">
-            {{#prev_post}}
-                <a class="read-next__story prev {{^if image}}no-image{{/if}}" href="{{url}}">
-                    {{#if image}}
-                        <div class="lazyload read-next__image" data-src="{{image}}" style="background-image: url({{image}})"></div>
-                    {{/if}}
-                    <div class="read-next__info">
-                        <div class="read-next__icon">
-                            <i class="fa fa-2x fa-angle-left" aria-hidden="true"></i>
-                        </div>
-                        <h3 class="read-next__title">{{title}}</h3>
-                    </div>
-                </a>
-            {{/prev_post}}
-            {{#next_post}}
-                <a class="read-next__story next {{^if image}}no-image{{/if}}" href="{{url}}">
-                    {{#if image}}
-                        <div class="lazyload read-next__image" data-src="{{image}}" style="background-image: url({{image}})"></div>
-                    {{/if}}
-                    <div class="read-next__info">
-                        <div class="read-next__icon">
-                            <i class="fa fa-2x fa-angle-right" aria-hidden="true"></i>
-                        </div>
-                        <h3 class="read-next__title">{{title}}</h3>
-                    </div>
-                </a>
-            {{/next_post}}
+      {{#if image}}
+        <div class="scroll-wrapper hidden-xs">
+          <a class="scroll-down animated bounce" href="#content">
+            <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+          </a>
         </div>
+      {{/if}}
     </div>
+  </div>
+
+  <div class="post-content container" id="content">
+    {{!-- Post Social Share --}}
+    {{> social-share}}
+    
+    {{!-- Post Content --}}
+    <article>
+      {{content}}
+    </article>
+
+    {{!-- Author Box/Info --}}
+    {{> author-box}}
+
+    {{!-- Previous and Next Posts --}}
+    {{> read-next}}
+  </div>
 </div>
 
 {{!-- Include Disqus Comments --}}

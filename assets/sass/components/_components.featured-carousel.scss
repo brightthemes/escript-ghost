@@ -6,12 +6,9 @@
 	
 	.featured-post__image {
 		min-height: 30em;
+    height: 100vh;
 		background-color: $dark-color;
 		@include background-cover;
-
-		@media #{$md} {
-			height: 100vh;
-		}
 	}
 
 	.featured-post__image--overlay {
@@ -154,7 +151,10 @@
     }
 
     .featured-post__title {
-      @media #{$xs} { font-size: 2rem; }
+      @media #{$xs} { 
+        font-size: 2rem; 
+        margin: 0.25em 0;
+      }
       @media #{$sm} { font-size: 3rem; }
       @media #{$md} { font-size: 3.5rem; }
       @media #{$lg} { font-size: 4rem; }

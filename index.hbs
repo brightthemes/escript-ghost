@@ -4,58 +4,60 @@
 {{#get "posts" limit="4" include="author,tags" filter="featured:true" as |featured| }}
   <section class="featured-posts">
     <div id="featured-posts__carousel" class="carousel slide" data-ride="carousel" data-interval="8000">
+
 		  {{!-- Indicators --}}
 		  <ol class="carousel-indicators featured-posts__indicators">
-		  {{#foreach featured}}
-		    <li data-target="#featured-posts__carousel" data-slide-to="{{@index}}" class="{{#if @first}}active{{/if}}"></li>
-		  {{/foreach}}
+				{{#foreach featured}}
+					<li data-target="#featured-posts__carousel" data-slide-to="{{@index}}" class="{{#if @first}}active{{/if}}"></li>
+				{{/foreach}}
 		  </ol>
 			
 			{{!-- Featured post content --}}
 	 		<div class="carousel-inner featured-posts__inner">
-	 		{{#foreach featured}}
-		    <div class="featured-post item {{#if @first}}active{{/if}}">
-		      <div class="lazyload featured-post__image" 
-		      		 data-src="{{#if image}}{{image}}{{/if}}" 
-		      		 style="{{#if image}}background-image: url({{image}}){{else}}background-color: #000;{{/if}}">
-		      </div> 
-		      <div class="featured-post__image--overlay"></div>
-		    	<div class="featured-post__content">
-		    		<div class="container">
-		    		  <h6 class="featured-post__tag animated fadeInDown">in {{tags limit="1" separator=""}}</h6>
-		      		<h2 class="featured-post__title animated fadeInRight"><a href="{{url}}">{{title}}</a></h2>
-							<div class="featured-post__info animated fadeInRight">
-								<div class="featured-post__author">by {{author}}</div>
-						    <div class="featured-post__date">
-						    	<time datetime="{{date format="YYYY-MM-DD"}}">{{date published_at}}</time>
-						    </div>
-						    <div class="featured-post__comments">
-									<i class="fa fa-comments-o"></i>
-									<span class="disqus-comment-count" data-disqus-url="{{url absolute='true'}}">0</span>
+				{{#foreach featured}}
+					<div class="featured-post item {{#if @first}}active{{/if}}">
+						<div class="lazyload featured-post__image" 
+								data-src="{{#if image}}{{image}}{{/if}}" 
+								style="{{#if image}}background-image: url({{image}}){{else}}background-color: #000;{{/if}}">
+						</div> 
+						<div class="featured-post__image--overlay"></div>
+						<div class="featured-post__content">
+							<div class="container">
+								<h6 class="featured-post__tag animated fadeInDown">in {{tags limit="1" separator=""}}</h6>
+								<h2 class="featured-post__title animated fadeInRight"><a href="{{url}}">{{title}}</a></h2>
+								<div class="featured-post__info animated fadeInRight">
+									<div class="featured-post__author">by {{author}}</div>
+									<div class="featured-post__date">
+										<time datetime="{{date format="YYYY-MM-DD"}}">{{date published_at}}</time>
+									</div>
+									<div class="featured-post__comments">
+										<i class="fa fa-comments-o"></i>
+										<span class="disqus-comment-count" data-disqus-url="{{url absolute='true'}}">0</span>
+									</div>
+								</div>
+								<div class="read-more animated fadeInUp">
+									<a class="button" href="{{url}}">Read More</a>
 								</div>
 							</div>
-							<div class="read-more animated fadeInUp">
-								<a class="button" href="{{url}}">Read More</a>
-							</div>
-		      	</div>
-		      </div>
-		    </div>
-	 		{{/foreach}}
+						</div>
+					</div>
+				{{/foreach}}
 		  </div>
 
 		  {{!-- Controls --}}
 		  <div class="featured-posts__control-wrapper clearfix">
-		  <a class="left carousel-control" href="#featured-posts__carousel" role="button" data-slide="prev">
-		    <div class="carousel-control-prev">
-		    	<i class="fa fa-angle-left"></i>
-		    </div>
-		  </a>
-		  <a class="right carousel-control" href="#featured-posts__carousel" role="button" data-slide="next">
-		  	<div class="carousel-control-next">
-		    	<i class="fa fa-angle-right"></i>
-		    </div>
-		  </a>
+				<a class="left carousel-control" href="#featured-posts__carousel" role="button" data-slide="prev">
+					<div class="carousel-control-prev">
+						<i class="fa fa-angle-left"></i>
+					</div>
+				</a>
+				<a class="right carousel-control" href="#featured-posts__carousel" role="button" data-slide="next">
+					<div class="carousel-control-next">
+						<i class="fa fa-angle-right"></i>
+					</div>
+				</a>
 		  </div>
+
 		</div>
   </section>
 {{/get}}
@@ -65,38 +67,7 @@
 <section class="latest-posts container">
 	<div class="masonry clearfix" id="grid" data-columns>
 	{{#foreach latest}}
-		<div class="masonry-item">
-			{{#if image}}
-				<a class="masonry-post__image" href="{{url}}">
-					<img src="{{image}}" class="lazyload img-responsive" alt="{{title}}">
-				</a>
-			{{/if}}
-			<div class="masonry-post__content">
-				<h2 class="post-title"><a href="{{url}}">{{title}}</a></h2>
-				<h6 class="post-author">by {{author}}</h6>
-				<p class="post-tags">{{#if tags}}#{{tags limit=5 separator=" #"}}{{/if}}</p>
-				<p>{{excerpt words="20"}}&hellip;</p>
-				<div class="tag-comment clearfix">
-					<div class="text-center">
-						<a href="{{url}}" class="read-more">Read More</a>
-				  </div>
-					<hr>
-					<div class="pull-left">{{date}}</div>
-					<div class="pull-right">
-						<div class="masonry-post-share"><i class="fa fa-share-alt"></i></div>					
-						<div class="masonry-post-share__social pull-left animated fadeIn">
-							<a class="facebook" href=""><i class="fa fa-facebook-official"></i></a>
-							<a class="twitter" href=""><i class="fa fa-twitter"></i></a>
-							<a class="reddit" href=""><i class="fa fa-reddit"></i></a>
-						</div>
-						<div class="masonry-post-comment-count">
-							<i class="fa fa-comments-o"></i>
-							<span class="disqus-comment-count" data-disqus-url="{{url absolute='true'}}">0</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+    {{> masonry}}
 	{{/foreach}}
 	</div>
 	<div class="masonry-foot text-center">

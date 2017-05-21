@@ -1,0 +1,32 @@
+{{!-- Links to Previous/Next posts --}}
+<div class="read-next animated fadeIn clearfix">
+  {{!-- Prevoius Post --}}
+  {{#prev_post}}
+    <a class="read-next__story prev {{^if image}}no-image{{/if}}" href="{{url}}">
+      {{#if image}}
+        <div class="lazyload read-next__image" data-src="{{image}}" style="background-image: url({{image}})"></div>
+      {{/if}}
+      <div class="read-next__info">
+        <div class="read-next__icon">
+          <i class="fa fa-2x fa-angle-left" aria-hidden="true"></i>
+        </div>
+        <h3 class="read-next__title">{{title}}</h3>
+      </div>
+    </a>
+  {{/prev_post}}
+
+  {{!-- Next Post --}}
+  {{#next_post}}
+    <a class="read-next__story next {{^if image}}no-image{{/if}}" href="{{url}}">
+      {{#if image}}
+        <div class="lazyload read-next__image" data-src="{{image}}" style="background-image: url({{image}})"></div>
+      {{/if}}
+      <div class="read-next__info">
+        <div class="read-next__icon">
+          <i class="fa fa-2x fa-angle-right" aria-hidden="true"></i>
+        </div>
+        <h3 class="read-next__title">{{title}}</h3>
+      </div>
+    </a>
+  {{/next_post}}
+</div>
