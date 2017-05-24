@@ -6,6 +6,7 @@ pre,
 code {
   font-family: $font-family-monospace;
   background-color: darken($background-color, 5%);
+  white-space: pre;
 }
 
 // Code block
@@ -17,6 +18,12 @@ pre {
   font-size: $font-size-root;
   white-space: pre-wrap;
   word-wrap: break-word;
+
+  code {
+    word-wrap: normal;
+    white-space: -moz-pre-wrap;
+    white-space: pre-wrap;
+  }
 }
 
 // Inline code

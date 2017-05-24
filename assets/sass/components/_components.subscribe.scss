@@ -72,6 +72,9 @@
     }
     .subscribe-form__button {
       margin-left: -0.25em;
+      padding: 0.5em 1em;
+      
+      i { color: $light-color; }
 
       &:hover { 
         i { color: rgba($brand-color, 0.6); }

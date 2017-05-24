@@ -1,10 +1,6 @@
 //===================================
 // Featured carousel
 //===================================
-.invisible {
-  opacity:0;
-}
-
 .latest-posts {
   margin-top: 2em;
   margin-bottom: 2em;
@@ -13,6 +9,7 @@
 .masonry {
   $class-slug: masonry-item;
   $animation-delay: 0.1s;
+  margin: 0 0 1em;
 
   & > div {
     @for $i from 1 through 10 {

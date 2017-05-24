@@ -17,40 +17,27 @@ hr {
   margin: $leading 0;
 }
 
-//Placeholder colors
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: rgba($light-color, 0.5);
-}
-::-moz-placeholder { /* Firefox 19+ */
-  color: rgba($light-color, 0.5);
-}
-:-ms-input-placeholder { /* IE 10+ */
-  color: rgba($light-color, 0.5);
-}
-:-moz-placeholder { /* Firefox 18- */
-  color: rgba($light-color, 0.5);
+small {
+  font-size: 65%;
 }
 
-button, .button {
-  color: $light-color;
-  font-weight: $font-weight-semibold;
-  font-family: $heading-font-family;
-  font-size: $font-size-root;
-  transition: all $transition-speed-base;
-  background: transparent;
-  text-transform: uppercase;
-  display: inline-block;
-  border: 2px solid $light-color;
-  padding: 0.25em 0.5em;
+abbr {
+  -webkit-font-variant: small-caps;
+  -moz-font-variant: small-caps;
+  -ms-font-variant: small-caps;
+  font-variant: small-caps;
+  font-weight: 600;
+  text-transform: lowercase;
+  color: gray;
+}
 
-  @media #{$sm} {
-    padding: 0.5em 1em;
-  }
+abbr[title]:hover {
+  cursor: help;
+}
 
-  &:hover {
-  	background: $light-color;
-  	color: $dark-color;
-  }
-
-  &:active, &:focus { outline: none; }
+::selection {
+  background: rgba($brand-color, 0.5); /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: rgba($brand-color, 0.5); /* Gecko Browsers */
 }

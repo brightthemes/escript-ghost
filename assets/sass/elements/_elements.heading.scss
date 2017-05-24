@@ -14,40 +14,40 @@ h1 {
 	font-size: $font-size-root * 3.5;
 	font-weight: $font-weight-bold;
 	line-height: $heading-line-height * 0.8;
-  margin: ($leading * 0.5) 0;
+  margin: 0 0 ($leading * 0.5);
 }
 
 h2 { 
 	font-size: $font-size-root * 2.5; 
 	font-weight: $font-weight-bold;
 	line-height: $heading-line-height * 0.85;
-	margin: ($leading * 0.6) 0;
+	margin: 0 0 ($leading * 0.6);
 }
 
 h3 { 
 	font-size: $font-size-root * 2; 
 	font-weight: $font-weight-bold;
 	line-height: $heading-line-height * 0.9;
-	margin: ($leading * 0.7) 0;
+	margin: 0 0 ($leading * 0.7);
 }
 
 h4 { 
 	font-size: $font-size-root * 1.5; 
 	font-weight: $font-weight-semibold;
 	line-height: $heading-line-height * 0.95;
-	margin: ($leading * 0.8) 0;
+	margin: 0 0 ($leading * 0.8);
 }
 
 h5 { 
 	font-size: $font-size-root * 1.25; 
 	font-weight: $font-weight-semibold;
 	line-height: $heading-line-height * 1;
-	margin: ($leading * 0.9) 0;
+	margin: 0 0 ($leading * 0.9);
 }
 
 h6 { 
 	font-size: $font-size-root * 1; 
 	font-weight: $font-weight-semibold;
 	line-height: $heading-line-height * 1;
-	margin: ($leading * 1) 0;
+	margin: 0 0 ($leading * 1);
 }

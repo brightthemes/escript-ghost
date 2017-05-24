@@ -29,3 +29,7 @@ p {
     &:active { color: $link-color; }
   }
 }
+
+.post {
+  a:hover { text-decoration: none; }
+}

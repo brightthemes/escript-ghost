@@ -9,7 +9,31 @@ blockquote {
   padding: $leading;
   font-style: italic;
   text-align: center;
-  background-color: darken($background-color, 5%);
+  color: rgba($text-color, 0.6);
+  text-shadow: 1px rgba($text-color, 0.4);
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+  border-left: none;
+  position: relative;
+
+  &:after {
+    color: rgba($brand-color, 0.7);
+    font-family: FontAwesome;
+    content: '\f10e';
+    font-size: 2rem;
+    position: absolute;
+    bottom: calc(100% - 20px);
+    background: $light-color;
+    height: 1.3em;
+    width: 2em;
+    transform: translateX(-50%);
+  }
+
+  &+ figcaption cite {
+    display: block;
+    font-size: inherit;
+    text-align: right;
+  }
 
   p { margin: 0; }
 }
