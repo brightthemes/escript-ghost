@@ -72,6 +72,11 @@ $(document).ready(function () {
     $('.navbar__default').css('backgroundColor', 'rgba(0,0,0,0.85)');
   }
 
+  if ( window.location.pathname === "/" && !$('.featured-posts').length ) {
+    $('.navbar__default').css('backgroundColor', 'rgba(0,0,0,0.85)');
+    $('.latest-posts').css('marginTop', '7em');
+  } 
+
   // Advertisement div hide when ad block active
   if ($('.ad-unit').is(':hidden')) {
     $('.ad').hide();
@@ -82,7 +87,7 @@ $(document).ready(function () {
     $(el).attr('data-src', el.src).addClass('lazyload');
   });
 
-  jQuery('.masonry-item').addClass("invisible").viewportChecker({
+  jQuery('.masonry-post').addClass("invisible").viewportChecker({
     classToAdd: 'visible animated fadeIn',
     classToRemove: 'invisible',
     offset: 100
@@ -165,7 +170,7 @@ $(document).ready(function () {
   });
 });
 
-var postsPerPage = $('.masonry-item').length;
+var postsPerPage = $('.masonry-post').length;
 //This is set to 2 since the posts already loaded should be page 1
 var nextPage = 2;
 //Set this to match the pagination used in your blog

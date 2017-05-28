@@ -34,6 +34,8 @@
     }
 
     &:hover {
+      text-decoration: none;
+
       .read-next__image:after {
         opacity: 0.9;
         transition: all $transition-speed-base;
@@ -92,6 +94,12 @@
 
       .read-next__title {
         color: $light-color;
+        margin: 0.5em 0;
+        font-size: 1.4rem;
+
+        @media #{$sm} { font-size: 1.6rem; }
+        @media #{$md} { font-size: 1.8rem; }
+        @media #{$lg} { font-size: 2rem; }
       }
     }
   }

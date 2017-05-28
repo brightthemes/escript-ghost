@@ -36,7 +36,6 @@
       .post-header__title,
       .post-header__detail {
         color: $dark-color;
-        margin: 0.2em 0;
 
         a { color: $dark-color; }
       }
@@ -66,6 +65,14 @@
       margin: 0.3em 0;
 
       a { color: $light-color; }
+    }
+
+    .post-header__title {
+      font-size: 2rem;
+      @media #{$xs} { margin: 0.5em 0; }
+      @media #{$sm} { font-size: 3rem; }
+      @media #{$md} { font-size: 3.5rem; }
+      @media #{$lg} { font-size: 4rem; }
     }
 
     .post-header__tag {
@@ -124,14 +131,6 @@
         a:hover { color: $light-color; }
       }
     }
-  }
-
-
-  .post-header__title {
-    @media #{$xs} { font-size: 2rem; }
-    @media #{$sm} { font-size: 3rem; }
-    @media #{$md} { font-size: 3.5rem; }
-    @media #{$lg} { font-size: 4rem; }
   }
 }
 

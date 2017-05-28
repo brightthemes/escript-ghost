@@ -46,6 +46,8 @@
       height: 5em;
       margin-left: 5.5em;
 
+      .footer-post__title { line-height: 1.3; }
+
       .footer-post__title, .footer-post__author {
         margin-top: 0;
         color: rgba($light-color, 0.8);

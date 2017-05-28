@@ -3,7 +3,7 @@
 //===================================
 
 blockquote {
-  margin: $leading 0;
+  margin: 2*$leading 0;
   font-size: $font-size-root * 1.25;
   line-height: $line-height-base;
   padding: $leading;
@@ -27,6 +27,7 @@ blockquote {
     height: 1.3em;
     width: 2em;
     transform: translateX(-50%);
+    left: 50%;
   }
 
   &+ figcaption cite {
