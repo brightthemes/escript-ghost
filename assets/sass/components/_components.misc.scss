@@ -43,7 +43,7 @@
     height: 3em;
     border: 2px solid $border-color;
     display: inline-block;
-    transition: all $transition-speed-base;
+    transition: color $transition-speed-base, background $transition-speed-base;
 
     &:hover {
       background-color: darken($light-color, 20%);

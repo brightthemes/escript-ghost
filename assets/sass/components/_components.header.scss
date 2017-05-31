@@ -12,7 +12,7 @@
 	width: 100%;
 	z-index: 10;
 	height: 5em;
-	transition: all ($transition-speed-base);
+	transition: color $transition-speed-base, background $transition-speed-base;
 
 	.navbar-header {
 		float: none;
@@ -33,7 +33,7 @@
 			margin: 1em 0;
 			cursor: pointer;
 			color: $light-color;
-			transition: all ($transition-speed-base);
+			transition: color $transition-speed-base, background $transition-speed-base;
 
 			.navbar-search__group {
 				padding: 0.7em 0;
@@ -42,7 +42,7 @@
 			p {
 				display: inline-block;
 				padding-left: 0.5em;
-				transition: all ($transition-speed-base);
+				transition: color $transition-speed-base, background $transition-speed-base;
 				margin: 0;
 			}
 		}
@@ -74,12 +74,12 @@
 		height: 50px;
 
 		.navbar-logo a img { 
-			transition: height ($transition-speed-base);
+			transition: height $transition-speed-base;
 		}
 
 		.navbar-search.btn-search--open .navbar-search__group {
 			padding: 0.2em 0;
-			transition: all ($transition-speed-base);
+			transition: height $transition-speed-base, padding $transition-speed-base;
 		}
 
 		.navbar-logo img,
@@ -87,15 +87,17 @@
 		.navbar-search.btn-search--open {
 			height: 30px;
 			margin: 10px 0;
+			transition: height $transition-speed-base, padding $transition-speed-base;
 		}
 
-		.navbar-search span { transition: all ($transition-speed-base); }
+		.navbar-search span { transition: height $transition-speed-base; }
 	}
 }
 
 .navbar-navigation {
 	@include absolute-full-width;
-	display: table;
+	display: flex;
+	align-items: center;
 	font-family: $font-family-base;
 	width: 100%;
 	height: 100vh;
@@ -116,9 +118,7 @@
     font-size: 1.6em;
     text-transform: uppercase;
     text-align: center;
-    float: none;
-    display: table-cell;
-    vertical-align: middle;
+    flex: 1 0 auto;
 
     li { 
     	float: none; 

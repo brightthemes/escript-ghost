@@ -25,7 +25,7 @@
     border: 1px solid $dark-color;
     background-color: $light-color;
     border-radius: 0;
-    transition: all $transition-speed-base;
+    transition: color $transition-speed-base, background $transition-speed-base;
     margin-bottom: 0.5em;
 
     @media #{$sm} {

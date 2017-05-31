@@ -8,6 +8,7 @@
 
 .post-header {
   min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   background-color: $dark-color;
@@ -16,6 +17,7 @@
   &.post-without-image { 
     display: block; 
     min-height: auto;
+    height: auto;
     background: transparent;
 
     .post-header__info {
@@ -84,7 +86,7 @@
         text-transform: uppercase;
         margin-right: 0.25em;
         line-height: 2;
-        transition: all $transition-speed-base;
+        transition: color $transition-speed-base, background $transition-speed-base;
 
         @media #{$sm} {
           font-size: 1.2rem;

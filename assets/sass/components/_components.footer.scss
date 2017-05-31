@@ -82,7 +82,7 @@
       height: 2em;
       text-align: center;
       margin-right: 0.5em;
-      transition: all $transition-speed-base;
+      transition: color $transition-speed-base, background $transition-speed-base;
 
       i {
         vertical-align: middle;
@@ -91,11 +91,11 @@
 
       &:hover {
         background-color: rgba($light-color, 0.8);
-        transition: all $transition-speed-base;
+        transition: color $transition-speed-base, background $transition-speed-base;
 
         i {
           color: rgba($dark-color, 0.8);
-          transition: all $transition-speed-base;
+          transition: color $transition-speed-base, background $transition-speed-base;
         }
       }
     }

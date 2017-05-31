@@ -11,7 +11,7 @@ button, .button {
   font-weight: $font-weight-semibold;
   font-family: $heading-font-family;
   font-size: $font-size-root;
-  transition: all $transition-speed-base;
+  transition: color $transition-speed-base, background $transition-speed-base;
   background: transparent;
   text-transform: uppercase;
   display: inline-block;

@@ -12,6 +12,7 @@
   text-transform: uppercase;
   color: rgba($light-color, 0.8);
   font-weight: $font-weight-bold;
+  transition: background $transition-speed-base, color $transition-speed-base;
 
   &:hover {
     color: rgba($dark-color, 0.8);

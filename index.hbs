@@ -1,7 +1,7 @@
 {{!< default}}
 
 {{!-- The big featured header --}}
-{{#get "posts" limit="4" include="author,tags" filter="featured:true" as |featured| }}
+{{#get "posts" limit="10" include="author,tags" filter="featured:true" as |featured| }}
   <section class="featured-posts">
     <div id="featured-posts__carousel" class="carousel slide" data-ride="carousel" data-interval="8000">
 

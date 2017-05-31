@@ -1,0 +1,13 @@
+//===================================
+// Post video
+//===================================
+
+.post-content {
+  .fluid-width-video-wrapper {
+    @media #{$sm} {
+      width: calc(100% + 5em);
+      margin: 1em -2.5em;
+      max-width: 50.52em;
+    }
+  }
+}

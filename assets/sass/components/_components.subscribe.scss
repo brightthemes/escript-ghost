@@ -41,9 +41,13 @@
   }
 
   .subscribe-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
     .subscribe-form__input {
       background-color: transparent;
-      padding: 0.5em;
+      height: 3rem;
       border: 2px solid $light-color;
       border-right: 0;
       max-width: 15em;
@@ -71,7 +75,8 @@
       }
     }
     .subscribe-form__button {
-      margin-left: -0.25em;
+      height: 3em;
+      margin-left: -0.3em;
       padding: 0.5em 1em;
       
       i { color: $light-color; }
