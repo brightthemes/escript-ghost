@@ -3,7 +3,7 @@
 {{!-- Page 404 --}}
 <div class="page-header {{#if @blog.cover}}post-hero{{else}}post-without-image{{/if}}">
   {{#if @blog.cover}}
-    <div class="full-page-cover lazyload" data-src="{{@blog.cover}}" style="background-image: url({{@blog.cover}})"></div>
+    <div class="full-page-cover lazyload blur" data-src="{{@blog.cover}}" style="background-image: url({{@blog.cover}})"></div>
   {{/if}}
   <div class="container">
     <div class="error-404">

@@ -4,7 +4,7 @@
 {{#tag}}
   <section class="tag tag-header">
     {{#if image}}
-      <div class="full-page-cover lazyload " data-src="{{image}}" style="background-image: url({{image}})"></div>
+      <div class="full-page-cover lazyload blur" data-src="{{image}}" style="background-image: url({{image}})"></div>
     {{/if}}
     <div class="container">
       <div class="tag__info">        
@@ -31,6 +31,7 @@
 {{/tag}}
 
 {{!-- The main content/post by the author --}}
+{{#if posts}}
 <section class="latest-posts container" id="content">
 	<div class="masonry clearfix" id="grid" data-columns>
 	{{#foreach posts}}
@@ -41,3 +42,4 @@
   	<button id="load-posts" onclick="loadTagPosts('{{tag.slug}}');" class="uppercase load-more-posts">Load More</button>
   </div>
 </section>
+{{/if}}

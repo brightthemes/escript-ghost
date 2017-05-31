@@ -4,12 +4,12 @@
 {{#author}}
   <section class="author">
     {{#if cover}}
-      <div class="full-page-cover lazyload " data-src="{{cover}}" style="background-image: url({{cover}})"></div>
+      <div class="full-page-cover lazyload blur" data-src="{{cover}}" style="background-image: url({{cover}})"></div>
     {{/if}}
     <div class="container">
       <div class="author__profile">
         {{#if image}}
-          <div class="lazyload author__image" data-src="{{image}}" style="background-image: url({{image}})">
+          <div class="lazyload blur author__image" data-src="{{image}}" style="background-image: url({{image}})">
             <span class="hidden">{{name}}'s Picture</span>
           </div>
         {{/if}}

@@ -24,8 +24,8 @@
     height: 2.8em;
     border: 1px solid $dark-color;
     background-color: $light-color;
-    border-radius: 0;
-    transition: color $transition-speed-base, background $transition-speed-base;
+    border-radius: $global-border-radius;
+    transition: color $global-transition, background $global-transition;
     margin-bottom: 0.5em;
 
     @media #{$sm} {

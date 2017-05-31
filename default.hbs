@@ -24,7 +24,7 @@
     {{!-- Ghost outputs important style and meta data with this tag --}}
     {{ghost_head}}
   </head>
-  <body class="{{body_class}} nav--closed search--closed">
+  <body class="{{body_class}} nav--closed search--closed" onload="postsPerPage({{@blog.posts_per_page}})">
 
     {{!-- The blog navigation links --}}
     {{> header}}

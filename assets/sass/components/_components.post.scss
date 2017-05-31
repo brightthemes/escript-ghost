@@ -86,7 +86,7 @@
         text-transform: uppercase;
         margin-right: 0.25em;
         line-height: 2;
-        transition: color $transition-speed-base, background $transition-speed-base;
+        transition: color $global-transition, background $global-transition;
 
         @media #{$sm} {
           font-size: 1.2rem;

@@ -170,11 +170,19 @@ $(document).ready(function () {
   });
 });
 
-var postsPerPage = $('.masonry-post').length;
+var pagination = 0;
+
+function postsPerPage(postsPerPage) {
+  pagination = postsPerPage;  
+  var currentPosts = $('.masonry-post').length;
+  if (currentPosts < pagination) {
+    $('.masonry-foot').css('display', 'none');
+  }
+}
+
+
 //This is set to 2 since the posts already loaded should be page 1
 var nextPage = 2;
-//Set this to match the pagination used in your blog
-var pagination = postsPerPage;
 
 var grid = document.querySelector('#grid');
 var item = document.createElement('div');
@@ -225,7 +233,7 @@ function loadPosts(filter) {
     //If you are on the last post, hide the load more button
 
     if (nextPage == data.meta.pagination.pages || data.posts.length == 0) {
-      $('#load-posts').hide();
+      $('.masonry-foot').hide();
     } else {
       nextPage++;
     }

@@ -11,11 +11,12 @@ button, .button {
   font-weight: $font-weight-semibold;
   font-family: $heading-font-family;
   font-size: $font-size-root;
-  transition: color $transition-speed-base, background $transition-speed-base;
+  transition: color $global-transition, background $global-transition;
   background: transparent;
   text-transform: uppercase;
   display: inline-block;
   border: 2px solid $dark-color;
+  border-radius: $global-border-radius;
   padding: 0.25em 0.5em;
 
   @media #{$sm} {

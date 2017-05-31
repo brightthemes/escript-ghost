@@ -3,6 +3,7 @@
 //===================================
 
 .featured-posts {
+  background-color: $dark-color;
 	
 	.featured-post__image {
 		min-height: 30em;
@@ -67,6 +68,7 @@
     background-color: transparent;
     background-image: none;
     border: 2px solid rgba($light-color, 0.8);
+    border-radius: $global-border-radius;
     opacity: 1;
 
     &.left {
@@ -94,7 +96,7 @@
 	.carousel-control-next {
 		position: absolute;
     color: rgba($light-color, 0.8);
-    transition: $transition-speed-base;
+    transition: $global-transition;
     top: 50%;
     width: 100%;
     -webkit-transform: translateY(-50%);

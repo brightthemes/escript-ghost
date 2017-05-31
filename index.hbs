@@ -16,7 +16,7 @@
 	 		<div class="carousel-inner featured-posts__inner">
 				{{#foreach featured}}
 					<div class="featured-post item {{#if @first}}active{{/if}}">
-						<div class="lazyload featured-post__image" 
+						<div class="lazyload blur featured-post__image" 
 								data-src="{{#if image}}{{image}}{{/if}}" 
 								style="{{#if image}}background-image: url({{image}}){{else}}background-color: #000;{{/if}}">
 						</div> 

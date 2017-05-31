@@ -3,9 +3,12 @@
 //===================================
 
 // Base transition speed
-$transition-speed-base:				.4s;
+$global-transition:				    .4s;
 
 // Max width
-$max-width-sm:							46.875em;
-$max-width-md:							60.625em;
-$max-width-lg:							73.125em;
+$max-width-sm:							  46.875em;
+$max-width-md:							  60.625em;
+$max-width-lg:							  73.125em;
+
+// Border radius
+$global-border-radius:        10px;

@@ -2,20 +2,31 @@
 // Misc
 //===================================
 
-.lazyload, .lazyloading {
-  opacity: 0;
-  transform: scale(0.85);
+// .lazyload, .lazyloading {
+//   opacity: 0;
+//   transform: scale(0.85);
+// }
+
+// .lazyload.animated, .lazyloading.animated {
+//   opacity: 0;
+//   transform: scale(1);
+// }
+
+// .lazyloaded {
+//   opacity: 1;
+//   transform: scale(1);
+//   transition: transform .6s ease, opacity 1s ease;
+// }
+
+.blur {
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+  transition: filter 400ms, -webkit-filter 400ms;
 }
 
-.lazyload.animated, .lazyloading.animated {
-  opacity: 0;
-  transform: scale(1);
-}
-
-.lazyloaded {
-  opacity: 1;
-  transform: scale(1);
-  transition: transform .6s ease, opacity 1s ease;
+.blur.lazyloaded {
+  -webkit-filter: blur(0);
+  filter: blur(0);
 }
 
 .clearfix {
@@ -43,7 +54,7 @@
     height: 3em;
     border: 2px solid $border-color;
     display: inline-block;
-    transition: color $transition-speed-base, background $transition-speed-base;
+    transition: color $global-transition, background $global-transition;
 
     &:hover {
       background-color: darken($light-color, 20%);

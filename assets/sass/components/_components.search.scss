@@ -140,7 +140,7 @@
   margin-bottom: 1em;
   background-color: $light-color;
   box-shadow: 0 2px 5px darken($light-color, 20%);
-  transition: box-shadow $transition-speed-base;
+  transition: box-shadow $global-transition;
 
   &:hover {
     box-shadow: 0 3px 8px darken($light-color, 30%);

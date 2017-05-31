@@ -5,7 +5,7 @@
 a {
   color: $dark-color;
   text-decoration: none;
-  transition: color $transition-speed-base;
+  transition: color $global-transition;
 
   &:active, &:focus, &:hover { text-decoration: none; }
 
@@ -16,14 +16,14 @@ p {
   a {
     color: $link-color;
     text-decoration: none;
-    transition: color $transition-speed-base;
+    transition: color $global-transition;
 
     &:visited { color: $link-color-visited; }
 
     &:hover {
       color: $link-color-hover;
       text-decoration: none;
-      transition: color $transition-speed-base;
+      transition: color $global-transition;
     }
 
     &:active { color: $link-color; }
