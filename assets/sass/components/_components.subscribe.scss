@@ -49,6 +49,8 @@
       background-color: transparent;
       height: 3rem;
       border: 2px solid $light-color;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
       border-right: 0;
       max-width: 15em;
       color: $light-color;
@@ -61,23 +63,13 @@
       &:focus {
         outline: none;
       }
-      &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-        color: rgba($light-color, 0.6);
-      }
-      &::-moz-placeholder { /* Firefox 19+ */
-        color: rgba($light-color, 0.6);
-      }
-      &:-ms-input-placeholder { /* IE 10+ */
-        color: rgba($light-color, 0.6);
-      }
-      &:-moz-placeholder { /* Firefox 18- */
-        color: rgba($light-color, 0.6);
-      }
     }
     .subscribe-form__button {
       height: 3em;
       margin-left: -0.3em;
       padding: 0.5em 1em;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
       
       i { color: $light-color; }
 

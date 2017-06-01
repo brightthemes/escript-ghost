@@ -11,27 +11,18 @@
   max-width: 50em;
   margin: 0 auto;
 
-  .contact-address {
-    .social-media-list .social-media-list__item {
-      color: $light-color;
-      text-decoration: none;
-      transition: color $global-transition;
-      font-size: 1.2rem;
-      margin: 0.25em;
-
-      &:first-of-type {
-        margin-left: 0;
-      }
-
-      &:hover {
-        color: $link-color;
-      }
-    }
+  .contact-address, .contact__form-wrapper {
+    padding-top: 1em;
+    padding-bottom: 1em;
   }
 
   .contact-address__title,
   .contact-form__title {
     color: $light-color;
+
+    @media #{$xs} {
+      font-size: 1.6rem;
+    }
   }
 
   .contact-form {
@@ -43,8 +34,10 @@
       background: transparent;
       border: none;
       border-bottom: 2px solid;
+      border-radius: 0;
       width: 100%;
       max-width: 25em;
+      min-height: 2em;
       font-size: 1.2rem;
       padding: 0;
 

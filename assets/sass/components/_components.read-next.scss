@@ -17,7 +17,10 @@
     flex-grow: 1;
     min-width: 100%;
     position: relative;
-    color: $light-color;
+    border-radius: $global-border-radius;
+    display: flex;
+    align-items: center;
+    min-height: 15em;
 
     @media #{$sm} {
       min-width: 49%;
@@ -38,59 +41,46 @@
 
       .read-next__image:after {
         opacity: 0.9;
-        transition: color $global-transition, opacity $global-transition;
+        transition: opacity $global-transition;
+      }
+    }
+
+    &.no-image.read-next__story {
+      background-color: rgba($dark-color, 0.1);
+      transition: background-color $global-transition;
+
+      &:hover {
+        background-color: rgba($dark-color, 0.15);
+        transition: background-color $global-transition;
       }
 
-      .read-next__info .read-next__icon {
-        background-color: $light-color;
+      .read-next__info .read-next__title {
         color: $dark-color;
       }
     }
 
-    &.no-image {
-      .read-next__info {        
-        .read-next__icon {
-          border: 2px solid $dark-color;
-          color: $dark-color;
-        }
-        .read-next__title {
-          color: $dark-color;
-        }
-      }
-    }
-
     .read-next__image {
+      @include background-cover;
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      @include background-cover;
+      border-radius: $global-border-radius;
 
       &:after {
-        content: "";
-        transition: color $global-transition, background $global-transition;
         @include background-overlay;
+        content: "";
+        transition: opacity $global-transition, background $global-transition;
         opacity: 0.6;
+        border-radius: $global-border-radius;
         background: linear-gradient(to bottom, rgba($dark-color, 0.6) 0%, rgba($dark-color, 0.8) 100%);
       }
     }
 
     .read-next__info {
       position: relative;
-      
-      .read-next__icon {
-        display: inline-block;
-        border: 2px solid $light-color;
-        color: $light-color;
-        width: 3em;
-        height: 3em;
-        border-radius: 50%;
-        margin-top: 1em;
-        transition: color $global-transition, background $global-transition;
-
-        i { padding: 0.15em; }
-      }
+      margin: 0 auto;
 
       .read-next__title {
         color: $light-color;

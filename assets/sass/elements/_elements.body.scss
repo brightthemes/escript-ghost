@@ -20,4 +20,11 @@ html, body {
   hyphens: auto;
 }
 
-body { overflow-x: hidden; }
+body { 
+  overflow-x: hidden; 
+}
+
+// Root font size
+:root {
+  font-size: $font-size-root;
+}

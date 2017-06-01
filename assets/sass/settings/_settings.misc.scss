@@ -3,7 +3,7 @@
 //===================================
 
 // Base transition speed
-$global-transition:				    .4s;
+$global-transition:				    .4s ease;
 
 // Max width
 $max-width-sm:							  46.875em;
@@ -11,4 +11,4 @@ $max-width-md:							  60.625em;
 $max-width-lg:							  73.125em;
 
 // Border radius
-$global-border-radius:        10px;
+$global-border-radius:        0px;

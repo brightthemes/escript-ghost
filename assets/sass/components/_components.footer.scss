@@ -39,6 +39,7 @@
       height: 5em;
       float: left;
       background-color: $brand-color;
+      border-radius: $global-border-radius;
       @include background-cover;
     }
 
@@ -69,36 +70,6 @@
 
   .footer-logo {
     max-height: 3em;
-  }
-
-  .social-media-list {
-    margin: 0;
-    padding: 0;
-
-    .social-media-list__item {
-      float: left;
-      border: 1px solid rgba($light-color, 0.8);
-      width: 2em;
-      height: 2em;
-      text-align: center;
-      margin-right: 0.5em;
-      transition: color $global-transition, background $global-transition;
-
-      i {
-        vertical-align: middle;
-        color: rgba($light-color, 0.8);
-      }
-
-      &:hover {
-        background-color: rgba($light-color, 0.8);
-        transition: color $global-transition, background $global-transition;
-
-        i {
-          color: rgba($dark-color, 0.8);
-          transition: color $global-transition, background $global-transition;
-        }
-      }
-    }
   }
 
   .container .row > div:not(:first-child) {

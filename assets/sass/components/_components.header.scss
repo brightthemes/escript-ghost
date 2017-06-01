@@ -10,6 +10,7 @@
 	background-color: transparent;
 	border: none;
 	width: 100%;
+	max-width: 100vw;
 	z-index: 10;
 	height: 5em;
 	transition: color $global-transition, background $global-transition;

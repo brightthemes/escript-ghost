@@ -19,7 +19,7 @@
     padding-top: 1.5em;
   }
 
-  a {
+  a, button {
     width: 2.8em;
     height: 2.8em;
     border: 1px solid $dark-color;
@@ -31,6 +31,8 @@
     @media #{$sm} {
       display: block;
     }
+
+    &:focus, &:active { outline: none; }
 
     &:hover {
       background-color: $dark-color;

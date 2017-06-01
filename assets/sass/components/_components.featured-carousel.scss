@@ -153,6 +153,7 @@
 
     .featured-post__title {
       font-size: 2rem;
+      animation-delay: $global-transition;
       
       @media #{$sm} { 
         font-size: 3rem;   
@@ -167,14 +168,14 @@
     }
 
     .featured-post__tag { 
-      animation-delay: 1s; 
+      animation-delay: 0.8s; 
 
       @media #{$md} { font-size: 1.1rem; }
       @media #{$lg} { font-size: 1.2rem; }
     }
 
     .featured-post__info { 
-      animation-delay: 0.5s; 
+      animation-delay: 0.4s; 
       margin-bottom: 0.5em;
 
       @media #{$md} { font-size: 1.1rem; }
@@ -182,7 +183,7 @@
     }
     
     .read-more { 
-      animation-delay: 1.5s; 
+      animation-delay: 1.2s; 
       padding: 0.5em 0;
       display: table;
 

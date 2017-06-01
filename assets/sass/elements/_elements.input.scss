@@ -4,6 +4,7 @@
 
 input, textarea, select { 
   padding: 0 0.5em;
+  border-radius: $global-border-radius;
 }
 
 button, .button {

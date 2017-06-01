@@ -2,6 +2,38 @@
 // Social Media
 //===================================
 
+.social-media-list {
+  margin: 0;
+  padding: 0;
+
+  .social-media-list__item {
+    font-size: 1rem;
+    float: left;
+    border: 1px solid rgba($light-color, 0.8);
+    border-radius: $global-border-radius;
+    width: 2em;
+    height: 2em;
+    text-align: center;
+    margin-right: 0.5em;
+    transition: color $global-transition, background $global-transition;
+
+    i {
+      vertical-align: middle;
+      color: rgba($light-color, 0.8);
+    }
+
+    &:hover {
+      background-color: rgba($light-color, 0.8);
+      transition: color $global-transition, background $global-transition;
+
+      i {
+        color: rgba($dark-color, 0.8);
+        transition: color $global-transition, background $global-transition;
+      }
+    }
+  }
+}
+
 .facebook, .facebook:hover { color: $facebook; }
 .twitter, .twitter:hover { color: $twitter; }
 .behance, .behance:hover { color: $behance; }

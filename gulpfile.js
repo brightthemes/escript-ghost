@@ -54,15 +54,18 @@ gulp.task('scripts', function() {
 gulp.task('sass', function () {
     var processors = [
         removeComments,
-        cssnext({browsers:'> 1%, last 10 version, Firefox >= 20, ie >= 8', warnForDuplicates: false}),
+        cssnext({
+            browsers:'> 1%, last 10 version, Firefox >= 30, ie >= 9', 
+            warnForDuplicates: false
+        }),
         zindex,
         willChange,
         colorRgbaFallback,
         opacity,
         pseudoelements,
         vmin,
-        pixrem({rootValue: '26px'}),
-        cssnano
+        // // pixrem({rootValue: 16, replace: false, atrules: false, html: true, browsers: 'ie <= 8', unitPrecision: 3}),
+        // cssnano
     ];
 
   return gulp
