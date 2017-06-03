@@ -4,20 +4,50 @@
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $heading-font-family;
-  font-weight: $font-weight-semibold;
-  line-height: $heading-line-height;
   color: $heading-text-color;
-  margin: 0 0 $heading-line-height/2;
+	word-break: break-word;
+
+  a { color: $heading-text-color; }
 }
 
-h1 { font-size: ceil($font-size-base * 2.5); }
+h1 { 
+	font-size: $font-size-root * 3.5;
+	font-weight: $font-weight-bold;
+	line-height: $heading-line-height * 0.8;
+  margin: 0 0 ($leading * 0.5);
+}
 
-h2 { font-size: ceil($font-size-base * 2); }
+h2 { 
+	font-size: $font-size-root * 2.5; 
+	font-weight: $font-weight-bold;
+	line-height: $heading-line-height * 0.85;
+	margin: 0 0 ($leading * 0.6);
+}
 
-h3 { font-size: ceil($font-size-base * 1.75); }
+h3 { 
+	font-size: $font-size-root * 2; 
+	font-weight: $font-weight-bold;
+	line-height: $heading-line-height * 0.9;
+	margin: 0 0 ($leading * 0.7);
+}
 
-h4 { font-size: ceil($font-size-base * 1.5); }
+h4 { 
+	font-size: $font-size-root * 1.5; 
+	font-weight: $font-weight-semibold;
+	line-height: $heading-line-height * 0.95;
+	margin: 0 0 ($leading * 0.8);
+}
 
-h5 { font-size: ceil($font-size-base * 1.25); }
+h5 { 
+	font-size: $font-size-root * 1.25; 
+	font-weight: $font-weight-semibold;
+	line-height: $heading-line-height * 1;
+	margin: 0 0 ($leading * 0.9);
+}
 
-h6 { font-size: ceil($font-size-base * 1); }
+h6 { 
+	font-size: $font-size-root * 1; 
+	font-weight: $font-weight-semibold;
+	line-height: $heading-line-height * 1;
+	margin: 0 0 ($leading * 1);
+}

@@ -5,5 +5,11 @@
 // Bootstrap
 @import "_generic.bootstrap";
 
+// External stylesheets
+@import "_generic.vendor";
+
 // Box-sizing
 @import "_generic.box-sizing";
+
+// Prism - Code Highlighting
+@import "_generic.prism";

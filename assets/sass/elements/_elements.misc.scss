@@ -14,5 +14,30 @@ hr {
   border: 0;
   height: 1px;
   background-color: $border-color;
-  margin: 0 $line-height-base;
+  margin: $leading 0;
+}
+
+small {
+  font-size: 65%;
+}
+
+abbr {
+  -webkit-font-variant: small-caps;
+  -moz-font-variant: small-caps;
+  -ms-font-variant: small-caps;
+  font-variant: small-caps;
+  font-weight: 600;
+  text-transform: lowercase;
+  color: gray;
+}
+
+abbr[title]:hover {
+  cursor: help;
+}
+
+::selection {
+  background: rgba($brand-color, 0.5); /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: rgba($brand-color, 0.5); /* Gecko Browsers */
 }

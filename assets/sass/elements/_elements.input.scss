@@ -1,0 +1,57 @@
+//===================================
+// Input and Buttons
+//===================================
+
+input, textarea, select { 
+  padding: 0 0.5em;
+  border-radius: $global-border-radius;
+}
+
+button, .button {
+  color: $dark-color;
+  font-weight: $font-weight-semibold;
+  font-family: $heading-font-family;
+  font-size: $font-size-root;
+  transition: color $global-transition, background $global-transition;
+  background: transparent;
+  text-transform: uppercase;
+  display: inline-block;
+  border: 2px solid $dark-color;
+  border-radius: $global-border-radius;
+  padding: 0.25em 0.5em;
+
+  @media #{$sm} {
+    padding: 0.5em 1em;
+  }
+
+  &.button--light {
+    color: $light-color;
+    border-color: $light-color;
+
+    &:hover {
+      background: $light-color;
+      color: $dark-color;
+    }
+  }
+
+  &:hover {
+  	background: $dark-color;
+  	color: $light-color;
+  }
+
+  &:active, &:focus { outline: none; }
+}
+
+input,
+abbr,
+acronym,
+blockquote,
+code,
+kbd,
+q,
+samp,
+var {
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}

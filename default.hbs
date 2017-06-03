@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     {{!-- Document Settings --}}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,22 +23,23 @@
 
     {{!-- Ghost outputs important style and meta data with this tag --}}
     {{ghost_head}}
-</head>
-<body class="{{body_class}} nav-closed">
+  </head>
+  <body class="{{body_class}} nav--closed search--closed" 
+        onload="postsPerPage({{@blog.posts_per_page}})">
 
     {{!-- The blog navigation links --}}
-    {{!-- {{> header}} --}}
+    {{> header}}
 
     {{!-- Blog search --}}
-    {{!-- {{> search}} --}}
+    {{> search}}
 
     <main class="main">
-        {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
-        {{{body}}}
+      {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+      {{{body}}}
     </main>
 
     {{!-- The footer at the very bottom --}}
-    {{!-- {{> footer}} --}}
+    {{> footer}}
 
     {{!-- Ghost outputs important scripts and data with this tag --}}
     {{ghost_foot}}
@@ -48,15 +49,16 @@
 
     {{!-- Disqus comments --}}
     <script type="text/javascript">
-        var disqus_shortname = 'bironthemes'; // Replace 'bironthemes' with your disqus account shortname
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var s = document.createElement('script'); s.async = true;
-            s.type = 'text/javascript';
-            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-            (document.getElementsByTagName('BODY')[0]).appendChild(s);
-        }());
+      // Replace 'bironthemes' with your disqus account shortname
+      var disqus_shortname = 'bironthemes'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('BODY')[0]).appendChild(s);
+      }());
     </script>
-
-</body>
+    
+  </body>
 </html>

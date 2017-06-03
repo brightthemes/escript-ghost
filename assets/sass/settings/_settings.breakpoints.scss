@@ -5,13 +5,13 @@
 $screen: "only screen" !default;
 
 // Mobile phones
-$xs: "#{$screen} and (max-width: 767px)";
+$xs: "#{$screen} and (max-width: 47.938em)"; // 767px
 
 // Tablets
-$sm: "#{$screen} and (min-width: 768px)";
+$sm: "#{$screen} and (min-width: 48em)"; // 768px
 
 // Smaller laptops
-$md: "#{$screen} and (min-width: 992px)";
+$md: "#{$screen} and (min-width: 62em)"; // 992px
 
 // Larger devices 
-$lg: "#{$screen} and (min-width: 1200px)";
+$lg: "#{$screen} and (min-width: 75em)"; // 1200px

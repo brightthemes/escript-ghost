@@ -1,0 +1,81 @@
+//===================================
+// Author page style
+//===================================
+
+.tag-header {
+  min-height: 100vh;
+	height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: $dark-color;
+	position: relative;
+
+	.tag__info {
+		margin: 0 auto;
+		padding: 2em;
+		position: relative;
+		height: 100%;
+		width: 100%;
+		background-color: rgba($dark-color, 0.6);
+	}
+
+	.tag__title {
+		margin-top: 0;
+		font-size: 2rem;
+		text-align: center;
+		color: $brand-color;
+
+		@media #{$sm} {
+			font-size: 2.5rem;
+		}
+
+		@media #{$md} {
+			font-size: 3rem;
+		}
+
+		a {
+			color: $dark-color;
+
+			&:hover {
+				text-decoration: none;
+				border: none;
+			}
+		}
+	}
+
+	.tag__description {
+		max-width: 30em;
+		margin: 0 auto;
+		color: darken($light-color, 20%);
+		font-size: 1rem;
+		letter-spacing: 0;
+		text-indent: 0;
+		text-align: center;
+
+		@media #{$sm} {
+			font-size: 1.2rem;
+		}
+	}
+}
+
+.tag-meta {
+	margin: 0;
+	padding: 0.5em 0;
+	color: darken($light-color, 20%);
+	text-align: center;
+
+	span {
+		display: inline-block;
+		margin: 0.5em;
+		word-wrap: break-word;
+	}
+
+	a { 
+		text-decoration: none;
+		color: darken($light-color, 20%);
+
+		&:hover { color: $link-color-hover; }
+	}
+
+	.tag-meta__stats { color: darken($light-color, 20%); }
+}

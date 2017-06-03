@@ -6,21 +6,27 @@ pre,
 code {
   font-family: $font-family-monospace;
   background-color: darken($background-color, 5%);
+  white-space: pre;
 }
 
 // Code block
 pre {
   overflow: auto;
   margin-top: 0;
-  margin-bottom: $line-height-base;
-  padding: $line-height-base;
-
-  font-size: $font-size-base;
+  margin: $leading 0;
+  padding: $leading;
+  font-size: $font-size-root;
   white-space: pre-wrap;
   word-wrap: break-word;
+
+  code {
+    word-wrap: normal;
+    white-space: -moz-pre-wrap;
+    white-space: pre-wrap;
+  }
 }
 
 // Inline code
 p code {
-  padding: $line-height-base/2 $line-height-base/4;
+  padding: $leading * 0.5 $leading * 0.25;
 }

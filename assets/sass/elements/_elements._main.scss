@@ -2,6 +2,9 @@
 // Elements
 //===================================
 
+// Font
+@import 'elements.font';
+
 // Bootstrap
 @import '_elements.bootstrap';
 
@@ -28,6 +31,9 @@
 
 // Lists
 @import '_elements.list';
+
+// Input
+@import '_elements.input';
 
 // // Figures
 // @import '_elements.figure';

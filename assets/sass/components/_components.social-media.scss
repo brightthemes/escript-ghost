@@ -1,0 +1,56 @@
+//===================================
+// Social Media
+//===================================
+
+.social-media-list {
+  margin: 0;
+  padding: 0;
+
+  .social-media-list__item {
+    font-size: 1rem;
+    float: left;
+    border: 1px solid rgba($light-color, 0.8);
+    border-radius: $global-border-radius;
+    width: 2em;
+    height: 2em;
+    text-align: center;
+    margin-right: 0.5em;
+    transition: color $global-transition, background $global-transition;
+
+    i {
+      vertical-align: middle;
+      color: rgba($light-color, 0.8);
+    }
+
+    &:hover {
+      background-color: rgba($light-color, 0.8);
+      transition: color $global-transition, background $global-transition;
+
+      i {
+        color: rgba($dark-color, 0.8);
+        transition: color $global-transition, background $global-transition;
+      }
+    }
+  }
+}
+
+.facebook, .facebook:hover { color: $facebook; }
+.twitter, .twitter:hover { color: $twitter; }
+.behance, .behance:hover { color: $behance; }
+.dribbble, .dribbble:hover { color: $dribbble; } 
+.email, .email:hover { color: $email; }
+.google, .google:hover { color: $google; }
+.google-plus, .google-plus:hover { color: $google-plus; }
+.instagram, .instagram:hover { color: $instagram; }
+.linkedin, .linkedin:hover { color: $linkedin; }
+.pinterest, .pinterest:hover { color: $pinterest; }
+.reddit, .reddit:hover { color: $reddit; }
+.rss, .rss:hover { color: $rss; }
+.skype, .skype:hover { color: $skype; } 
+.soundcloud, .soundcloud:hover { color: $soundcloud; }
+.spotify, .spotify:hover { color: $spotify; }
+.stumbleupon, .stumbleupon:hover { color: $stumbleupon; }
+.trello, .trello:hover { color: $trello; }
+.tumblr, .tumblr:hover { color: $tumblr; }
+.whatsapp, .whatsapp:hover { color: $whatsapp; }
+.youtube, .youtube:hover { color: $youtube; }

@@ -3,19 +3,37 @@
 //===================================
 
 a {
-  color: $link-color;
+  color: $dark-color;
   text-decoration: none;
-  transition: $transition-speed-base;
+  transition: color $global-transition;
 
-  &:visited {
-    color: $link-color-visited;
-  }
+  &:active, &:focus, &:hover { text-decoration: none; }
 
-  &:hover {
-    color: $link-color-hover;
-  }
+  &:hover { color: $link-color-hover; }
+}
 
-  &:active {
+p {
+  a {
     color: $link-color;
+    text-decoration: none;
+    transition: color $global-transition;
+
+    &:visited { color: $link-color-visited; }
+
+    &:hover {
+      color: $link-color-hover;
+      text-decoration: none;
+      transition: color $global-transition;
+    }
+
+    &:active { color: $link-color; }
   }
+}
+
+.post {
+  a:hover { text-decoration: none; }
+}
+
+.post-content {
+  a:hover { text-decoration: underline; }
 }

@@ -1,5 +1,52 @@
 {{!< default}}
 
-{{!-- The first three articles form the header part --}}
+{{!-- Tag header --}}
+{{#tag}}
+  <section class="tag tag-header">
+    {{!-- Tag cover image --}}
+    {{#if image}}
+      <div class="full-page-cover lazyload blur" data-src="{{image}}" 
+           style="background-image: url({{image}})">
+      </div>
+    {{/if}}
+    <div class="container">
+      <div class="tag__info">
+        {{!-- Tag name --}}  
+        <h2 class="tag__title">{{name}}</h2>
+        {{!-- Tag description --}}
+        {{#if description}}
+          <p class="tag__description">{{description}}</p>
+        {{/if}}
+        {{!-- Number of posts for the tag --}}
+        <div class="tag-meta">
+          <span class="tag-meta__stats">
+            <i class="fa fa-signal" aria-hidden="true"></i>
+            {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
+          </span>
+        </div>
+      </div>
 
-{{!-- The main content area on the homepage --}}
+      <div class="scroll-wrapper hidden-xs">
+        <a class="scroll-down animated bounce" href="#content">
+          <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+{{/tag}}
+
+{{!-- The main content/post by the author --}}
+{{#if posts}}
+<section class="latest-posts container" id="content">
+	<div class="masonry clearfix" id="grid" data-columns>
+	{{#foreach posts}}
+		{{> masonry}}
+	{{/foreach}}
+	</div>
+	<div class="masonry-foot text-center">
+  	<button id="load-posts" onclick="loadTagPosts('{{tag.slug}}');" 
+            class="uppercase load-more-posts">Load More
+    </button>
+  </div>
+</section>
+{{/if}}

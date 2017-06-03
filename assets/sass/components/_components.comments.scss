@@ -1,0 +1,14 @@
+//===================================
+// Comments
+//===================================
+
+.comments {
+  .comments__panel {
+    max-width: 46em;
+    padding: 1em;
+
+    @media #{$sm} {
+      padding: 2em 0;
+    }
+  }
+}

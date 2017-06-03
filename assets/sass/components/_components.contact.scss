@@ -1,0 +1,53 @@
+//===================================
+// Contact page style
+//===================================
+
+.contact-header {
+  padding: 4em 0 2em;
+}
+
+.contact {
+  color: $light-color;
+  max-width: 50em;
+  margin: 0 auto;
+
+  .contact-address, .contact__form-wrapper {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  .contact-address__title,
+  .contact-form__title {
+    color: $light-color;
+
+    @media #{$xs} {
+      font-size: 1.6rem;
+    }
+  }
+
+  .contact-form {
+    .contact-form__name, 
+    .contact-form__email,
+    textarea { 
+      display: block; 
+      margin: 1em 0;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid;
+      border-radius: 0;
+      width: 100%;
+      max-width: 25em;
+      min-height: 2em;
+      font-size: 1.2rem;
+      padding: 0;
+
+      &:active, &:focus {
+        outline: none;
+      }
+    }
+
+    .button {
+      margin: 0;
+    }
+  }
+}

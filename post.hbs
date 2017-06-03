@@ -2,9 +2,75 @@
 
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
+<div class="{{post_class}}">
+  <div class="post-header {{#if image}}post-hero{{else}}post-without-image{{/if}}">
+    {{!-- Post image --}}
+    {{#if image}}
+      <div class="full-page-cover lazyload blur" data-src="{{image}}" 
+           style="background-image: url({{image}})"></div>
+    {{/if}}
+    <div class="container">
+      <div class="post-header__info">    
+        {{!-- Post tags --}}
+        <h6 class="post-header__tag animated fadeInDown">
+          {{tags limit="5" separator=" "}}
+        </h6>
+        {{!-- Post title --}}
+        <h2 class="post-header__title animated fadeInRight">{{title}}</h2>
+        <div class="post-header__details animated fadeInUp">
+          {{!-- Post author --}}
+          <h6 class="post-header__author">
+            {{#author}}<a href="{{url}}">{{name}}</a>{{/author}}
+          </h6>
+          {{!-- Post date --}}
+          <h6 class="post-header__date">
+            <time datetime="{{date format="YYYY-MM-DD"}}">
+              {{date published_at}}
+            </time>
+          </h6>
+          {{!-- Post comments --}}
+          <h6 class="post-header__comments">
+            <a href="#comments">
+              <i class="fa fa-comments-o"></i>
+              <span class="disqus-comment-count" 
+                    data-disqus-url="{{url absolute='true'}}">0
+              </span>
+            </a>
+          </h6>
+        </div>
+      </div>
 
-{{content}}
+      {{#if image}}
+        <div class="scroll-wrapper hidden-xs">
+          <a class="scroll-down animated bounce" href="#content">
+            <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+          </a>
+        </div>
+      {{/if}}
+    </div>
+  </div>
 
-    {{!-- Links to Previous/Next posts --}}
+  <div class="post-content container" id="content">
+    {{!-- Post Social Share --}}
+    {{> social-share}}
+    
+    {{!-- Post Content --}}
+    <article>
+      {{content}}
+    </article>
+
+    {{!-- Author Box/Info --}}
+    {{> author-box}}
+
+    {{!-- Previous and Next Posts --}}
+    {{> read-next}}
+  </div>
+</div>
+
+{{!-- Include Disqus Comments --}}
+{{> comments}}
 
 {{/post}}
+
+{{!-- Email subscribe form at the main page --}}
+{{> subscribe}}

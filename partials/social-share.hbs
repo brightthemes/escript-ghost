@@ -1,0 +1,47 @@
+{{!-- Post/Page share icons --}}
+<div class="social-share animated fadeIn">
+  {{!-- facebook --}}
+  <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute='true'}}" 
+      rel="external" target="_blank" class="btn">
+    <i class="fa fa-facebook"></i>
+  </a>
+  {{!-- google-plus --}}
+  <a href="https://plus.google.com/share?url={{url absolute='true'}}" 
+      rel="external" target="_blank" class="btn">
+    <i class="fa fa-google-plus"></i>
+  </a>
+  {{!-- twitter --}}
+  <a href="http://twitter.com/share?text={{encode title}}&amp;url={{url absolute='true'}}" 
+      rel="external" target="_blank" class="btn">
+    <i class="fa fa-twitter"></i>
+  </a>
+  {{!-- reddit --}}
+  <a href="//www.reddit.com/submit?url={{url absolute='true'}}" 
+      rel="external" target="_blank" class="btn">
+    <i class="fa fa-reddit-alien"></i>
+  </a>
+  {{!-- whatsapp --}}
+  <a href="whatsapp://send?text={{url}}" data-action="share/whatsapp/share" 
+      rel="external" target="_blank" class="btn">
+    <i class="fa fa-whatsapp"></i>
+  </a>
+  {{!-- stumbleupon --}}
+  <a href="http://www.stumbleupon.com/badge/?url={{url absolute='true'}}" 
+      rel="external" target="_blank" class="btn">
+    <i class="fa fa-stumbleupon"></i>
+  </a>
+  {{!-- Linkedin --}}
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{url}}/&amp;title={{encode title}}" 
+      rel="external" target="_blank" class="hidden-xs btn">
+    <i class="fa fa-linkedin"></i>
+  </a>
+  {{!-- email --}}
+  <a href="mailto:?subject={{encode title}}&amp;body=Article:%20{{url absolute='true'}}"
+      class="hidden-xs btn">
+    <i class="fa fa-envelope"></i>
+  </a>
+  {{!-- link --}}
+  <button onclick="copyLink();" class="hidden-xs btn azm-share">
+    <i class="fa fa-link"></i>
+  </button>
+</div>

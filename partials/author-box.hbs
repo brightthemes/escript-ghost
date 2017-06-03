@@ -1,4 +1,51 @@
 {{!-- Author Box --}}
 {{#author}}
-
+  <div class="author-box animated fadeIn">
+    <div class="row clearfix">
+      {{!-- Author profile image --}}
+      {{#if image}}
+        <div class="col-sm-2">
+          <a class="author-box__image blur lazyload" href="{{url}}" data-src="{{image}}" style="background-image: url({{image}})">
+          </a>
+        </div>
+      {{/if}}
+      <div class="{{#if image}}col-sm-10{{else}}col-sm-12{{/if}}">
+        <h4 class="author-box__name {{^if image}}text-center{{/if}}"><a href="{{url}}">{{name}}</a></h4>
+        {{!-- Author bio --}}
+        {{#if bio}}
+          <p class="author-box__bio">{{bio}}</p>
+        {{/if}}
+        <div class="author-link">
+          {{!-- Author location --}}
+          {{#if location}}
+          <div class="author-link__location">
+            <i class="fa fa-map-marker" aria-hidden="true"></i>{{location}}
+          </div>
+          {{/if}} 
+          {{!-- Author website --}}
+          {{#if website}}
+          <div class="author-link__website">
+            <i class="fa fa-link" aria-hidden="true"></i>
+            <a href="{{website}}" target="_blank">{{website}}</a>
+          </div>
+          {{/if}} 
+          {{!-- Author twitter --}}
+          {{#if twitter}}
+          <div class="author-link__twitter">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <a href="{{twitter_url}}" target="_blank">{{name}}</a>
+          </div>
+          {{/if}} 
+          {{!-- Author facebook --}}
+          {{#if facebook}}
+          <div class="author-link__facebook">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <a href="{{facebook_url}}" target="_blank">{{name}}</a>
+          </div>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
 {{/author}}
+

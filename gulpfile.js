@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
-var uglify = require('gulp-uglify');  
+var uglify = require('gulp-uglify');
 var postcss = require('gulp-postcss');
 var cssnext = require('postcss-cssnext');
 var colorRgbaFallback = require('postcss-color-rgba-fallback');
@@ -35,15 +35,18 @@ gulp.task('scripts', function() {
         .src([
             npm_src   + 'jquery/dist/jquery.min.js',
             npm_src   + 'fitvids/fitvids.min.js',
-            npm_src   + 'bootstrap/dist/js/bootstrap.min.js',
+            npm_src   + 'bootstrap-sass/assets/javascripts/bootstrap.min.js',
+            npm_src   + 'moment/min/moment.min.js',
             npm_src   + 'lazysizes/lazysizes.min.js',
+            npm_src   + 'jquery-viewport-checker/dist/jquery.viewportchecker.min.js',
+            npm_src   + 'salvattore/dist/salvattore.min.js',
             asset_src + 'js/scripts/jquery.ghostHunter.js',
             asset_src + 'js/scripts/prism.js',
             asset_src + 'js/scripts/script.js'
         ])
         .pipe(concat('app.js'))
         .pipe(rename({suffix: '.min'}))
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(gulp.dest(dest + 'js'));
 });
 
@@ -51,15 +54,18 @@ gulp.task('scripts', function() {
 gulp.task('sass', function () {
     var processors = [
         removeComments,
-        cssnext({browsers:'> 1%, last 10 version, Firefox >= 20, ie >= 8', warnForDuplicates: false} ),
+        cssnext({
+            browsers:'> 1%, last 10 version, Firefox >= 30, ie >= 9', 
+            warnForDuplicates: false
+        }),
         zindex,
         willChange,
         colorRgbaFallback,
         opacity,
         pseudoelements,
         vmin,
-        pixrem,
-        cssnano
+        // // pixrem({rootValue: 16, replace: false, atrules: false, html: true, browsers: 'ie <= 8', unitPrecision: 3}),
+        // cssnano
     ];
 
   return gulp
@@ -75,7 +81,7 @@ gulp.task('watch', function() {
   // Watch .js files
   gulp.watch(asset_src + 'js/scripts/*.js', ['scripts']);
   // Watch .scss files
-  gulp.watch(asset_src + 'sass/*/*.sass', ['sass']);
+  gulp.watch(asset_src + 'sass/*/*.scss', ['sass']);
  });
 
 // Default Task

@@ -1,0 +1,113 @@
+//===================================
+// Misc
+//===================================
+
+.blur {
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
+  transition: filter $global-transition, -webkit-filter $global-transition;
+}
+
+.blur.lazyloaded {
+  -webkit-filter: blur(0);
+  filter: blur(0);
+}
+
+.animated {
+  transform: translateZ(0);
+  transition: none;
+-webkit-transition: none;
+}
+
+.clearfix {
+  zoom: 1;
+
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after { clear: both; }
+}
+
+.scroll-wrapper {
+  text-align: center;
+  margin: 0 0 2em;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  .scroll-down {
+		color: darken($light-color, 20%);
+    width: 3em;
+    height: 3em;
+    border: 2px solid $border-color;
+    border-radius: $global-border-radius;
+    display: inline-block;
+    transition: color $global-transition, background $global-transition;
+
+    &:hover {
+      background-color: darken($light-color, 20%);
+      color: $dark-color;
+    }
+
+    i { 
+      padding: 0.5em;
+      font-size: 1.4em;
+    }
+  }
+}
+
+.full-page-cover {
+  @include background-cover;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba($dark-color, 0.35), rgba($dark-color, 0.85));
+  }
+}
+
+// Navigation and search page close button
+.btn--close {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 20px;
+  right: 20px;
+  padding: 0;
+
+  &:before, &:after {
+    width: 40px;
+    background: $light-color;
+    top: 20px;
+    content: '';
+    position: absolute;
+    height: 2px;
+    transition: background 0.15s ease;
+  }
+
+  &:before {
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    transform: rotate(-45deg);
+  }
+
+  &:hover:before,
+  &:hover:after {
+    background: $link-color;
+  }
+}
+
+.invisible {
+  opacity:0;
+}
