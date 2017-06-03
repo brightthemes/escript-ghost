@@ -24,7 +24,8 @@
     {{!-- Ghost outputs important style and meta data with this tag --}}
     {{ghost_head}}
   </head>
-  <body class="{{body_class}} nav--closed search--closed" onload="postsPerPage({{@blog.posts_per_page}})">
+  <body class="{{body_class}} nav--closed search--closed" 
+        onload="postsPerPage({{@blog.posts_per_page}})">
 
     {{!-- The blog navigation links --}}
     {{> header}}
@@ -48,7 +49,8 @@
 
     {{!-- Disqus comments --}}
     <script type="text/javascript">
-      var disqus_shortname = 'bironthemes'; // Replace 'bironthemes' with your disqus account shortname
+      // Replace 'bironthemes' with your disqus account shortname
+      var disqus_shortname = 'bironthemes'; 
       /* * * DON'T EDIT BELOW THIS LINE * * */
       (function() {
         var s = document.createElement('script'); s.async = true;

@@ -1,7 +1,7 @@
 {
-  "name": "",
+  "name": "Escript",
   "version": "1.0.0",
-  "description": "Magazine and Blog Ghost Theme",
+  "description": "Masonry Blog Ghost Theme",
   "author": "Biron Themes",
   "devDependencies": {
     "bootstrap": "^3.3.7",

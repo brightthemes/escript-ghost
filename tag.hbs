@@ -3,16 +3,21 @@
 {{!-- Tag header --}}
 {{#tag}}
   <section class="tag tag-header">
+    {{!-- Tag cover image --}}
     {{#if image}}
-      <div class="full-page-cover lazyload blur" data-src="{{image}}" style="background-image: url({{image}})"></div>
+      <div class="full-page-cover lazyload blur" data-src="{{image}}" 
+           style="background-image: url({{image}})">
+      </div>
     {{/if}}
     <div class="container">
-      <div class="tag__info">        
+      <div class="tag__info">
+        {{!-- Tag name --}}  
         <h2 class="tag__title">{{name}}</h2>
+        {{!-- Tag description --}}
         {{#if description}}
           <p class="tag__description">{{description}}</p>
         {{/if}}
-
+        {{!-- Number of posts for the tag --}}
         <div class="tag-meta">
           <span class="tag-meta__stats">
             <i class="fa fa-signal" aria-hidden="true"></i>
@@ -39,7 +44,9 @@
 	{{/foreach}}
 	</div>
 	<div class="masonry-foot text-center">
-  	<button id="load-posts" onclick="loadTagPosts('{{tag.slug}}');" class="uppercase load-more-posts">Load More</button>
+  	<button id="load-posts" onclick="loadTagPosts('{{tag.slug}}');" 
+            class="uppercase load-more-posts">Load More
+    </button>
   </div>
 </section>
 {{/if}}

@@ -7,75 +7,76 @@
   position: relative;
   padding: 5em 0;
   color: $light-color;
-
+  
   .subscribe-overlay {
     position: absolute;
-    z-index: 1;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 1;
     display: block;
-    background-color: rgba($brand-color, 0.6);
+    background: linear-gradient(160deg,rgba($brand-color, 0.8),rgba($dark-color, 0.5));
   }
 
   h3 {
     color: $light-color;
     margin-top: 0;
   }
+}
 
-  .gh-subscribe {
-    position: relative;
-    z-index: 2;
+.subscribe-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  .subscribe-form__input {
+    background-color: transparent;
+    height: 3rem;
+    border: 2px solid $light-color;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 0;
+    max-width: 15em;
+    color: $light-color;
+    font-weight: $font-weight-bold;
 
-    .gh-subscribe-rss {
-      margin: 1em 0;
-    
-      a {
-        color: $light-color;
-        font-weight: $font-weight-bold;
+    @media #{$sm} {
+      width: 100%;
+    }
 
-        &:hover { color: $dark-color; }
-      }
+    &:focus {
+      outline: none;
     }
   }
 
-  .subscribe-form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .subscribe-form__button {
+    height: 3em;
+    margin-left: -0.3em;
+    padding: 0.5em 1em;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
     
-    .subscribe-form__input {
-      background-color: transparent;
-      height: 3rem;
-      border: 2px solid $light-color;
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-      border-right: 0;
-      max-width: 15em;
+    i { color: $light-color; }
+
+    &:hover { 
+      i { color: rgba($brand-color, 0.6); }
+    }
+  }
+}
+
+.gh-subscribe {
+  position: relative;
+  z-index: 2;
+
+  .gh-subscribe-rss {
+    margin: 1em 0;
+  
+    a {
       color: $light-color;
       font-weight: $font-weight-bold;
 
-      @media #{$sm} {
-        width: 100%;
-      }
-
-      &:focus {
-        outline: none;
-      }
-    }
-    .subscribe-form__button {
-      height: 3em;
-      margin-left: -0.3em;
-      padding: 0.5em 1em;
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-      
-      i { color: $light-color; }
-
-      &:hover { 
-        i { color: rgba($brand-color, 0.6); }
-      }
+      &:hover { color: $dark-color; }
     }
   }
 }

@@ -56,26 +56,26 @@
 			font-size: 1.2rem;
 		}
 	}
+}
 
-	.tag-meta {
-		margin: 0;
-		padding: 0.5em 0;
-		color: darken($light-color, 20%);
-		text-align: center;
+.tag-meta {
+	margin: 0;
+	padding: 0.5em 0;
+	color: darken($light-color, 20%);
+	text-align: center;
 
-		span {
-			display: inline-block;
-			margin: 0.5em;
-			word-wrap: break-word;
-		}
-
-		a { 
-			text-decoration: none;
-			color: darken($light-color, 20%);
-
-			&:hover { color: $link-color-hover; }
-		}
-
-		.tag-meta__stats { color: darken($light-color, 20%); }
+	span {
+		display: inline-block;
+		margin: 0.5em;
+		word-wrap: break-word;
 	}
+
+	a { 
+		text-decoration: none;
+		color: darken($light-color, 20%);
+
+		&:hover { color: $link-color-hover; }
+	}
+
+	.tag-meta__stats { color: darken($light-color, 20%); }
 }

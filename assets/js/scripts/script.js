@@ -87,11 +87,11 @@ $(document).ready(function () {
     $(el).attr('data-src', el.src).addClass('lazyload');
   });
 
-  jQuery('.masonry-post').addClass("invisible").viewportChecker({
-    classToAdd: 'visible animated fadeIn',
-    classToRemove: 'invisible',
-    offset: 100
-  });
+  // jQuery('.masonry-post').addClass("invisible").viewportChecker({
+  //   classToAdd: 'visible animated fadeIn',
+  //   classToRemove: 'invisible',
+  //   offset: 100
+  // });
 
   // Site scroll takes into account the fixed header
   function scroll_if_anchor(href) {

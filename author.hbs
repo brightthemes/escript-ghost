@@ -3,37 +3,51 @@
 {{!-- Everything inside the #author tags pulls data from the author --}}
 {{#author}}
   <section class="author">
+    {{!-- Author cover image --}}
     {{#if cover}}
-      <div class="full-page-cover lazyload blur" data-src="{{cover}}" style="background-image: url({{cover}})"></div>
+      <div class="full-page-cover lazyload blur" data-src="{{cover}}" 
+           style="background-image: url({{cover}})">
+      </div>
     {{/if}}
     <div class="container">
       <div class="author__profile">
+        {{!-- Author profile image --}}
         {{#if image}}
-          <div class="lazyload blur author__image" data-src="{{image}}" style="background-image: url({{image}})">
-            <span class="hidden">{{name}}'s Picture</span>
+          <div class="lazyload blur author__image" data-src="{{image}}" 
+               style="background-image: url({{image}})">
           </div>
         {{/if}}
         
+        {{!-- Author Name --}}
         <h2 class="author__title">{{name}}</h2>
+        {{!-- Author bio --}}
         {{#if bio}}
           <p class="author__bio">{{bio}}</p>
         {{/if}}
 
         <div class="author-meta">
+          {{!-- Author location --}}
           {{#if location}}
-            <span class="author-meta__location"><i class="fa fa-globe" aria-hidden="true"></i> {{location}}</span>
-          {{/if}}
-          {{#if website}}
-            <span class="author-meta__link">
-              <a href="{{website}}"><i class="fa fa-link" aria-hidden="true"></i> {{website}}</a>
+            <span class="author-meta__location">
+              <i class="fa fa-globe" aria-hidden="true"></i> {{location}}
             </span>
           {{/if}}
+          {{!-- Author website --}}
+          {{#if website}}
+            <span class="author-meta__link">
+              <a href="{{website}}">
+                <i class="fa fa-link" aria-hidden="true"></i> {{website}}
+              </a>
+            </span>
+          {{/if}}
+          {{!-- Author post number --}}
           <span class="author-meta__stats">
             <i class="fa fa-signal" aria-hidden="true"></i>
             {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
           </span>
         </div>
 
+        {{!-- Author social links --}}
         <div class="author-social">
           {{#if twitter}}
           <a class="author-social__link" href="{{twitter_url}}" target="_blank">
@@ -41,7 +55,6 @@
             <p>Twitter</p>
           </a>
           {{/if}}
-
           {{#if facebook}}
           <a class="author-social__link" href="{{facebook_url}}" target="_blank">
             <i class="fa fa-facebook" aria-hidden="true"></i>
@@ -68,6 +81,8 @@
 	{{/foreach}}
 	</div>
 	<div class="masonry-foot text-center">
-  	<button id="load-posts" onclick="loadAuthorPosts('{{author.slug}}');" class="uppercase load-more-posts">Load More</button>
+  	<button id="load-posts" onclick="loadAuthorPosts('{{author.slug}}');" 
+            class="uppercase load-more-posts">Load More
+    </button>
   </div>
 </section>

@@ -3,9 +3,13 @@
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
 <div class="{{post_class}}">
-  <div class="post-header contact-header {{#if image}}post-hero{{else}}post-without-image{{/if}}">
+  <div class="post-header contact-header 
+              {{#if image}}post-hero{{else}}post-without-image{{/if}}">
+    {{!-- Post image --}}
     {{#if image}}
-      <div class="full-page-cover lazyload blur" data-src="{{image}}" style="background-image: url({{image}})"></div>
+      <div class="full-page-cover lazyload blur" data-src="{{image}}" 
+           style="background-image: url({{image}})">
+      </div>
     {{/if}}
     <div class="container">
       <div class="post-header__info">    
@@ -14,7 +18,7 @@
 
       <div class="contact">
         <div class="row">
-
+          {{!-- Blog contact info --}}
           <div class="col-sm-6 col-xs-12 contact-address animated fadeInLeft">
             <h3 class="contact-address__title">Info</h3>
             <p> 601 E 54th St<br>
@@ -27,14 +31,23 @@
             {{>social-media}}
           </div>
 
+          {{!-- Blog contact form --}}
           <div class="col-sm-6 col-xs-12 contact__form-wrapper animated fadeInRight">
-            <form action="//formspree.io/youremail@domain.com" id="contact-form" class="contact-form clearfix" method="post">
+            <form action="//formspree.io/youremail@domain.com" id="contact-form" 
+                  class="contact-form clearfix" method="post">
                 <h3 class="contact-form__title">Drop a message</h3>
-                <input type="text" name="username" id="username" class="contact-form__name placeholder-light" title="Name" placeholder="Name" required>
-                <input type="text" name="email" id="email" title="Email" class="contact-form__email placeholder-light" placeholder="Email" required>
-                <textarea rows="2" name="message" id="message" title="Message" class="placeholder-light" placeholder="Message" required></textarea>
+                <input type="text" name="username" id="username" 
+                       class="contact-form__name placeholder-light" 
+                       title="Name" placeholder="Name" required>
+                <input type="text" name="email" id="email" title="Email" 
+                       class="contact-form__email placeholder-light" 
+                       placeholder="Email" required>
+                <textarea rows="2" name="message" id="message" title="Message" 
+                          class="placeholder-light" placeholder="Message" required>
+                </textarea>
                 <input type="text" name="_gotcha" style="display:none">
-                <input class="button button--light" type="submit" name="submit" id="submit" value="Submit">
+                <input class="button button--light" type="submit" name="submit" 
+                       id="submit" value="Submit">
             </form>
           </div>
 

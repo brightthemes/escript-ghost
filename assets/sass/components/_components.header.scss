@@ -52,6 +52,12 @@
 	.navbar-logo {
 		text-align: center;
 
+		.navbar-title {
+			color: $light-color;
+			margin: 0;
+			padding: 17px 0;
+		}
+
 		a img {
 			height: 50px;
 			margin: 1em 0;
@@ -76,6 +82,12 @@
 
 		.navbar-logo a img { 
 			transition: height $global-transition;
+		}
+
+		.navbar-title { 
+			font-size: 1.6rem;
+			padding: 7px 0;
+			transition: padding $global-transition;
 		}
 
 		.navbar-search.btn-search--open .navbar-search__group {

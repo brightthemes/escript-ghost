@@ -1,7 +1,7 @@
 {{!-- Navigation --}}
 <ul class="nav navbar-nav navigation">
   {{#foreach navigation}}
-    <li class="nav-{{slug}}{{#if current}} nav-current{{/if}} nav-menu" role="presentation">
+    <li class="nav-{{slug}}{{#if current}} nav-current{{/if}} nav-menu">
       <a href="{{url absolute="true"}}">{{label}}</a>
     </li>
   {{/foreach}}
