@@ -46,7 +46,7 @@ gulp.task('scripts', function() {
         ])
         .pipe(concat('app.js'))
         .pipe(rename({suffix: '.min'}))
-        // .pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest(dest + 'js'));
 });
 
@@ -64,8 +64,7 @@ gulp.task('sass', function () {
         opacity,
         pseudoelements,
         vmin,
-        // // pixrem({rootValue: 16, replace: false, atrules: false, html: true, browsers: 'ie <= 8', unitPrecision: 3}),
-        // cssnano
+        cssnano
     ];
 
   return gulp
