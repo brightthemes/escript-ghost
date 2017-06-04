@@ -10,6 +10,7 @@
   $class-slug: masonry-item;
   $animation-delay: 0.1s;
   margin: 0 0 1em;
+  visibility: hidden;
 
   & > div {
     @for $i from 1 through 10 {
