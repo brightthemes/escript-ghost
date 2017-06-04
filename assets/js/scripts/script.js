@@ -22,6 +22,7 @@ $(document).ready(function () {
     if (socialHeight >= postHeight) {
       $('.social-share').css('position','relative').css('margin-left','auto').css('text-align','center');
       $('.social-share a').css('display','inline-block');
+      $('.social-share button').css('display','inline-block');
     }
 
     $(window).scroll(function (event) {
@@ -87,11 +88,11 @@ $(document).ready(function () {
     $(el).attr('data-src', el.src).addClass('lazyload');
   });
 
-  // jQuery('.masonry-post').addClass("invisible").viewportChecker({
-  //   classToAdd: 'visible animated fadeIn',
-  //   classToRemove: 'invisible',
-  //   offset: 100
-  // });
+  jQuery('.masonry-post').addClass("invisible").viewportChecker({
+    classToAdd: 'visible animated fadeIn',
+    classToRemove: 'invisible',
+    offset: 100
+  });
 
   // Site scroll takes into account the fixed header
   function scroll_if_anchor(href) {
@@ -168,7 +169,10 @@ $(document).ready(function () {
                         '</a>' +
                       '</div>'
   });
+
+  $(".masonry").css('visibility', 'visible');
 });
+
 
 var pagination = 0;
 
