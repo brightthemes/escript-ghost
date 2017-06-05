@@ -15,6 +15,7 @@ var path = require('path');
 var cssnano = require('cssnano');
 var zindex = require('postcss-zindex');
 var removeComments = require('postcss-discard-comments');
+var browserSync = require('browser-sync').create();
 
 // Define base folders
 var asset_src = 'assets/';
@@ -75,13 +76,32 @@ gulp.task('sass', function () {
     .pipe(gulp.dest(dest + 'css'));
 });
 
+// Browsersync init and reload
+gulp.task('browsersync', function (callback) {  
+  browserSync.init({
+    proxy: 'http://192.168.64.1:82/'
+  });
+  callback();
+});
+
+gulp.task('browsersync:reload', function (callback) {  
+  browserSync.reload();
+  callback();
+});
+
 // Watch for changes in files
 gulp.task('watch', function() {
   // Watch .js files
   gulp.watch(asset_src + 'js/scripts/*.js', ['scripts']);
   // Watch .scss files
   gulp.watch(asset_src + 'sass/*/*.scss', ['sass']);
- });
-
+  // Watch main.min.csss
+  gulp.watch(asset_src + 'css/main.min.css', ['browsersync:reload']);
+  // Watch app.min.js
+  gulp.watch(asset_src + 'js/app.min.js', ['browsersync:reload']);
+  // Watch .hbs files
+  gulp.watch('**/*.hbs', ['browsersync:reload']);
+});
 // Default Task
-gulp.task('default', ['scripts', 'sass', 'watch']);
+// gulp.task('default', ['scripts', 'sass', 'watch']);
+gulp.task('default', ['scripts', 'sass', 'watch', 'browsersync']);
