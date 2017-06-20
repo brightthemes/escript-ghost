@@ -31,15 +31,15 @@
 						<div class="featured-post__content">
 							<div class="container">
 								{{!-- Featured post tag (set to show only 1) --}}
-								<h6 class="featured-post__tag animated fadeInDown">
+								<p class="featured-post__tag animated fadeInDown">
 									in {{tags limit="1" separator=""}}
-								</h6>
+								</p>
 								{{!-- Featured post title --}}
 								<h2 class="featured-post__title animated fadeInRight">
 									<a href="{{url}}">{{title}}</a>
 								</h2>
 								<div class="featured-post__info animated fadeInRight">
-									<div class="featured-post__author">by {{author}}</div>
+									<div class="featured-post__author">{{author}}</div>
 									<div class="featured-post__date">
 										<time datetime="{{date format="YYYY-MM-DD"}}">
 											{{date published_at}}

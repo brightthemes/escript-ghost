@@ -44,6 +44,8 @@
       opacity: 0.9;
       transition: opacity $global-transition;
     }
+
+    .read-next__info .read-next__title { color: $link-color-hover; }
   }
 
   &.no-image.read-next__story {
@@ -52,10 +54,14 @@
 
     &:hover {
       background-color: rgba($dark-color, 0.15);
-      transition: background-color $global-transition;
+      transition: background-color $global-transition, color $global-transition;
+
+      .read-next__title {
+        color: $link-color-hover;
+      }
     }
 
-    .read-next__info .read-next__title {
+    .read-next__title {
       color: $dark-color;
     }
   }
@@ -87,6 +93,7 @@
       color: $light-color;
       margin: 0.5em 0;
       font-size: 1.2rem;
+      transition: color $global-transition;
 
       @media #{$sm} { font-size: 1.3rem; }
       @media #{$md} { font-size: 1.4rem; }

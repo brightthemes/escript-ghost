@@ -6,8 +6,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $heading-font-family;
   color: $heading-text-color;
 	word-break: break-word;
-
-  a { color: $heading-text-color; }
 }
 
 h1 { 
@@ -33,21 +31,18 @@ h3 {
 
 h4 { 
 	font-size: $font-size-root * 1.5; 
-	font-weight: $font-weight-semibold;
 	line-height: $heading-line-height * 0.95;
 	margin: 0 0 ($leading * 0.8);
 }
 
 h5 { 
 	font-size: $font-size-root * 1.25; 
-	font-weight: $font-weight-semibold;
 	line-height: $heading-line-height * 1;
 	margin: 0 0 ($leading * 0.9);
 }
 
 h6 { 
 	font-size: $font-size-root * 1; 
-	font-weight: $font-weight-semibold;
 	line-height: $heading-line-height * 1;
 	margin: 0 0 ($leading * 1);
 }

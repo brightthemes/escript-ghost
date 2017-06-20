@@ -113,11 +113,17 @@
     position: absolute;
     bottom: 10em;
 
+    .featured-post__title a{
+      color: $light-color;
+
+      &:hover {
+        color: $link-color-hover;
+      }
+    }
+
     .featured-post__tag,
-    .featured-post__title,
     .featured-post__info {
     	color: $light-color;
-      font-family: $heading-font-family;
       display: table;
 
     	a { 
@@ -130,12 +136,6 @@
     .featured-post__author, 
     .featured-post__date {
       display: inline-block;
-
-      &:after { 
-        content: "|";
-        margin: 0 0.4em;
-        font-weight: $font-weight-regular;
-      }
     }
 
     .featured-post__date {
@@ -176,7 +176,18 @@
 
     .featured-post__info { 
       animation-delay: 0.4s; 
-      margin-bottom: 0.5em;
+      margin-bottom: 1em;
+
+      &>div {
+        padding: 0 0.75em;
+        border-right: 1px solid $light-color;
+
+        &:first-of-type { padding-left: 0; }
+        &:last-of-type { 
+          border: none; 
+          padding-right: 0;
+        }
+      }
 
       @media #{$md} { font-size: 1.1rem; }
       @media #{$lg} { font-size: 1.2rem; }
@@ -191,6 +202,9 @@
       @media #{$lg} { font-size: 1.2rem; }
 
       a {
+        border-width: 1px;
+        font-weight: $font-weight-regular; 
+
         @media #{$sm} {
           padding: 0.35em 0.7em;
         }
