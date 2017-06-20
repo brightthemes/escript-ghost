@@ -144,8 +144,6 @@
     }
 
     .masonry-post__tags {
-      font-style: italic;
-
       a { 
         color: lighten($dark-color, 40%); 
 
@@ -205,10 +203,12 @@
 
   .read-more { 
     border: 1px solid $border-color;
-    padding: 0.4em 0.8em;
+    padding: 0.5em 1em;
     transition: color $global-transition, background $global-transition;
     display: inline-block;
     color: lighten($dark-color, 40%);
+    text-transform: uppercase;
+    font-size: 0.9rem;
 
     &:hover {
       background-color: $dark-color;

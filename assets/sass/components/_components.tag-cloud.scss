@@ -9,10 +9,10 @@
   border-radius: $global-border-radius;
   margin-bottom: 0.6em;
   margin-right: 0.2em;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   text-transform: uppercase;
   color: rgba($light-color, 0.8);
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-regular;
   transition: background $global-transition, color $global-transition;
 
   &:hover {

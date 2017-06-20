@@ -49,7 +49,7 @@
         border-top: 1px solid $dark-color;
         border-bottom: 1px solid $dark-color;
 
-        h6 {
+        p {
           border-color: $dark-color;
 
           a, time, span { color: $dark-color; }
@@ -86,15 +86,11 @@
       a { 
         border: 1px solid $light-color;
         border-radius: $global-border-radius;
-        padding: 0.25em 0.5em;
+        padding: 0.5em 1em;
         text-transform: uppercase;
         margin-right: 0.25em;
         line-height: 2;
         transition: color $global-transition, background $global-transition;
-
-        @media #{$sm} {
-          font-size: 1.2rem;
-        }
 
         &:hover {
           background-color: $light-color;
@@ -111,7 +107,7 @@
       padding: 0.5em 0;
       animation-delay: 1s;
 
-      h6 {
+      p {
         margin: 0;    
         padding: 0 0.5em;
         border-right: 1px solid $light-color;
@@ -119,10 +115,6 @@
         a, time, span { color: $light-color; }
 
         a:hover { color: $link-color-hover; }
-
-        @media #{$sm} {
-          font-size: 1.2rem;
-        }
       }
 
       .post-header__author,
@@ -146,15 +138,16 @@
   padding-bottom: 2em;
 
   article {
+    font-family: $font-family-serif;
     max-width: 40em;
     margin: 0 auto;
-    padding: 1em 0;
+    padding: 1.2em 0;
 
     p {
+      line-height: 1.2 * $line-height-base;
       margin-left: auto;
       margin-right: auto;
-
-      @media #{$sm} { font-size: 1.2rem; }
+      margin-bottom: 1.2em;
 
       img { 
         width: calc(100% + 30px);

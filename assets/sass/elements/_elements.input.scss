@@ -9,8 +9,7 @@ input, textarea, select {
 
 button, .button {
   color: $dark-color;
-  font-weight: $font-weight-semibold;
-  font-family: $heading-font-family;
+  font-weight: $font-weight-bold;
   font-size: $font-size-root;
   transition: color $global-transition, background $global-transition;
   background: transparent;

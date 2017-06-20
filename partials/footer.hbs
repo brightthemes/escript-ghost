@@ -42,9 +42,8 @@
             </a>
             <div class="footer-post__info">
               <p class="footer-post__title"><a href="{{url}}">{{title}}</a></p>
-              <p class="footer-post__author">
-                by {{author}} {{date published_at timeago="true"}}
-              </p>
+              <p class="footer-post__author">{{author}}</p>
+              <p class="footer-post__date">{{date published_at timeago="true"}}</p>
             </div>
           </div>
           {{^if @last}} <hr class="footer-divider"> {{/if}} 

@@ -11,13 +11,13 @@
     {{!-- Masonry title --}}
     <h2 class="masonry-post__title"><a href="{{url}}">{{title}}</a></h2>
     {{!-- Masonry post author --}}
-    <h6 class="masonry-post__author">by {{author}}</h6>
+    <p class="masonry-post__author">{{author}}</p>
     {{!-- Masonry post tags (limit 5) --}}
     {{#if tags}}
       <p class="masonry-post__tags">#{{tags limit=5 separator=" #"}}</p>
     {{/if}}
     {{!-- Masonry post excerpt --}}
-    <p>{{excerpt words="20"}}&hellip;</p>
+    <p class="masonry-post__excerpt">{{excerpt words="20"}}&hellip;</p>
 
     <div class="masonry-post__more clearfix">
       <div class="text-center">
