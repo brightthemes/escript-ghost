@@ -8,7 +8,11 @@ $(document).ready(function () {
   if ( $('.social-share').length ) {
     $('.social-share').show();
 
-    var commentTop = $('.subscribe').offset().top;
+    var commentTop;
+    
+    if ($('.subscribe').length) {
+      commentTop = $('.subscribe').offset().top;
+    }
 
     if ( $('.author-box').length ) {
        commentTop = $('.author-box').offset().top;
@@ -73,7 +77,7 @@ $(document).ready(function () {
     $('.navbar__default').css('backgroundColor', 'rgba(0,0,0,0.85)');
   }
 
-  if ( window.location.pathname === "/" && !$('.featured-posts').length ) {
+  if ( window.location.pathname === "/" && !$('.featured-post').length ) {
     $('.navbar__default').css('backgroundColor', 'rgba(0,0,0,0.85)');
     $('.latest-posts').css('marginTop', '7em');
   } 
