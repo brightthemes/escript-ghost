@@ -4,17 +4,17 @@
 {{#author}}
   <section class="author">
     {{!-- Author cover image --}}
-    {{#if cover}}
-      <div class="full-page-cover lazyload blur" data-src="{{cover}}" 
-           style="background-image: url({{cover}})">
+    {{#if cover_image}}
+      <div class="full-page-cover lazyload blur" data-src="{{cover_image}}" 
+           style="background-image: url({{cover_image}})">
       </div>
     {{/if}}
     <div class="container">
       <div class="author__profile">
         {{!-- Author profile image --}}
-        {{#if image}}
-          <div class="lazyload blur author__image" data-src="{{image}}" 
-               style="background-image: url({{image}})">
+        {{#if profile_image}}
+          <div class="lazyload blur author__image" data-src="{{profile_image}}" 
+               style="background-image: url({{profile_image}})">
           </div>
         {{/if}}
         

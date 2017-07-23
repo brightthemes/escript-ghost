@@ -3,14 +3,14 @@
   <div class="author-box animated fadeIn">
     <div class="row clearfix">
       {{!-- Author profile image --}}
-      {{#if image}}
+      {{#if profile_image}}
         <div class="col-sm-2">
           <a class="author-box__image blur lazyload" href="{{url}}" data-src="{{image}}" style="background-image: url({{image}})">
           </a>
         </div>
       {{/if}}
-      <div class="{{#if image}}col-sm-10{{else}}col-sm-12{{/if}}">
-        <h4 class="author-box__name {{^if image}}text-center{{/if}}"><a href="{{url}}">{{name}}</a></h4>
+      <div class="{{#if profile_image}}col-sm-10{{else}}col-sm-12{{/if}}">
+        <h4 class="author-box__name {{^if profile_image}}text-center{{/if}}"><a href="{{url}}">{{name}}</a></h4>
         {{!-- Author bio --}}
         {{#if bio}}
           <p class="author-box__bio">{{bio}}</p>

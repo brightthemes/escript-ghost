@@ -22,8 +22,8 @@
 					<div class="featured-post item {{#if @first}}active{{/if}}">
 						{{!-- Featured post image --}}
 						<div class="lazyload blur featured-post__image" 
-								data-src="{{#if image}}{{image}}{{/if}}" 
-								style="{{#if image}}background-image: url({{image}})
+								data-src="{{#if feature_image}}{{image}}{{/if}}" 
+								style="{{#if feature_image}}background-image: url({{image}})
 											 {{else}}background-color: #000;{{/if}}">
 						</div>
 						{{!-- Featured post image overlay --}}
@@ -83,7 +83,7 @@
 
 {{!-- Masonry posts --}}
 {{#get "posts" include="author,tags" 
-							 limit=@blog.posts_per_page 
+							 limit=@config.posts_per_page 
 							 filter="featured:false" as |latest| }}
 	<section class="latest-posts container">
 		<div class="masonry clearfix" id="grid" data-columns>

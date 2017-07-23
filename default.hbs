@@ -8,7 +8,6 @@
 
     {{!-- Page Meta --}}
     <title>{{meta_title}}</title>
-    <meta name="description" content="{{meta_description}}" />
 
     {{!-- Mobile Meta --}}
     <meta name="HandheldFriendly" content="True" />
@@ -25,7 +24,7 @@
     {{ghost_head}}
   </head>
   <body class="{{body_class}} nav--closed search--closed" 
-        onload="postsPerPage({{@blog.posts_per_page}})">
+        onload="postsPerPage({{@config.posts_per_page}})">
 
     {{!-- The blog navigation links --}}
     {{> header}}

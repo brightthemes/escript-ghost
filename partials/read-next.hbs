@@ -3,7 +3,7 @@
   {{!-- Prevoius Post --}}
   {{#prev_post}}
     <a class="read-next__story prev {{^if image}}no-image{{/if}}" href="{{url}}">
-      {{#if image}}
+      {{#if feature_image}}
         <div class="lazyload blur read-next__image" data-src="{{image}}" 
             style="background-image: url({{image}})"></div>
       {{/if}}
@@ -16,9 +16,9 @@
   {{!-- Next Post --}}
   {{#next_post}}
     <a class="read-next__story next {{^if image}}no-image{{/if}}" href="{{url}}">
-      {{#if image}}
+      {{#if feature_image}}
         <div class="lazyload blur read-next__image" data-src="{{image}}" 
-            style="background-image: url({{image}})"></div>
+            sstyle="background-image: url({{image}})"></div>
       {{/if}}
       <div class="read-next__info">
         <h3 class="read-next__title">{{title}}</h3>

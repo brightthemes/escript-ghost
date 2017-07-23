@@ -1,11 +1,11 @@
 {{!< default}}
 
 {{!-- Page 404 --}}
-<div class="page-header {{#if @blog.cover}}post-hero{{else}}post-without-image{{/if}}">
+<div class="page-header {{#if @blog.cover_image}}post-hero{{else}}post-without-image{{/if}}">
   {{!-- Blog cover photo --}}
-  {{#if @blog.cover}}
-    <div class="full-page-cover lazyload blur" data-src="{{@blog.cover}}" 
-         style="background-image: url({{@blog.cover}})">
+  {{#if @blog.cover_image}}
+    <div class="full-page-cover lazyload blur" data-src="{{@blog.cover_image}}" 
+         style="background-image: url({{@blog.cover_image}})">
     </div>
   {{/if}}
   <div class="container">
