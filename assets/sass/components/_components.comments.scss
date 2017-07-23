@@ -5,10 +5,10 @@
 .comments {
   .comments__panel {
     max-width: 46em;
-    padding: 1em;
+    padding: $spacing-base;
 
-    @media #{$sm} {
-      padding: 2em 0;
+    @include mq($from: sm) {
+      padding: $spacing-large 0;
     }
   }
 }

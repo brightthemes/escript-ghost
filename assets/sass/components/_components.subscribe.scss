@@ -6,7 +6,7 @@
   @include background-cover;
   position: relative;
   padding: 5em 0;
-  color: $light-color;
+  color: $color-light;
   
   .subscribe-overlay {
     position: absolute;
@@ -16,11 +16,11 @@
     right: 0;
     z-index: 1;
     display: block;
-    background: linear-gradient(160deg,rgba($brand-color, 0.8),rgba($dark-color, 0.5));
+    background: linear-gradient(160deg,rgba($color-brand, 0.8),rgba($color-dark, 0.5));
   }
 
   h3 {
-    color: $light-color;
+    color: $color-light;
     margin-top: 0;
   }
 }
@@ -33,15 +33,15 @@
   .subscribe-form__input {
     background-color: transparent;
     height: 3rem;
-    border: 2px solid $light-color;
+    border: 2px solid $color-light;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-right: 0;
     max-width: 15em;
-    color: $light-color;
+    color: $color-light;
     font-weight: $font-weight-bold;
 
-    @media #{$sm} {
+    @include mq($from: sm) {
       width: 100%;
     }
 
@@ -53,14 +53,14 @@
   .subscribe-form__button {
     height: 3em;
     margin-left: -0.3em;
-    padding: 0.5em 1em;
+    padding: $spacing-small $spacing-base;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     
-    i { color: $light-color; }
+    i { color: $color-light; }
 
     &:hover { 
-      i { color: rgba($brand-color, 0.6); }
+      i { color: rgba($color-brand, 0.6); }
     }
   }
 }
@@ -70,13 +70,13 @@
   z-index: 2;
 
   .gh-subscribe-rss {
-    margin: 1em 0;
+    margin: $spacing-base 0;
   
     a {
-      color: $light-color;
+      color: $color-light;
       font-weight: $font-weight-bold;
 
-      &:hover { color: $dark-color; }
+      &:hover { color: $color-dark; }
     }
   }
 }

@@ -5,30 +5,30 @@
 .error-404 {
   position: relative;
   text-align: center;
-  color: $light-color;
+  color: $color-light;
 
   .error-404__title {
     font-size: 10rem;
-    color: $light-color;
+    color: $color-light;
     margin: 0;
     line-height: 1;
   }
 
   .error-404__text {
     margin-top: 0;
-    margin-bottom: 0.25em;
+    margin-bottom: $spacing-tiny;
     font-size: 2rem;
     font-weight: $font-weight-bold;
   }
 
   .error-404__description {
     font-size: 1.2rem;
-    margin: 0.25em 0;
+    margin: $spacing-tiny 0;
   }
 
   .error-404__links {
-    margin: 2em 0;
+    margin: $spacing-large 0;
 
-    a { margin-right: 0.5em; }
+    a { margin-right: $spacing-small; }
   }
 }

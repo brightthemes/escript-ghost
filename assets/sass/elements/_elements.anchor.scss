@@ -3,30 +3,30 @@
 //===================================
 
 a {
-  color: $dark-color;
+  color: $color-dark;
   text-decoration: none;
   transition: color $global-transition;
 
   &:active, &:focus, &:hover { text-decoration: none; }
 
-  &:hover { color: $link-color-hover; }
+  &:hover { color: $color-link-hover; }
 }
 
 p {
   a {
-    color: $link-color;
+    color: $color-link;
     text-decoration: none;
     transition: color $global-transition;
 
-    &:visited { color: $link-color-visited; }
+    &:visited { color: $color-link-visited; }
 
     &:hover {
-      color: $link-color-hover;
+      color: $color-link-hover;
       text-decoration: none;
       transition: color $global-transition;
     }
 
-    &:active { color: $link-color; }
+    &:active { color: $color-link; }
   }
 }
 

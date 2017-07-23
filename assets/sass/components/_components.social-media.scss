@@ -6,28 +6,28 @@
   margin: 0;
   padding: 0;
 
-  .social-media-list__item {
+  &__item {
     font-size: 1rem;
     float: left;
-    border: 1px solid rgba($light-color, 0.8);
+    border: 1px solid rgba($color-light, 0.8);
     border-radius: $global-border-radius;
     width: 2em;
     height: 2em;
     text-align: center;
-    margin-right: 0.5em;
+    margin-right: $spacing-small;
     transition: color $global-transition, background $global-transition;
 
     i {
       vertical-align: middle;
-      color: rgba($light-color, 0.8);
+      color: rgba($color-light, 0.8);
     }
 
     &:hover {
-      background-color: rgba($light-color, 0.8);
+      background-color: rgba($color-light, 0.8);
       transition: color $global-transition, background $global-transition;
 
       i {
-        color: rgba($dark-color, 0.8);
+        color: rgba($color-dark, 0.8);
         transition: color $global-transition, background $global-transition;
       }
     }

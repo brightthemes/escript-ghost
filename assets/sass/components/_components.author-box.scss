@@ -3,13 +3,13 @@
 //===================================
 
 .author-box {
-  border: 2px solid $dark-color;
+  border: 2px solid $color-dark;
   border-radius: $global-border-radius;
-  padding: 1em;
-  margin: 0 0 2em;
+  padding: $spacing-base;
+  margin: 0 0 $spacing-large;
 
-  @media #{$sm} {
-    padding: 2em;
+  @include mq($from: sm) {
+    padding: $spacing-large;
   }
 
   .author-box__image {
@@ -31,15 +31,17 @@
     .author-link__twitter {
       display: inline-block;
       margin: 0 0.3em;
-      margin-bottom: 0.5em;
+      margin-bottom: $spacing-small;
 
       i { margin-right: 0.2em; }
     }
   }
 
   .row > div {
-    @media #{$xs} {
-      text-align: center;
+    text-align: center;
+
+    @include mq($from: sm) {
+      text-align: left;
     }
   }
 }

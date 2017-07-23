@@ -3,34 +3,34 @@
 //===================================
 
 // Brand color 
-$brand-color:           #F22613; // Pomegranate
+$color-brand:           #F22613; // Pomegranate
 
 // Background color. 
-$background-color:      #f1f1f1;
+$color-background:      #f1f1f1;
 
 // Color light. 
-$light-color:           #ffffff;
+$color-light:           #ffffff;
 
 // Color dark. 
-$dark-color:            #000000;
+$color-dark:            #000000;
 
 // Text color
-$text-color: 						#222222;
+$color-text: 						#222222;
 
 // Heading text color
-$heading-text-color: 		darken($text-color, 10%);
+$color-heading-text: 		darken($color-text, 10%);
 
 // Global text link color. 
-$link-color:            $brand-color;
+$color-link:            $color-brand;
 
 // Link hover color. 
-$link-color-hover:      darken($link-color, 10%);
+$color-link-hover:      darken($color-link, 10%);
 
 // Link visited color. 
-$link-color-visited:    darken($link-color, 20%);
+$color-link-visited:    darken($color-link, 20%);
 
 // Globar border color 
-$border-color:          #cccccc;
+$color-border:          #cccccc;
 
 // Social Media colors 
 $behance:               #0077ff;

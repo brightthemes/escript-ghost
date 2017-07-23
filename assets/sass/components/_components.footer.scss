@@ -1,44 +1,44 @@
 .footer {
-  background-color: rgba($dark-color, 0.8);
-  color: rgba($light-color, 0.8);
+  background-color: rgba($color-dark, 0.8);
+  color: rgba($color-light, 0.8);
 
-  a { color: rgba($light-color, 0.8); }
+  a { color: rgba($color-light, 0.8); }
 
   .footer-title {
-    color: $light-color;
+    color: $color-light;
     line-height: 1;
     margin-top: 0;
   }
 
-  .row { padding: 2em 0; }
+  .row { padding:$spacing-large 0; }
 
   .footer-section {
     border-bottom: 1px solid #888;
-    margin-bottom: 1em;
-    padding-bottom: 0.5em;
+    margin-bottom: $spacing-base;
+    padding-bottom: $spacing-small;
   }
 
   .footer-section-title {
     margin: 0;
     font-size: 1.4rem;
-    color: rgba($light-color, 0.8);
+    color: rgba($color-light, 0.8);
     position: relative;
     display: inline-block;
   }
 
   .footer-bottom {
-    background-color: $dark-color;
-    padding: 1em 0;
+    background-color: $color-dark;
+    padding: $spacing-base 0;
   }
 
   .footer-post {
-    margin-bottom: 1em;
+    margin-bottom: $spacing-base;
 
     .footer-post__image {
       width: 5em;
       height: 5em;
       float: left;
-      background-color: $brand-color;
+      background-color: $color-brand;
       border-radius: $global-border-radius;
       @include background-cover;
     }
@@ -55,8 +55,8 @@
       }
 
       .footer-post__author:after {
-        padding-left: 0.5em;
-        padding-right: 0.25em;
+        padding-left: $spacing-small;
+        padding-right: $spacing-tiny;
         content: "|";
       }
 
@@ -64,13 +64,13 @@
       .footer-post__author,
       .footer-post__date {
         margin-top: 0;
-        color: rgba($light-color, 0.8);
-        margin-bottom: 0.25em;
+        color: rgba($color-light, 0.8);
+        margin-bottom: $spacing-tiny;
         a {
-          color: rgba($light-color, 0.8);
+          color: rgba($color-light, 0.8);
 
           &:hover {
-            color: $link-color-hover;
+            color: $color-link-hover;
           }
         }
       }
@@ -78,7 +78,7 @@
   }
 
   .footer-divider {
-    background-color: rgba($light-color, 0.4);
+    background-color: rgba($color-light, 0.4);
   }
 
   .footer-logo {
@@ -86,10 +86,10 @@
   }
 
   .container .row > div:not(:first-child) {
-    margin-top: 1em;
+    margin-top: $spacing-base;
   }
 
-  @media #{$md} { 
+  @include mq($from: md) { 
     .container .row > div:not(:first-child) {
       margin-top: 0em;
     }

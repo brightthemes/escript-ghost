@@ -173,7 +173,6 @@ $(document).ready(function () {
   $(".masonry").css('visibility', 'visible');
 });
 
-
 var pagination = 0;
 
 function postsPerPage(postsPerPage) {
@@ -183,7 +182,6 @@ function postsPerPage(postsPerPage) {
     $('.masonry-foot').css('display', 'none');
   }
 }
-
 
 //This is set to 2 since the posts already loaded should be page 1
 var nextPage = 2;

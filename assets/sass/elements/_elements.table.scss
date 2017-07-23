@@ -3,24 +3,24 @@
 //===================================
 
 table {
-  margin: $leading 0;
+  margin: $spacing-base 0;
   border-spacing: 0px;
   border-collapse: collapse;
 
   thead {
-    background-color: darken($light-color, 20%);
+    background-color: darken($color-light, 20%);
   }
 
   tbody {
-    background-color: darken($light-color, 5%);
+    background-color: darken($color-light, 5%);
 
     tr:nth-child(even) {
-      background-color: darken($light-color, 10%);
+      background-color: darken($color-light, 10%);
     }
   }
 
   th, td { 
-    padding: 1em;
+    padding: $spacing-base;
     line-height: $line-height-base;
   }
 }

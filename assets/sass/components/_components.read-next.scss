@@ -5,14 +5,15 @@
 .read-next {
   display: flex;
   align-items: stretch;
+  flex-direction: column;
 
-  @media #{$xs} {
-    flex-direction: column;
+  @include mq($from: sm) {
+    flex-direction: row;
   }
 }
 
 .read-next__story {
-  padding: 1em;
+  padding: $spacing-base;
   margin: 0 auto;
   text-align: center;
   flex-grow: 1;
@@ -23,17 +24,16 @@
   align-items: center;
   min-height: 15em;
 
-  @media #{$sm} {
+  @include mq($from: sm) {
     min-width: 49%;
   }
 
   &.next {
-    @media #{$xs} {
-      margin-top: 1em;
-    }
+    margin-top: $spacing-base;
     
-    @media #{$sm} {
-      margin-left: 1em;
+    @include mq($from: sm) {
+      margin-left: $spacing-base;
+      margin-top: 0;
     }
   }
 
@@ -45,24 +45,24 @@
       transition: opacity $global-transition;
     }
 
-    .read-next__info .read-next__title { color: $link-color-hover; }
+    .read-next__info .read-next__title { color: $color-link-hover; }
   }
 
   &.no-image.read-next__story {
-    background-color: rgba($dark-color, 0.1);
+    background-color: rgba($color-dark, 0.1);
     transition: background-color $global-transition;
 
     &:hover {
-      background-color: rgba($dark-color, 0.15);
+      background-color: rgba($color-dark, 0.15);
       transition: background-color $global-transition, color $global-transition;
 
       .read-next__title {
-        color: $link-color-hover;
+        color: $color-link-hover;
       }
     }
 
     .read-next__title {
-      color: $dark-color;
+      color: $color-dark;
     }
   }
 
@@ -81,7 +81,7 @@
       transition: opacity $global-transition, background $global-transition;
       opacity: 0.6;
       border-radius: $global-border-radius;
-      background: linear-gradient(to bottom, rgba($dark-color, 0.6) 0%, rgba($dark-color, 0.8) 100%);
+      background: linear-gradient(to bottom, rgba($color-dark, 0.6) 0%, rgba($color-dark, 0.8) 100%);
     }
   }
 
@@ -90,14 +90,14 @@
     margin: 0 auto;
 
     .read-next__title {
-      color: $light-color;
-      margin: 0.5em 0;
+      color: $color-light;
+      margin: $spacing-small 0;
       font-size: 1.2rem;
       transition: color $global-transition;
 
-      @media #{$sm} { font-size: 1.3rem; }
-      @media #{$md} { font-size: 1.4rem; }
-      @media #{$lg} { font-size: 1.6rem; }
+      @include mq($from: sm) { font-size: 1.3rem; }
+      @include mq($from: md) { font-size: 1.4rem; }
+      @include mq($from: lg) { font-size: 1.6rem; }
     }
   }
 }

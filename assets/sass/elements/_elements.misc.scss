@@ -13,8 +13,8 @@ strong, b, .bold {
 hr {
   border: 0;
   height: 1px;
-  background-color: $border-color;
-  margin: $leading 0;
+  background-color: $color-border;
+  margin: $spacing-base 0;
 }
 
 small {
@@ -36,8 +36,8 @@ abbr[title]:hover {
 }
 
 ::selection {
-  background: rgba($brand-color, 0.5); /* WebKit/Blink Browsers */
+  background: rgba($color-brand, 0.5); /* WebKit/Blink Browsers */
 }
 ::-moz-selection {
-  background: rgba($brand-color, 0.5); /* Gecko Browsers */
+  background: rgba($color-brand, 0.5); /* Gecko Browsers */
 }

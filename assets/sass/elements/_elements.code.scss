@@ -5,7 +5,7 @@
 pre,
 code {
   font-family: $font-family-monospace;
-  background-color: darken($background-color, 5%);
+  background-color: darken($color-background, 5%);
   white-space: pre;
 }
 
@@ -13,8 +13,8 @@ code {
 pre {
   overflow: auto;
   margin-top: 0;
-  margin: $leading 0;
-  padding: $leading;
+  margin: $spacing-base 0;
+  padding: $spacing-base;
   font-size: $font-size-root;
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -28,5 +28,5 @@ pre {
 
 // Inline code
 p code {
-  padding: $leading * 0.5 $leading * 0.25;
+  padding: $spacing-small $spacing-tiny;
 }

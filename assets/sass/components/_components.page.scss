@@ -3,7 +3,7 @@
 //===================================
 
 .page {
-  background-color: $light-color;
+  background-color: $color-light;
 }
 
 .page-header {
@@ -11,7 +11,7 @@
   height: 100vh;
   display: flex;
   align-items: center;
-  background-color: $dark-color;
+  background-color: $color-dark;
   position: relative;
   margin: 0;
   padding: 0;
