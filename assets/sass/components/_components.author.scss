@@ -7,12 +7,12 @@
 	height: 100vh;
   display: flex;
   align-items: center;
-  padding-top: 6em;
-  background-color: $dark-color;
+  padding-top: 8em;
+  background-color: $color-dark;
 	position: relative;
 
-	@media #{$xs} {
-		padding-top: 8em;
+	@include mq($from: sm) {
+		padding-top: 6em;
 	}
 
   .author__cover {
@@ -27,18 +27,18 @@
 			position: absolute;
 			width: 100%;
 			height: 100%;
-			background: linear-gradient(rgba($dark-color, 0.35), rgba($dark-color, 0.85));
+			background: linear-gradient(rgba($color-dark, 0.35), rgba($color-dark, 0.85));
 		}
   }
 
 	.author__profile {
 		margin: 0 auto;
-		padding: 2em;
+		padding: $spacing-large;
 		padding-top: 0;
 		position: relative;
 		height: 100%;
 		width: 100%;
-		background-color: rgba($dark-color, 0.6);
+		background-color: rgba($color-dark, 0.6);
 	}
 
 	.author__image {
@@ -56,7 +56,7 @@
 		background-position: center center;
 		border-radius: 100%;
 
-		@media #{$md} {
+		@include mq($from: md) {
 			width: 8em;
 			height: 8em;
 			top: -4em;
@@ -64,22 +64,22 @@
 	}
 
 	.author__title {
-		padding-top: 2em; 
+		padding-top: $spacing-large; 
 		margin-top: 0;
 		font-size: 2rem;
 		text-align: center;
-		color: $light-color;
+		color: $color-light;
 
-		@media #{$sm} {
+		@include mq($from: sm) {
 			font-size: 2.5rem;
 		}
 
-		@media #{$md} {
+		@include mq($from: md) {
 			font-size: 3rem;
 		}
 
 		a {
-			color: $dark-color;
+			color: $color-dark;
 
 			&:hover {
 				text-decoration: none;
@@ -91,44 +91,44 @@
 	.author__bio {
 		max-width: 30em;
 		margin: 0 auto;
-		color: darken($light-color, 20%);
+		color: darken($color-light, 20%);
 		font-size: 1rem;
 		letter-spacing: 0;
 		text-indent: 0;
 		text-align: center;
 
-		@media #{$sm} {
+		@include mq($from: sm) {
 			font-size: 1.2rem;
 		}
 	}
 
 	.author-meta {
 		margin: 0;
-		padding: 0.5em 0;
-		color: darken($light-color, 20%);
+		padding: $spacing-small 0;
+		color: darken($color-light, 20%);
 		text-align: center;
 
 		span {
 			display: inline-block;
-			margin: 0.5em;
+			margin: $spacing-small;
 			word-wrap: break-word;
 		}
 
 		a { 
 			text-decoration: none;
-			color: darken($light-color, 20%);
+			color: darken($color-light, 20%);
 
-			&:hover { color: $link-color-hover; }
+			&:hover { color: $color-link-hover; }
 		}
 
-		.author-meta__location, .author-meta__stats { color: darken($light-color, 20%); }
+		.author-meta__location, .author-meta__stats { color: darken($color-light, 20%); }
 	}
 
 	.author__link {
 		a { 
-			color: darken($light-color, 20%); 
+			color: darken($color-light, 20%); 
 
-			&:hover { color: $brand-color; }
+			&:hover { color: $color-brand; }
 		}
 	}
 
@@ -138,38 +138,39 @@
 	}
 
 	.author-social__link {
-		border: 1px solid $border-color;
-		color: darken($light-color, 20%);
-		margin-right: 0.25em;
+		border: 1px solid $color-border;
+		color: darken($color-light, 20%);
+		margin-right: $spacing-tiny;
 		cursor: pointer;
 		display: inline-block;
 		font-weight: 700;
-		padding: 0 1em;
+		padding: 0 $spacing-base;
+		margin-bottom: $spacing-small;
 		height: 2.6em;
 		transition: border-color .4s ease, background .4s ease;
 
-		@media #{$xs} {
-			margin-bottom: 0.5em;
+		@include mq($from: sm) {
+			margin-bottom: 0;
 		}
 
 		&:hover {
-			border-color: $brand-color;
-			background: $brand-color;
-			i, p { color: $light-color; }
+			border-color: $color-brand;
+			background: $color-brand;
+			i, p { color: $color-light; }
 		}
 
 		i {
 			float: left;
 			margin-right: 0;
-			margin-top: 0.6em;
-			color: darken($light-color, 20%);
+			margin-top: 0.65em;
+			color: darken($color-light, 20%);
 			transition: color .4s ease;
 		}
 
 		p {
 			display: inline-block;
-			margin-left: 0.5em;
-    	margin-top: 0.35em;
+			margin-left: $spacing-small;
+    	margin-top: 0.4em;
 			margin-bottom: 0;
 			transition: color .4s ease;
 		}

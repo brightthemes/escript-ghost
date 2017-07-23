@@ -15,3 +15,13 @@ $md: "#{$screen} and (min-width: 62em)"; // 992px
 
 // Larger devices 
 $lg: "#{$screen} and (min-width: 75em)"; // 1200px
+
+// Breakpoints 
+// Example usage:
+// @include mq($from: sm) {}
+$mq-breakpoints: (
+  xs:  767px,
+  sm:  768px,
+  md:  992px,
+  lg: 1200px
+);

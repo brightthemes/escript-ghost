@@ -3,29 +3,29 @@
 //===================================
 
 blockquote {
-  margin: 2*$leading 0;
+  margin: 2*$spacing-base 0;
   font-size: $font-size-root * 1.25;
   line-height: $line-height-base;
-  padding: $leading;
+  padding: $spacing-base;
   font-style: italic;
   text-align: center;
-  color: rgba($text-color, 0.6);
-  text-shadow: 1px rgba($text-color, 0.4);
-  border-top: 1px solid $border-color;
-  border-bottom: 1px solid $border-color;
+  color: rgba($color-text, 0.6);
+  text-shadow: 1px rgba($color-text, 0.4);
+  border-top: 1px solid $color-border;
+  border-bottom: 1px solid $color-border;
   border-left: none;
   position: relative;
 
   &:after {
-    color: rgba($brand-color, 0.7);
+    color: rgba($color-brand, 0.7);
     font-family: FontAwesome;
     content: '\f10e';
     font-size: 2rem;
     position: absolute;
     bottom: calc(100% - 20px);
-    background: $light-color;
+    background: $color-light;
     height: 1.3em;
-    width: 2em;
+    width:$spacing-large;
     transform: translateX(-50%);
     left: 50%;
   }

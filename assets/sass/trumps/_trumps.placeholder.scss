@@ -4,30 +4,30 @@
 
 .placeholder-dark {
   &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: rgba($dark-color, 0.6);
+    color: rgba($color-dark, 0.6);
   }
   &::-moz-placeholder { /* Firefox 19+ */
-    color: rgba($dark-color, 0.6);
+    color: rgba($color-dark, 0.6);
   }
   &:-ms-input-placeholder { /* IE 10+ */
-    color: rgba($dark-color, 0.6);
+    color: rgba($color-dark, 0.6);
   }
   &:-moz-placeholder { /* Firefox 18- */
-    color: rgba($dark-color, 0.6);
+    color: rgba($color-dark, 0.6);
   }
 }
 
 .placeholder-light {
   &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: rgba($light-color, 0.6);
+    color: rgba($color-light, 0.6);
   }
   &::-moz-placeholder { /* Firefox 19+ */
-    color: rgba($light-color, 0.6);
+    color: rgba($color-light, 0.6);
   }
   &:-ms-input-placeholder { /* IE 10+ */
-    color: rgba($light-color, 0.6);
+    color: rgba($color-light, 0.6);
   }
   &:-moz-placeholder { /* Firefox 18- */
-    color: rgba($light-color, 0.6);
+    color: rgba($color-light, 0.6);
   }
 }

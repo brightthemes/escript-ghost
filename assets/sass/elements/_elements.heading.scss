@@ -4,7 +4,7 @@
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $heading-font-family;
-  color: $heading-text-color;
+  color: $color-heading-text;
 	word-break: break-word;
 }
 
@@ -12,37 +12,37 @@ h1 {
 	font-size: $font-size-root * 3.5;
 	font-weight: $font-weight-bold;
 	line-height: $heading-line-height * 0.8;
-  margin: 0 0 ($leading * 0.5);
+  margin: 0 0 ($spacing-base * 0.5);
 }
 
 h2 { 
 	font-size: $font-size-root * 2.5; 
 	font-weight: $font-weight-bold;
 	line-height: $heading-line-height * 0.85;
-	margin: 0 0 ($leading * 0.6);
+	margin: 0 0 ($spacing-base * 0.6);
 }
 
 h3 { 
 	font-size: $font-size-root * 2; 
 	font-weight: $font-weight-bold;
 	line-height: $heading-line-height * 0.9;
-	margin: 0 0 ($leading * 0.7);
+	margin: 0 0 ($spacing-base * 0.7);
 }
 
 h4 { 
 	font-size: $font-size-root * 1.5; 
 	line-height: $heading-line-height * 0.95;
-	margin: 0 0 ($leading * 0.8);
+	margin: 0 0 ($spacing-base * 0.8);
 }
 
 h5 { 
 	font-size: $font-size-root * 1.25; 
 	line-height: $heading-line-height * 1;
-	margin: 0 0 ($leading * 0.9);
+	margin: 0 0 ($spacing-base * 0.9);
 }
 
 h6 { 
 	font-size: $font-size-root * 1; 
 	line-height: $heading-line-height * 1;
-	margin: 0 0 ($leading * 1);
+	margin: 0 0 ($spacing-base * 1);
 }

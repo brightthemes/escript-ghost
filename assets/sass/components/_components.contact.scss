@@ -3,25 +3,26 @@
 //===================================
 
 .contact-header {
-  padding: 4em 0 2em;
+  padding: $spacing-huge 0 $spacing-large;
 }
 
 .contact {
-  color: $light-color;
+  color: $color-light;
   max-width: 50em;
   margin: 0 auto;
 
   .contact-address, .contact__form-wrapper {
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding-top: $spacing-base;
+    padding-bottom: $spacing-base;
   }
 
   .contact-address__title,
   .contact-form__title {
-    color: $light-color;
+    color: $color-light;
+    font-size: 1.6rem;
 
-    @media #{$xs} {
-      font-size: 1.6rem;
+    @include mq($from: sm) {
+      font-size: 2rem;
     }
   }
 
@@ -30,14 +31,14 @@
     .contact-form__email,
     textarea { 
       display: block; 
-      margin: 1em 0;
+      margin: $spacing-base 0;
       background: transparent;
       border: none;
       border-bottom: 2px solid;
       border-radius: 0;
       width: 100%;
       max-width: 25em;
-      min-height: 2em;
+      min-height: $spacing-large;
       font-size: 1.2rem;
       padding: 0;
 

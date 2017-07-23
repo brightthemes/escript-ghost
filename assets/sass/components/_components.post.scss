@@ -3,17 +3,17 @@
 //===================================
 
 .post {
-  background-color: $light-color;
+  background-color: $color-light;
 }
 
 .post-header {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-color: $dark-color;
+  background-color: $color-dark;
   position: relative;
 
-  @media #{$sm} {
+  @include mq($from: sm) {
     height: 100vh;
   }
 
@@ -28,11 +28,11 @@
 
       .post-header__tag {
         a { 
-          border-color: $dark-color;
+          border-color: $color-dark;
 
           &:hover {
-            background-color: $dark-color;
-            color: $light-color;
+            background-color: $color-dark;
+            color: $color-light;
           }
         }
       }
@@ -40,22 +40,22 @@
       .post-header__tag, 
       .post-header__title,
       .post-header__detail {
-        color: $dark-color;
+        color: $color-dark;
 
-        a { color: $dark-color; }
+        a { color: $color-dark; }
       }
 
       .post-header__details {
-        border-top: 1px solid $dark-color;
-        border-bottom: 1px solid $dark-color;
+        border-top: 1px solid $color-dark;
+        border-bottom: 1px solid $color-dark;
 
         p {
-          border-color: $dark-color;
+          border-color: $color-dark;
 
-          a, time, span { color: $dark-color; }
+          a, time, span { color: $color-dark; }
         }
 
-        .post-header__comments a:hover { color: $dark-color; }
+        .post-header__comments a:hover { color: $color-dark; }
       }
     }
   }
@@ -65,36 +65,39 @@
 
     .post-header__tag, 
     .post-header__title,
-    .post-header__detail {
-      color: $light-color;
-      margin: 0.3em 0;
+    .post-header__details {
+      color: $color-light;
+      margin: $spacing-tiny 0;
 
-      a { color: $light-color; }
+      a { color: $color-light; }
     }
 
     .post-header__title {
       font-size: 2rem;
-      @media #{$xs} { margin: 0.5em 0; }
-      @media #{$sm} { font-size: 3rem; }
-      @media #{$md} { font-size: 3.5rem; }
-      @media #{$lg} { font-size: 4rem; }
+      margin: $spacing-small 0;
+      @include mq($from: sm) { 
+        font-size: 3rem; 
+        margin: $spacing-tiny 0;
+      }
+      @include mq($from: md) { font-size: 3.5rem; }
+      @include mq($from: lg) { font-size: 4rem; }
     }
 
     .post-header__tag {
       animation-delay: 0.5s;
 
       a { 
-        border: 1px solid $light-color;
+        border: 1px solid $color-light;
         border-radius: $global-border-radius;
-        padding: 0.5em 1em;
+        padding: $spacing-small $spacing-base;
         text-transform: uppercase;
-        margin-right: 0.25em;
+        margin-right: $spacing-tiny;
         line-height: 2;
         transition: color $global-transition, background $global-transition;
 
         &:hover {
-          background-color: $light-color;
-          color: $dark-color;
+          background-color: $color-light;
+          color: $color-dark;
         }
       }
     }
@@ -102,19 +105,19 @@
     .post-header__details {
       display: inline-block;
       text-transform: uppercase;
-      border-top: 1px solid $light-color;
-      border-bottom: 1px solid $light-color;
-      padding: 0.5em 0;
+      border-top: 1px solid $color-light;
+      border-bottom: 1px solid $color-light;
+      padding: $spacing-small 0;
       animation-delay: 1s;
 
       p {
         margin: 0;    
-        padding: 0 0.5em;
-        border-right: 1px solid $light-color;
+        padding: 0 $spacing-small;
+        border-right: 1px solid $color-light;
 
-        a, time, span { color: $light-color; }
+        a, time, span { color: $color-light; }
 
-        a:hover { color: $link-color-hover; }
+        a:hover { color: $color-link-hover; }
       }
 
       .post-header__author,
@@ -126,7 +129,7 @@
       .post-header__comments { 
         border-right: none; 
 
-        a:hover { color: $light-color; }
+        a:hover { color: $color-light; }
       }
     }
   }
@@ -134,8 +137,8 @@
 
 .post-content {
   max-width: 48em;
-  padding-top: 2em;
-  padding-bottom: 2em;
+  padding-top: $spacing-large;
+  padding-bottom: $spacing-large;
 
   article {
     font-family: $font-family-serif;
@@ -151,11 +154,11 @@
 
       img { 
         width: calc(100% + 30px);
-        margin: 1em -15px;
+        margin: $spacing-base -15px;
 
-        @media #{$sm} {
+        @include mq($from: sm) {
           width: calc(100% + 5em);
-          margin: 1em -2.5em;
+          margin: $spacing-base -2.5em;
           max-width: 50.52em;
         }
       }

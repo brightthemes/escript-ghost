@@ -4,7 +4,7 @@
   </div>
 </div>
 <script>
-  document.addEventListener("DOMContentLoaded", function(){
+  var callback = function(){
     var comments = document.getElementById('comments');
 
     var scroll = function(e) {
@@ -29,7 +29,16 @@
       }
     };
     document.addEventListener('scroll', scroll, true);  
-  });
+  };
+
+  if (
+      document.readyState === "complete" ||
+      (document.readyState !== "loading" && !document.documentElement.doScroll)
+  ) {
+    callback();
+  } else {
+    document.addEventListener("DOMContentLoaded", callback);
+  }
 </script>
 <noscript>
   Please enable JavaScript to view the
