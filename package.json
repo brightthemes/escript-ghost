@@ -1,9 +1,14 @@
 {
   "name": "escript",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "Masonry Blog Ghost Theme",
-  "author": "Biron Themes",
-  "email": "bironthemes@gmail.com",
+  "author": {
+    "name": "Biron Themes",
+    "email": "bironthemes@gmail.com"
+  },
+  "config": { 
+    "posts_per_page": 9
+  },
   "devDependencies": {
     "bootstrap": "^3.3.7",
     "bootstrap-sass": "^3.3.7",
