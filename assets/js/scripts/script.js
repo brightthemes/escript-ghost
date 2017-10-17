@@ -168,7 +168,7 @@ $(document).ready(function () {
                         '<a href="{{link}}" class="result-link">' +
                           '<div class="result-item-content">' +
                           '<h4>{{title}}</h4>' +
-                          '<p>{{authorName}}, {{pubDate}}</p>' +
+                          '<p>{{pubDate}}</p>' +
                           '</div>' +
                         '</a>' +
                       '</div>'
