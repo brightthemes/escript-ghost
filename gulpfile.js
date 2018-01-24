@@ -79,7 +79,7 @@ gulp.task('sass', function () {
 // Browsersync init and reload
 gulp.task('browsersync', function (callback) {  
   browserSync.init({
-    proxy: 'http://localhost:2372'
+    proxy: 'http://localhost:82'
   });
   callback();
 });

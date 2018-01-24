@@ -256,7 +256,7 @@ function insertPost(postData, authorData, animate) {
 
   if (postData.image !== null) {
     postInfo += '<a class="masonry-post__image" href="' + postData.url + '">\
-                    <img src="' + postData.image + '" class="lazyload img-responsive" alt="' + postData.title + '">\
+                    <img src="' + postData.feature_image + '" class="lazyload img-responsive" alt="' + postData.title + '">\
                   </a>';
   }
 
