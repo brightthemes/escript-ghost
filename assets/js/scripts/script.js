@@ -254,7 +254,7 @@ function insertPost(postData, authorData, animate) {
 
   var postInfo = '<div class="masonry-post animated fadeIn" style="animation-delay:' + animate + 's">';
 
-  if (postData.image !== null) {
+  if (postData.feature_image !== null) {
     postInfo += '<a class="masonry-post__image" href="' + postData.url + '">\
                     <img src="' + postData.feature_image + '" class="lazyload img-responsive" alt="' + postData.title + '">\
                   </a>';
