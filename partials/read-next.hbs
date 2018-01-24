@@ -2,7 +2,7 @@
 <div class="read-next animated fadeIn clearfix">
   {{!-- Prevoius Post --}}
   {{#prev_post}}
-    <a class="read-next__story prev {{^if image}}no-image{{/if}}" href="{{url}}">
+    <a class="read-next__story prev {{^if feature_image}}no-image{{/if}}" href="{{url}}">
       {{#if feature_image}}
         <div class="lazyload blur read-next__image" data-src="{{img_url feature_image}}" 
             style="background-image: url({{img_url feature_image}})"></div>
@@ -15,7 +15,7 @@
 
   {{!-- Next Post --}}
   {{#next_post}}
-    <a class="read-next__story next {{^if image}}no-image{{/if}}" href="{{url}}">
+    <a class="read-next__story next {{^if feature_image}}no-image{{/if}}" href="{{url}}">
       {{#if feature_image}}
         <div class="lazyload blur read-next__image" data-src="{{img_url feature_image}}" 
             style="background-image: url({{img_url feature_image}})"></div>

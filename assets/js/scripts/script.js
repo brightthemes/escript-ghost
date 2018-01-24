@@ -262,7 +262,7 @@ function insertPost(postData, authorData, animate) {
 
   postInfo += '<div class="masonry-post__content">' +
     '<h2 class="masonry-post__title"><a href="' + postData.url + '">' + postData.title + '</a></h2>' +
-    '<h6 class="masonry-post__author">by <a href=/author/"' + authorData.slug + '">' + authorData.name +  '</a></h6>' +
+    '<h6 class="masonry-post__author">by <a href=/author/' + authorData.slug + '>' + authorData.name +  '</a></h6>' +
     '<p class="masonry-post__tags">' + listTags(postData.tags) + '</p>' +
     '<p>' + excerpt + '</p>' +
     '<div class="masonry-post__more clearfix">' +
