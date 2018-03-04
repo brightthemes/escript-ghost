@@ -6,7 +6,7 @@
     "name": "Biron Themes",
     "email": "bironthemes@gmail.com"
   },
-  "config": { 
+  "config": {
     "posts_per_page": 9
   },
   "devDependencies": {
@@ -14,13 +14,18 @@
     "bootstrap-sass": "^3.3.7",
     "browser-sync": "^2.18.12",
     "cssnano": "^3.10.0",
+    "fs": "0.0.1-security",
     "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-notify": "^3.2.0",
     "gulp-pixrem": "^1.0.0",
+    "gulp-plumber": "^1.2.0",
     "gulp-postcss": "^7.0.0",
     "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
     "path": "^0.12.7",
     "pixrem": "^4.0.1",
     "postcss": "^6.0.8",
@@ -42,6 +47,7 @@
     "jQuery-viewport-checker": "git+https://github.com/dirkgroenen/jQuery-viewport-checker.git",
     "jquery": "^3.1.1",
     "lazysizes": "^4.0.0-rc3",
+    "vanilla-lazyload": "^8.6.0",
     "moment": "^2.18.1",
     "salvattore": "^1.0.9"
   }

@@ -92,6 +92,26 @@ $(document).ready(function () {
     $(el).attr('data-src', el.src).addClass('lazyload');
   });
 
+  // ================
+  // Lazy load images
+  // ================
+  var lazyLoad = new LazyLoad({
+    elements_selector: ".lazyload",
+    class_loading: "loading",
+    class_loaded: "lazyloaded",    
+    callback_enter: function() {
+      addClass('.lazyload', 'loading');
+    },
+    callback_load: function() {
+      removeClass('.lazyload', 'loading');
+      addClass('.lazyload', 'lazyloaded');
+    },
+    callback_set: function() {
+      removeClass('.lazyload', 'loading');
+      addClass('.lazyload', 'lazyloaded');
+    }
+  });
+  
   jQuery('.masonry-post').addClass("invisible").viewportChecker({
     classToAdd: 'visible animated fadeIn',
     classToRemove: 'invisible',
@@ -175,6 +195,15 @@ $(document).ready(function () {
   });
 
   $(".masonry").css('visibility', 'visible');
+
+  // ==========================
+  // Disqus commen count script
+  // ==========================
+  // (function() {
+  //   var s = document.createElement('script'); s.async = true;
+  //   s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  //   (document.getElementsByTagName('BODY')[0]).appendChild(s);
+  // }());
 });
 
 var pagination = 0;
@@ -308,26 +337,6 @@ function listTags(tags) {
 // Make videos responsive
 fitvids();
 
-// Disqus comments
-function loadComments(url, id) {
-  /**
-   *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-   *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-   */
-  // var disqus_shortname = 'codehowio'; // required: replace example with your forum shortname
-  var disqus_config = function () {
-    this.page.url = url;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = id; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-  };
-
-  (function () {  // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', + new Date());
-    (d.head || d.body).appendChild(s);
-  })();
-}
-
 function isInViewport(el) {
   var top = el.offsetTop;
   var left = el.offsetLeft;
@@ -361,4 +370,30 @@ function copyTextToClipboard(text) {
 
 function copyLink() {
   copyTextToClipboard(location.href);
+}
+
+// ==================
+// Add class function
+// ==================
+function addClass(selector, myClass) {
+  // get all elements that match our selector
+  elements = document.querySelectorAll(selector);
+
+  // add class to all chosen elements
+  for (var i=0; i<elements.length; i++) {
+    elements[i].classList.add(myClass);
+  }
+}
+
+// =====================
+// Remove class function
+// =====================
+function removeClass(selector, myClass) {  
+  // get all elements that match our selector
+  elements = document.querySelectorAll(selector);
+
+  // remove class from all chosen elements
+  for (var i=0; i<elements.length; i++) {
+    elements[i].classList.remove(myClass);
+  }
 }

@@ -18,7 +18,8 @@
     <link rel="icon" href="{{asset '/favicon.ico'}}" type="image/x-icon">
 
     {{!-- Styles'n'Scripts --}}
-    <link rel="stylesheet" type="text/css" href="{{asset 'css/main.min.css'}}" />
+    {{!-- <link rel="stylesheet" type="text/css" href="{{asset 'css/main.min.css'}}" /> --}}
+    {{> compiled/inline-css }}
 
     {{!-- Ghost outputs important style and meta data with this tag --}}
     {{ghost_head}}
@@ -49,14 +50,7 @@
     {{!-- Disqus comments --}}
     <script type="text/javascript">
       // Replace 'bironthemes' with your disqus account shortname
-      var disqus_shortname = 'bironthemes'; 
-      /* * * DON'T EDIT BELOW THIS LINE * * */
-      (function() {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('BODY')[0]).appendChild(s);
-      }());
+      var disqus_shortname = 'biron-demo';
     </script>
     
   </body>
