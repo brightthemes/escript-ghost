@@ -97,6 +97,7 @@ $(document).ready(function () {
   // ================
   var lazyLoad = new LazyLoad({
     elements_selector: ".lazyload",
+    treshold: 0,
     class_loading: "loading",
     class_loaded: "lazyloaded",    
     callback_enter: function() {
