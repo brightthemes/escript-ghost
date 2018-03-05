@@ -7,7 +7,7 @@
 // Font Awesome Icons
 @import "node_modules/font-awesome/scss/variables";
 // Replace font path
-$fa-font-path: "../assets/fonts";
+$fa-font-path: "/assets/fonts";
 @import "node_modules/font-awesome/scss/mixins";
 @import "node_modules/font-awesome/scss/path";
 @import "node_modules/font-awesome/scss/core";

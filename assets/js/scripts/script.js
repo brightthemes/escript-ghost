@@ -320,7 +320,7 @@ function insertPost(postData, authorData, animate) {
   salvattore.appendElements(grid, [item]);
   item.outerHTML = postInfo;
 
-  DISQUSWIDGETS.getCount({ reset: true });
+  // DISQUSWIDGETS.getCount({ reset: true });
 }
 
 function listTags(tags) {
