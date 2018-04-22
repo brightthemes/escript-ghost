@@ -1,21 +1,3 @@
-// var gulp = require('gulp');
-// var concat = require('gulp-concat');
-// var rename = require('gulp-rename');
-// var uglify = require('gulp-uglify');
-// var postcss = require('gulp-postcss');
-// var cssnext = require('postcss-cssnext');
-// var colorRgbaFallback = require('postcss-color-rgba-fallback');
-// var opacity = require('postcss-opacity');
-// var pseudoelements = require('postcss-pseudoelements');
-// var vmin = require('postcss-vmin');
-// var pixrem = require('pixrem');
-// var willChange = require('postcss-will-change');
-// var sass = require('gulp-sass');
-// var path = require('path');
-// var cssnano = require('cssnano');
-// var zindex = require('postcss-zindex');
-// var removeComments = require('postcss-discard-comments');
-// var browserSync = require('browser-sync').create();
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
@@ -86,7 +68,7 @@ gulp.task('sass', function () {
   var processors = [
       removeComments,
       cssnext({
-          browsers:'> 1%, last 10 version, Firefox >= 30, ie >= 9', 
+          browsers:'> 1%, last 10 version, Firefox >= 30, ie >= 9',
           warnForDuplicates: false
       }),
       zindex,
@@ -119,15 +101,15 @@ gulp.task('inlinecss', function() {
   });
 
 // Browsersync init and reload
-gulp.task('browsersync', function (callback) {  
+gulp.task('browsersync', function (callback) {
   browserSync.init({
-    port: 3472,
-    proxy: 'http://localhost:2372/'
+    port: 3468,
+    proxy: 'http://localhost:3368/'
   });
   callback();
 });
 
-gulp.task('browsersync:reload', function (callback) {  
+gulp.task('browsersync:reload', function (callback) {
   browserSync.reload();
   callback();
 });

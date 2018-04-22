@@ -1,28 +1,28 @@
 {{!< default}}
 
 {{!-- The big featured header --}}
-{{#get "posts" limit="5" 
-							 include="author,tags" 
+{{#get "posts" limit="5"
+							 include="author,tags"
 							 filter="featured:true" as |featured| }}
   <section class="featured-posts">
-    <div id="featured-posts__carousel" class="carousel slide" 
+    <div id="featured-posts__carousel" class="carousel slide"
 				 data-ride="carousel" data-interval="8000">
 
 		  {{!-- Indicators --}}
 		  <ol class="carousel-indicators featured-posts__indicators">
 				{{#foreach featured}}
-					<li data-target="#featured-posts__carousel" data-slide-to="{{@index}}" 
+					<li data-target="#featured-posts__carousel" data-slide-to="{{@index}}"
 							class="{{#if @first}}active{{/if}}"></li>
 				{{/foreach}}
 		  </ol>
-			
+
 			{{!-- Featured post content --}}
 	 		<div class="carousel-inner featured-posts__inner">
 				{{#foreach featured}}
 					<div class="featured-post item {{#if @first}}active{{/if}}">
 						{{!-- Featured post image --}}
-						<div class="lazyload blur featured-post__image" 
-								data-src="{{#if feature_image}}{{img_url feature_image}}{{/if}}" 
+						<div class="lazyload blur featured-post__image"
+								data-src="{{#if feature_image}}{{img_url feature_image}}{{/if}}"
 								style="{{#if feature_image}}background-image: url({{img_url feature_image}})
 											 {{else}}background-color: #000;{{/if}}">
 						</div>
@@ -46,10 +46,12 @@
 										</time>
 									</div>
 									<div class="featured-post__comments">
-										<i class="fa fa-comments-o"></i>
-										<span class="disqus-comment-count" 
+                    <i class="fa fa-clock-o"></i>
+                    {{reading_time}}
+										{{!-- <i class="fa fa-comments-o"></i>
+										<span class="disqus-comment-count"
 											data-disqus-url="{{url absolute='true'}}">0
-										</span>
+										</span> --}}
 									</div>
 								</div>
 								<div class="read-more animated fadeInUp">
@@ -63,13 +65,13 @@
 
 		  {{!-- Controls --}}
 		  <div class="featured-posts__control-wrapper clearfix">
-				<a class="left carousel-control" href="#featured-posts__carousel" 
+				<a class="left carousel-control" href="#featured-posts__carousel"
 					 role="button" data-slide="prev">
 					<div class="carousel-control-prev">
 						<i class="fa fa-angle-left"></i>
 					</div>
 				</a>
-				<a class="right carousel-control" href="#featured-posts__carousel" 
+				<a class="right carousel-control" href="#featured-posts__carousel"
 					 role="button" data-slide="next">
 					<div class="carousel-control-next">
 						<i class="fa fa-angle-right"></i>
@@ -82,8 +84,8 @@
 {{/get}}
 
 {{!-- Masonry posts --}}
-{{#get "posts" include="author,tags" 
-							 limit=@config.posts_per_page 
+{{#get "posts" include="author,tags"
+							 limit=@config.posts_per_page
 							 filter="featured:false" as |latest| }}
 	<section class="latest-posts container">
 		<div class="masonry clearfix" id="grid" data-columns>
@@ -92,7 +94,7 @@
 		{{/foreach}}
 		</div>
 		<div class="masonry-foot text-center">
-			<button id="load-posts" onclick="loadPosts();" 
+			<button id="load-posts" onclick="loadPosts();"
 				class="uppercase load-more-posts">Load More
 			</button>
 		</div>

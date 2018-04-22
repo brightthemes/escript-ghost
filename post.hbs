@@ -6,11 +6,11 @@
   <div class="post-header {{#if feature_image}}post-hero{{else}}post-without-image{{/if}}">
     {{!-- Post image --}}
     {{#if feature_image}}
-      <div class="full-page-cover lazyload blur" data-src="{{img_url feature_image}}" 
+      <div class="full-page-cover lazyload blur" data-src="{{img_url feature_image}}"
            style="background-image: url({{img_url feature_image}})"></div>
     {{/if}}
     <div class="container">
-      <div class="post-header__info">    
+      <div class="post-header__info">
         {{!-- Post tags --}}
         <p class="post-header__tag animated fadeInDown">
           {{tags limit="5" separator=" "}}
@@ -30,12 +30,13 @@
           </p>
           {{!-- Post comments --}}
           <p class="post-header__comments">
-            <a href="#comments">
+            {{reading_time}}
+            {{!-- <a href="#comments">
               <i class="fa fa-comments-o"></i>
-              <span class="disqus-comment-count" 
+              <span class="disqus-comment-count"
                     data-disqus-url="{{url absolute='true'}}">0
               </span>
-            </a>
+            </a> --}}
           </p>
         </div>
       </div>
@@ -53,7 +54,7 @@
   <div class="post-content container" id="content">
     {{!-- Post Social Share --}}
     {{> social-share}}
-    
+
     {{!-- Post Content --}}
     <article>
       {{content}}
