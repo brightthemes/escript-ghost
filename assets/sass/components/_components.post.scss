@@ -17,8 +17,8 @@
     height: 100vh;
   }
 
-  &.post-without-image { 
-    display: block; 
+  &.post-without-image {
+    display: block;
     min-height: auto;
     height: auto;
     background: transparent;
@@ -27,7 +27,7 @@
       padding-top: 7em;
 
       .post-header__tag {
-        a { 
+        a {
           border-color: $color-dark;
 
           &:hover {
@@ -37,7 +37,7 @@
         }
       }
 
-      .post-header__tag, 
+      .post-header__tag,
       .post-header__title,
       .post-header__detail {
         color: $color-dark;
@@ -55,7 +55,7 @@
           a, time, span { color: $color-dark; }
         }
 
-        .post-header__comments a:hover { color: $color-dark; }
+        .post-header__comments { color: $color-dark; }
       }
     }
   }
@@ -63,7 +63,7 @@
   .post-header__info {
     text-align: center;
 
-    .post-header__tag, 
+    .post-header__tag,
     .post-header__title,
     .post-header__details {
       color: $color-light;
@@ -75,8 +75,8 @@
     .post-header__title {
       font-size: 2rem;
       margin: $spacing-small 0;
-      @include mq($from: sm) { 
-        font-size: 3rem; 
+      @include mq($from: sm) {
+        font-size: 3rem;
         margin: $spacing-tiny 0;
       }
       @include mq($from: md) { font-size: 3.5rem; }
@@ -86,7 +86,7 @@
     .post-header__tag {
       animation-delay: 0.5s;
 
-      a { 
+      a {
         border: 1px solid $color-light;
         border-radius: $global-border-radius;
         padding: $spacing-small $spacing-base;
@@ -111,7 +111,7 @@
       animation-delay: 1s;
 
       p {
-        margin: 0;    
+        margin: 0;
         padding: 0 $spacing-small;
         border-right: 1px solid $color-light;
 
@@ -126,8 +126,8 @@
         display: inline-block;
       }
 
-      .post-header__comments { 
-        border-right: none; 
+      .post-header__comments {
+        border-right: none;
 
         a:hover { color: $color-light; }
       }
@@ -152,7 +152,7 @@
       margin-right: auto;
       margin-bottom: 1.2em;
 
-      img { 
+      img {
         width: calc(100% + 30px);
         margin: $spacing-base -15px;
 
