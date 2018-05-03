@@ -104,7 +104,7 @@ gulp.task('inlinecss', function() {
 gulp.task('browsersync', function (callback) {
   browserSync.init({
     port: 3468,
-    proxy: 'http://localhost:3368/'
+    proxy: 'http://localhost:2368/'
   });
   callback();
 });

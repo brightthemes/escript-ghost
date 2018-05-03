@@ -1,18 +1,23 @@
 {
   "name": "escript",
-  "version": "2.0.9",
+  "version": "2.1.0",
   "description": "Masonry Blog Ghost Theme",
   "author": {
     "name": "Biron Themes",
     "email": "bironthemes@gmail.com"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://norberthunyadi@bitbucket.org/birondev/escript-ghost.git"
+  },
+  "private": true,
   "config": {
     "posts_per_page": 9
   },
   "devDependencies": {
     "bootstrap": "^3.3.7",
     "bootstrap-sass": "^3.3.7",
-    "browser-sync": "^2.18.12",
+    "browser-sync": "^2.24.2",
     "cssnano": "^3.10.0",
     "fs": "0.0.1-security",
     "gulp": "^3.9.1",
@@ -28,7 +33,7 @@
     "gulp-util": "^3.0.8",
     "path": "^0.12.7",
     "pixrem": "^4.0.1",
-    "postcss": "^6.0.8",
+    "postcss": "^6.0.22",
     "postcss-color-rgba-fallback": "^3.0.0",
     "postcss-cssnext": "^3.0.2",
     "postcss-discard-comments": "^2.0.4",
@@ -41,14 +46,13 @@
   },
   "dependencies": {
     "animate.css": "^3.5.2",
-    "bootstrap-sass": "^3.3.7",
     "fitvids": "^2.0.0",
     "font-awesome": "^4.7.0",
     "jQuery-viewport-checker": "git+https://github.com/dirkgroenen/jQuery-viewport-checker.git",
     "jquery": "^3.1.1",
     "lazysizes": "^4.0.0-rc3",
-    "vanilla-lazyload": "^8.6.0",
     "moment": "^2.18.1",
-    "salvattore": "^1.0.9"
+    "salvattore": "^1.0.9",
+    "vanilla-lazyload": "^8.6.0"
   }
 }
