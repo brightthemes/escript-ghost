@@ -87,12 +87,13 @@
       animation-delay: 0.5s;
 
       a {
+        display: inline-block;
         border: 1px solid $color-light;
         border-radius: $global-border-radius;
         padding: $spacing-small $spacing-base;
         text-transform: uppercase;
         margin-right: $spacing-tiny;
-        line-height: 2;
+        margin-bottom: $spacing-small;
         transition: color $global-transition, background $global-transition;
 
         &:hover {
