@@ -15,14 +15,14 @@ a {
 .kg-card-markdown {
   a {
     color: $color-link;
-    text-decoration: none;
+    text-decoration: underline;
     transition: color $global-transition;
 
     &:visited { color: $color-link-visited; }
 
     &:hover {
       color: $color-link-hover;
-      text-decoration: none;
+      text-decoration: underline;
       transition: color $global-transition;
     }
 
@@ -30,6 +30,6 @@ a {
   }
 }
 
-.post {
-  a:hover { text-decoration: none; }
-}
+// .post {
+//   a:hover { text-decoration: none; }
+// }
