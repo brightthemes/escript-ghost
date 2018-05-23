@@ -21,7 +21,7 @@
     &:before, &:after {
       background-color: $color-dark;
     }
-        
+
     &:hover:before,
     &:hover:after {
       background-color: $color-link;
@@ -35,14 +35,14 @@
     transition: transform 0.5s;
   }
 
-  .search-form {     
+  .search-form {
     margin: 0 auto 1.5em;
     max-width: 40em;
     position: relative;
     border-bottom: 2px solid $color-border;
 
-    input { 
-      color: $color-brand; 
+    input {
+      color: $color-brand;
       font-weight: $font-weight-bold;
       padding: 0;
       border: none;
@@ -64,7 +64,7 @@
       }
     }
 
-    .search-icon {      
+    .search-icon {
       float: right;
       background: transparent;
       color: darken($color-light, 60%);
@@ -74,19 +74,19 @@
       font-size: 1.4rem;
 
       @include mq($from: sm) { font-size: 2rem; }
-      @include mq($from: md) { 
+      @include mq($from: md) {
         font-size: 2.6rem;
-        padding: 0.15em 0; 
+        padding: 0.15em 0;
       }
 
       i { transition: color .4s ease; }
 
-      &:hover { 
+      &:hover {
         i { color: $color-brand; }
       }
     }
 
-    .slider { 
+    .slider {
       position: absolute;
       bottom: 0;
       left: 0;
@@ -113,7 +113,7 @@
     p {
       text-align: center;
       font-size: 1.2rem;
-      margin: $spacing-small 0;  
+      margin: $spacing-small 0;
 
       @include mq($from: lg) { font-size: 1.4rem; }
     }
@@ -137,8 +137,8 @@
     width: 100%;
     padding: $spacing-base;
 
-    h4 { 
-      font-size: 1.2rem; 
+    h4 {
+      font-size: 1.2rem;
       margin-top: 0;
       margin-bottom: $spacing-tiny;
 

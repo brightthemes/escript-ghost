@@ -1,6 +1,6 @@
 {
   "name": "escript",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Masonry Blog Ghost Theme",
   "author": {
     "name": "Biron Themes",
@@ -46,6 +46,7 @@
   },
   "dependencies": {
     "animate.css": "^3.5.2",
+    "feather-icons": "^4.7.0",
     "fitvids": "^2.0.0",
     "font-awesome": "^4.7.0",
     "jQuery-viewport-checker": "git+https://github.com/dirkgroenen/jQuery-viewport-checker.git",
