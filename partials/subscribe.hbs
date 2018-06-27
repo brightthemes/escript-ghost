@@ -1,19 +1,18 @@
 {{!-- Subscribe component (Ghost) --}}
 {{#if @labs.subscribers}}
-  <section class="subscribe" {{#if @blog.cover_image}} 
+  <section class="subscribe" {{#if @blog.cover_image}}
            style="background-image: url({{@blog.cover_image}})"{{/if}}>
     <div class="subscribe-overlay"></div>
     <div class="container text-center">
       <div class="gh-subscribe">
-        <h3 class="gh-subscribe-title">Subscribe to {{@blog.title}}</h3>
-        <p>Get the latest posts delivered right to your inbox.</p>
-        {{> subscribe-form input_class="subscribe-form__input placeholder-light" 
-            button_class="subscribe-form__button" placeholder="Your email"}}
-        <div class="gh-subscribe-rss">or subscribe 
-          <a href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/">
-            via RSS</a> with Feedly!
-        </div>
+        <h3 class="gh-subscribe-title">{{t "Subscribe to {blogtitle}" blogtitle=@blog.title}}</h3>
+        <p>{{t "Get the latest posts delivered right to your inbox"}}</p>
+        {{ subscribe_form form_class="subscribe-form" input_class="subscribe-form__input placeholder-light"
+            button_class="subscribe-form__button button--light" placeholder=(t "Your email address")}}
       </div>
     </div>
   </section>
 {{/if}}
+
+
+

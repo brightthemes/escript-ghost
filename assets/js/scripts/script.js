@@ -9,7 +9,7 @@ $(document).ready(function () {
     $('.social-share').show();
 
     var commentTop;
-    
+
     if ($('.subscribe').length) {
       commentTop = $('.subscribe').offset().top;
     }
@@ -80,7 +80,7 @@ $(document).ready(function () {
   if ( window.location.pathname === "/" && !$('.featured-post').length ) {
     $('.navbar__default').css('backgroundColor', 'rgba(0,0,0,0.85)');
     $('.latest-posts').css('marginTop', '7em');
-  } 
+  }
 
   // Advertisement div hide when ad block active
   if ($('.ad-unit').is(':hidden')) {
@@ -99,24 +99,13 @@ $(document).ready(function () {
     elements_selector: ".lazyload",
     treshold: 0,
     class_loading: "loading",
-    class_loaded: "lazyloaded",    
-    callback_enter: function() {
-      addClass('.lazyload', 'loading');
+    class_loaded: "lazyloaded",
+    callback_enter: function(el) {
+      el.classList.add('loading');
     },
-    callback_load: function() {
-      removeClass('.lazyload', 'loading');
-      addClass('.lazyload', 'lazyloaded');
-    },
-    callback_set: function() {
-      removeClass('.lazyload', 'loading');
-      addClass('.lazyload', 'lazyloaded');
+    callback_set: function(el) {
+      el.classList.add('lazyloaded');
     }
-  });
-  
-  jQuery('.masonry-post').addClass("invisible").viewportChecker({
-    classToAdd: 'visible animated fadeIn',
-    classToRemove: 'invisible',
-    offset: 100
   });
 
   // Site scroll takes into account the fixed header
@@ -210,7 +199,7 @@ $(document).ready(function () {
 var pagination = 0;
 
 function postsPerPage(postsPerPage) {
-  pagination = postsPerPage;  
+  pagination = postsPerPage;
   var currentPosts = $('.masonry-post').length;
   if (currentPosts < pagination) {
     $('.masonry-foot').css('display', 'none');
@@ -252,9 +241,9 @@ function loadPosts(filter) {
   $.get(
     //go grab the pagination number of posts on the next page and include the tags
     ghost.url.api('posts', {
-      limit: pagination, 
+      limit: pagination,
       page: nextPage,
-      include: 'tags,author', 
+      include: 'tags,author',
       filter: filter
     })
   ).done(function (data) {
@@ -389,7 +378,7 @@ function addClass(selector, myClass) {
 // =====================
 // Remove class function
 // =====================
-function removeClass(selector, myClass) {  
+function removeClass(selector, myClass) {
   // get all elements that match our selector
   elements = document.querySelectorAll(selector);
 

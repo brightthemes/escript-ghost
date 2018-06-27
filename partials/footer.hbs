@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-md-4 clearfix">
         <div class="footer-section">
-          <p class="footer-section-title">About</p>
+          <p class="footer-section-title">{{t "About"}}</p>
         </div>
         {{!-- Blog logo or title --}}
         <a href="{{@blog.url}}">
@@ -23,14 +23,14 @@
       </div>
       <div class="col-md-4 clearfix">
         <div class="footer-section">
-          <p class="footer-section-title">Tag Cloud</p>
+          <p class="footer-section-title">{{t "Tag cloud"}}</p>
         </div>
         {{!-- Tag cloud --}}
         {{> tag-cloud}}
       </div>
       <div class="col-md-4 clearfix">
         <div class="footer-section">
-          <p class="footer-section-title">Latest News</p>
+          <p class="footer-section-title">{{t "Latest posts"}}</p>
         </div>
         {{!-- Show the 2 most recent posts --}}
         {{#get "posts" include="author, tags" limit=2 }}

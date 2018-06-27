@@ -36,8 +36,9 @@
 			transition: color $global-transition, background $global-transition;
 
 			.navbar-search__group {
+        text-transform: uppercase;
 				padding: 0.7em 0;
-        font-weight: $font-weight-bold; 
+        font-weight: $font-weight-bold;
 			}
 
 			p {
@@ -77,15 +78,15 @@
 		padding: 0 10px;
 	}
 
-	&.navbar--scrolled { 
+	&.navbar--scrolled {
 		background-color: rgba($color-dark, 0.85);
 		height: 50px;
 
-		.navbar-logo a img { 
+		.navbar-logo a img {
 			transition: height $global-transition;
 		}
 
-		.navbar-title { 
+		.navbar-title {
 			font-size: 1.6rem;
 			padding: 7px 0;
 			transition: padding $global-transition;
@@ -125,7 +126,7 @@
   &.open {
 	  visibility: visible;
 	  transform: translateX(0%);
-	  transition: transform 0.5s; 
+	  transition: transform 0.5s;
 	}
 
 	.navbar-nav {
@@ -134,10 +135,10 @@
     text-align: center;
     flex: 1 0 auto;
 
-    li { 
-    	float: none; 
+    li {
+    	float: none;
 
-    	a { 
+    	a {
     		color: $color-light;
 				background-color: transparent;
 				display: inline-block;
@@ -162,10 +163,10 @@ body.search--opened {
 	}
 
 	body.nav--opened .main {
-		transform: translateX(-50%); 
+		transform: translateX(-50%);
 	}
 
 	body.search--opened .main {
-		transform: translateX(50%); 
+		transform: translateX(50%);
 	}
 }

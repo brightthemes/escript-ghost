@@ -3,16 +3,16 @@
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
 <div class="{{post_class}}">
-  <div class="post-header contact-header 
+  <div class="post-header contact-header
               {{#if feature_image}}post-hero{{else}}post-without-image{{/if}}">
     {{!-- Post image --}}
     {{#if feature_image}}
-      <div class="full-page-cover lazyload blur" data-src="{{img_url feature_image}}" 
+      <div class="full-page-cover lazyload blur" data-src="{{img_url feature_image}}"
            style="background-image: url({{img_url feature_image}})">
       </div>
     {{/if}}
     <div class="container">
-      <div class="post-header__info">    
+      <div class="post-header__info">
         <h2 class="post-header__title animated fadeInDown">{{title}}</h2>
       </div>
 
@@ -33,20 +33,20 @@
 
           {{!-- Blog contact form --}}
           <div class="col-sm-6 col-xs-12 contact__form-wrapper animated fadeInRight">
-            <form action="//formspree.io/youremail@domain.com" id="contact-form" 
+            <form action="//formspree.io/youremail@domain.com" id="contact-form"
                   class="contact-form clearfix" method="post">
-                <h3 class="contact-form__title">Drop a message</h3>
-                <input type="text" name="username" id="username" 
-                       class="contact-form__name placeholder-light" 
+                <h3 class="contact-form__title">{{t "Message"}}</h3>
+                <input type="text" name="username" id="username"
+                       class="contact-form__name placeholder-light"
                        title="Name" placeholder="Name" required>
-                <input type="text" name="email" id="email" title="Email" 
-                       class="contact-form__email placeholder-light" 
+                <input type="text" name="email" id="email" title="Email"
+                       class="contact-form__email placeholder-light"
                        placeholder="Email" required>
-                <textarea rows="2" name="message" id="message" title="Message" 
+                <textarea rows="2" name="message" id="message" title="Message"
                           class="placeholder-light" placeholder="Message" required>
                 </textarea>
                 <input type="text" name="_gotcha" style="display:none">
-                <input class="button button--light" type="submit" name="submit" 
+                <input class="button button--light" type="submit" name="submit"
                        id="submit" value="Submit">
             </form>
           </div>

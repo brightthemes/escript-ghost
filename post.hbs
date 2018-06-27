@@ -30,13 +30,7 @@
           </p>
           {{!-- Post comments --}}
           <p class="post-header__comments">
-            {{reading_time}}
-            {{!-- <a href="#comments">
-              <i class="fa fa-comments-o"></i>
-              <span class="disqus-comment-count"
-                    data-disqus-url="{{url absolute='true'}}">0
-              </span>
-            </a> --}}
+            {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
           </p>
         </div>
       </div>

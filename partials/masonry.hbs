@@ -22,7 +22,7 @@
     <div class="masonry-post__more clearfix">
       <div class="text-center">
         {{!-- Read more button --}}
-        <a href="{{url}}" class="read-more">Read More</a>
+        <a href="{{url}}" class="read-more">{{t "Read more"}}</a>
       </div>
       <hr>
       <div class="pull-left">{{date}}</div>
@@ -48,10 +48,7 @@
         {{!-- Comment count --}}
         <div class="masonry-post-comment-count">
           <i class="fa fa-clock-o"></i>
-            {{reading_time}}
-          {{!-- <i class="fa fa-comments-o"></i>
-          <span class="disqus-comment-count"
-                data-disqus-url="{{url absolute='true'}}">0</span> --}}
+            {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
         </div>
       </div>
     </div>
