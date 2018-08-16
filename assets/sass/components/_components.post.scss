@@ -168,7 +168,7 @@
 }
 
 
-.kg-card-markdown,
+.post-content__inner,
 .kg-post {
 	// max-width: 600px;
 	// margin: 0 auto;
@@ -183,48 +183,6 @@
 
   blockquote p { margin: 0; }
 }
-
-// .kg-image {
-
-// }
-
-// .kg-image-wide {
-//   width: 100%;
-// }
-
-// .kg-image-full {
-//   width: 100vw;
-//   max-width: 100%;
-// }
-
-// .kg-post figcaption {
-//   font-size: 0.9 * $font-size-base;
-//   text-align: center;
-// }
-
-// .kg-image-card {
-//   margin: $spacing-base auto;
-// }
-
-// .kg-image-card figcaption {
-//   margin: -$spacing-base 0 $spacing-base;
-// }
-
-// .kg-embed-card {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   margin: $spacing-base 0 $spacing-large;
-//   min-width: 100%;
-// }
-
-// .kg-embed-card figcaption {
-//   margin: $spacing-small 0 0;
-// }
-
-// .kg-embed-card .fluid-width-video-wrapper {
-//   margin: 0;
-// }
 
 // Koenig editor styles
 .kg-embed-card {
@@ -256,28 +214,31 @@
     text-align: center;
     color: rgba($color-dark, 0.6);
   }
+}
 
-  .kg-image {
-    max-width: 100%;
+.kg-image {
+  max-width: 100%;
+}
+
+.kg-image-wide, .kg-image-full,
+.kg-width-wide, .kg-width-full {
+  max-width: calc(100% + #{$spacing-large});
+  margin-left: -$spacing-base;
+  margin-right: -$spacing-base;
+}
+
+@include mq($from: md) {
+  .kg-image-wide,
+  .kg-width-wide {
+    max-width: calc(100% + #{$spacing-huge});
+    margin-left: -$spacing-large;
+    margin-right: -$spacing-large;
   }
 
-  .kg-image-wide, .kg-image-full {
-    max-width: calc(100% + #{$spacing-large});
-    margin-left: -$spacing-base;
-    margin-right: -$spacing-base;
-  }
-
-  @include mq($from: md) {
-    .kg-image-wide {
-      max-width: calc(100% + #{$spacing-huge});
-      margin-left: -$spacing-large;
-      margin-right: -$spacing-large;
-    }
-
-    .kg-image-full {
-      max-width: calc(100% + 3*#{$spacing-huge});
-      margin-left: -1.5*$spacing-huge;
-      margin-right: -1.5*$spacing-huge;
-    }
+  .kg-image-full,
+  .kg-width-full {
+    max-width: calc(100% + 3*#{$spacing-huge});
+    margin-left: -1.5*$spacing-huge;
+    margin-right: -1.5*$spacing-huge;
   }
 }

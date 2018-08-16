@@ -2,7 +2,7 @@
 
 {{!-- The big featured header --}}
 {{#get "posts" limit="5"
-							 include="author,tags"
+							 include="authors,tags"
 							 filter="featured:true" as |featured| }}
   <section class="featured-posts">
     <div id="featured-posts__carousel" class="carousel slide"
@@ -39,7 +39,7 @@
 									<a href="{{url}}">{{title}}</a>
 								</h2>
 								<div class="featured-post__info animated fadeInRight">
-									<div class="featured-post__author">{{author}}</div>
+									<div class="featured-post__author">{{authors}}</div>
 									<div class="featured-post__date">
 										<time datetime="{{date format="YYYY-MM-DD"}}">
 											{{date published_at}}
@@ -80,7 +80,7 @@
 {{/get}}
 
 {{!-- Masonry posts --}}
-{{#get "posts" include="author,tags"
+{{#get "posts" include="authors,tags"
 							 limit=@config.posts_per_page
 							 filter="featured:false" as |latest| }}
 	<section class="latest-posts container">

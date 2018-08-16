@@ -1,5 +1,5 @@
 {{!-- Author Box --}}
-{{#author}}
+{{#primary_author}}
   <div class="author-box animated fadeIn">
     <div class="row clearfix">
       {{!-- Author profile image --}}
@@ -21,21 +21,21 @@
           <div class="author-link__location">
             <i class="fa fa-map-marker" aria-hidden="true"></i>{{location}}
           </div>
-          {{/if}} 
+          {{/if}}
           {{!-- Author website --}}
           {{#if website}}
           <div class="author-link__website">
             <i class="fa fa-link" aria-hidden="true"></i>
             <a href="{{website}}" target="_blank">{{website}}</a>
           </div>
-          {{/if}} 
+          {{/if}}
           {{!-- Author twitter --}}
           {{#if twitter}}
           <div class="author-link__twitter">
             <i class="fa fa-twitter" aria-hidden="true"></i>
             <a href="{{twitter_url}}" target="_blank">{{name}}</a>
           </div>
-          {{/if}} 
+          {{/if}}
           {{!-- Author facebook --}}
           {{#if facebook}}
           <div class="author-link__facebook">
@@ -47,5 +47,5 @@
       </div>
     </div>
   </div>
-{{/author}}
+{{/primary_author}}
 

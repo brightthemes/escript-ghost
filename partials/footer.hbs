@@ -33,7 +33,7 @@
           <p class="footer-section-title">{{t "Latest posts"}}</p>
         </div>
         {{!-- Show the 2 most recent posts --}}
-        {{#get "posts" include="author, tags" limit=2 }}
+        {{#get "posts" include="authors, tags" limit=2 }}
           {{#foreach posts}}
           <div class="footer-post clearfix">
             <a href="{{url}}" class="">
@@ -41,7 +41,7 @@
             </a>
             <div class="footer-post__info">
               <p class="footer-post__title"><a href="{{url}}">{{title}}</a></p>
-              <p class="footer-post__author">{{author}}</p>
+              <p class="footer-post__author">{{primary_author}}</p>
               <p class="footer-post__date">{{date published_at timeago="true"}}</p>
             </div>
           </div>

@@ -1,15 +1,16 @@
 {
   "name": "escript",
-  "version": "2.3.0",
+  "version": "2.3.2",
   "description": "Masonry Blog Ghost Theme",
   "author": {
     "name": "Biron Themes",
     "email": "bironthemes@gmail.com"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://norberthunyadi@bitbucket.org/birondev/escript-ghost.git"
-  },
+  "keywords": [
+    "ghost",
+    "theme",
+    "ghost-theme"
+  ],
   "private": true,
   "config": {
     "posts_per_page": 9

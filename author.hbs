@@ -81,7 +81,7 @@
 	{{/foreach}}
 	</div>
 	<div class="masonry-foot text-center">
-  	<button id="load-posts" onclick="loadAuthorPosts('{{author.slug}}');"
+  	<button id="load-posts" onclick="loadAuthorPosts('{{#author}}{{slug}}{{/author}}');"
             class="uppercase load-more-posts">{{t "Load more posts"}}
     </button>
   </div>

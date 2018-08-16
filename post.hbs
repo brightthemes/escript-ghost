@@ -20,7 +20,7 @@
         <div class="post-header__details animated fadeInUp">
           {{!-- Post author --}}
           <p class="post-header__author">
-            {{#author}}<a href="{{url}}">{{name}}</a>{{/author}}
+            {{#authors}}<a href="{{url}}">{{name}}</a>{{/authors}}
           </p>
           {{!-- Post date --}}
           <p class="post-header__date">
@@ -51,7 +51,9 @@
 
     {{!-- Post Content --}}
     <article>
-      {{content}}
+      <div class="post-content__inner">
+        {{content}}
+      </div>
     </article>
 
     {{!-- Author Box/Info --}}
