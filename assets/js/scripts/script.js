@@ -168,20 +168,41 @@ $(document).ready(function () {
     }
   });
 
-  $('#search-field').ghostHunter({
-    results         : '#results',
-    onKeyUp         : true,
-    includepages    : true,
-    onPageLoad      : true,
-    info_template   : '<p>{{amount}} results found</p>',
-    result_template : '<div class="animated fadeIn result-item">' +
-                        '<a href="{{link}}" class="result-link">' +
-                          '<div class="result-item-content">' +
-                          '<h4>{{title}}</h4>' +
-                          '<p>{{pubDate}}</p>' +
-                          '</div>' +
-                        '</a>' +
-                      '</div>'
+  // $('#search-field').ghostHunter({
+  //   results         : '#results',
+  //   onKeyUp         : true,
+  //   includepages    : true,
+  //   onPageLoad      : true,
+  //   info_template   : '<p>{{amount}} results found</p>',
+  //   result_template :
+  // });
+
+  let ghostSearch = new GhostSearch({
+    key: ghost_key,
+    host: ghost_host,
+    template: function(result) {
+      let url = [location.protocol, '//', location.host].join('');
+      return '<div class="animated fadeIn result-item">' +
+                '<a href="' + url + '/' + result.slug + '" class="result-link">' +
+                  '<div class="result-item-content">' +
+                  '<h4>' + result.title + '</h4>' +
+                  '<p>' + moment(result.published_at).format("MMM Do YYYY") + '</p>' +
+                  '</div>' +
+                '</a>' +
+              '</div>'
+    },
+    trigger: 'focus',
+    api: {
+      resource: 'posts',
+      parameters: {
+          limit: 'all',
+          fields: ['title', 'slug', 'published_at'],
+          filter: '',
+          include: '',
+          order: '',
+          formats: '',
+      },
+    }
   });
 
   $(".masonry").css('visibility', 'visible');

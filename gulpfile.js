@@ -1,33 +1,32 @@
-var gulp = require('gulp');
-var concat = require('gulp-concat');
-var rename = require('gulp-rename');
-var uglify = require('gulp-uglify');
-var postcss = require('gulp-postcss');
-var cssnext = require('postcss-cssnext');
-var colorRgbaFallback = require('postcss-color-rgba-fallback');
-var opacity = require('postcss-opacity');
-var pseudoelements = require('postcss-pseudoelements');
-var vmin = require('postcss-vmin');
-var pixrem = require('pixrem');
-var willChange = require('postcss-will-change');
-var sass = require('gulp-sass');
-var path = require('path');
-var cssnano = require('cssnano');
-var zindex = require('postcss-zindex');
-var removeComments = require('postcss-discard-comments');
-var browserSync = require('browser-sync').create();
-var plumber = require('gulp-plumber');
-var notify = require('gulp-notify');
-var gutil = require('gulp-util');
-var replace = require('gulp-replace');
-var fs = require('fs');
+const gulp = require('gulp');
+const concat = require('gulp-concat');
+const rename = require('gulp-rename');
+const uglify = require('gulp-uglify');
+const postcss = require('gulp-postcss');
+const cssnext = require('postcss-cssnext');
+const colorRgbaFallback = require('postcss-color-rgba-fallback');
+const opacity = require('postcss-opacity');
+const pseudoelements = require('postcss-pseudoelements');
+const vmin = require('postcss-vmin');
+const willChange = require('postcss-will-change');
+const sass = require('gulp-sass');
+const cssnano = require('cssnano');
+const zindex = require('postcss-zindex');
+const removeComments = require('postcss-discard-comments');
+const browserSync = require('browser-sync').create();
+const plumber = require('gulp-plumber');
+const notify = require('gulp-notify');
+const gutil = require('gulp-util');
+const replace = require('gulp-replace');
+const fs = require('fs');
+const babel = require('gulp-babel');
 
 // Define base folders
-var asset_src = 'assets/';
-var npm_src   = 'node_modules/';
-var dest      = 'assets/';
+const asset_src = 'assets/';
+const npm_src   = 'node_modules/';
+const dest      = 'assets/';
 
-var onError = function( err ) {
+const onError = function( err ) {
   console.log('An error occurred:', gutil.colors.magenta(err.message));
   gutil.beep();
   this.emit('end');
@@ -49,14 +48,24 @@ gulp.task('scripts', function() {
         npm_src   + 'fitvids/fitvids.min.js',
         npm_src   + 'bootstrap-sass/assets/javascripts/bootstrap.min.js',
         npm_src   + 'moment/min/moment.min.js',
-        // npm_src   + 'lazysizes/lazysizes.min.js',
         npm_src   + 'vanilla-lazyload/dist/lazyload.js',
-        npm_src   + 'jquery-viewport-checker/dist/jquery.viewportchecker.min.js',
+        // npm_src   + 'jquery-viewport-checker/dist/jquery.viewportchecker.min.js',
         npm_src   + 'salvattore/dist/salvattore.min.js',
-        asset_src + 'js/scripts/jquery.ghostHunter.js',
+        // asset_src + 'js/scripts/jquery.ghostHunter.js',
+        npm_src   + 'ghost-search/dist/ghost-search.js',
+        asset_src + 'js/scripts/ghostAPI.js',
         asset_src + 'js/scripts/prism.js',
         asset_src + 'js/scripts/script.js'
     ])
+    .pipe(babel({
+      'presets': [
+        [
+          '@babel/preset-env', {
+            'modules': false
+          }
+        ]
+      ]
+    }))
     .pipe(concat('app.js'))
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
@@ -109,26 +118,37 @@ gulp.task('browsersync', function (callback) {
   callback();
 });
 
-gulp.task('browsersync:reload', function (callback) {
+gulp.task('reload', function (callback) {
   browserSync.reload();
   callback();
 });
 
 // Watch for changes in files
-gulp.task('watch', function() {
-  // Watch .js files
-  gulp.watch(asset_src + 'js/scripts/*.js', ['scripts']);
-  // Watch .scss files
-  gulp.watch(asset_src + 'sass/*/*.scss', ['sass']);
-  // Watch app.min.css
-  gulp.watch(asset_src + 'css/main.min.css', ['inlinecss']);
-  // Watch main.min.csss
-  gulp.watch(asset_src + 'css/main.min.css', ['browsersync:reload']);
-  // Watch app.min.js
-  gulp.watch(asset_src + 'js/app.min.js', ['browsersync:reload']);
-  // Watch .hbs files
-  gulp.watch('**/*.hbs', ['browsersync:reload']);
+gulp.task('watch:scripts', function () {
+  gulp.watch(asset_src + 'js/scripts/*.js', gulp.series('scripts', 'reload'));
 });
+
+gulp.task('watch:sass', function () {
+  gulp.watch(asset_src + 'sass/*/*.scss', gulp.series('sass', 'inlinecss', 'reload'));
+});
+
+gulp.task('watch:hbs', function () {
+  gulp.watch('**/*.hbs', gulp.series('reload'));
+});
+
+gulp.task('watch',
+  gulp.parallel('watch:scripts', 'watch:sass', 'watch:hbs')
+);
+
 // Default Task
-// gulp.task('default', ['scripts', 'sass', 'watch', 'browsersync']);
-gulp.task('default', ['sass','inlinecss', 'scripts', 'fonts', 'watch', 'browsersync']);
+gulp.task('default',
+  gulp.series(
+    gulp.parallel(
+      'scripts',
+      'sass'
+    ),
+    'inlinecss',
+    'browsersync',
+    'watch'
+  ),
+);

@@ -24,7 +24,7 @@
     {{!-- Ghost outputs important style and meta data with this tag --}}
     {{ghost_head}}
   </head>
-  <body class="{{body_class}} nav--closed search--closed" 
+  <body class="{{body_class}} nav--closed search--closed"
         onload="postsPerPage({{@config.posts_per_page}})">
 
     {{!-- The blog navigation links --}}
@@ -49,9 +49,14 @@
 
     {{!-- Disqus comments --}}
     <script type="text/javascript">
+      /* Ghost Search */
+      // Replace it with your domain: ghost_host = 'https://yoursite.domain'
+      var ghost_host = 'http://localhost:3468';
+      // Settings > Integrations > New Custom Integration. Copy Key. Replace ghost_key below.
+      var ghost_key = '42695d4e682a4757b736928a19';
       // Replace 'bironthemes' with your disqus account shortname
       var disqus_shortname = 'biron-demo';
     </script>
-    
+
   </body>
 </html>
