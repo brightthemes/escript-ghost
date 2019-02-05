@@ -2,7 +2,7 @@
   "name": "escript",
   "description": "Masonry Blog Ghost Theme",
   "demo": "https://escript.bironthemes.com",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "engines": {
     "ghost": ">=2.0.0",
     "ghost-api": "v2"
