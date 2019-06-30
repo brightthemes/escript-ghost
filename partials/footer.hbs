@@ -7,16 +7,16 @@
           <p class="footer-section-title">{{t "About"}}</p>
         </div>
         {{!-- Blog logo or title --}}
-        <a href="{{@blog.url}}">
-          {{#if @blog.logo}}
-            <img data-src="{{@blog.logo}}" alt="{{@blog.title}}"
+        <a href="{{@site.url}}">
+          {{#if @site.logo}}
+            <img data-src="{{@site.logo}}" alt="{{@site.title}}"
                  class="lazyload img-responsive footer-logo"/>
           {{else}}
-            <h3 class="footer-title">{{@blog.title}}</h3>
+            <h3 class="footer-title">{{@site.title}}</h3>
           {{/if}}
         </a>
         {{!-- Blog description --}}
-        <p>{{@blog.description}}</p>
+        <p>{{@site.description}}</p>
         <hr class="footer-divider">
         {{!-- Social media links --}}
         {{>social-media}}
@@ -54,7 +54,7 @@
   {{!-- Copyright --}}
   <div class="footer-bottom">
     <div class="copyright text-center">
-      &copy; {{date format="YYYY"}} <a href="{{@blog.url}}">{{@blog.title}}</a>.
+      &copy; {{date format="YYYY"}} <a href="{{@site.url}}">{{@site.title}}</a>.
       Published with <a href="https://ghost.org/">Ghost</a>.
       Theme by <a href="https://bironthemes.com">Biron Themes</a>
     </div>

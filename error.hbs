@@ -1,11 +1,11 @@
 {{!< default}}
 
 {{!-- Page 404 --}}
-<div class="page-header {{#if @blog.cover_image}}post-hero{{else}}post-without-image{{/if}}">
+<div class="page-header {{#if @site.cover_image}}post-hero{{else}}post-without-image{{/if}}">
   {{!-- Blog cover photo --}}
-  {{#if @blog.cover_image}}
-    <div class="full-page-cover lazyload blur" data-src="{{@blog.cover_image}}"
-         style="background-image: url({{@blog.cover_image}})">
+  {{#if @site.cover_image}}
+    <div class="full-page-cover lazyload blur" data-src="{{@site.cover_image}}"
+         style="background-image: url({{@site.cover_image}})">
     </div>
   {{/if}}
   <div class="container">
@@ -16,10 +16,10 @@
 
       {{!-- Links to home and contact page --}}
       <div class="error-404__links">
-        <a class="button button--light" href="{{@blog.url}}">
+        <a class="button button--light" href="{{@site.url}}">
           <i class="fa fa-share fa-flip-horizontal"></i>{{t "Home"}}
         </a>
-        <a class="button button--light" href="{{@blog.url}}/contact">
+        <a class="button button--light" href="{{@site.url}}/contact">
           <i class="fa fa-paper-plane"></i>{{t "Contact"}}
         </a>
       </div>
