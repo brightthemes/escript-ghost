@@ -45,15 +45,14 @@ gulp.task('scripts', function() {
   return gulp
     .src([
         npm_src   + 'jquery/dist/jquery.min.js',
-        npm_src   + 'fitvids/fitvids.min.js',
+        npm_src   + 'fitvids/dist/fitvids.min.js',
         npm_src   + 'bootstrap-sass/assets/javascripts/bootstrap.min.js',
         npm_src   + 'moment/min/moment.min.js',
         npm_src   + 'vanilla-lazyload/dist/lazyload.js',
         // npm_src   + 'jquery-viewport-checker/dist/jquery.viewportchecker.min.js',
         npm_src   + 'salvattore/dist/salvattore.min.js',
-        // asset_src + 'js/scripts/jquery.ghostHunter.js',
+        npm_src   + '@tryghost/content-api/umd/content-api.min.js',
         npm_src   + 'ghost-search/dist/ghost-search.js',
-        asset_src + 'js/scripts/ghostAPI.js',
         asset_src + 'js/scripts/prism.js',
         asset_src + 'js/scripts/script.js'
     ])
@@ -112,7 +111,7 @@ gulp.task('inlinecss', function() {
 // Browsersync init and reload
 gulp.task('browsersync', function (callback) {
   browserSync.init({
-    port: 3468,
+    port: 3368,
     proxy: 'http://localhost:2368/'
   });
   callback();

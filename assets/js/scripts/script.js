@@ -176,9 +176,12 @@ $(document).ready(function () {
   //   result_template :
   // });
 
+  console.log('ghos_data: ', ghost_host, ghost_key);
+
   let ghostSearch = new GhostSearch({
     key: ghost_key,
-    host: ghost_host,
+    url: ghost_host,
+    version: 'v3',
     template: function(result) {
       let url = [location.protocol, '//', location.host].join('');
       return '<div class="animated fadeIn result-item">' +
@@ -235,7 +238,7 @@ function postsPerPage(postsPerPage) {
   pagination = postsPerPage;
   var currentPosts = $('.masonry-post').length;
   if (currentPosts < pagination) {
-    $('.masonry-foot').css('display', 'none');
+    $('#load-posts').css('cursor', 'not-allowed');
   }
 }
 
@@ -262,7 +265,7 @@ function loadTagPosts (tag) {
     filter = 'tags:' + tag;
   }
 
-  loadPosts(filter);
+  loadPosts(api,filter);
 }
 
 function loadPosts(filter) {
@@ -271,31 +274,36 @@ function loadPosts(filter) {
     filter = 'featured:false';
   }
 
-  $.get(
-    //go grab the pagination number of posts on the next page and include the tags
-    ghost.url.api('posts', {
+  const api = new GhostContentAPI({
+    url: ghost_host,
+    key: ghost_key,
+    version: "v3"
+  });
+
+    api.posts.browse({
       limit: pagination,
       page: nextPage,
-      include: 'tags,author',
+      include: 'tags,authors',
       filter: filter
     })
-  ).done(function (data) {
+  .then(function (data) {
+    console.log(data.meta.pagination.next, data.meta.pagination.pages);
     //for each post returned
-    $.each(data.posts, function (i, post) {
-      //Now that we have the author and post data, send that to the insertPost function
-      var user = post.author;
-      insertPost(post, user, animateDelay);
-      animateDelay += 0.1;
-    });
-  }).done(function (data) {
-    //If you are on the last post, hide the load more button
 
-    if (nextPage == data.meta.pagination.pages || data.posts.length == 0) {
+    if (data.meta.pagination.next == data.meta.pagination.pages || data.length == 0) {
       $('.masonry-foot').hide();
     } else {
       nextPage++;
     }
-  }).fail(function (err) {
+
+    $.each(data, function (i, post) {
+      //Now that we have the author and post data, send that to the insertPost function
+      var user = post.authors[0];
+      insertPost(post, user, animateDelay);
+      animateDelay += 0.1;
+    });
+
+  }).catch(function (err) {
     console.log(err);
   });
 };

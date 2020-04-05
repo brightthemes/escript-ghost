@@ -41,22 +41,22 @@
     {{!-- The footer at the very bottom --}}
     {{> footer}}
 
+    {{!-- Disqus comments --}}
+    <script type="text/javascript">
+      /* Ghost Search */
+      // Replace it with your domain: ghost_host = 'https://yoursite.domain'
+      var ghost_host = 'http://localhost:3368';
+      // Settings > Integrations > New Custom Integration. Copy Key. Replace ghost_key below.
+      var ghost_key = '55a4116f266aa7f13f51a90d72';
+      // Replace 'bironthemes' with your disqus account shortname
+      var disqus_shortname = 'biron-demo';
+    </script>
+
     {{!-- Ghost outputs important scripts and data with this tag --}}
     {{ghost_foot}}
 
     {{!-- Main theme scripts --}}
     <script type="text/javascript" async src="{{asset 'js/app.min.js'}}"></script>
-
-    {{!-- Disqus comments --}}
-    <script type="text/javascript">
-      /* Ghost Search */
-      // Replace it with your domain: ghost_host = 'https://yoursite.domain'
-      var ghost_host = 'http://localhost:3468';
-      // Settings > Integrations > New Custom Integration. Copy Key. Replace ghost_key below.
-      var ghost_key = '42695d4e682a4757b736928a19';
-      // Replace 'bironthemes' with your disqus account shortname
-      var disqus_shortname = 'biron-demo';
-    </script>
 
   </body>
 </html>
