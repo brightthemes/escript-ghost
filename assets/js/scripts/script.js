@@ -9,7 +9,6 @@ $(document).ready(function () {
     $('.social-share').show();
 
     var commentTop;
-    
     if ($('.subscribe').length) {
       commentTop = $('.subscribe').offset().top;
     }
@@ -80,7 +79,7 @@ $(document).ready(function () {
   if ( window.location.pathname === "/" && !$('.featured-post').length ) {
     $('.navbar__default').css('backgroundColor', 'rgba(0,0,0,0.85)');
     $('.latest-posts').css('marginTop', '7em');
-  } 
+  }
 
   // Advertisement div hide when ad block active
   if ($('.ad-unit').is(':hidden')) {
@@ -92,10 +91,20 @@ $(document).ready(function () {
     $(el).attr('data-src', el.src).addClass('lazyload');
   });
 
-  jQuery('.masonry-post').addClass("invisible").viewportChecker({
-    classToAdd: 'visible animated fadeIn',
-    classToRemove: 'invisible',
-    offset: 100
+  // ================
+  // Lazy load images
+  // ================
+  var lazyLoad = new LazyLoad({
+    elements_selector: ".lazyload",
+    treshold: 0,
+    class_loading: "loading",
+    class_loaded: "lazyloaded",
+    callback_enter: function(el) {
+      el.classList.add('loading');
+    },
+    callback_set: function(el) {
+      el.classList.add('lazyloaded');
+    }
   });
 
   // Site scroll takes into account the fixed header
@@ -158,29 +167,72 @@ $(document).ready(function () {
     }
   });
 
-  $('#search-field').ghostHunter({
-    results         : '#results',
-    onKeyUp         : true,
-    includepages    : true,
-    onPageLoad      : true,
-    info_template   : '<p>{{amount}} results found</p>',
-    result_template : '<div class="animated fadeIn result-item">' +
-                        '<a href="{{link}}" class="result-link">' +
-                          '<div class="result-item-content">' +
-                          '<h4>{{title}}</h4>' +
-                          '<p>{{authorName}}, {{pubDate}}</p>' +
-                          '</div>' +
-                        '</a>' +
-                      '</div>'
+  // $('#search-field').ghostHunter({
+  //   results         : '#results',
+  //   onKeyUp         : true,
+  //   includepages    : true,
+  //   onPageLoad      : true,
+  //   info_template   : '<p>{{amount}} results found</p>',
+  //   result_template :
+  // });
+
+  let ghostSearch = new GhostSearch({
+    key: ghost_key,
+    host: ghost_host,
+    template: function(result) {
+      let url = [location.protocol, '//', location.host].join('');
+      return '<div class="animated fadeIn result-item">' +
+                '<a href="' + url + '/' + result.slug + '" class="result-link">' +
+                  '<div class="result-item-content">' +
+                  '<h4>' + result.title + '</h4>' +
+                  '<p>' + moment(result.published_at).format("MMM Do YYYY") + '</p>' +
+                  '</div>' +
+                '</a>' +
+              '</div>'
+    },
+    trigger: 'focus',
+    api: {
+      resource: 'posts',
+      parameters: {
+          limit: 'all',
+          fields: ['title', 'slug', 'published_at'],
+          filter: '',
+          include: '',
+          order: '',
+          formats: '',
+      },
+    }
   });
 
   $(".masonry").css('visibility', 'visible');
+
+  // ==========================
+  // Disqus commen count script
+  // ==========================
+  // (function() {
+  //   var s = document.createElement('script'); s.async = true;
+  //   s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  //   (document.getElementsByTagName('BODY')[0]).appendChild(s);
+  // }());
+
+
+  // =============
+  // Image Gallery
+  // =============
+  var images = document.querySelectorAll('.kg-gallery-image img');
+  images.forEach(function (image) {
+      var container = image.closest('.kg-gallery-image');
+      var width = image.attributes.width.value;
+      var height = image.attributes.height.value;
+      var ratio = width / height;
+      container.style.flex = ratio + ' 1 0%';
+  })
 });
 
 var pagination = 0;
 
 function postsPerPage(postsPerPage) {
-  pagination = postsPerPage;  
+  pagination = postsPerPage;
   var currentPosts = $('.masonry-post').length;
   if (currentPosts < pagination) {
     $('.masonry-foot').css('display', 'none');
@@ -222,9 +274,9 @@ function loadPosts(filter) {
   $.get(
     //go grab the pagination number of posts on the next page and include the tags
     ghost.url.api('posts', {
-      limit: pagination, 
+      limit: pagination,
       page: nextPage,
-      include: 'tags,author', 
+      include: 'tags,author',
       filter: filter
     })
   ).done(function (data) {
@@ -254,15 +306,15 @@ function insertPost(postData, authorData, animate) {
 
   var postInfo = '<div class="masonry-post animated fadeIn" style="animation-delay:' + animate + 's">';
 
-  if (postData.image !== null) {
+  if (postData.feature_image !== null) {
     postInfo += '<a class="masonry-post__image" href="' + postData.url + '">\
-                    <img src="' + postData.image + '" class="lazyload img-responsive" alt="' + postData.title + '">\
+                    <img src="' + postData.feature_image + '" class="lazyload img-responsive" alt="' + postData.title + '">\
                   </a>';
   }
 
   postInfo += '<div class="masonry-post__content">' +
     '<h2 class="masonry-post__title"><a href="' + postData.url + '">' + postData.title + '</a></h2>' +
-    '<h6 class="masonry-post__author">by <a href="' + authorData.url + '">' + authorData.name +  '</a></h6>' +
+    '<h6 class="masonry-post__author">by <a href=/author/' + authorData.slug + '>' + authorData.name +  '</a></h6>' +
     '<p class="masonry-post__tags">' + listTags(postData.tags) + '</p>' +
     '<p>' + excerpt + '</p>' +
     '<div class="masonry-post__more clearfix">' +
@@ -291,14 +343,14 @@ function insertPost(postData, authorData, animate) {
   salvattore.appendElements(grid, [item]);
   item.outerHTML = postInfo;
 
-  DISQUSWIDGETS.getCount({ reset: true });
+  // DISQUSWIDGETS.getCount({ reset: true });
 }
 
 function listTags(tags) {
   var tagList = '';
   for(i=0; i<tags.length; i++) {
     if (i < 5) {
-      tagList += '#<a href="/tag' + tags[i].slug + '/">' + tags[i].name + '</a> ';
+      tagList += '#<a href="/tag/' + tags[i].slug + '/">' + tags[i].name + '</a> ';
     }
   }
 
@@ -307,26 +359,6 @@ function listTags(tags) {
 
 // Make videos responsive
 fitvids();
-
-// Disqus comments
-function loadComments(url, id) {
-  /**
-   *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-   *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-   */
-  // var disqus_shortname = 'codehowio'; // required: replace example with your forum shortname
-  var disqus_config = function () {
-    this.page.url = url;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = id; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-  };
-
-  (function () {  // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', + new Date());
-    (d.head || d.body).appendChild(s);
-  })();
-}
 
 function isInViewport(el) {
   var top = el.offsetTop;
@@ -361,4 +393,30 @@ function copyTextToClipboard(text) {
 
 function copyLink() {
   copyTextToClipboard(location.href);
+}
+
+// ==================
+// Add class function
+// ==================
+function addClass(selector, myClass) {
+  // get all elements that match our selector
+  elements = document.querySelectorAll(selector);
+
+  // add class to all chosen elements
+  for (var i=0; i<elements.length; i++) {
+    elements[i].classList.add(myClass);
+  }
+}
+
+// =====================
+// Remove class function
+// =====================
+function removeClass(selector, myClass) {
+  // get all elements that match our selector
+  elements = document.querySelectorAll(selector);
+
+  // remove class from all chosen elements
+  for (var i=0; i<elements.length; i++) {
+    elements[i].classList.remove(myClass);
+  }
 }

@@ -1,13 +1,3 @@
 //===================================
 // Post video
 //===================================
-
-.post-content {
-  .fluid-width-video-wrapper {
-    @include mq($from: sm) {
-      width: calc(100% + 5em);
-      margin: $spacing-base -2.5em;
-      max-width: 50.52em;
-    }
-  }
-}

@@ -17,8 +17,8 @@
     height: 100vh;
   }
 
-  &.post-without-image { 
-    display: block; 
+  &.post-without-image {
+    display: block;
     min-height: auto;
     height: auto;
     background: transparent;
@@ -27,7 +27,7 @@
       padding-top: 7em;
 
       .post-header__tag {
-        a { 
+        a {
           border-color: $color-dark;
 
           &:hover {
@@ -37,7 +37,7 @@
         }
       }
 
-      .post-header__tag, 
+      .post-header__tag,
       .post-header__title,
       .post-header__detail {
         color: $color-dark;
@@ -55,7 +55,7 @@
           a, time, span { color: $color-dark; }
         }
 
-        .post-header__comments a:hover { color: $color-dark; }
+        .post-header__comments { color: $color-dark; }
       }
     }
   }
@@ -63,7 +63,7 @@
   .post-header__info {
     text-align: center;
 
-    .post-header__tag, 
+    .post-header__tag,
     .post-header__title,
     .post-header__details {
       color: $color-light;
@@ -75,8 +75,8 @@
     .post-header__title {
       font-size: 2rem;
       margin: $spacing-small 0;
-      @include mq($from: sm) { 
-        font-size: 3rem; 
+      @include mq($from: sm) {
+        font-size: 3rem;
         margin: $spacing-tiny 0;
       }
       @include mq($from: md) { font-size: 3.5rem; }
@@ -86,13 +86,14 @@
     .post-header__tag {
       animation-delay: 0.5s;
 
-      a { 
+      a {
+        display: inline-block;
         border: 1px solid $color-light;
         border-radius: $global-border-radius;
         padding: $spacing-small $spacing-base;
         text-transform: uppercase;
         margin-right: $spacing-tiny;
-        line-height: 2;
+        margin-bottom: $spacing-small;
         transition: color $global-transition, background $global-transition;
 
         &:hover {
@@ -111,7 +112,7 @@
       animation-delay: 1s;
 
       p {
-        margin: 0;    
+        margin: 0;
         padding: 0 $spacing-small;
         border-right: 1px solid $color-light;
 
@@ -126,8 +127,8 @@
         display: inline-block;
       }
 
-      .post-header__comments { 
-        border-right: none; 
+      .post-header__comments {
+        border-right: none;
 
         a:hover { color: $color-light; }
       }
@@ -152,7 +153,7 @@
       margin-right: auto;
       margin-bottom: 1.2em;
 
-      img { 
+      img {
         width: calc(100% + 30px);
         margin: $spacing-base -15px;
 
@@ -164,4 +165,111 @@
       }
     }
   }
+}
+
+
+.post-content__inner,
+.kg-post {
+	// max-width: 600px;
+	// margin: 0 auto;
+  // padding: $spacing-large 0;
+  max-width: 48em;
+  padding-top: $spacing-large;
+  padding-bottom: $spacing-large;
+
+  p, blockquote, pre {
+    margin-bottom: $spacing-large;
+  }
+
+  blockquote p { margin: 0; }
+}
+
+// Koenig editor styles
+.kg-embed-card,
+.kg-gallery-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: $spacing-base 0 $spacing-large;
+  min-width: 100%;
+
+  figcaption {
+    margin: $spacing-small 0 0;
+    color: rgba($color-dark, 0.6);
+  }
+
+  .fluid-width-video-wrapper {
+    margin: 0;
+  }
+}
+
+.kg-image-card {
+  margin: 0 0 $spacing-base;
+
+  img {
+    margin: 0 0 $spacing-large;
+  }
+
+  figcaption {
+    margin: -$spacing-base 0 $spacing-base;
+    text-align: center;
+    color: rgba($color-dark, 0.6);
+  }
+}
+
+.kg-image {
+  max-width: 100%;
+}
+
+.kg-image-wide, .kg-image-full,
+.kg-width-wide, .kg-width-full {
+  max-width: calc(100% + #{$spacing-large});
+  margin-left: -$spacing-base;
+  margin-right: -$spacing-base;
+}
+
+@include mq($from: md) {
+  .kg-image-wide,
+  .kg-width-wide {
+    max-width: calc(100% + #{$spacing-huge});
+    margin-left: -$spacing-large;
+    margin-right: -$spacing-large;
+  }
+
+  .kg-image-full,
+  .kg-width-full {
+    max-width: calc(100% + 3*#{$spacing-huge});
+    margin-left: -1.5*$spacing-huge;
+    margin-right: -1.5*$spacing-huge;
+  }
+}
+
+// Image gallery style
+.kg-gallery-container {
+  display: flex;
+  flex-direction: column;
+  margin: $spacing-base auto;
+  max-width: 100%;
+  width: 100vw;
+}
+
+.kg-gallery-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.kg-gallery-image img {
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.kg-gallery-row:not(:first-of-type) {
+  margin: $spacing-small 0 0 0;
+}
+
+.kg-gallery-image:not(:first-of-type) {
+  margin: 0 0 0 $spacing-small;
 }

@@ -1,33 +1,29 @@
 {{!< default}}
 
 {{!-- Page 404 --}}
-<div class="page-header {{#if @blog.cover}}post-hero{{else}}post-without-image{{/if}}">
+<div class="page-header {{#if @site.cover_image}}post-hero{{else}}post-without-image{{/if}}">
   {{!-- Blog cover photo --}}
-  {{#if @blog.cover}}
-    <div class="full-page-cover lazyload blur" data-src="{{@blog.cover}}" 
-         style="background-image: url({{@blog.cover}})">
+  {{#if @site.cover_image}}
+    <div class="full-page-cover lazyload blur" data-src="{{@site.cover_image}}"
+         style="background-image: url({{@site.cover_image}})">
     </div>
   {{/if}}
   <div class="container">
     <div class="error-404">
       {{!-- Error title and messages --}}
-      <h2 class="error-404__title">404</h2> 
-      <p class="error-404__text">Page Not Found</p>
-      <p class="error-404__description">Something went wrong!</p>
-      <p class="error-404__description">
-        We can't seem to find the page you are looking for.
-      </p>
+      <h2 class="error-404__title">{{t "404 Error"}}</h2>
+      <p class="error-404__description">{{t "Something went wrong! We can't seem to find the page you are looking for"}}</p>
 
       {{!-- Links to home and contact page --}}
-      <div class="error-404__links"> 
-        <a class="button button--light" href="{{@blog.url}}">
-          <i class="fa fa-share fa-flip-horizontal"></i> HOME
-        </a>  
-        <a class="button button--light" href="{{@blog.url}}/contact">
-          <i class="fa fa-paper-plane"></i> CONTACT
+      <div class="error-404__links">
+        <a class="button button--light" href="{{@site.url}}">
+          <i class="fa fa-share fa-flip-horizontal"></i>{{t "Home"}}
+        </a>
+        <a class="button button--light" href="{{@site.url}}/contact">
+          <i class="fa fa-paper-plane"></i>{{t "Contact"}}
         </a>
       </div>
-      
+
     </div>
   </div>
 </div>

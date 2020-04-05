@@ -4,20 +4,20 @@
 {{#author}}
   <section class="author">
     {{!-- Author cover image --}}
-    {{#if cover}}
-      <div class="full-page-cover lazyload blur" data-src="{{cover}}" 
-           style="background-image: url({{cover}})">
+    {{#if cover_image}}
+      <div class="full-page-cover lazyload blur" data-src="{{cover_image}}"
+           style="background-image: url({{cover_image}})">
       </div>
     {{/if}}
     <div class="container">
       <div class="author__profile">
         {{!-- Author profile image --}}
-        {{#if image}}
-          <div class="lazyload blur author__image" data-src="{{image}}" 
-               style="background-image: url({{image}})">
+        {{#if profile_image}}
+          <div class="lazyload blur author__image" data-src="{{profile_image}}"
+               style="background-image: url({{profile_image}})">
           </div>
         {{/if}}
-        
+
         {{!-- Author Name --}}
         <h2 class="author__title">{{name}}</h2>
         {{!-- Author bio --}}
@@ -43,7 +43,7 @@
           {{!-- Author post number --}}
           <span class="author-meta__stats">
             <i class="fa fa-signal" aria-hidden="true"></i>
-            {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
+            {{plural ../pagination.total empty='No posts' singular=(t '1 post') plural=(t '% posts')}}
           </span>
         </div>
 
@@ -81,8 +81,8 @@
 	{{/foreach}}
 	</div>
 	<div class="masonry-foot text-center">
-  	<button id="load-posts" onclick="loadAuthorPosts('{{author.slug}}');" 
-            class="uppercase load-more-posts">Load More
+  	<button id="load-posts" onclick="loadAuthorPosts('{{#author}}{{slug}}{{/author}}');"
+            class="uppercase load-more-posts">{{t "Load more posts"}}
     </button>
   </div>
 </section>

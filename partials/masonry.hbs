@@ -1,17 +1,17 @@
 {{!-- Masonry item --}}
 <div class="masonry-post">
   {{!-- Masonry image --}}
-  {{#if image}}
+  {{#if feature_image}}
     <a class="masonry-post__image" href="{{url}}">
-      <img src="{{image}}" class="lazyload blur img-responsive" alt="{{title}}">
+      <img data-src="{{img_url feature_image}}" class="lazyload blur img-responsive" alt="{{title}}">
     </a>
   {{/if}}
-  
+
   <div class="masonry-post__content">
     {{!-- Masonry title --}}
     <h2 class="masonry-post__title"><a href="{{url}}">{{title}}</a></h2>
     {{!-- Masonry post author --}}
-    <p class="masonry-post__author">{{author}}</p>
+    <p class="masonry-post__author">{{authors}}</p>
     {{!-- Masonry post tags (limit 5) --}}
     {{#if tags}}
       <p class="masonry-post__tags">#{{tags limit=5 separator=" #"}}</p>
@@ -22,34 +22,33 @@
     <div class="masonry-post__more clearfix">
       <div class="text-center">
         {{!-- Read more button --}}
-        <a href="{{url}}" class="read-more">Read More</a>
+        <a href="{{url}}" class="read-more">{{t "Read more"}}</a>
       </div>
       <hr>
       <div class="pull-left">{{date}}</div>
       <div class="pull-right">
         {{!-- Post share --}}
-        <div class="masonry-post-share"><i class="fa fa-share-alt"></i></div>					
+        <div class="masonry-post-share"><i class="fa fa-share-alt"></i></div>
         <div class="masonry-post-share__social pull-left animated fadeIn">
-          <a class="facebook" 
-             href="https://www.facebook.com/sharer/sharer.php?u={{url absolute='true'}}" 
+          <a class="facebook"
+             href="https://www.facebook.com/sharer/sharer.php?u={{url absolute='true'}}"
              rel="external" target="_blank">
              <i class="fa fa-facebook-official"></i>
           </a>
-          <a class="twitter" 
-             href="http://twitter.com/share?text={{encode title}}&amp;url={{url absolute='true'}}" 
+          <a class="twitter"
+             href="http://twitter.com/share?text={{encode title}}&amp;url={{url absolute='true'}}"
              rel="external" target="_blank">
              <i class="fa fa-twitter"></i>
           </a>
-          <a class="reddit" href="//www.reddit.com/submit?url={{url absolute='true'}}" 
+          <a class="reddit" href="//www.reddit.com/submit?url={{url absolute='true'}}"
              rel="external" target="_blank">
              <i class="fa fa-reddit"></i>
           </a>
         </div>
         {{!-- Comment count --}}
         <div class="masonry-post-comment-count">
-          <i class="fa fa-comments-o"></i>
-          <span class="disqus-comment-count" 
-                data-disqus-url="{{url absolute='true'}}">0</span>
+          <i class="fa fa-clock-o"></i>
+            {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
         </div>
       </div>
     </div>
