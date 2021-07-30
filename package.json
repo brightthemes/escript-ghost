@@ -2,10 +2,10 @@
   "name": "escript",
   "description": "Masonry Blog Ghost Theme",
   "demo": "https://escript.bironthemes.com",
-  "version": "3.0.1",
+  "version": "4.0.0",
   "engines": {
-    "ghost": ">=3.0.0",
-    "ghost-api": "v3"
+    "ghost": ">=4.0.0",
+    "ghost-api": "v4"
   },
   "author": {
     "name": "Biron Themes",
@@ -26,11 +26,8 @@
     "ghost-theme"
   ],
   "devDependencies": {
-    "@babel/cli": "^7.12.8",
-    "@babel/core": "^7.12.9",
-    "@babel/plugin-transform-runtime": "^7.12.1",
-    "@babel/preset-env": "^7.12.7",
-    "@babel/preset-es2015": "^7.0.0-beta.53",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
     "bootstrap": "^3.4.1",
     "bootstrap-sass": "^3.4.1",
     "browser-sync": "^2.26.13",
@@ -45,7 +42,7 @@
     "gulp-postcss": "^7.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^0.6.1",
-    "gulp-sass": "^4.1.0",
+    "gulp-sass": "^5.0.0",
     "gulp-uglify": "^3.0.2",
     "gulp-util": "^3.0.8",
     "path": "^0.12.7",
@@ -59,7 +56,8 @@
     "postcss-pseudoelements": "^5.0.0",
     "postcss-vmin": "^3.0.0",
     "postcss-will-change": "^2.0.0",
-    "postcss-zindex": "^2.2.0"
+    "postcss-zindex": "^2.2.0",
+    "sass": "^1.36.0"
   },
   "dependencies": {
     "@tryghost/content-api": "^1.4.10",
@@ -69,7 +67,7 @@
     "font-awesome": "^4.7.0",
     "ghost-search": "^1.0.1",
     "jquery": "^3.5.1",
-    "lazysizes": "^4.1.8",
+    "lazysizes": "^5.3.2",
     "moment": "^2.29.1",
     "salvattore": "^1.0.9",
     "vanilla-lazyload": "^8.17.0"

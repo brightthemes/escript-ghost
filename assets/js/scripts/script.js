@@ -176,12 +176,10 @@ $(document).ready(function () {
   //   result_template :
   // });
 
-  console.log('ghos_data: ', ghost_host, ghost_key);
-
   let ghostSearch = new GhostSearch({
     key: ghost_key,
     url: ghost_host,
-    version: 'v3',
+    version: 'v4',
     template: function(result) {
       let url = [location.protocol, '//', location.host].join('');
       return '<div class="animated fadeIn result-item">' +
@@ -287,7 +285,6 @@ function loadPosts(filter) {
       filter: filter
     })
   .then(function (data) {
-    console.log(data.meta.pagination.next, data.meta.pagination.pages);
     //for each post returned
 
     if (data.meta.pagination.next == data.meta.pagination.pages || data.length == 0) {
