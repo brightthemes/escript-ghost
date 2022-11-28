@@ -2,10 +2,9 @@
   "name": "escript",
   "description": "Masonry Blog Ghost Theme",
   "demo": "https://escript.bironthemes.com",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "engines": {
-    "ghost": ">=4.0.0",
-    "ghost-api": "v4"
+    "ghost": ">=5.0.0"
   },
   "author": {
     "name": "Biron Themes",
@@ -73,6 +72,7 @@
     "vanilla-lazyload": "^8.17.0"
   },
   "config": {
+    "card_assets": true,
     "posts_per_page": 9,
     "image_sizes": {
       "xxs": {

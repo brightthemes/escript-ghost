@@ -1,5 +1,5 @@
 {{!-- Subscribe component (Ghost) --}}
-{{#if @labs.subscribers}}
+{{#unless @member}}
   <section class="subscribe" {{#if @site.cover_image}}
            style="background-image: url({{@site.cover_image}})"{{/if}}>
     <div class="subscribe-overlay"></div>
@@ -12,7 +12,7 @@
       </div>
     </div>
   </section>
-{{/if}}
+{{/unless}}
 
 
 
